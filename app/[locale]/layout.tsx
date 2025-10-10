@@ -24,8 +24,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-    title: 'Hotel Royel Palace - Luxury Accommodation',
-    description: 'Experience luxury at Hotel Royel Palace. Book your unforgettable stay today.',
+    title: 'Riad Nashira & SPA - Luxury Accommodation',
+    description: 'Experience luxury at Riad Nashira and SPA. Book your unforgettable stay today.',
 }
 
 async function getMessages(locale: string) {
