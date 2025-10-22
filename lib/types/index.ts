@@ -1,4 +1,10 @@
 import {IconType} from "react-icons";
+import {ComponentType} from "react";
+
+export interface RoomAmenity {
+    icon: ComponentType<{ className?: string }>
+    label: string
+}
 
 export interface Room {
     id: string
@@ -6,6 +12,8 @@ export interface Room {
     price: number
     image: string
     slug: string
+    description: string
+    amenities: RoomAmenity[]
 }
 
 export interface Testimonial {
@@ -21,6 +29,7 @@ export interface Amenity {
     id: string
     icon: IconType
     label: string
+    description?: string
 }
 
 export interface Activity {

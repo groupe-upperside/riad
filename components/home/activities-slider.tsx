@@ -49,7 +49,7 @@ export default function ActivitiesSlider() {
             <Container>
                 <SectionHeader
                     label="Services"
-                    title="Équipements & prestations"
+                    title="Services & prestations"
                     subtitle="Explorez nos services signature et nos installations."
                     centered
                     className="mb-12"
@@ -86,14 +86,14 @@ export default function ActivitiesSlider() {
                     <button
                         onClick={handlePrev}
                         disabled={currentIndex === 0}
-                        className="w-10 h-10 border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
+                        className="w-10 h-10 border cursor-pointer border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
                     >
                         <FaArrowLeft />
                     </button>
                     <button
                         onClick={handleNext}
                         disabled={currentIndex === maxIndex}
-                        className="w-10 h-10 border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
+                        className="w-10 h-10 border cursor-pointer border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
                     >
                         <FaArrowRight />
                     </button>
