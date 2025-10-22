@@ -46,14 +46,14 @@ export default function GalleryColumns(): JSX.Element {
                     {cols.map((col, cIdx) => (
                         <div key={cIdx} className="grid gap-4">
                             {col.map((img) => (
-                                <div key={img.id} className="overflow-hidden rounded-lg">
+                                <div key={img.id} className="overflow-hidden rounded-sm">
                                     {img.width && img.height ? (
                                         <Image
                                             src={img.src}
                                             alt={img.alt}
                                             width={img.width}
                                             height={img.height}
-                                            className="h-auto max-w-full rounded-lg object-cover"
+                                            className="h-auto max-w-full rounded-sm object-cover"
                                             sizes="(max-width: 768px) 50vw, 25vw"
                                         />
                                     ) : (

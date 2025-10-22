@@ -16,12 +16,12 @@ export default function HeroSection() {
             <div className="w-full lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-brand-beige-100 flex flex-col justify-center p-8 md:p-12 pt-24 lg:pt-12">
                 <div>
                     <div className="mt-12 md:mt-24">
-                        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-brand-dark-800 leading-tight mb-6">
-                            Bienvenue au <br className="hidden md:block" />
+                        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-brand-dark-800 leading-tight">
                             Riad Nashira & SPA
                         </h1>
+                        <h2 className="text-xl md:text-2xl lg:text-3xl text-brand-gray-500 mb-12">Luxe et sérénité au cœur de Marrakech</h2>
                         <p className="text-brand-gray-500 leading-relaxed max-w-lg">
-                            {`Riad Nashira & Spa apporte une nouvelle dimension à l'hospitalité à Marrakech, en introduisant un concept qui va au-delà de toute autre expérience.`}
+                            {`Au cœur de la Médina, une maison d’exception où chaque instant devient une expérience de luxe et de sérénité. C’est l’élégance d’un riad authentique, sublimée par le bien–être, la gastronomie et l’hospitalité marocaine.`}
                         </p>
                     </div>
                 </div>

@@ -7,6 +7,8 @@ import {Playfair_Display, Poppins} from 'next/font/google'
 
 import CustomNextIntlClientProvider from '@/lib/next-intl/custom-next-intl-client-provider';
 import {ReactNode} from "react";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -47,8 +49,12 @@ export default async function RootLayout({
         <html lang={locale} className={`${playfair.variable} ${poppins.variable}`}>
         <body>
         <CustomNextIntlClientProvider locale={locale} messages={messages}>
-                    <Toaster position="top-center" reverseOrder={false}/>
-                    <main className="h-screen w-screen bg-[#F9FAFB]">{children}</main>
+            <Toaster position="top-center" reverseOrder={false}/>
+            <div className="h-screen w-screen bg-[#F9FAFB]">
+            <Header/>
+            <main> {children}</main>
+            <Footer/>
+            </div>
         </CustomNextIntlClientProvider>
         </body>
         </html>

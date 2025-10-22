@@ -21,8 +21,8 @@ export default function SectionHeader({
         <div className={cn(centered && 'text-center', className)}>
             {label && (
                 <p className={cn(
-                    'text-sm tracking-widest uppercase mb-2',
-                    dark ? 'text-brand-gray' : 'text-brand-gray'
+                    'text-xs font-semibold tracking-widest uppercase mb-2',
+                    dark ? 'text-white' : 'text-brand-gold-400'
                 )}>
                     {label}
                 </p>

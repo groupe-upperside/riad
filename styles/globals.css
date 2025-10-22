@@ -257,6 +257,65 @@
 
 /* Component Styles */
 @layer components {
+    .menu-transition {
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* Indentation for nested items */
+    .menu-level-0 { @apply pl-0; }
+    .menu-level-1 { @apply pl-4; }
+    .menu-level-2 { @apply pl-8; }
+    .menu-level-3 { @apply pl-12; }
+
+    /* Active menu item */
+    .menu-item-active {
+        @apply text-brand-gold-500 font-medium;
+    }
+
+    .room-card-overlay {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s;
+    }
+
+    .bd-facility-slider__thumb {
+        position: relative;
+        width: 450px;
+        height: 502px;
+    }
+
+    /* ≤ 575px */
+    @media (max-width: 575px) {
+        .bd-facility-slider__thumb {
+            width: 250px;
+            height: 300px;
+        }
+    }
+
+    /* 576px–767px */
+    @media (min-width: 576px) and (max-width: 767px) {
+        .bd-facility-slider__thumb {
+            width: calc(100% - 100px);
+            height: 450px;
+        }
+    }
+
+    /* Prevent text selection on hover */
+    .room-card-hover {
+        user-select: none;
+    }
+
+    /* Mobile touch feedback */
+    @media (hover: none) {
+        .room-card-touch {
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+
+    /* Desktop dropdown shadows */
+    .dropdown-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
     .container {
         @apply px-4 mx-auto max-w-7xl;
     }

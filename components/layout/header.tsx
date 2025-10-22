@@ -14,14 +14,18 @@ import {cn} from '@/lib/utils/utils';
 import Image from "next/image";
 import {LiaTimesSolid} from "react-icons/lia";
 import {FaFacebookF, FaXTwitter, FaYoutube} from "react-icons/fa6";
-import ClientPortal from "../client-portal";
-import {FaChevronRight, FaInstagram, FaTripadvisor} from "react-icons/fa";
+import ClientPortal from "../common/client-portal";
+import {FaInstagram, FaTripadvisor} from "react-icons/fa";
 import {Contact, Social} from "@/components/layout/footer";
+import MultiLevelMenu from "@/components/layout/multi-level-menu";
+import {usePathname} from "@/lib/i18n/navigation";
 
 export default function Header(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [headerH, setHeaderH] = useState<number>(0);
+
+    const path = usePathname();
 
     const ref = useRef<HTMLElement | null>(null);
 
@@ -63,12 +67,12 @@ export default function Header(): JSX.Element {
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') setIsMenuOpen(false);
     }, []);
+
     useEffect(() => {
         if (!isMenuOpen || typeof window === 'undefined') return;
         window.addEventListener('keydown', onKeyDown);
         return () => window.removeEventListener('keydown', onKeyDown);
     }, [isMenuOpen, onKeyDown]);
-
 
     const social: Social = {
         instagram: 'https://www.instagram.com/riadnashira',
@@ -84,7 +88,7 @@ export default function Header(): JSX.Element {
         office: '+212 (0) 6.66.84.08.28',
         email: 'info@riadnashira.com',
         address: 'Diour Saboune, Derb Sidi Makhlouf n°16 Marrakech',
-        cta: { label: 'réservez maintenant', href: '#' },
+        cta: {label: 'réservez maintenant', href: '#'},
     };
 
     return (
@@ -93,24 +97,20 @@ export default function Header(): JSX.Element {
                 ref={ref}
                 role="banner"
                 className={cn(
-                    scrolled ? 'fixed top-0 left-0 w-full z-50' : 'absolute top-0 left-0 w-full z-50',
+                    scrolled ? 'fixed top-0 left-0 w-full z-50' : path !== '/' ? "block" : 'absolute top-0 left-0 w-full z-50',
                     'transition-colors duration-300',
-                    scrolled
+                    scrolled || path !== "/"
                         ? 'bg-white/95 border-b border-brand-gray-200 backdrop-blur-sm'
                         : 'bg-transparent'
                 )}
             >
                 <div
-                    className="grid xl:grid-cols-5 2xl:grid-cols-3 md:grid-cols-4 items-start px-4 md:px-6 py-4 md:py-6 lg:px-12">
+                    className="grid xl:grid-cols-5 2xl:grid-cols-3 md:grid-cols-4 items-start px-4 md:px-6 py-4 md:py-4 lg:px-12">
                     <div
                         className="md:col-span-2 xl:col-span-2 2xl:col-span-1 flex items-center justify-between pr-4 lg:pr-12">
                         <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
-                            <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo.png`} alt="logo" width={50}
+                            <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo_noir.png`} alt="logo" width={150}
                                    height={50}/>
-                            <span
-                                className="font-serif text-2xl md:text-3xl font-medium text-brand-dark-800 tracking-wider">
-                RIAD NASHIRA
-              </span>
                         </Link>
 
                         <button
@@ -130,13 +130,13 @@ export default function Header(): JSX.Element {
                             href="/book"
                             className={cn(
                                 'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
-                                scrolled
+                                scrolled || path !== "/"
                                     ? 'bg-brand-gold-400 text-white hover:bg-black'
                                     : 'bg-white text-brand-dark-800 hover:bg-brand-gold-500 hover:text-white'
                             )}
                             aria-label="Book now"
                         >
-                            <span className="uppercase">réserver maintenant</span>
+                            <span className="uppercase">réserver</span>
                             <HiArrowUpRight aria-hidden
                                             className="group-hover:translate-x-1 transition-transform duration-300"/>
                         </Link>
@@ -157,25 +157,21 @@ export default function Header(): JSX.Element {
                         id="site-drawer"
                         className={cn(
                             'fixed inset-y-0 right-0 z-50',
-                            'w-full sm:max-w-md md:max-w-sm',                 // similar width as the mock
-                            'bg-white text-brand-dark-800 md:rounded-l-lg',  // light panel + rounded left on md+
+                            'w-full sm:max-w-md md:max-w-sm',
+                            'bg-white text-brand-dark-800 md:rounded-l-lg',
                             'shadow-2xl ring-1 ring-brand-gray-200/70',
                             'transform transition-transform duration-300',
-                            'overflow-y-auto',                                // scroll content
+                            'overflow-y-auto',
                             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
                         )}
                         aria-label="Main navigation"
                     >
                         <div className="relative flex h-full flex-col p-6 md:p-7">
-                            {/* Top row: logo + close */}
                             <div className="flex items-start justify-between">
                                 <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
-                                    <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo.png`} alt="logo" width={50}
+                                    <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo_noir.png`} alt="logo"
+                                           width={150}
                                            height={50}/>
-                                    <span
-                                        className="font-serif text-2xl md:text-3xl font-medium text-brand-dark-800 tracking-wider">
-                RIAD NASHIRA
-              </span>
                                 </Link>
                                 <button
                                     type="button"
@@ -186,24 +182,7 @@ export default function Header(): JSX.Element {
                                     <LiaTimesSolid/>
                                 </button>
                             </div>
-                            <nav className="mt-6">
-                                <ul className="divide-y divide-brand-gray-200/80">
-                                    {['Accueil', 'Chambres', 'Services', 'Galerie', 'Contact'].map((item) => (
-                                        <li key={item}>
-                                            <a
-                                                href={`#${item.toLowerCase()}`}
-                                                onClick={() => setIsMenuOpen(false)}
-                                                className="flex items-center justify-between py-3 text-sm tracking-wide uppercase hover:text-brand-gold-500 transition-colors"
-                                            >
-                                                <span>{item}</span>
-                                                <FaChevronRight className="text-brand-gray-400" aria-hidden/>
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </nav>
-
-                            {/* About */}
+                            <MultiLevelMenu onClose={() => setIsMenuOpen(false)}/>
                             <div className="mt-8">
                                 <h4 className="font-serif text-base text-brand-dark-800">À propos du Riad Nashira</h4>
                                 <p className="mt-3 text-sm leading-relaxed text-brand-gray-600">
@@ -212,7 +191,6 @@ export default function Header(): JSX.Element {
                                 </p>
                             </div>
 
-                            {/* Contact info */}
                             <div className="mt-8">
                                 <h4 className="font-serif text-base text-brand-dark-800">Contact</h4>
                                 <ul className="mt-4 space-y-4 text-sm">
@@ -264,7 +242,6 @@ export default function Header(): JSX.Element {
                                 </ul>
                             </div>
 
-                            {/* Socials */}
                             <div className="mt-8 border-t border-brand-gray-200/80 pt-6">
                                 <div className="flex items-center gap-3">
                                     <a
@@ -274,7 +251,7 @@ export default function Header(): JSX.Element {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FaInstagram />
+                                        <FaInstagram/>
                                     </a>
                                     <a
                                         href={social.facebook}
@@ -283,7 +260,7 @@ export default function Header(): JSX.Element {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FaFacebookF />
+                                        <FaFacebookF/>
                                     </a>
                                     <a
                                         href={social.tripadvisor}
@@ -292,7 +269,7 @@ export default function Header(): JSX.Element {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FaTripadvisor />
+                                        <FaTripadvisor/>
                                     </a>
                                     <a
                                         href={social.twitter}
@@ -301,7 +278,7 @@ export default function Header(): JSX.Element {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FaXTwitter />
+                                        <FaXTwitter/>
                                     </a>
                                     <a
                                         href={social.youtube}
@@ -310,24 +287,23 @@ export default function Header(): JSX.Element {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <FaYoutube />
+                                        <FaYoutube/>
                                     </a>
                                 </div>
                             </div>
 
-                            {/* CTA stays at bottom */}
                             <div className="mt-auto pt-8">
                                 <Link
                                     href="/book"
                                     className={cn(
                                         'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
-                                        scrolled
+                                        scrolled || path !== "/"
                                             ? 'bg-brand-gold-400 text-white hover:bg-black'
                                             : 'bg-white text-brand-dark-800 hover:bg-brand-gold-500 hover:text-white'
                                     )}
                                     aria-label="Book now"
                                 >
-                                    <span className="uppercase">réserver maintenant</span>
+                                    <span className="uppercase">réserver</span>
                                     <HiArrowUpRight aria-hidden
                                                     className="group-hover:translate-x-1 transition-transform duration-300"/>
                                 </Link>

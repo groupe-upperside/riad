@@ -13,49 +13,49 @@ export const routing = defineRouting({
             pt: '/',
             de: '/'
         },
-        '/forbidden': {
-            en: '/forbidden',
-            fr: '/interdit',
+        '/rooms': {
+            en: '/rooms',
+            fr: '/hebergements',
             it: '/vietato',
             es: '/prohibido',
             pt: '/proibido',
             de: '/verboten'
         },
-        '/credits': {
-            en: '/credits',
-            fr: '/credits',
+        '/rooms/comfort': {
+            en: '/rooms/comfort',
+            fr: '/hebergements/confort',
             it: '/crediti',
             es: '/creditos',
             pt: '/creditos',
             de: '/credits'
         },
-        '/contact': {
-            en: '/contact',
-            fr: '/contact',
+        '/rooms/deluxe': {
+            en: '/rooms/deluxe',
+            fr: '/hebergements/deluxe',
             it: '/contatto',
             es: '/contacto',
             pt: '/contato',
             de: '/kontakt'
         },
-        '/login': {
-            en: '/login',
-            fr: '/connexion',
+        '/rooms/special-suites': {
+            en: '/rooms/special-suites',
+            fr: '/hebergements/suites-speciales',
             it: '/accesso',
             es: '/iniciar-sesion',
             pt: '/entrar',
             de: '/anmelden'
         },
-        '/register': {
-            en: '/register',
-            fr: '/inscription',
+        '/rooms/suites': {
+            en:  '/rooms/suites',
+            fr: '/hebergements/suites',
             it: '/registrazione',
             es: '/registro',
             pt: '/registrar',
             de: '/registrieren'
         },
-        '/invoices': {
-            en: '/invoices',
-            fr: '/factures',
+        '/bars-restaurants': {
+            en: '/bars-restaurants',
+            fr: '/bars-restaurants',
             it: '/fatture',
             es: '/facturas',
             pt: '/faturas',

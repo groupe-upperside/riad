@@ -1,26 +1,25 @@
-import HeroSection from "@/components/sections/hero-section";
-import AmenitiesBar from "@/components/sections/amenities-bar";
-import GalleryMasonry from "@/components/sections/gallery";
-import Testimonials from "@/components/sections/testimonials";
-import RoomsSuites from "@/components/sections/room-suites";
-import ActivitiesSlider from "@/components/sections/activities-slider";
-import AboutSection from "@/components/sections/about";
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
+import HeroSection from "@/components/home/hero-section";
+import AmenitiesBar from "@/components/home/amenities-bar";
+import GalleryMasonry from "@/components/home/gallery";
+import Testimonials from "@/components/home/testimonials";
+import RoomsSuites from "@/components/home/room-suites";
+import ActivitiesSlider from "@/components/home/activities-slider";
+import AboutSection from "@/components/home/about";
+import ExperiencesSlider from "@/components/home/experience-slider";
+import {experienceSlides} from "@/lib/constants";
 
 
 export default function HomePage() {
     return (
-        <main>
-            <Header />
-            <HeroSection />
-            <AmenitiesBar />
-            <AboutSection />
-            <RoomsSuites />
-            <ActivitiesSlider />
-            <Testimonials />
-            <GalleryMasonry />
-            <Footer />
-        </main>
+        <>
+            <HeroSection/>
+            <AmenitiesBar/>
+            <ExperiencesSlider sliderContent={experienceSlides}/>
+            <AboutSection/>
+            <RoomsSuites/>
+            <ActivitiesSlider/>
+            <Testimonials/>
+            <GalleryMasonry/>
+        </>
     )
 }
