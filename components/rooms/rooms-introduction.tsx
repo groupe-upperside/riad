@@ -21,7 +21,7 @@ const roomsData = {
     stats: [
         {icon: FaBed, value: 3, label: "Confort"},
         {icon: FaStar, value: 9, label: "Deluxe"},
-        {icon: FaGem, value: 3, label: "Cuites"},
+        {icon: FaGem, value: 3, label: "Suites"},
         {icon: FaCrown, value: 2, label: "Suites spéciales"}
     ] as StatItem[]
 };
