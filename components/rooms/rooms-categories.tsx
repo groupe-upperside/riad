@@ -45,8 +45,7 @@ export default function RoomCategoriesGrid() {
                         Nos Chambres
                     </h2>
                     <p className="text-base text-white max-w-3xl mx-auto mt-8">
-                        Le riad comporte 17 chambres, toutes différentes vous permettant de voyager...
-                        Certaines sont au rez de chaussée, d'autres à l'étage, certaines avec vue sur le patio piscine ou le patio fontaine.
+                        {"Le riad comporte 17 chambres, toutes différentes vous permettant de voyager... Certaines sont au rez de chaussée, d'autres à l'étage, certaines avec vue sur le patio piscine ou le patio fontaine."}
                     </p>
                 </div>
 

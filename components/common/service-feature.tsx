@@ -42,7 +42,6 @@ interface OverlappingImagesProps {
     position: 'left' | 'right';
 }
 
-// Overlapping Images Component
 const OverlappingImages: React.FC<OverlappingImagesProps> = ({ images, position }) => {
     const primaryPositionClass = position === 'left'
         ? 'top-0 left-0'
@@ -76,7 +75,6 @@ const OverlappingImages: React.FC<OverlappingImagesProps> = ({ images, position 
     );
 };
 
-// Features List Component
 const FeaturesList: React.FC<{ features: ServiceFeatureItem[] | string[] }> = ({ features }) => {
     return (
         <div className="flex flex-wrap items-center gap-6 text-brand-gray mb-10">
@@ -96,7 +94,6 @@ const FeaturesList: React.FC<{ features: ServiceFeatureItem[] | string[] }> = ({
     );
 };
 
-// Main Component
 const ServiceFeature: React.FC<ServiceFeatureProps> = ({
                                                            id,
                                                            category,
@@ -104,7 +101,6 @@ const ServiceFeature: React.FC<ServiceFeatureProps> = ({
                                                            description,
                                                            features,
                                                            images,
-                                                           cta,
                                                            imagePosition = 'right',
                                                            backgroundColor = 'bg-white',
                                                            className = ''
@@ -154,5 +150,4 @@ const ServiceFeature: React.FC<ServiceFeatureProps> = ({
 
 export default ServiceFeature;
 
-// Export types for external use
 export type { ServiceFeatureProps, ServiceFeatureItem, ServiceImage };

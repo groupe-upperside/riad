@@ -225,6 +225,7 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                             ))}
                         </div>
                         {slide.link && (
+                            //@ts-expect-error - link is optional
                             <Link href={slide.link} className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
                                   aria-label="Read more">
                             <span className="relative pb-1 text-base font-medium uppercase text-brand-dark-800">
