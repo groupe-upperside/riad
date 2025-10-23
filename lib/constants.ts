@@ -17,7 +17,7 @@ import {SecondaryFacility} from "@/components/common/secondary-facility-card";
 import {EventSpace} from "@/components/events/events-showcase";
 
 export const images = {
-    hero: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/5c04d838a6-66122dae7190d989147c.png',
+    hero: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/92e2273a04-b5f14e21a0c1ed168958.png',
     aboutRiad: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4f19248be1-361b5188a53dc6e33bfc.png',
     experienceSuite: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/0b98983862-ad0abfe6da44ee70e37b.png',
     patternOverlay: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/dc765237cd-ef220abc13ff04563495.png',

@@ -4,7 +4,6 @@ import {JSX, useCallback, useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import {
     HiArrowUpRight,
-    HiBars3CenterLeft,
     HiOutlineDevicePhoneMobile,
     HiOutlineEnvelope,
     HiOutlineMapPin,
@@ -19,12 +18,14 @@ import {FaInstagram, FaTripadvisor} from "react-icons/fa";
 import {Contact, Social} from "@/components/layout/footer";
 import MultiLevelMenu from "@/components/layout/multi-level-menu";
 import {usePathname} from "@/lib/i18n/navigation";
+import {RxHamburgerMenu} from "react-icons/rx";
 
 export default function Header(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [headerH, setHeaderH] = useState<number>(0);
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const [language, setLanguage] = useState('FR');
 
     const path = usePathname();
 
@@ -98,6 +99,7 @@ export default function Header(): JSX.Element {
                 ref={ref}
                 role="banner"
                 className={cn(
+                    'py-2',
                     scrolled ? 'fixed top-0 left-0 w-full z-50' : path !== '/' ? "block" : 'absolute top-0 left-0 w-full z-50',
                     'transition-colors duration-300',
                     scrolled || path !== "/"
@@ -105,84 +107,126 @@ export default function Header(): JSX.Element {
                         : 'bg-transparent'
                 )}
             >
-                <div
-                    className="grid xl:grid-cols-5 2xl:grid-cols-3 md:grid-cols-4 items-start px-4 md:px-6 py-4 md:py-4 lg:px-12">
-                    <div
-                        className="md:col-span-2 xl:col-span-2 2xl:col-span-1 flex items-center justify-between pr-4 lg:pr-12">
-                        <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
-                            <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo_noir.png`} alt="logo" width={150}
-                                   height={50}/>
-                        </Link>
+                <div className="w-full px-4 md:px-6 py-4 md:py-4 lg:px-12">
+                    <div className="flex items-center justify-between relative">
+                        {/* Left section - Menu and Language */}
+                        <div className="flex-1 flex items-center gap-4 md:gap-6">
+                            <Link href="/" className="flex items-center" aria-label="Go to homepage">
+                                <Image
+                                    src={`${process.env.NEXT_PUBLIC_CDN_URL}${scrolled || path !== "/" ? "epicurean_noir.png" : "epicurean.png"}`}
+                                    alt="logo"
+                                    className="max-w-[140px] md:max-w-[180px] hidden md:block"
+                                    width={2746}
+                                    height={615}
+                                />
+                                <Image
+                                    src={`${process.env.NEXT_PUBLIC_CDN_URL}${scrolled || path !== "/" ? "ee.png" : "ee_blanc.png"}`}
+                                    alt="logo"
+                                    className="max-w-[40px] block md:hidden"
+                                    width={90}
+                                    height={82}
+                                />
+                            </Link>
+                            {/* Language selector */}
+                        </div>
 
-                        <button
-                            type="button"
-                            onClick={() =>
-                            {
-                                setIsMenuOpen((s) => !s)
-                                setIsSubMenuOpen(false)
-                            }}
-                            className="text-brand-dark-800 text-2xl md:text-3xl hover:text-brand-gold-400 cursor-pointer transition-colors"
-                            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                            aria-expanded={isMenuOpen}
-                            aria-controls="site-drawer"
-                        >
-                            {isMenuOpen ? <LiaTimesSolid/> : <HiBars3CenterLeft/>}
-                        </button>
-                    </div>
+                        {/* Center logo */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <Link href="/" className="flex items-center" aria-label="Go to homepage">
+                                <Image
+                                    src={`${process.env.NEXT_PUBLIC_CDN_URL}${scrolled || path !== "/" ? "logo_noir.png" : "logo_blanc.png"}`}
+                                    alt="logo"
+                                    className="max-w-[140px] md:max-w-[220px]"
+                                    width={1650}
+                                    height={545}
+                                />
+                            </Link>
+                        </div>
 
-                    <div className="md:col-span-2 xl:col-span-3 2xl:col-span-2 md:flex justify-end hidden">
-                        <Link
-                            href="/booking"
-                            className={cn(
-                                'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
-                                scrolled || path !== "/"
-                                    ? 'bg-brand-gold-400 text-white hover:bg-black'
-                                    : 'bg-white text-brand-dark-800 hover:bg-brand-gold-500 hover:text-white'
-                            )}
-                            aria-label="Book now"
-                        >
-                            <span className="uppercase">réserver</span>
-                            <HiArrowUpRight aria-hidden
-                                            className="group-hover:translate-x-1 transition-transform duration-300"/>
-                        </Link>
+                        {/* Right section - Book Now button */}
+                        <div className="flex-1 flex items-center justify-end space-x-4 md:space-x-6">
+                            <div className="relative hidden md:block">
+                                <button
+                                    className={cn(
+                                        "flex items-center text-sm hover:text-brand-gold-400 cursor-pointer",
+                                        scrolled || path !== "/" ? "text-brand-dark-800" : "text-white"
+                                    )}
+                                    onClick={() => setLanguage(language === 'FR' ? 'EN' : 'FR')}
+                                >
+                                    <span>{language}</span>
+                                </button>
+                            </div>
+                            <Link
+                                href="/booking"
+                                className={cn(
+                                    'hidden md:inline-flex items-center gap-2 px-4 md:px-5 py-3 font-semibold tracking-wider group duration-300 transition-all text-xs md:text-sm',
+                                    scrolled || path !== "/"
+                                        ? 'bg-brand-gold-400 text-white hover:bg-black'
+                                        : 'bg-transparent text-white border-1 hover:text-brand-gold-400'
+                                )}
+                                aria-label="Book now"
+                            >
+                                <span className="uppercase">réserver</span>
+                                <HiArrowUpRight aria-hidden
+                                                className="group-hover:translate-x-1 transition-transform duration-300"/>
+                            </Link>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setIsMenuOpen((s) => !s);
+                                    setIsSubMenuOpen(false);
+                                }}
+                                className={cn(
+                                    "text-2xl md:text-3xl hover:text-brand-gold-400 cursor-pointer transition-colors",
+                                    scrolled || path !== "/" ? "text-brand-dark-800" : "text-white"
+                                )}
+                                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                                aria-expanded={isMenuOpen}
+                                aria-controls="site-drawer"
+                            >
+                                {isMenuOpen ? <LiaTimesSolid/> : <RxHamburgerMenu />}
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <ClientPortal>
                     <button
                         aria-hidden={!isMenuOpen}
                         tabIndex={-1}
-                        onClick={() => setIsMenuOpen(false)}
                         className={cn(
-                            'fixed inset-0 bg-black/40 transition-opacity focus:outline-none outline-none ring-0',
-                            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                            'fixed inset-0 bg-black/40 backdrop-blur-sm cursor-pointer z-40 transition-opacity',
+                            isMenuOpen
+                                ? 'opacity-100 pointer-events-auto'
+                                : 'opacity-0 pointer-events-none'
                         )}
+                        onClick={() => setIsMenuOpen(false)}
+                        aria-label="Close menu overlay"
                     />
-
                     <aside
                         id="site-drawer"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Navigation principale"
                         className={cn(
-                            'fixed inset-y-0 right-0 z-50',
-                            'w-full sm:max-w-md md:max-w-sm',
-                            'bg-white text-brand-dark-800 md:rounded-l-lg',
-                            'shadow-2xl ring-1 ring-brand-gray-200/70',
-                            'transform transition-transform duration-300',
-                            'overflow-y-auto',
-                            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                            'fixed left-0 top-0 h-full w-full md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-white flex flex-col overflow-y-auto z-50 transition-transform duration-300',
+                            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
                         )}
-                        aria-label="Main navigation"
                     >
-                        <div className="relative flex h-full flex-col p-6 md:p-7">
-                            <div className="flex items-start justify-between">
-                                <Link href="/" className="flex items-center gap-2" aria-label="Go to homepage">
-                                    <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo_noir.png`} alt="logo"
-                                           width={150}
-                                           height={50}/>
+                        <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col">
+                            <div className="flex items-center justify-between mb-8">
+                                <Link href="/" onClick={() => setIsMenuOpen(false)}
+                                      aria-label="Fermer le menu et aller à la page d'accueil">
+                                    <Image src={`${process.env.NEXT_PUBLIC_CDN_URL}logo.png`} alt="logo"
+                                           className="max-w-[180px]"
+                                           width={1938}
+                                           height={932}/>
                                 </Link>
                                 <button
                                     type="button"
                                     onClick={() => {
-                                        setIsMenuOpen(false)
-                                        setIsSubMenuOpen(false)
+                                        setIsMenuOpen(false);
+                                        setIsSubMenuOpen(false);
                                     }}
                                     className="text-brand-dark-800/70 cursor-pointer hover:text-brand-dark-800 transition-colors text-2xl"
                                     aria-label="Fermer le menu"
@@ -190,7 +234,7 @@ export default function Header(): JSX.Element {
                                     <LiaTimesSolid/>
                                 </button>
                             </div>
-                            <MultiLevelMenu onClose={() => setIsMenuOpen(false)} isOpen={isMenuOpen} />
+                            <MultiLevelMenu onClose={() => setIsMenuOpen(false)} isOpen={isMenuOpen}/>
                             <div className="mt-8">
                                 <h4 className="font-serif text-base text-brand-dark-800">À propos du Riad Nashira</h4>
                                 <p className="mt-3 text-sm leading-relaxed text-brand-gray-600">
