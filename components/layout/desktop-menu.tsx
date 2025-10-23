@@ -57,7 +57,7 @@ function DesktopMenuItem({ item }: { item: MenuItem }) {
                 >
                     <ul className="py-2">
                         {item.children?.map((child) => (
-                            <DesktopSubMenuItem key={child.id} item={child} level={1} />
+                            <DesktopSubMenuItem key={child.id} item={child}  />
                         ))}
                     </ul>
                 </div>
@@ -66,7 +66,7 @@ function DesktopMenuItem({ item }: { item: MenuItem }) {
     )
 }
 
-function DesktopSubMenuItem({ item, level }: { item: MenuItem; level: number }) {
+function DesktopSubMenuItem({ item }: { item: MenuItem; }) {
     const [isOpen, setIsOpen] = useState(false)
     const hasChildren = item.children && item.children.length > 0
 

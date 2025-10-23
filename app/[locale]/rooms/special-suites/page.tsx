@@ -6,21 +6,18 @@ import {
     FaDumbbell,
     FaExpand,
     FaGem,
-    FaHeart,
     FaHome,
     FaHotTub,
     FaMedal,
     FaMountain,
     FaSpa,
     FaStar,
-    FaUser,
     FaUsers
 } from "react-icons/fa";
 import {FaLocationDot, FaUpDownLeftRight} from "react-icons/fa6";
 import OverviewSection from "@/components/rooms/rooms-overview";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
 import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
-import {PerfectForItem} from "@/components/rooms/perfect-for-section";
 import BookingCtaSection, {Bullet, CtaAction} from "@/components/rooms/booking-cta";
 import OtherRiadsSlider, {RiadCard} from "@/components/rooms/other-rooms-slider";
 import SuiteFeaturesSection, {SuiteFeatureItem} from "@/components/rooms/suite-features";
@@ -43,30 +40,6 @@ const confortGalleryItems: GalleryItem[] = [
         alt: "Intimate seating area in Moroccan comfort room with traditional cushions, low table, warm ambiance, authentic decor",
         colSpan: 1,
         rowSpan: 1,
-    },
-];
-
-const items: PerfectForItem[] = [
-    {
-        id: "couple-stay",
-        icon: FaHeart,
-        title: "Séjour en Couple",
-        description:
-            "Atmosphère romantique et intime, parfaite pour une escapade à deux dans un cadre authentique et chaleureux au cœur de la Médina.",
-    },
-    {
-        id: "solo-travel",
-        icon: FaUser,
-        title: "Voyage Solo",
-        description:
-            "Espace personnel idéal pour la réflexion et la détente, offrant tout le confort nécessaire pour un séjour en solo enrichissant et reposant.",
-    },
-    {
-        id: "authentic-experience",
-        icon: FaStar,
-        title: "Expérience Luxueuse",
-        description:
-            "Confort supérieur et services premium pour découvrir Marrakech dans les meilleures conditions. Art de vivre marocain dans toute sa splendeur.",
     },
 ];
 
@@ -127,17 +100,17 @@ const riads: RiadCard[] = [
 ];
 
 const rinerFeatures: Feature[] = [
-    { icon: FaMedal,    label: "Décor inspiré du judo" },
-    { icon: FaCrown,  label: "Mobilier d'exception" },
-    { icon: FaSpa,     label: "Espace bien-être privé" },
-    { icon: FaMountain,      label: "Vue panoramique" },
+    {icon: FaMedal, label: "Décor inspiré du judo"},
+    {icon: FaCrown, label: "Mobilier d'exception"},
+    {icon: FaSpa, label: "Espace bien-être privé"},
+    {icon: FaMountain, label: "Vue panoramique"},
 ];
 
 const nashiraFeatures: Feature[] = [
-    { icon: FaGem,    label: "Luxe absolu" },
-    { icon: FaHome,  label: "Espace le plus vaste" },
-    { icon: FaConciergeBell,     label: "Service personnalisé" },
-    { icon: FaStar,      label: "Prestations exclusives" },
+    {icon: FaGem, label: "Luxe absolu"},
+    {icon: FaHome, label: "Espace le plus vaste"},
+    {icon: FaConciergeBell, label: "Service personnalisé"},
+    {icon: FaStar, label: "Prestations exclusives"},
 ];
 
 const rinerSuiteFeatures: SuiteFeatureItem[] = [
@@ -160,7 +133,6 @@ const rinerSuiteFeatures: SuiteFeatureItem[] = [
         description: "Hammam privé et baignoire en tadelakt pour une détente absolue.",
     },
 ];
-
 
 
 export default function ComfortPage() {
