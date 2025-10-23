@@ -576,6 +576,15 @@
     }
 }
 
+button{
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 /* Animation utilities */
 .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;

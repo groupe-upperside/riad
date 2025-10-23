@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import {FaChevronDown, FaChevronRight} from 'react-icons/fa'
 import {MenuItem, navigationMenu} from '@/lib/navigation'
 import {cn} from '@/lib/utils/utils'
 import {useEffect, useState} from 'react'
+import {FiMinus, FiPlus} from "react-icons/fi";
 
 interface MenuItemComponentProps {
     item: MenuItem
@@ -35,8 +35,7 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
             <div
                 className={cn(
                     "flex items-center justify-between py-3 cursor-pointer transition-colors",
-                    "text-sm tracking-wide hover:text-brand-gold-500",
-                    level === 0 && "border-b border-brand-gray-200/80"
+                    "text-sm tracking-wide hover:text-brand-gold-500"
                 )}
             >
                 {hasChildren ? (
@@ -59,9 +58,9 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
                         <button onClick={handleToggle}
                                 className="ml-2 transition-transform duration-200 cursor-pointer">
                             {isSubMenuOpen ? (
-                                <FaChevronDown className="text-brand-gray-400"/>
+                                <FiMinus className="text-brand-gray-500"/>
                             ) : (
-                                <FaChevronRight className="text-brand-gray-400"/>
+                                <FiPlus className="text-brand-gray-500"/>
                             )}
                         </button>
                     </div>
@@ -82,7 +81,7 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
                             {item.label}
                         </span>
                         {(level === 0 && hasChildren) && (
-                            <FaChevronRight className="text-brand-gray-400"/>
+                            <FiPlus className="text-brand-gray-500"/>
                         )}
                     </Link>
                 )}
