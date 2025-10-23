@@ -61,25 +61,25 @@ export const routing = defineRouting({
             pt: '/faturas',
             de: '/rechnungen'
         },
-        '/faqs': {
-            en: '/faqs',
-            fr: '/faqs',
+        '/events': {
+            en: '/events',
+            fr: '/evenements',
             it: '/faq',
             es: '/preguntas-frecuentes',
             pt: '/perguntas-frequentes',
             de: '/haeufig-gestellte-fragen'
         },
-        '/documentations': {
-            en: '/documentations',
-            fr: '/documentations',
+        '/activities': {
+            en: '/activities',
+            fr: '/activites',
             it: '/documentazioni',
             es: '/documentaciones',
             pt: '/documentacoes',
             de: '/dokumentationen'
         },
-        '/profile': {
-            en: '/profile',
-            fr: '/compte',
+        '/services': {
+            en: '/services',
+            fr: '/services',
             it: '/profilo',
             es: '/perfil',
             pt: '/perfil',

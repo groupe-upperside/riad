@@ -61,7 +61,7 @@ const bullets: Bullet[] = [
 ];
 
 const actions: CtaAction[] = [
-    {label: "RÉSERVER MAINTENANT", href: "/reservation", icon: FaCalendar, variant: "primary"}
+    {label: "RÉSERVER MAINTENANT", href: "/booking", icon: FaCalendar, variant: "primary"}
 ];
 
 const riads: RiadCard[] = [
@@ -105,7 +105,7 @@ const riads: RiadCard[] = [
             + "déploie des espaces majestueux baignés de lumière. Toutes deux offrent une expérience rare, où le luxe discret se mêle à "
             + "l’âme marocaine pour un séjour d’exception.",
         ctaLabel: "Découvrir",
-        href: "/rooms/suites-speciales",
+        href: "/rooms/special-suites",
     },
 ];
 

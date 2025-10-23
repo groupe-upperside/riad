@@ -1,7 +1,7 @@
 import RoomsHeroSection from "@/components/rooms/rooms-hero-section";
 import RoomCategoriesGrid from "@/components/rooms/rooms-categories";
 import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
-import PatioViews from "@/components/rooms/rooms-patio-view";
+import {PatioViews} from "@/components/rooms/rooms-patio-view";
 import RoomAmenities from "@/components/rooms/rooms-amenities";
 import RoomsIntroduction from "@/components/rooms/rooms-introduction";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";

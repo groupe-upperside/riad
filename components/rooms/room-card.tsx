@@ -5,6 +5,7 @@ import Image from 'next/image'
 import {FaArrowRight, FaCoffee, FaInfoCircle, FaShower, FaSnowflake, FaWifi} from 'react-icons/fa'
 import {cn} from "@/lib/utils/utils";
 import {Room} from "@/lib/types";
+import Link from "next/link";
 
 interface RoomCardProps {
     room: Room
@@ -31,6 +32,16 @@ export default function RoomCard({room, background}: RoomCardProps) {
         return () => window.removeEventListener('resize', checkMobile)
     }, [])
 
+    const  roomLink = () => {
+        switch (room.id) {
+            case '1': return '/rooms/comfort'
+            case '2': return '/rooms/deluxe'
+            case '3': return '/rooms/suites'
+            case '4': return '/rooms/special-suites'
+            default: return '/rooms/comfort'
+        }
+    }
+
     return (
         <div
             className={`${background ? background : 'bg-brand-beige-100'} group relative overflow-hidden`}
@@ -38,9 +49,9 @@ export default function RoomCard({room, background}: RoomCardProps) {
             onMouseLeave={() => !isMobile && setShowDetails(false)}
         >
             <div className="p-6 pb-0 mb-4">
-                <h3 className="font-serif text-xl md:text-2xl text-brand-dark-800">
+                <Link href={roomLink()} className="font-serif text-xl md:text-2xl text-brand-dark-800">
                     {room.title}
-                </h3>
+                </Link>
             </div>
 
             <div className="mx-6 relative h-64 md:h-72 xl:h-80 flex flex-col">
@@ -120,11 +131,11 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         >
                             ← Retour
                         </button>
-                        <button
+                        <Link href={"/booking"}
                             className="w-full bg-brand-dark-800 text-white py-3 font-semibold tracking-wider hover:bg-brand-gold-400 transition-colors duration-300 flex items-center justify-center gap-2">
                             RÉSERVER MAINTENANT
                             <FaArrowRight/>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             )}
@@ -139,7 +150,7 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         <span>Voir détails</span>
                     </button>
                 ) : (
-                    <button
+                    <Link href={"/booking"}
                         className="group/btn cursor-pointer inline-flex items-center font-semibold tracking-wider text-brand-dark-800 transition-all duration-700 ease-out hover:text-brand-gold-400">
                         <span
                             className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 translate-y-0.5 transition-[max-width,opacity,transform] duration-700 ease-out group-hover/btn:max-w-[180px] group-hover/btn:opacity-100 group-hover/btn:translate-y-0">
@@ -147,7 +158,7 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         </span>
                         <FaArrowRight
                             className="ml-0 transition-[margin,transform] duration-700 ease-out group-hover/btn:ml-2 group-hover/btn:translate-x-0.5"/>
-                    </button>
+                    </Link>
                 )}
             </div>
         </div>

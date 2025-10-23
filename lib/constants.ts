@@ -13,7 +13,8 @@ import {
 import {IoIosFitness} from "react-icons/io";
 import {MdDeck, MdElevator} from "react-icons/md";
 import {Facility} from "@/components/common/facility-card";
-import {Bar} from "@/components/common/secondary-facility-card";
+import {SecondaryFacility} from "@/components/common/secondary-facility-card";
+import {EventSpace} from "@/components/events/events-showcase";
 
 export const images = {
     hero: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/5c04d838a6-66122dae7190d989147c.png',
@@ -274,11 +275,11 @@ export const galleryImages: GalleryItem[] = [
 ];
 
 export type SlideCategory =
-    | 'HÉBERGEMENTS'
-    | 'GASTRONOMIE'
+    | 'HÉBERGEMENTS' | 'ÉVÉNEMENTS PRIVÉS' | 'EXCLUSIVITÉ TOTALE' | 'ÉVÉNEMENTS PROFESSIONNELS'
+    | 'GASTRONOMIE' | 'AVENTURE EXTRÊME' | 'SPORT DE PRESTIGE'
     | 'DÉTENTE'
     | 'BIEN-ÊTRE & SPA'
-    | 'AMBIANCE' | 'MIXOLOGIE';
+    | 'AMBIANCE' | 'MIXOLOGIE' | 'MOMENTS PRÉCIEUX';
 
 export interface SlideImages {
     main: string;
@@ -292,6 +293,7 @@ export interface Slide {
     description: string[];
     features: string[];
     images: SlideImages;
+    link?: string;
 }
 
 
@@ -308,7 +310,8 @@ export const experienceSlides: Slide[] = [
         images: {
             main: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80'
-        }
+        },
+        link: '/rooms'
     },
     {
         id: 2,
@@ -322,7 +325,8 @@ export const experienceSlides: Slide[] = [
         images: {
             main: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'
-        }
+        },
+        link: '/bars-restaurants'
     },
     {
         id: 3,
@@ -336,7 +340,8 @@ export const experienceSlides: Slide[] = [
         images: {
             main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80'
-        }
+        },
+        link: '/spa'
     },
     {
         id: 4,
@@ -350,7 +355,8 @@ export const experienceSlides: Slide[] = [
         images: {
             main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80'
-        }
+        },
+        link: '/spa'
     },
     {
         id: 5,
@@ -364,7 +370,8 @@ export const experienceSlides: Slide[] = [
         images: {
             main: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80'
-        }
+        },
+        link: '/bars-restaurants'
     }
 ]
 
@@ -438,30 +445,27 @@ export const spaData: Facility[] = [
         category: 'SANCTUAIRE DE QUIÉTUDE',
         name: 'Un spa raffiné',
         description:
-            ['Le spa Nashira est un sanctuaire dédié au ressourcement. Dans une atmosphère douce et apaisante , profitez de 3 cabines de massage pour des soins personnalisés (relaxants, énérgétiques, signatures à l’huile d’argan) et 2 hammams traditionnels pour le rituel marocain de purification.',
-            'Un espace de relaxation où prolonger la détente dans le calme.',
-            'Un service "coiffeur" est aussi à votre disposition sur demande.'],
+            ['Le spa Nashira est un sanctuaire dédié au ressourcement. Dans une atmosphère douce et apaisante , profitez de 3 cabines de massage pour des soins personnalisés (relaxants, énérgétiques, signatures à l’huile d’argan). Un espace de relaxation vous permettra de prolonger ces instants de détente dans le calme.',
+                'Un service "coiffeur" est aussi à votre disposition sur demande.'],
         image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/1e8781d502-0bcb5ebf0de2cf37c8d1.png',
         imageAlt: 'Serene spa treatment room with massage table, natural stone walls, soft lighting, aromatherapy candles, peaceful ambiance',
         menuText: "Carte des soins",
         reservationText: "Réserver votre massage"
     },
     {
-        id: 'pools',
-        category: 'ESPACE AQUATIQUE',
-        name: 'Trois piscines pour chaque instant',
+        id: 'hammam',
+        category: 'TRADITION ANCESTRALE',
+        name: 'Deux hammams traditionnels',
         description: [
-            'Le Riad Nashira offre une rareté à Marrakech : trois piscines, dont deux chauffées et pensées pour les différents moments de la journée.',
-            'La piscine extérieure, nichée dans un patio, idéale pour se rafraichir et faire quelques longueurs et profiter de l’atmosphère du riad.',
-            'La piscine intérieure chauffée, un cocon de bien–être accessible toute l’année.',
-            'La piscine rooftop, au sommet du riad parfaite pour se détendre au soleil et contempler l’Atlas et la Médina. Idéale aussi pour déguster un cocktail.'
+            'Immergez-vous dans la tradition millénaire du hammam marocain. Cette expérience purifiante combine vapeur chaude, gommage au savon noir et rhassoul pour une régénération complète de la peau.',
+            'Nos deux hammams authentiques, construits selon les techniques traditionnelles, vous transportent dans un rituel de purification ancestral, suivi d\'un moment de détente absolue.',
         ],
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/87a9787cf6-bead61bfe4c3749cd29a.png',
-        imageAlt: 'Rooftop swimming pool with panoramic city views, lounge chairs, sunset lighting, luxury hotel terrace',
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/d88c3415bb-270587d94437037719d8.png',
+        imageAlt: 'Traditional Moroccan hammam interior with marble surfaces, steam, warm lighting, authentic architecture, spa luxury',
     }
 ];
 
-export const barsData: Bar[] = [
+export const barsData: SecondaryFacility[] = [
     {
         id: 'rinlip-bar',
         name: 'Rinlip',
@@ -478,7 +482,7 @@ export const barsData: Bar[] = [
     }
 ];
 
-export const fitnessData: Bar[] = [
+export const fitnessData: SecondaryFacility[] = [
     {
         id: 'fitness',
         name: 'Fitness',
@@ -525,3 +529,198 @@ export const spaSlides: Slide[] = [
         }
     },
 ]
+
+export const eventsSlides: Slide[] = [
+    {
+        id: 1,
+        category: 'ÉVÉNEMENTS PROFESSIONNELS',
+        title: 'Séminaires et Réunions Professionnelles',
+        description: [
+            'Organisez vos événements d\'entreprise dans un cadre inspirant et raffiné. Nos espaces modulables s\'adaptent à tous vos besoins professionnels.',
+            'Équipements audiovisuels de pointe, service de restauration personnalisé et accompagnement dédié pour la réussite de vos événements.'
+        ],
+        features: ['Salles Modulables', 'Équipements High-Tech', 'Service Traiteur'],
+        images: {
+            main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png',
+            secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/9f194e8d44-73d7ed8e3f5811381e05.png'
+        }
+    },
+    {
+        id: 2,
+        category: 'ÉVÉNEMENTS PRIVÉS',
+        title: 'Dîners Privés et Soirées Exclusives',
+        description: [
+            'Créez des moments intimes et raffinés pour vos invités. Nos chefs conçoivent des menus sur mesure dans des espaces privatisés d\'exception.',
+            'Service personnalisé, ambiance sur mesure et attention aux moindres détails pour des soirées mémorables et exclusives.'
+        ],
+        features: ['Menus Personnalisés', 'Service Exclusif', 'Ambiance Sur Mesure'],
+        images: {
+            main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/61e7871271-6dd1d996f7a4cc2c0992.png',
+            secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/89055ea760-73006c17bb6da7a6f155.png'
+        }
+    },
+    {
+        id: 3,
+        category: 'MOMENTS PRÉCIEUX',
+        title: 'Célébrations et Moments de Vie',
+        description: [
+            'Mariages, anniversaires, baptêmes... Chaque moment important mérite un cadre à la hauteur de vos émotions et de vos rêves.',
+            'Notre équipe vous accompagne dans la création d\'événements uniques, reflétant votre personnalité et vos souhaits les plus chers.'
+        ],
+        features: ['Mariages', 'Anniversaires', 'Événements Familiaux'],
+        images: {
+            main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/f64c1a0ffb-976c7943c5562cb6b6a9.png',
+            secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4a62406da9-30273bf52e80cf233724.png'
+        }
+    },
+    {
+        id: 4,
+        category: 'EXCLUSIVITÉ TOTALE',
+        title: 'Privatisation Totale du Riad',
+        description: [
+            'L\'expérience ultime : le Riad Nashira entièrement à votre disposition. Un privilège rare pour des événements d\'exception et une intimité absolue.',
+            'Tous nos espaces, services et équipes dédiés exclusivement à votre événement pour une expérience sur mesure et inoubliable.'
+        ],
+        features: ['Riad Entier', 'Service Dédié', 'Intimité Absolue'],
+        images: {
+            main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/6d8ead5dc2-9b054213d63436e9568a.png',
+            secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b9d9b0a36c-30c1db56b54cd8485586.png'
+        }
+    }
+];
+
+export const eventSpacesData: EventSpace[] = [
+    {
+        id: "courtyard-space",
+        title: "Cour Centrale",
+        description: "Le cœur du riad, idéal pour les cérémonies intimes et les cocktails.",
+        capacity: 80,
+        locationType: "Intérieur/Extérieur",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6558f36621-e20e0706a6c5c022bf86.png",
+            alt: "Beautiful central courtyard of Moroccan riad with fountain, traditional tiles, orange trees, perfect for intimate ceremonies"
+        }
+    },
+    {
+        id: "rooftop-space",
+        title: "Terrasse Panoramique",
+        description: "Vue imprenable sur Marrakech pour des soirées mémorables.",
+        capacity: 120,
+        locationType: "Extérieur",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/863856695e-5849c187e15562a08213.png",
+            alt: "Stunning rooftop terrace in Marrakech with panoramic views, set up for elegant evening reception with string lights"
+        }
+    },
+    {
+        id: "salon-space",
+        title: "Salon Marocain",
+        description: "Ambiance authentique pour des réunions privilégiées.",
+        capacity: 30,
+        locationType: "Intérieur",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/74a5b35bbe-3bebfecc45f28de0ed52.png",
+            alt: "Elegant Moroccan salon with traditional seating, ornate decorations, perfect for private meetings and intimate gatherings"
+        }
+    }
+];
+
+export const activitiesSlides: Slide[] = [
+    {
+        id: 1,
+        category: "AVENTURE EXTRÊME",
+        title: "Excursion en Quad et Buggy",
+        description: [
+            "Vivez l'adrénaline pure en explorant les paysages spectaculaires du désert marocain. Une aventure tout-terrain inoubliable.",
+            "Équipement professionnel fourni, guides expérimentés et circuit adapté à tous les niveaux pour une expérience sécurisée."
+        ],
+        features: ["Équipement Inclus", "Guide Expert", "Tous Niveaux"],
+        images: {
+            main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/0b7ff82c22-64ad22472bcaae938859.png",
+            secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
+        }
+    },
+    {
+        id: 2,
+        category: "SPORT DE PRESTIGE",
+        title: "Golf à Marrakech",
+        description: [
+            "Découvrez les plus beaux parcours de golf de Marrakech avec vue imprenable sur l'Atlas. Excellence et raffinement garantis.",
+            "Accès privilégié aux clubs prestigieux, équipement haut de gamme et service personnalisé pour une expérience d'exception."
+        ],
+        features: ["Parcours Premium", "Équipement Fourni", "Transport Inclus"],
+        images: {
+            main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b8927524b2-a48d98923a544bed8973.png",
+            secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c27f84a6af-bc8129bd50aa1ba899aa.png"
+        }
+    }
+];
+
+export const otherActivitiesData =  [
+    {
+        id: "desert-excursion-card",
+        title: "Excursions Désert",
+        description:
+            "Partez à la découverte du désert d'Agafay, nuit sous les étoiles et rencontre avec les nomades.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/bf8d658fa1-3c567cdec2565ebf0bcf.png",
+            alt: "Sahara desert excursion with camels and Berber camp, golden sand dunes, traditional nomadic experience",
+        },
+    },
+    {
+        id: "horse-riding-card",
+        title: "Balade à Cheval",
+        description:
+            "Explorez la palmeraie et les environs de Marrakech à cheval, une expérience unique.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ff0f2f42a8-7a4347d908e14d14d959.png",
+            alt: "Horseback riding in Moroccan countryside, Atlas Mountains background, equestrian adventure, traditional riding",
+        },
+    },
+    {
+        id: "essaouira-card",
+        title: "Journée Essaouira",
+        description:
+            "Accompagnez d'un guide, découvrez la perle de l'Atlantique, ses remparts et son ambiance bohème unique.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e8114fc3cb-1700b859c31688cf5b27.png",
+            alt: "Essaouira coastal city Morocco, blue and white medina, Atlantic Ocean, fishing port, historic ramparts",
+        },
+    },
+    {
+        id: "cooking-class-card",
+        title: "Cours de Cuisine",
+        description:
+            "Apprenez les secrets de la cuisine marocaine avec nos chefs expérimentés.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ae8263489e-b83b032f87ae704c3841.png",
+            alt: "Moroccan cooking class, traditional tagine preparation, spices market visit, culinary experience, chef instruction",
+        },
+    },
+    {
+        id: "medina-tour-card",
+        title: "Visite Guidée Médina",
+        description:
+            "Plongez au cœur de la médina et de ses souks avec un guide local expert et passionné.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/673726ac87-ba0c37d34e4547597665.png",
+            alt: "Guided tour of Marrakech medina, traditional souks, local guide, cultural discovery, historic monuments",
+        },
+    },
+    {
+        id: "atlas-mountains-card",
+        title: "Randonnée Atlas",
+        description:
+            "Explorez les villages berbères et les sommets de l'Atlas marocain.",
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/37793ac69d-275b036d343274fa9974.png",
+            alt: "Atlas Mountains hiking trail, Berber villages, mountain landscape, trekking adventure, traditional architecture",
+        },
+    },
+];
+
+
+
+
+
+

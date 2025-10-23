@@ -77,8 +77,8 @@ const bullets: Bullet[] = [
 ];
 
 const actions: CtaAction[] = [
-    {label: "RÉSERVER LA RINER", href: "/reservation", icon: FaMedal, variant: "primary"},
-    {label: "RÉSERVER LA NASHIRA", href: "/reservation", icon: FaCrown, variant: "outline"}
+    {label: "RÉSERVER LA RINER", href: "/booking", icon: FaMedal, variant: "primary"},
+    {label: "RÉSERVER LA NASHIRA", href: "/booking", icon: FaCrown, variant: "outline"}
 ];
 
 const riads: RiadCard[] = [
@@ -107,7 +107,7 @@ const riads: RiadCard[] = [
             + "idéale pour se détendre après une journée dans la Médina. Chaque détail a été pensé pour offrir de l’espace, "
             + "de la douceur et une élégance discrète, entre modernité et artisanat.",
         ctaLabel: "Découvrir",
-        href: "/riads/deluxes",
+        href: "/riads/deluxe",
     },
     {
         id: "suites-card",

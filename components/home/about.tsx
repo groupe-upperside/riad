@@ -3,6 +3,7 @@ import SectionHeader from '@/components/ui/section-header'
 import Button from '@/components/ui/button'
 import {images} from '@/lib/constants'
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function AboutSection() {
     return (
@@ -32,9 +33,13 @@ export default function AboutSection() {
                             d’un moment de calme au bord de la piscine, chaque instant est une expérience à part
                             entière.
                         </p>
-                        <Button variant="outline" showArrow>
-                            A PROPOS DE NOUS
-                        </Button>
+                        <Link href="/booking">
+                            <Button variant="outline"
+                                    showArrow
+                                    className="uppercase">
+                                réserver
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-8 lg:gap-0 mt-12 lg:mt-0 lg:grid-cols-2 items-center">
@@ -52,9 +57,11 @@ export default function AboutSection() {
                             table, notre chef célèbre les produits locaux de saison, parfois servis sous les étoiles
                             pour un souvenir inoubliable.
                         </p>
-                        <Button variant="outline" showArrow>
-                            CHOISIR UNE CHAMBRE
-                        </Button>
+                        <Link href="/rooms">
+                            <Button variant="outline" showArrow>
+                                CHOISIR UNE CHAMBRE
+                            </Button>
+                        </Link>
                     </div>
                     <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
 

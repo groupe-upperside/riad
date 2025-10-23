@@ -46,88 +46,71 @@ export const navigationMenu: MenuItem[] = [
             {
                 id: 'le-nour',
                 label: 'Le Nour',
-                href: '/bars-restaurants/le-nour'
+                href: '/bars-restaurants#restaurants'
             },
             {
                 id: 'le-rive',
                 label: 'Le Rive',
-                href: '/bars-restaurants/le-rive'
+                href: '/bars-restaurants#restaurants'
             },
             {
-                id: 'le-rintip',
-                label: 'Le Rintlip',
-                href: '/bars-restaurants/le-rintlip'
+                id: 'le-rinlip',
+                label: 'Le Rinlip',
+                href: '/bars-restaurants#bars'
             },
             {
-                id: 'le-rintip-rooftop',
-                label: 'Le Rintlip rooftop',
-                href: '/bars-restaurants/le-rintlip-rooftop'
+                id: 'le-rinlip-rooftop',
+                label: 'Le Rinlip rooftop',
+                href: '/bars-restaurants#bars'
             }
         ]
     },
     {
-        id: 'spa-fitness',
-        label: 'Spa, fitness et piscines',
-        href: '/spa-fitness',
+        id: 'spa',
+        label: 'Spa ET Bien-être',
+        href: '/spa',
         children: [
             {
                 id: 'notre-spa',
                 label: 'Notre spa',
-                href: '/spa-fitness/spa',
-                children: [
-                    {
-                        id: 'massages',
-                        label: 'Les massages',
-                        href: '/spa-fitness/spa/massages'
-                    },
-                    {
-                        id: 'hammams',
-                        label: 'Les hammams',
-                        href: '/spa-fitness/spa/hammams'
-                    },
-                    {
-                        id: 'relaxation',
-                        label: 'Notre espace de relaxation',
-                        href: '/spa-fitness/spa/relaxation'
-                    },
-                    {
-                        id: 'coiffure',
-                        label: "L'espace coiffure",
-                        href: '/spa-fitness/spa/coiffure'
-                    }
-                ]
-            },
-            {
-                id: 'salle-sport',
-                label: 'Notre salle de sport',
-                href: '/spa-fitness/salle-sport'
+                href: '/spa#spa',
             },
             {
                 id: 'piscines',
                 label: 'Nos piscines',
-                href: '/spa-fitness/piscines'
-            }
+                href: '/spa#pools'
+            },
+            {
+                id: 'salle-sport',
+                label: 'Notre salle de sport',
+                href: '/spa#fitness'
+            },
         ]
     },
     {
         id: 'evenements',
         label: 'Évènements',
-        href: '/evenements',
+        href: '/events',
         children: [
             {
-                id: 'seminaire',
-                label: 'Séminaire',
-                href: '/evenements/seminaire'
+                id: 'professionnels',
+                label: 'Professionnels',
+                href: '/evenements#events'
+            },
+            {
+                id: 'prives',
+                label: 'Privés',
+                href: '/evenements#events'
+            },
+            {
+                id: 'moments-precieux',
+                label: 'Moments précieux',
+                href: '/evenements#events'
             },
             {
                 id: 'privatisation',
                 label: 'Privatisation',
-                href: '/evenements/privatisation'
-            },
-            {
-                id: 'mariage',
-                label: 'Mariage, célébration',
-                href: '/evenements/mariage'
+                href: '/evenements#events'
             }
         ]
     },
@@ -137,8 +120,8 @@ export const navigationMenu: MenuItem[] = [
         href: '/activites'
     },
     {
-        id: 'boutique',
-        label: 'Boutique',
-        href: '/boutique'
+        id: 'services',
+        label: 'Services',
+        href: '/services'
     }
 ]

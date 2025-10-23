@@ -9,9 +9,9 @@ export interface SecondaryFacility {
     ctaText?: string;
 }
 
-export const SecondaryFacilityCard: React.FC<{ secondaryFacility: SecondaryFacility }> = ({ secondaryFacility }) => {
+export const SecondaryFacilityCard: React.FC<{ secondaryFacility: SecondaryFacility, bgWhite:boolean }> = ({ secondaryFacility, bgWhite=true }) => {
     return (
-        <div className="bg-brand-beige-100 rounded-sm overflow-hidden group">
+        <div className={`${bgWhite ? "bg-brand-beige-100" : "bg-white"} rounded-sm overflow-hidden group`}>
             <div className="h-72 overflow-hidden">
                 <img
                     className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"

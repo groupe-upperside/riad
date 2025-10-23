@@ -1,6 +1,7 @@
 import {IconType} from "react-icons";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
+import Link from "next/link";
 
 export interface CTAButton {
     text: string;
@@ -44,9 +45,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         {buttons.map((button, index) => {
                             const Icon = button.icon;
-                            return (
+
+                            const btnEl = (
                                 <Button
-                                    key={index}
                                     variant={button.variant}
                                     showArrow={button.showArrow}
                                     className={button.className}
@@ -55,6 +56,16 @@ export const CTASection: React.FC<CTASectionProps> = ({
                                     {Icon && <Icon className="mr-2" />}
                                     {button.text}
                                 </Button>
+                            );
+
+                            return button.href ? (
+                                <Link key={index} href={button.href} className="inline-block">
+                                    {btnEl}
+                                </Link>
+                            ) : (
+                                <div key={index} className="inline-block">
+                                    {btnEl}
+                                </div>
                             );
                         })}
                     </div>

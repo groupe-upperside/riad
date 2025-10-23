@@ -37,13 +37,17 @@ export default function Footer(): JSX.Element {
     const [err, setErr] = useState<string | null>(null);
 
     const usefulLeft: NavLink[] = [
-        { label: 'Accueil', href: '#' },
-        { label: 'Chambres', href: '#' },
-        { label: 'Services', href: '#' },
+        { label: 'Accueil', href: '/' },
+        { label: 'Hébergements', href: '/rooms' },
+        { label: 'Bars & Restaurants', href: '/bars-restaurants' },
+        { label: 'Spa & Bien-Être', href: '/spa' },
     ];
     const usefulRight: NavLink[] = [
-        { label: 'Galerie', href: '#' },
-        { label: 'Contact', href: '#' },
+        { label: 'Evènements', href: '/events' },
+        { label: 'Activités', href: '/activities' },
+        { label: 'Services', href: '/services' },
+        { label: 'Contact', href: '/contact' },
+
     ];
 
     const contact: Contact = {
@@ -51,7 +55,7 @@ export default function Footer(): JSX.Element {
         office: '+212 (0) 6.66.84.08.28',
         email: 'info@riadnashira.com',
         address: 'Diour Saboune, Derb Sidi Makhlouf n°16 Marrakech',
-        cta: { label: 'réservez maintenant', href: '#' },
+        cta: { label: 'réservez maintenant', href: '/booking' },
     };
 
     const social: Social = {

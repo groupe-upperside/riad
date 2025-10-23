@@ -7,6 +7,7 @@ import Button from '@/components/ui/button'
 import Image from 'next/image'
 import {useParallax} from "@/lib/hooks/use-parallax"
 import RoomCard from "@/components/rooms/room-card";
+import Link from "next/link";
 
 export default function RoomsSuites() {
     const parallax = useParallax({
@@ -42,24 +43,27 @@ export default function RoomsSuites() {
             </div>
 
             <Container className="relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 space-y-4 md:space-y-0">
+                <div
+                    className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 space-y-4 md:space-y-0">
                     <SectionHeader
                         label="CHAMBRES"
                         title="Chambres & Suites"
                         dark
                     />
-                    <Button
-                        variant="outline"
-                        showArrow
-                        className="text-white uppercase border-white hover:bg-white hover:text-brand-dark-800"
-                    >
-                        toutes les chambres
-                    </Button>
+                    <Link href="/rooms">
+                        <Button
+                            variant="outline"
+                            showArrow
+                            className="text-white uppercase border-white hover:bg-white hover:text-brand-dark-800"
+                        >
+                            toutes les chambres
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
                     {rooms.map((room) => (
-                        <RoomCard key={room.id} room={room} />
+                        <RoomCard key={room.id} room={room}/>
                     ))}
                 </div>
             </Container>
