@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import SectionHeader from '@/components/ui/section-header';
 import {IconType} from 'react-icons';
+import {clsx} from "clsx";
 
-// Type definitions
 interface StatItem {
     icon: IconType;
     value: string | number;
@@ -31,17 +31,22 @@ interface IntroductionSectionProps {
 
 interface StatsDisplayProps {
     stats: StatItem[];
+    featuresColumns?: number;
 }
 
-// Stats Display Component
-const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats }) => {
+const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats, featuresColumns = 2 }) => {
     return (
-        <div className="flex space-x-10 text-brand-gray">
+        <div
+            className={clsx(
+                "grid gap-6 mb-2",
+                featuresColumns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"
+            )}
+        >
             {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                    <div key={index} className="flex flex-col items-center text-center">
-                        <Icon className="size-6 mb-2 text-brand-gold" aria-hidden />
+                    <div key={index} className="flex items-center space-x-3">
+                        <Icon className="text-xl text-brand-gold" aria-hidden />
                         <p className="font-semibold uppercase">
                             {stat.value} {stat.label}
                         </p>
@@ -52,7 +57,6 @@ const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats }) => {
     );
 };
 
-// Main Component
 const IntroductionSection: React.FC<IntroductionSectionProps> = ({
                                                                      id = "hero-section",
                                                                      image,
@@ -107,5 +111,4 @@ const IntroductionSection: React.FC<IntroductionSectionProps> = ({
 
 export default IntroductionSection;
 
-// Export types for external use
 export type { IntroductionSectionProps, StatItem };

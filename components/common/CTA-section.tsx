@@ -42,7 +42,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
                     <p className={`${descriptionClassName}`}>
                         {description}
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         {buttons.map((button, index) => {
                             const Icon = button.icon;
 
