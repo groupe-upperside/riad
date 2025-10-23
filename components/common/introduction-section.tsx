@@ -47,7 +47,7 @@ const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats, featuresColumns = 2 
                 return (
                     <div key={index} className="flex items-center space-x-3">
                         <Icon className="text-xl text-brand-gold" aria-hidden />
-                        <p className="font-semibold uppercase">
+                        <p className="font-semibold text-brand-gray-500">
                             {stat.value} {stat.label}
                         </p>
                     </div>
