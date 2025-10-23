@@ -4,15 +4,17 @@ interface RestaurantShowcaseProps {
     title: string;
     subtitle: string;
     facilities: Facility[];
+    id?: string;
 }
 
 export const FacilityShowcase: React.FC<RestaurantShowcaseProps> = ({
                                                                         title,
                                                                         subtitle,
-                                                                        facilities
+                                                                        facilities,
+    id
                                                                     }) => {
     return (
-        <section className="py-24 bg-brand-beige-100">
+        <section className="py-24 bg-brand-beige-100" id={id} >
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">{title}</h2>

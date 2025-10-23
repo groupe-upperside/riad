@@ -47,7 +47,6 @@ function DesktopMenuItem({ item }: { item: MenuItem }) {
                 )}
             </Link>
 
-            {/* Dropdown */}
             {hasChildren && (
                 <div
                     className={cn(
@@ -84,8 +83,7 @@ function DesktopSubMenuItem({ item, level }: { item: MenuItem; level: number }) 
                 {item.label}
                 {hasChildren && <FaChevronDown className="text-xs -rotate-90" />}
             </Link>
-
-            {/* Nested dropdown */}
+            
             {hasChildren && (
                 <div
                     className={cn(

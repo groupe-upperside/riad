@@ -6,6 +6,7 @@ import {IoMdCheckmarkCircleOutline} from "react-icons/io";
 import {HiArrowUpRight} from "react-icons/hi2";
 import SectionHeader from "@/components/ui/section-header";
 import {Slide} from "@/lib/constants";
+import {Link} from "@/lib/i18n/navigation";
 
 interface ExperienceSliderProps {
     sliderContent: Slide[]
@@ -223,15 +224,17 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                                 </span>
                             ))}
                         </div>
-                        <button className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
-                                aria-label="Read more">
+                        {slide.link && (
+                            <Link href={slide.link} className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
+                                  aria-label="Read more">
                             <span className="relative pb-1 text-base font-medium uppercase text-brand-dark-800">
                                 Découvrir
                                 <span
                                     className="absolute bottom-0 left-0 h-[2px] w-3/4 bg-brand-gold transition-transform group-hover:scale-x-120 group-hover:w-full"/>
                             </span>
-                            <HiArrowUpRight className="transition-transform group-hover:translate-x-1"/>
-                        </button>
+                                <HiArrowUpRight className="transition-transform group-hover:translate-x-1"/>
+                            </Link>
+                        )}
                     </div>
                     <div className="mt-8 flex gap-2">
                         {sliderContent.map((_, i) => (

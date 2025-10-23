@@ -121,7 +121,7 @@ export default function RoomFeatures({
                                         <Icon className={clsx(accentClass, "text-xl")}/>
                                         <div className={clsx(isLight ? "text-white" : "text-brand-gray-500")}>
                                             <p className="font-semibold">{f.label}</p>
-                                            <p className="text-brand-gray">{f.description}</p>
+                                            <p className="text-brand-gray-400">{f.description}</p>
 
                     </div>
                                     </div>

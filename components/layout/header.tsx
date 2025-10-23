@@ -24,6 +24,7 @@ export default function Header(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [headerH, setHeaderH] = useState<number>(0);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
 
     const path = usePathname();
 
@@ -115,7 +116,11 @@ export default function Header(): JSX.Element {
 
                         <button
                             type="button"
-                            onClick={() => setIsMenuOpen((s) => !s)}
+                            onClick={() =>
+                            {
+                                setIsMenuOpen((s) => !s)
+                                setIsSubMenuOpen(false)
+                            }}
                             className="text-brand-dark-800 text-2xl md:text-3xl hover:text-brand-gold-400 cursor-pointer transition-colors"
                             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                             aria-expanded={isMenuOpen}
@@ -127,7 +132,7 @@ export default function Header(): JSX.Element {
 
                     <div className="md:col-span-2 xl:col-span-3 2xl:col-span-2 md:flex justify-end hidden">
                         <Link
-                            href="/book"
+                            href="/booking"
                             className={cn(
                                 'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
                                 scrolled || path !== "/"
@@ -175,14 +180,17 @@ export default function Header(): JSX.Element {
                                 </Link>
                                 <button
                                     type="button"
-                                    onClick={() => setIsMenuOpen(false)}
+                                    onClick={() => {
+                                        setIsMenuOpen(false)
+                                        setIsSubMenuOpen(false)
+                                    }}
                                     className="text-brand-dark-800/70 cursor-pointer hover:text-brand-dark-800 transition-colors text-2xl"
                                     aria-label="Fermer le menu"
                                 >
                                     <LiaTimesSolid/>
                                 </button>
                             </div>
-                            <MultiLevelMenu onClose={() => setIsMenuOpen(false)}/>
+                            <MultiLevelMenu onClose={() => setIsMenuOpen(false)} isOpen={isMenuOpen} />
                             <div className="mt-8">
                                 <h4 className="font-serif text-base text-brand-dark-800">À propos du Riad Nashira</h4>
                                 <p className="mt-3 text-sm leading-relaxed text-brand-gray-600">
@@ -292,9 +300,9 @@ export default function Header(): JSX.Element {
                                 </div>
                             </div>
 
-                            <div className="mt-auto pt-8">
+                            <div className="mt-auto py-8">
                                 <Link
-                                    href="/book"
+                                    href="/booking"
                                     className={cn(
                                         'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
                                         scrolled || path !== "/"

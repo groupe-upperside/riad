@@ -1,65 +1,139 @@
-import Image from "next/image";
-import SectionHeader from "@/components/ui/section-header";
-import {FaBed, FaCrown, FaGem, FaStar} from "react-icons/fa";
+import React from 'react';
+import {FaBed, FaCrown, FaGem, FaGlassCheers, FaHeart, FaHome, FaStar, FaUsers} from 'react-icons/fa';
+import IntroductionSection, {StatItem} from "@/components/common/introduction-section";
+
+const roomsData = {
+    image: {
+        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f6d411a20e-a478a39d4494c6f8a3aa.png",
+        alt: "Luxurious Moroccan Riad interior with intricate zellige tilework, plush velvet seating, and warm ambient lighting, elegant style",
+        priority: true
+    },
+    header: {
+        label: "Chaque chambre",
+        title: "Une Atmosphère Singulière"
+    },
+    content: {
+        paragraphs: [
+            "Le Riad Nashira compte 17 chambres et suites toutes différentes les unes des autres. Pensées comme des univers uniques, elles se distinguent par leurs harmonies de couleurs, leurs jeux de lumière et le dialogue subtile entre design contemporain et artisanat marocain.",
+            "Que vous choisissez une chambre confort, une deluxe, une suite ou les suites exclusives, vous serez immergé dans une ambiance raffinée, bercée par le calme du riad et l'élégance de ses détails."
+        ]
+    },
+    stats: [
+        {icon: FaBed, value: 3, label: "confort"},
+        {icon: FaStar, value: 9, label: "deluxe"},
+        {icon: FaGem, value: 3, label: "suites"},
+        {icon: FaCrown, value: 2, label: "suites spéciales"}
+    ] as StatItem[]
+};
 
 export default function RoomsIntroduction() {
     return (
-        <section id="hero-section" className="py-24 bg-brand-beige-100">
-            <div className="container mx-auto px-8">
-                <div className="relative h-[600px] mb-16">
-                    <Image
-                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f6d411a20e-a478a39d4494c6f8a3aa.png"
-                        alt="Luxurious Moroccan Riad interior with intricate zellige tilework, plush velvet seating, and warm ambient lighting, elegant style"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
+        <IntroductionSection
+            id="rooms-hero-section"
+            image={roomsData.image}
+            header={roomsData.header}
+            content={roomsData.content}
+            stats={roomsData.stats}
+            backgroundColor="bg-brand-beige-100"
+        />
+    );
+}
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div className="md:col-span-4">
-                        <SectionHeader
-                            label="Chaque chambre"
-                            title="Une Atmosphère Singulière"
-                        />
-                    </div>
+export function RestaurantIntroduction() {
+    const restaurantData = {
+        image: {
+            src: "https://example.com/restaurant-image.jpg",
+            alt: "Elegant restaurant setting with traditional Moroccan cuisine",
+            priority: false
+        },
+        header: {
+            label: "Gastronomie",
+            title: "Une Cuisine D'Excellence"
+        },
+        content: {
+            paragraphs: [
+                "Notre restaurant vous invite à un voyage culinaire où la tradition marocaine rencontre la créativité contemporaine.",
+                "Chaque plat est une célébration des saveurs authentiques, préparés avec des ingrédients locaux soigneusement sélectionnés."
+            ]
+        }
+    };
 
-                    <div className="md:col-span-8">
-                        <p className="text-brand-gray text-base leading-relaxed pt-4">
-                            Le Riad Nashira compte 17 chambres et suites toutes différentes les unes des autres. Pensées
-                            comme des univers uniques, elles se distinguent par leurs harmonies de couleurs, leurs jeux
-                            de lumière et le dialogue subtile entre design contemporain et artisanat marocain.
-                        </p>
-                        <p className="text-brand-gray text-base leading-relaxed mb-8 pt-4">
-                            Que vous choisissez une chambre confort, une deluxe, une suite ou les suites exclusives, vous
-                            serez immergé dans une ambiance raffinée, bercée par le calme du riad et l'élégance de ses
-                            détails.
-                        </p>
+    return (
+        <IntroductionSection
+            id="restaurant-intro"
+            image={restaurantData.image}
+            header={restaurantData.header}
+            content={restaurantData.content}
+            backgroundColor="bg-white"
+        />
+    );
+}
 
-                        <div className="flex space-x-10 text-brand-gray">
-                            <div className="flex flex-col items-center text-center">
-                                <FaBed className="size-6 mb-2 text-brand-gold" aria-hidden />
-                                <p className="font-semibold uppercase">3 confort</p>
-                            </div>
+export function SpaIntroduction() {
+    const spaData = {
+        image: {
+            src: "https://example.com/spa-image.jpg",
+            alt: "Relaxing spa environment with traditional hammam",
+            priority: false
+        },
+        header: {
+            label: "Bien-être",
+            title: "Un Havre de Paix"
+        },
+        content: {
+            paragraphs: [
+                "Découvrez notre spa, un sanctuaire de bien-être où les rituels ancestraux du hammam se mêlent aux techniques de relaxation modernes.",
+                "Laissez-vous transporter par nos soins signature et retrouvez l'harmonie du corps et de l'esprit."
+            ]
+        }
+    };
 
-                            <div className="flex flex-col items-center text-center">
-                                <FaStar className="size-6 mb-2 text-brand-gold" aria-hidden />
-                                <p className="font-semibold uppercase">9 deluxe</p>
-                            </div>
+    return (
+        <IntroductionSection
+            id="spa-intro"
+            image={spaData.image}
+            header={spaData.header}
+            content={spaData.content}
+            backgroundColor="bg-brand-beige-50"
+            className="border-t border-brand-gold/20"
+        />
+    );
+}
 
-                            <div className="flex flex-col items-center text-center">
-                                <FaGem className="size-6 mb-2 text-brand-gold" aria-hidden />
-                                <p className="font-semibold uppercase">3 suites</p>
-                            </div>
+const eventsData = {
+    image: {
+        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png",
+        alt: "Modern conference room in luxury Moroccan hotel with elegant seating, audiovisual equipment, natural lighting, professional business setting",
+        priority: true
+    },
+    header: {
+        label: "Événements",
+        title: "Des Moments D'Exception"
+    },
+    content: {
+        paragraphs: [
+            "Au cœur de la Médina, le riad Nashira est bien plus qu'un lieu de séjour où l'on peut imaginer organiser et vivre des événements inoubliables.",
+            "Grâce à ses espaces raffinés – patios, rooftops panoramiques, restaurants, bars, salons – notre riad se prête à toutes les occasions, dans une atmosphère intime et élégante."
+        ]
+    }
+};
 
-                            <div className="flex flex-col items-center text-center">
-                                <FaCrown className="size-6 mb-2 text-brand-gold" aria-hidden />
-                                <p className="font-semibold uppercase">2 suites spéciales</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+export function EventsIntroduction() {
+    const eventTypesStats: StatItem[] = [
+        { icon: FaUsers, value: "Séminaires", label: "professionnels" },
+        { icon: FaGlassCheers, value: "Dîners", label: "privés" },
+        { icon: FaHeart, value: "Mariages", label: "& célébrations" },
+        { icon: FaHome, value: "Privatisation", label: "complète" }
+    ];
+
+    return (
+        <IntroductionSection
+            id="events-hero-section"
+            image={eventsData.image}
+            header={eventsData.header}
+            content={eventsData.content}
+            stats={eventTypesStats}
+            backgroundColor="bg-brand-beige-100"
+        />
+    );
 }

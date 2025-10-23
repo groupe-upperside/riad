@@ -71,7 +71,7 @@ const bullets: Bullet[] = [
 ];
 
 const actions: CtaAction[] = [
-    { label: "RÉSERVER MAINTENANT", href: "/reservation", icon: FaCalendar, variant: "primary" }
+    { label: "RÉSERVER MAINTENANT", href: "/booking", icon: FaCalendar, variant: "primary" }
 ];
 
 const riads: RiadCard[] = [
@@ -88,7 +88,7 @@ const riads: RiadCard[] = [
             + "idéale pour se détendre après une journée dans la Médina. Chaque détail a été pensé pour offrir de l’espace, "
             + "de la douceur et une élégance discrète, entre modernité et artisanat.",
         ctaLabel: "Découvrir",
-        href: "/riads/deluxes",
+        href: "/rooms/deluxe",
     },
     {
         id: "suites-card",
@@ -103,7 +103,7 @@ const riads: RiadCard[] = [
             + "où l’on savoure un véritable sentiment de liberté. Parfaites pour un séjour prolongé, elles conjuguent "
             + "intimité, confort contemporain et sens du détail.",
         ctaLabel: "Découvrir",
-        href: "/riads/suites",
+        href: "/rooms/suites",
     },
     {
         id: "suites-speciales-card",
@@ -118,7 +118,7 @@ const riads: RiadCard[] = [
             + "déploie des espaces majestueux baignés de lumière. Toutes deux offrent une expérience rare, où le luxe discret se mêle à "
             + "l’âme marocaine pour un séjour d’exception.",
         ctaLabel: "Découvrir",
-        href: "/riads/suites-speciales",
+        href: "/rooms/special-suites",
     },
 ];
 

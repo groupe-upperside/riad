@@ -8,12 +8,7 @@ export const roomsCTA: CTASectionProps = {
     textColor: 'text-white',
     buttons: [
         {
-            text: 'DÉCOUVRIR LES HÉBERGEMENTS',
-            variant: 'ghost',
-            showArrow: true,
-            className: 'bg-white text-brand-gold-400 hover:bg-gray-100'
-        },
-        {
+            href: "/booking",
             text: 'RÉSERVER MAINTENANT',
             variant: 'outline',
             icon: FaCalendar,
