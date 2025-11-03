@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import {FaArrowRight, FaChevronDown} from 'react-icons/fa6';
 import Container from '@/components/ui/container';
+import {useTranslations} from 'next-intl';
 
 export type BookingFormProps = {
     defaultRoomBadge?: string;
@@ -23,16 +24,17 @@ export default function BookingForm({
                                         defaultRooms = null,
                                         defaultRoomTypeSelect = null,
                                     }: BookingFormProps) {
+    const t = useTranslations('BookingForm');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [specialReq, setSpecialReq] = useState('');
 
-    const [adults, setAdults] = useState(defaultAdults ?? 'ADULTES');
-    const [children, setChildren] = useState(defaultChildren ?? 'ENFANTS');
-    const [rooms, setRooms] = useState(defaultRooms ?? '1 CHAMBRE');
-    const [roomTypeSelect, setRoomTypeSelect] = useState(defaultRoomTypeSelect ?? 'Type de chambre');
+    const [adults, setAdults] = useState(defaultAdults ?? t('DefaultAdults.translation.content'));
+    const [children, setChildren] = useState(defaultChildren ?? t('DefaultChildren.translation.content'));
+    const [rooms, setRooms] = useState(defaultRooms ?? t('DefaultRooms.translation.content'));
+    const [roomTypeSelect, setRoomTypeSelect] = useState(defaultRoomTypeSelect ?? t('DefaultRoomType.translation.content'));
 
     const [checkInISO, setCheckInISO] = useState<string>(defaultCheckIn ?? '');
     const [checkOutISO, setCheckOutISO] = useState<string>(defaultCheckOut ?? '');
@@ -75,11 +77,11 @@ export default function BookingForm({
                                 type="text"
                                 id="first-name"
                                 name="first-name"
-                                placeholder="Prénom"
+                                placeholder={t('PlaceholderFirstName.translation.content')}
                                 className={inputBase}
                                 value={firstName}
                                 onChange={(e) => setFirstName(e.target.value)}
-                                aria-label="Prénom"
+                                aria-label={t('AriaLabelFirstName.translation.content')}
                                 required
                             />
                         </div>
@@ -89,11 +91,11 @@ export default function BookingForm({
                                 type="text"
                                 id="last-name"
                                 name="last-name"
-                                placeholder="Nom"
+                                placeholder={t('PlaceholderLastName.translation.content')}
                                 className={inputBase}
                                 value={lastName}
                                 onChange={(e) => setLastName(e.target.value)}
-                                aria-label="Nom"
+                                aria-label={t('AriaLabelLastName.translation.content')}
                                 required
                             />
                         </div>
@@ -103,11 +105,11 @@ export default function BookingForm({
                                 type="email"
                                 id="email"
                                 name="email"
-                                placeholder="Adresse e-mail"
+                                placeholder={t('PlaceholderEmail.translation.content')}
                                 className={inputBase}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                aria-label="Adresse e-mail"
+                                aria-label={t('AriaLabelEmail.translation.content')}
                                 required
                             />
                         </div>
@@ -117,11 +119,11 @@ export default function BookingForm({
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                placeholder="Numéro de téléphone"
+                                placeholder={t('PlaceholderPhone.translation.content')}
                                 className={inputBase}
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
-                                aria-label="Numéro de téléphone"
+                                aria-label={t('AriaLabelPhone.translation.content')}
                             />
                         </div>
 
@@ -132,13 +134,13 @@ export default function BookingForm({
                                 className={selectBase}
                                 value={adults}
                                 onChange={(e) => setAdults(e.target.value)}
-                                aria-label="Adultes"
+                                aria-label={t('AriaLabelAdults.translation.content')}
                             >
-                                <option>ADULTES</option>
-                                <option>1 Adulte</option>
-                                <option>2 Adultes</option>
-                                <option>3 Adultes</option>
-                                <option>4 Adultes</option>
+                                <option>{t('OptionAdults.translation.content')}</option>
+                                <option>{t('Option1Adult.translation.content')}</option>
+                                <option>{t('Option2Adults.translation.content')}</option>
+                                <option>{t('Option3Adults.translation.content')}</option>
+                                <option>{t('Option4Adults.translation.content')}</option>
                             </select>
                             <FaChevronDown
                                 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"/>
@@ -151,13 +153,13 @@ export default function BookingForm({
                                 className={selectBase}
                                 value={children}
                                 onChange={(e) => setChildren(e.target.value)}
-                                aria-label="Enfants"
+                                aria-label={t('AriaLabelChildren.translation.content')}
                             >
-                                <option>ENFANTS</option>
-                                <option>0 Enfant</option>
-                                <option>1 Enfant</option>
-                                <option>2 Enfants</option>
-                                <option>3 Enfants</option>
+                                <option>{t('OptionChildren.translation.content')}</option>
+                                <option>{t('Option0Child.translation.content')}</option>
+                                <option>{t('Option1Child.translation.content')}</option>
+                                <option>{t('Option2Children.translation.content')}</option>
+                                <option>{t('Option3Children.translation.content')}</option>
                             </select>
                             <FaChevronDown
                                 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"/>
@@ -170,11 +172,11 @@ export default function BookingForm({
                                 className={selectBase}
                                 value={rooms}
                                 onChange={(e) => setRooms(e.target.value)}
-                                aria-label="Chambres"
+                                aria-label={t('AriaLabelRooms.translation.content')}
                             >
-                                <option>1 CHAMBRE</option>
-                                <option>2 CHAMBRES</option>
-                                <option>3 CHAMBRES</option>
+                                <option>{t('Option1Room.translation.content')}</option>
+                                <option>{t('Option2Rooms.translation.content')}</option>
+                                <option>{t('Option3Rooms.translation.content')}</option>
                             </select>
                             <FaChevronDown
                                 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"/>
@@ -187,14 +189,14 @@ export default function BookingForm({
                                 className={selectBase}
                                 value={roomTypeSelect}
                                 onChange={(e) => setRoomTypeSelect(e.target.value)}
-                                aria-label="Type de chambre"
+                                aria-label={t('AriaLabelRoomType.translation.content')}
                             >
-                                <option>Type de chambre</option>
-                                <option>Confort</option>
-                                <option>Deluxe</option>
-                                <option>Suite</option>
-                                <option>Suite Nashira</option>
-                                <option>Suite Riner</option>
+                                <option>{t('OptionRoomType.translation.content')}</option>
+                                <option>{t('OptionComfort.translation.content')}</option>
+                                <option>{t('OptionDeluxe.translation.content')}</option>
+                                <option>{t('OptionSuite.translation.content')}</option>
+                                <option>{t('OptionSuiteNashira.translation.content')}</option>
+                                <option>{t('OptionSuiteRiner.translation.content')}</option>
                             </select>
                             <FaChevronDown
                                 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"/>
@@ -208,7 +210,7 @@ export default function BookingForm({
                                 className={dateInput}
                                 value={checkInISO}
                                 onChange={(e) => setCheckInISO(e.target.value)}
-                                aria-label="Arrivée"
+                                aria-label={t('AriaLabelCheckIn.translation.content')}
                             />
                         </div>
 
@@ -220,7 +222,7 @@ export default function BookingForm({
                                 className={dateInput}
                                 value={checkOutISO}
                                 onChange={(e) => setCheckOutISO(e.target.value)}
-                                aria-label="Départ"
+                                aria-label={t('AriaLabelCheckOut.translation.content')}
                             />
                         </div>
 
@@ -229,11 +231,11 @@ export default function BookingForm({
                 id="special-requirements"
                 name="special-requirements"
                 rows={5}
-                placeholder="Demandes particulières"
+                placeholder={t('PlaceholderSpecialRequirements.translation.content')}
                 className="w-full rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700 placeholder-gray-400 outline-none focus:ring-2 focus:ring-black/5 focus:border-gray-300"
                 value={specialReq}
                 onChange={(e) => setSpecialReq(e.target.value)}
-                aria-label="Demandes particulières"
+                aria-label={t('AriaLabelSpecialRequirements.translation.content')}
             />
                         </div>
                     </div>
@@ -243,7 +245,7 @@ export default function BookingForm({
                             type="submit"
                             className="inline-flex items-center justify-center border border-black px-8 py-3 text-sm font-semibold uppercase tracking-wider text-black transition-colors duration-300 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                         >
-                            RÉSERVER
+                            {t('ButtonBook.translation.content')}
                             <FaArrowRight className="ml-3"/>
                         </button>
                     </div>

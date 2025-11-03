@@ -1,6 +1,6 @@
 'use client'
 
-import {images, rooms} from '@/lib/constants'
+import {getRooms, images} from '@/lib/constants'
 import Container from '@/components/ui/container'
 import SectionHeader from '@/components/ui/section-header'
 import Button from '@/components/ui/button'
@@ -8,13 +8,18 @@ import Image from 'next/image'
 import {useParallax} from "@/lib/hooks/use-parallax"
 import RoomCard from "@/components/rooms/room-card";
 import Link from "next/link";
+import {useTranslations} from 'next-intl';
 
 export default function RoomsSuites() {
+    const t = useTranslations('RoomsSuites');
+    const tConstant = useTranslations('Constants')
     const parallax = useParallax({
         strength: 0.15,
         maxShift: 140,
         overscan: 0.3
     })
+
+    const rooms = getRooms(tConstant);
 
     return (
         <section className="relative overflow-hidden bg-brand-dark-800 py-16 md:py-24">
@@ -46,8 +51,8 @@ export default function RoomsSuites() {
                 <div
                     className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 space-y-4 md:space-y-0">
                     <SectionHeader
-                        label="CHAMBRES"
-                        title="Chambres & Suites"
+                        label={t('Label.translation.content')}
+                        title={t('Title.translation.content')}
                         dark
                     />
                     <Link href="/rooms">
@@ -56,7 +61,7 @@ export default function RoomsSuites() {
                             showArrow
                             className="text-white uppercase border-white hover:bg-white hover:text-brand-dark-800"
                         >
-                            toutes les chambres
+                            {t('ButtonAllRooms.translation.content')}
                         </Button>
                     </Link>
                 </div>

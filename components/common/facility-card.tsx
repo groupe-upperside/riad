@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/section-header";
 import {FaClock, FaFish, FaUtensils} from "react-icons/fa";
 import {CTAButtons} from "@/components/common/CTA-buttons";
 import {IconType} from "react-icons";
+import React from "react";
 
 export interface Facility {
     id: string;

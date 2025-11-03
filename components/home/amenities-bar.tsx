@@ -1,7 +1,12 @@
-import {amenities} from '@/lib/constants'
+'use client';
+
+import {getAmenities} from '@/lib/constants'
 import Container from '@/components/ui/container'
+import {useTranslations} from "next-intl";
 
 export default function AmenitiesBar() {
+    const t = useTranslations('Constants');
+    const amenities = getAmenities(t);
     return (
         <section className="bg-brand-dark py-12 md:py-18">
             <Container>

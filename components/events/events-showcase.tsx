@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslations} from 'next-intl';
 
 export interface EventSpace {
     id: string;
@@ -25,6 +26,8 @@ interface SpaceCardProps {
 }
 
 const SpaceCard: React.FC<SpaceCardProps> = ({ space }) => {
+    const t = useTranslations('EventsShowcase');
+
     return (
         <div id={`${space.id}-card`} className="bg-white rounded-lg overflow-hidden group">
             <div className="h-64 overflow-hidden">
@@ -38,7 +41,9 @@ const SpaceCard: React.FC<SpaceCardProps> = ({ space }) => {
                 <h3 className="font-serif text-2xl text-brand-dark mb-3">{space.title}</h3>
                 <p className="text-brand-gray mb-4">{space.description}</p>
                 <div className="flex justify-between items-center text-sm text-brand-gray">
-                    <span>Capacité: {space.capacity} {space.capacityUnit || 'personnes'}</span>
+                    <span>
+                        {t('LabelCapacity.translation.content')}: {space.capacity} {space.capacityUnit || t('DefaultCapacityUnit.translation.content')}
+                    </span>
                     <span className="text-brand-gold">{space.locationType}</span>
                 </div>
             </div>
@@ -47,17 +52,23 @@ const SpaceCard: React.FC<SpaceCardProps> = ({ space }) => {
 };
 
 const EventsShowcase: React.FC<EventsShowcaseProps> = ({
-                                                           title = "Nos Espaces Événementiels",
-                                                           subtitle = "Des lieux d'exception adaptés à tous vos besoins, de l'intime au grandiose.",
+                                                           title,
+                                                           subtitle,
                                                            spaces,
                                                            className = ""
                                                        }) => {
+    const t = useTranslations('EventsShowcase');
+
     return (
         <section id="events-showcase" className={`py-24 bg-brand-beige ${className}`}>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="font-serif text-4xl text-brand-dark mb-4">{title}</h2>
-                    <p className="text-lg text-brand-gray max-w-3xl mx-auto">{subtitle}</p>
+                    <h2 className="font-serif text-4xl text-brand-dark mb-4">
+                        {title || t('DefaultTitle.translation.content')}
+                    </h2>
+                    <p className="text-lg text-brand-gray max-w-3xl mx-auto">
+                        {subtitle || t('DefaultSubtitle.translation.content')}
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

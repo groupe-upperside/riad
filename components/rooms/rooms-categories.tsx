@@ -5,8 +5,10 @@ import {images, rooms} from "@/lib/constants";
 import RoomCard from "@/components/rooms/room-card";
 import Image from "next/image";
 import {useParallax} from "@/lib/hooks/use-parallax";
+import {useTranslations} from 'next-intl';
 
 export default function RoomCategoriesGrid() {
+    const t = useTranslations('RoomCategoriesGrid');
     const parallax = useParallax({
         strength: 0.15,
         maxShift: 140,
@@ -42,10 +44,10 @@ export default function RoomCategoriesGrid() {
             <Container className="relative z-10">
                 <div className="text-center mb-16">
                     <h2 className='font-serif text-4xl md:text-5xl capitalize text-white'>
-                        Nos Chambres
+                        {t('Title.translation.content')}
                     </h2>
                     <p className="text-base text-white max-w-3xl mx-auto mt-8">
-                        {"Le riad comporte 17 chambres, toutes différentes vous permettant de voyager... Certaines sont au rez de chaussée, d'autres à l'étage, certaines avec vue sur le patio piscine ou le patio fontaine."}
+                        {t('Description.translation.content')}
                     </p>
                 </div>
 

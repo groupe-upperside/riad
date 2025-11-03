@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "trad": "ts-node pull-trad.ts"
   },
   "dependencies": {
     "@react-hook/window-size": "^3.1.1",

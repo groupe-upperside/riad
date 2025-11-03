@@ -1,11 +1,16 @@
+'use client';
+
 import Container from '@/components/ui/container'
 import SectionHeader from '@/components/ui/section-header'
 import Button from '@/components/ui/button'
 import {images} from '@/lib/constants'
 import Image from 'next/image'
 import Link from "next/link";
+import {useTranslations} from 'next-intl';
 
 export default function AboutSection() {
+    const t = useTranslations('AboutSection');
+
     return (
         <section className="py-16 md:py-24">
             <Container>
@@ -14,7 +19,7 @@ export default function AboutSection() {
                         <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
                             <Image
                                 src={images.aboutRiad}
-                                alt="Elegant Moroccan Riad interior"
+                                alt={t('AltAboutRiad.translation.content')}
                                 fill
                                 className="object-cover"
                             />
@@ -22,22 +27,18 @@ export default function AboutSection() {
                     </div>
                     <div className="order-1 lg:order-2 px-8 lg:px-16">
                         <SectionHeader
-                            label="à propos de nous"
-                            title="La tradition de l’excellence marocaine"
+                            label={t('LabelAboutUs.translation.content')}
+                            title={t('TitleTraditionExcellence.translation.content')}
                             className="mb-6"
                         />
                         <p className="text-brand-gray-500 mb-8 leading-relaxed">
-                            Plongez dans l’atmosphère apaisante du Riad Nashira. Un lieu pensé comme une oasis au cœur
-                            de la Médina, où l’artisanat marocain rencontre le design contemporain.
-                            Que vous soyez en quete de détente au spa, de saveurs dans nos restaurants, ou simplement
-                            d’un moment de calme au bord de la piscine, chaque instant est une expérience à part
-                            entière.
+                            {t('DescriptionAboutUs.translation.content')}
                         </p>
                         <Link href="/booking">
                             <Button variant="outline"
                                     showArrow
                                     className="uppercase">
-                                réserver
+                                {t('ButtonReserve.translation.content')}
                             </Button>
                         </Link>
                     </div>
@@ -45,29 +46,23 @@ export default function AboutSection() {
                 <div className="grid grid-cols-1 gap-8 lg:gap-0 mt-12 lg:mt-0 lg:grid-cols-2 items-center">
                     <div className="px-8 lg:px-16">
                         <SectionHeader
-                            label="expérience"
-                            title="Goûtez au luxe dans notre Riad & Spa"
+                            label={t('LabelExperience.translation.content')}
+                            title={t('TitleLuxuryExperience.translation.content')}
                             className="mb-6"
                         />
                         <p className="text-brand-gray-500 mb-8 leading-relaxed">
-                            Au Riad Nashira & Spa, 17 chambres intimistes, une terrasse-solarium, trois piscines
-                            (intérieure et extérieure) dont deux chauffées et deux restaurants soignés composent un
-                            véritable écrin de quiétude.
-                            Au spa, profitez du hammam traditionnel, massages sur mesure et du jacuzzi, tandis qu’à
-                            table, notre chef célèbre les produits locaux de saison, parfois servis sous les étoiles
-                            pour un souvenir inoubliable.
+                            {t('DescriptionExperience.translation.content')}
                         </p>
                         <Link href="/rooms">
                             <Button variant="outline" showArrow>
-                                CHOISIR UNE CHAMBRE
+                                {t('ButtonChooseRoom.translation.content')}
                             </Button>
                         </Link>
                     </div>
                     <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
-
                         <Image
                             src={images.experienceSuite}
-                            alt="Luxurious hotel suite"
+                            alt={t('AltLuxurySuite.translation.content')}
                             fill
                             className="object-cover"
                         />

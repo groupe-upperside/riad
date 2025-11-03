@@ -1,9 +1,17 @@
-import {testimonials} from '@/lib/constants'
+'use client'
+
+import {getTestimonials} from '@/lib/constants'
 import Container from '@/components/ui/container'
 import SectionHeader from '@/components/ui/section-header'
 import {FaQuoteLeft, FaStar} from 'react-icons/fa'
+import {useTranslations} from 'next-intl'
 
 export default function Testimonials() {
+    const t = useTranslations('Testimonials')
+    const tConstants = useTranslations('Constants')
+
+    const testimonials = getTestimonials(tConstants);
+
     return (
         <section className="py-16 md:py-24 bg-brand-dark text-white relative">
             <div className="absolute inset-0 opacity-5 bg-cover bg-center"
@@ -12,8 +20,8 @@ export default function Testimonials() {
 
             <Container className="relative z-10">
                 <SectionHeader
-                    label="Avis clients"
-                    title="Ce que nos invités disent de nous"
+                    label={t('Label.translation.content')}
+                    title={t('Title.translation.content')}
                     centered
                     dark
                     className="mb-12"

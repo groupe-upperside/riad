@@ -1,1 +1,3674 @@
-{}
+{
+  "CTA": {
+    "RestaurantsCTA": {
+      "Title": {
+        "term": "cta.restaurantsCTA.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Réservez Votre Table - BDSP",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Title for restaurants CTA section"
+      },
+      "Description": {
+        "term": "cta.restaurantsCTA.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Vivez une expérience culinaire exceptionnelle dans nos restaurants. Saveurs authentiques et raffinement vous attendent pour un moment inoubliable.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Description for restaurants CTA section"
+      },
+      "ButtonReserveTable": {
+        "term": "cta.restaurantsCTA.buttonReserveTable",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "RÉSERVER UNE TABLE",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Button text for reserving a table"
+      }
+    },
+    "SpaCTA": {
+      "Title": {
+        "term": "cta.spaCTA.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Réservez Votre Massage - BDSP",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Title for spa CTA section"
+      },
+      "Description": {
+        "term": "cta.spaCTA.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Offrez-vous un moment d'exception dans notre sanctuaire de bien-être. Nos équipes sont à votre disposition pour créer l'expérience parfaite selon vos besoins.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Description for spa CTA section"
+      },
+      "ButtonReserveTreatment": {
+        "term": "cta.spaCTA.buttonReserveTreatment",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "RÉSERVER UN SOIN",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "cta",
+        "tags": [],
+        "comment": "Button text for reserving a spa treatment"
+      }
+    }
+  },
+  "CTAButtons": {
+    "DefaultMenuText": {
+      "term": "ctaButtons.defaultMenuText",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "VOIR LE MENU",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "ctaButtons",
+      "tags": [],
+      "comment": "Default text for menu button"
+    },
+    "DefaultReservationText": {
+      "term": "ctaButtons.defaultReservationText",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Réserver une table",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "ctaButtons",
+      "tags": [],
+      "comment": "Default text for reservation button"
+    }
+  },
+  "SecondaryFacilityCard": {
+    "AriaLabelReadMore": {
+      "term": "secondaryFacilityCard.ariaLabelReadMore",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Read more",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "secondaryFacilityCard",
+      "tags": [],
+      "comment": "Aria label for read more button"
+    },
+    "DefaultCtaText": {
+      "term": "secondaryFacilityCard.defaultCtaText",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "DÉCOUVRIR LA CARTE",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "secondaryFacilityCard",
+      "tags": [],
+      "comment": "Default CTA text for facility card button"
+    }
+  },
+  "EventsShowcase": {
+    "DefaultTitle": {
+      "term": "eventsShowcase.defaultTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nos Espaces Événementiels - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsShowcase",
+      "tags": [],
+      "comment": "Default title for events showcase section"
+    },
+    "DefaultSubtitle": {
+      "term": "eventsShowcase.defaultSubtitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Des lieux d'exception adaptés à tous vos besoins, de l'intime au grandiose.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsShowcase",
+      "tags": [],
+      "comment": "Default subtitle for events showcase section"
+    },
+    "LabelCapacity": {
+      "term": "eventsShowcase.labelCapacity",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Capacité",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsShowcase",
+      "tags": [],
+      "comment": "Label for capacity information"
+    },
+    "DefaultCapacityUnit": {
+      "term": "eventsShowcase.defaultCapacityUnit",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "personnes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsShowcase",
+      "tags": [],
+      "comment": "Default unit for capacity (persons)"
+    }
+  },
+  "EventSpacesDetailed": {
+    "MainTitle": {
+      "term": "eventSpacesDetailed.mainTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nos Services Événementiels - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventSpacesDetailed",
+      "tags": [],
+      "comment": "Main title for event services section"
+    },
+    "ProfessionalEvents": {
+      "Title": {
+        "term": "eventSpacesDetailed.professionalEvents.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "ÉVÉNEMENTS PROFESSIONNELS",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Title for professional events category"
+      },
+      "Subtitle": {
+        "term": "eventSpacesDetailed.professionalEvents.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Séminaires et Réunions Professionnelles",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Subtitle for professional events"
+      },
+      "ImageAlt": {
+        "term": "eventSpacesDetailed.professionalEvents.imageAlt",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Séminaires et réunions professionnelles dans un cadre raffiné",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Alt text for professional events image"
+      },
+      "Description": {
+        "term": "eventSpacesDetailed.professionalEvents.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Nous organisons vos séminaires, ateliers et réunions avec tout le confort nécessaire : un espace dédié, restauration sur mesure, services personnalisés et possibilités d'activités bien-être ou culturelles pour vos équipes.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Description for professional events"
+      }
+    },
+    "PrivateEvents": {
+      "Title": {
+        "term": "eventSpacesDetailed.privateEvents.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "ÉVÉNEMENTS PRIVÉS",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Title for private events category"
+      },
+      "Subtitle": {
+        "term": "eventSpacesDetailed.privateEvents.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Dîners Privés et Soirées Exclusives",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Subtitle for private events"
+      },
+      "ImageAlt": {
+        "term": "eventSpacesDetailed.privateEvents.imageAlt",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Dîners privés et soirées exclusives",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Alt text for private events image"
+      },
+      "Description": {
+        "term": "eventSpacesDetailed.privateEvents.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Offrez à vos invités une expérience culinaire raffinée dans l'un de nos restaurants. Menus personnalisés, espace dédié, cocktail signature et service sur mesure viennent sublimer ces moments.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Description for private events"
+      }
+    },
+    "PreciousMoments": {
+      "Title": {
+        "term": "eventSpacesDetailed.preciousMoments.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "MOMENTS PRÉCIEUX",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Title for precious moments category"
+      },
+      "Subtitle": {
+        "term": "eventSpacesDetailed.preciousMoments.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Célébrations et Moments de Vie",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Subtitle for precious moments"
+      },
+      "ImageAlt": {
+        "term": "eventSpacesDetailed.preciousMoments.imageAlt",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Mariages intimes, anniversaires, fiancailles ou toute célébration privée … Le Riad Nashira devient votre maison le temps d'une soirée ou d'un séjour. Nos équipes vous accompagnent pour imaginer un évènement de A à Z à votre image, dans un décor élégant et authentique.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Alt text for precious moments image"
+      },
+      "Description": {
+        "term": "eventSpacesDetailed.preciousMoments.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Mariages, anniversaires, baptêmes... Chaque moment important mérite un cadre à la hauteur de vos émotions et de vos rêves. Notre équipe vous accompagne dans la création d'événements uniques, reflétant votre personnalité et vos souhaits les plus chers.",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Description for precious moments"
+      }
+    },
+    "TotalExclusivity": {
+      "Title": {
+        "term": "eventSpacesDetailed.totalExclusivity.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "EXCLUSIVITÉ TOTALE",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Title for total exclusivity category"
+      },
+      "Subtitle": {
+        "term": "eventSpacesDetailed.totalExclusivity.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Privatisation Totale du Riad",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Subtitle for total exclusivity"
+      },
+      "ImageAlt": {
+        "term": "eventSpacesDetailed.totalExclusivity.imageAlt",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Privatisation totale du riad",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Alt text for total exclusivity image"
+      },
+      "Description": {
+        "term": "eventSpacesDetailed.totalExclusivity.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Pour un mariage, une grande célébration, un évènement d'entreprise, le Riad peut être privatisé dans son intégralité. Vous bénéficierez alors de nos 17 chambres, nos restaurants, nos 3 piscines, nos bars …. Tout sera dédié à vos invités. Des privatisations partielles sont aussi envisageables",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "eventSpacesDetailed",
+        "tags": [],
+        "comment": "Description for total exclusivity"
+      }
+    }
+  },
+  "ServicesIncluded": {
+    "MainTitle": {
+      "term": "servicesIncluded.mainTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Services Inclus - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Main title for services included section"
+    },
+    "MainDescription": {
+      "term": "servicesIncluded.mainDescription",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Un accompagnement complet pour la réussite de votre événement.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Main description for services included section"
+    },
+    "ServiceDedicatedRoom": {
+      "term": "servicesIncluded.serviceDedicatedRoom",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Salle dédiée",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Service card title for dedicated room"
+    },
+    "ServiceWifiInternet": {
+      "term": "servicesIncluded.serviceWifiInternet",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "WIFI & Internet haut débit",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Service card title for WiFi and high-speed internet"
+    },
+    "ServiceProjector": {
+      "term": "servicesIncluded.serviceProjector",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Rétroprojecteur",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Service card title for projector"
+    },
+    "ServicePrinters": {
+      "term": "servicesIncluded.servicePrinters",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Imprimantes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "servicesIncluded",
+      "tags": [],
+      "comment": "Service card title for printers"
+    }
+  },
+  "AboutSection": {
+    "AltAboutRiad": {
+      "term": "aboutSection.altAboutRiad",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Elegant Moroccan Riad interior",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Alt text for about Riad image"
+    },
+    "LabelAboutUs": {
+      "term": "aboutSection.labelAboutUs",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "à propos de nous",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Label for about us section"
+    },
+    "TitleTraditionExcellence": {
+      "term": "aboutSection.titleTraditionExcellence",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "La tradition de l'excellence marocaine - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Title for tradition of excellence section"
+    },
+    "DescriptionAboutUs": {
+      "term": "aboutSection.descriptionAboutUs",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Plongez dans l'atmosphère apaisante du Riad Nashira. Un lieu pensé comme une oasis au cœur de la Médina, où l'artisanat marocain rencontre le design contemporain. Que vous soyez en quete de détente au spa, de saveurs dans nos restaurants, ou simplement d'un moment de calme au bord de la piscine, chaque instant est une expérience à part entière.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Description for about us section"
+    },
+    "ButtonReserve": {
+      "term": "aboutSection.buttonReserve",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "réserver",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Button text for reserve/booking"
+    },
+    "LabelExperience": {
+      "term": "aboutSection.labelExperience",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "expérience",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Label for experience section"
+    },
+    "TitleLuxuryExperience": {
+      "term": "aboutSection.titleLuxuryExperience",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Goûtez au luxe dans notre Riad & Spa - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Title for luxury experience section"
+    },
+    "DescriptionExperience": {
+      "term": "aboutSection.descriptionExperience",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Au Riad Nashira & Spa, 17 chambres intimistes, une terrasse-solarium, trois piscines (intérieure et extérieure) dont deux chauffées et deux restaurants soignés composent un véritable écrin de quiétude. Au spa, profitez du hammam traditionnel, massages sur mesure et du jacuzzi, tandis qu'à table, notre chef célèbre les produits locaux de saison, parfois servis sous les étoiles pour un souvenir inoubliable.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Description for experience section"
+    },
+    "ButtonChooseRoom": {
+      "term": "aboutSection.buttonChooseRoom",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "CHOISIR UNE CHAMBRE",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Button text for choosing a room"
+    },
+    "AltLuxurySuite": {
+      "term": "aboutSection.altLuxurySuite",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Luxurious hotel suite",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "aboutSection",
+      "tags": [],
+      "comment": "Alt text for luxury suite image"
+    }
+  },
+  "ActivitiesSlider": {
+    "Label": {
+      "term": "activitiesSlider.label",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Services",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "activitiesSlider",
+      "tags": [],
+      "comment": "Label for activities slider section"
+    },
+    "Title": {
+      "term": "activitiesSlider.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Services & prestations - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "activitiesSlider",
+      "tags": [],
+      "comment": "Title for activities slider section"
+    },
+    "Subtitle": {
+      "term": "activitiesSlider.subtitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Explorez nos services signature et nos installations.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "activitiesSlider",
+      "tags": [],
+      "comment": "Subtitle for activities slider section"
+    },
+    "AriaLabelPrevious": {
+      "term": "activitiesSlider.ariaLabelPrevious",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Previous slide",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "activitiesSlider",
+      "tags": [],
+      "comment": "Aria label for previous button"
+    },
+    "AriaLabelNext": {
+      "term": "activitiesSlider.ariaLabelNext",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Next slide",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "activitiesSlider",
+      "tags": [],
+      "comment": "Aria label for next button"
+    }
+  },
+  "ExperienceSection": {
+    "Label": {
+      "term": "experienceSection.label",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "EXPERIENCE",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "experienceSection",
+      "tags": [],
+      "comment": "Label for experience section"
+    },
+    "Title": {
+      "term": "experienceSection.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Experience Luxury At Our Riad & Spa - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "experienceSection",
+      "tags": [],
+      "comment": "Title for experience section"
+    },
+    "Description": {
+      "term": "experienceSection.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Each corner of Riad Nashira tells a story of craftsmanship and elegance. Indulge in our world-class spa, savor authentic Moroccan cuisine, and relax in rooms that are a testament to refined comfort. Your journey into serenity begins here.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "experienceSection",
+      "tags": [],
+      "comment": "Description for experience section"
+    },
+    "ButtonChooseRoom": {
+      "term": "experienceSection.buttonChooseRoom",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "CHOOSE ROOM",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "experienceSection",
+      "tags": [],
+      "comment": "Button text for choosing a room"
+    },
+    "AltLuxurySuite": {
+      "term": "experienceSection.altLuxurySuite",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Luxurious hotel suite",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "experienceSection",
+      "tags": [],
+      "comment": "Alt text for luxury suite image"
+    }
+  },
+  "HeroSection": {
+    "AltHeroImage": {
+      "term": "heroSection.altHeroImage",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Luxurious hotel room",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "heroSection",
+      "tags": [],
+      "comment": "Alt text for hero section image"
+    },
+    "Title": {
+      "term": "heroSection.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Riad Nashira & SPA - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "heroSection",
+      "tags": [],
+      "comment": "Main title for hero section"
+    },
+    "Subtitle": {
+      "term": "heroSection.subtitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Luxe et sérénité au cœur de Marrakech",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "heroSection",
+      "tags": [],
+      "comment": "Subtitle for hero section"
+    },
+    "Description": {
+      "term": "heroSection.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Au cœur de la Médina, une maison d'exception où chaque instant devient une expérience de luxe et de sérénité. C'est l'élégance d'un riad authentique, sublimée par le bien–être, la gastronomie et l'hospitalité marocaine.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "heroSection",
+      "tags": [],
+      "comment": "Description text for hero section"
+    }
+  },
+  "RoomsSuites": {
+    "Label": {
+      "term": "roomsSuites.label",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "CHAMBRES",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsSuites",
+      "tags": [],
+      "comment": "Label for rooms section"
+    },
+    "Title": {
+      "term": "roomsSuites.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Chambres & Suites - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsSuites",
+      "tags": [],
+      "comment": "Title for rooms and suites section"
+    },
+    "ButtonAllRooms": {
+      "term": "roomsSuites.buttonAllRooms",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "toutes les chambres",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsSuites",
+      "tags": [],
+      "comment": "Button text for viewing all rooms"
+    }
+  },
+  "Testimonials": {
+    "Label": {
+      "term": "testimonials.label",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Avis clients",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "testimonials",
+      "tags": [],
+      "comment": "Label for testimonials section"
+    },
+    "Title": {
+      "term": "testimonials.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Ce que nos invités disent de nous - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "testimonials",
+      "tags": [],
+      "comment": "Title for testimonials section"
+    }
+  },
+  "Footer": {
+    "NavHome": {
+      "term": "footer.navHome",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Accueil",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for home page"
+    },
+    "NavAccommodations": {
+      "term": "footer.navAccommodations",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Hébergements",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for accommodations page"
+    },
+    "NavBarsRestaurants": {
+      "term": "footer.navBarsRestaurants",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Bars & Restaurants",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for bars and restaurants page"
+    },
+    "NavSpaWellness": {
+      "term": "footer.navSpaWellness",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Spa & Bien-Être",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for spa and wellness page"
+    },
+    "NavEvents": {
+      "term": "footer.navEvents",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Evènements",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for events page"
+    },
+    "NavActivities": {
+      "term": "footer.navActivities",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Activités",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for activities page"
+    },
+    "NavServices": {
+      "term": "footer.navServices",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Services",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for services page"
+    },
+    "NavContact": {
+      "term": "footer.navContact",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Contact",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Navigation link for contact page"
+    },
+    "CtaBookNow": {
+      "term": "footer.ctaBookNow",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "réservez maintenant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "CTA button text for booking"
+    },
+    "Copyright": {
+      "term": "footer.copyright",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Copyright & Design ©Riad Nashira - 2025. Tous droits réservés.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Copyright text"
+    },
+    "SuccessMessage": {
+      "term": "footer.successMessage",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Inscription prise en compte. Vérifiez votre boîte mail.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Success message after newsletter subscription"
+    },
+    "ErrorMessage": {
+      "term": "footer.errorMessage",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "L'inscription a échoué. Veuillez réessayer.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Error message when newsletter subscription fails"
+    },
+    "TitleUsefulLinks": {
+      "term": "footer.titleUsefulLinks",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Liens utiles",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Title for useful links section"
+    },
+    "TitleContactUs": {
+      "term": "footer.titleContactUs",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nous contacter",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Title for contact us section"
+    },
+    "LabelReception": {
+      "term": "footer.labelReception",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Réception",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Label for reception phone number"
+    },
+    "LabelMobile": {
+      "term": "footer.labelMobile",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Mobile",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Label for mobile phone number"
+    },
+    "TitleNewsletter": {
+      "term": "footer.titleNewsletter",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "S'inscrire à la newsletter",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Title for newsletter subscription section"
+    },
+    "LabelYourEmail": {
+      "term": "footer.labelYourEmail",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Votre Email",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Label for email input field"
+    },
+    "PlaceholderYourEmail": {
+      "term": "footer.placeholderYourEmail",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Votre Email",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Placeholder text for email input field"
+    },
+    "ButtonSubscribing": {
+      "term": "footer.buttonSubscribing",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Inscription ...",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Button text while subscribing to newsletter"
+    },
+    "ButtonSubscribe": {
+      "term": "footer.buttonSubscribe",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "S'inscrire",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Button text for subscribing to newsletter"
+    },
+    "AriaLabelBackToTop": {
+      "term": "footer.ariaLabelBackToTop",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Remonter en haut",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Aria label for back to top button"
+    },
+    "TitleBackToTop": {
+      "term": "footer.titleBackToTop",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Back to top",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "footer",
+      "tags": [],
+      "comment": "Title attribute for back to top button"
+    }
+  },
+  "Header": {
+    "AriaLabelGoToHomepage": {
+      "term": "header.ariaLabelGoToHomepage",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Go to homepage",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for homepage link"
+    },
+    "AltLogo": {
+      "term": "header.altLogo",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "logo",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Alt text for logo images"
+    },
+    "AriaLabelBookNow": {
+      "term": "header.ariaLabelBookNow",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Book now",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for book now button"
+    },
+    "ButtonBook": {
+      "term": "header.buttonBook",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "réserver",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Button text for booking"
+    },
+    "AriaLabelCloseMenu": {
+      "term": "header.ariaLabelCloseMenu",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Close menu",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for close menu button"
+    },
+    "AriaLabelOpenMenu": {
+      "term": "header.ariaLabelOpenMenu",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Open menu",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for open menu button"
+    },
+    "AriaLabelCloseMenuOverlay": {
+      "term": "header.ariaLabelCloseMenuOverlay",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Close menu overlay",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for close menu overlay button"
+    },
+    "AriaLabelMainNavigation": {
+      "term": "header.ariaLabelMainNavigation",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Navigation principale",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for main navigation drawer"
+    },
+    "AriaLabelCloseMenuGoHome": {
+      "term": "header.ariaLabelCloseMenuGoHome",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Fermer le menu et aller à la page d'accueil",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Aria label for close menu and go to homepage link"
+    },
+    "TitleAboutRiad": {
+      "term": "header.titleAboutRiad",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "À propos du Riad Nashira",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Title for about Riad section in menu"
+    },
+    "DescriptionAboutRiad": {
+      "term": "header.descriptionAboutRiad",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Riad Nashira & Spa apporte une nouvelle dimension à l'hospitalité à Marrakech, en introduisant un concept qui va au-delà de toute autre expérience.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Description text about Riad in menu"
+    },
+    "TitleContact": {
+      "term": "header.titleContact",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Contact",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Title for contact section in menu"
+    },
+    "LabelReception": {
+      "term": "header.labelReception",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Réception",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Label for reception phone number"
+    },
+    "LabelMobile": {
+      "term": "header.labelMobile",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Mobile",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "Label for mobile phone number"
+    },
+    "CtaBookNow": {
+      "term": "header.ctaBookNow",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "réservez maintenant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "header",
+      "tags": [],
+      "comment": "CTA text for book now button"
+    }
+  },
+  "BookingForm": {
+    "DefaultAdults": {
+      "term": "bookingForm.defaultAdults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "ADULTES",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Default text for adults dropdown"
+    },
+    "DefaultChildren": {
+      "term": "bookingForm.defaultChildren",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "ENFANTS",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Default text for children dropdown"
+    },
+    "DefaultRooms": {
+      "term": "bookingForm.defaultRooms",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "1 CHAMBRE",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Default text for rooms dropdown"
+    },
+    "DefaultRoomType": {
+      "term": "bookingForm.defaultRoomType",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Type de chambre",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Default text for room type dropdown"
+    },
+    "PlaceholderFirstName": {
+      "term": "bookingForm.placeholderFirstName",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Prénom",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Placeholder for first name input"
+    },
+    "AriaLabelFirstName": {
+      "term": "bookingForm.ariaLabelFirstName",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Prénom",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for first name input"
+    },
+    "PlaceholderLastName": {
+      "term": "bookingForm.placeholderLastName",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nom",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Placeholder for last name input"
+    },
+    "AriaLabelLastName": {
+      "term": "bookingForm.ariaLabelLastName",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nom",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for last name input"
+    },
+    "PlaceholderEmail": {
+      "term": "bookingForm.placeholderEmail",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Adresse e-mail",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Placeholder for email input"
+    },
+    "AriaLabelEmail": {
+      "term": "bookingForm.ariaLabelEmail",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Adresse e-mail",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for email input"
+    },
+    "PlaceholderPhone": {
+      "term": "bookingForm.placeholderPhone",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Numéro de téléphone",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Placeholder for phone input"
+    },
+    "AriaLabelPhone": {
+      "term": "bookingForm.ariaLabelPhone",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Numéro de téléphone",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for phone input"
+    },
+    "AriaLabelAdults": {
+      "term": "bookingForm.ariaLabelAdults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Adultes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for adults dropdown"
+    },
+    "OptionAdults": {
+      "term": "bookingForm.optionAdults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "ADULTES",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for adults placeholder"
+    },
+    "Option1Adult": {
+      "term": "bookingForm.option1Adult",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "1 Adulte",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 1 adult"
+    },
+    "Option2Adults": {
+      "term": "bookingForm.option2Adults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "2 Adultes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 2 adults"
+    },
+    "Option3Adults": {
+      "term": "bookingForm.option3Adults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "3 Adultes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 3 adults"
+    },
+    "Option4Adults": {
+      "term": "bookingForm.option4Adults",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "4 Adultes",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 4 adults"
+    },
+    "AriaLabelChildren": {
+      "term": "bookingForm.ariaLabelChildren",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Enfants",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for children dropdown"
+    },
+    "OptionChildren": {
+      "term": "bookingForm.optionChildren",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "ENFANTS",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for children placeholder"
+    },
+    "Option0Child": {
+      "term": "bookingForm.option0Child",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "0 Enfant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 0 children"
+    },
+    "Option1Child": {
+      "term": "bookingForm.option1Child",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "1 Enfant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 1 child"
+    },
+    "Option2Children": {
+      "term": "bookingForm.option2Children",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "2 Enfants",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 2 children"
+    },
+    "Option3Children": {
+      "term": "bookingForm.option3Children",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "3 Enfants",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 3 children"
+    },
+    "AriaLabelRooms": {
+      "term": "bookingForm.ariaLabelRooms",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Chambres",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for rooms dropdown"
+    },
+    "Option1Room": {
+      "term": "bookingForm.option1Room",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "1 CHAMBRE",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 1 room"
+    },
+    "Option2Rooms": {
+      "term": "bookingForm.option2Rooms",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "2 CHAMBRES",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 2 rooms"
+    },
+    "Option3Rooms": {
+      "term": "bookingForm.option3Rooms",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "3 CHAMBRES",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for 3 rooms"
+    },
+    "AriaLabelRoomType": {
+      "term": "bookingForm.ariaLabelRoomType",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Type de chambre",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for room type dropdown"
+    },
+    "OptionRoomType": {
+      "term": "bookingForm.optionRoomType",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Type de chambre",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for room type placeholder"
+    },
+    "OptionComfort": {
+      "term": "bookingForm.optionComfort",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Confort",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for Confort room type"
+    },
+    "OptionDeluxe": {
+      "term": "bookingForm.optionDeluxe",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Deluxe",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for Deluxe room type"
+    },
+    "OptionSuite": {
+      "term": "bookingForm.optionSuite",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suite",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for Suite room type"
+    },
+    "OptionSuiteNashira": {
+      "term": "bookingForm.optionSuiteNashira",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suite Nashira",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for Suite Nashira room type"
+    },
+    "OptionSuiteRiner": {
+      "term": "bookingForm.optionSuiteRiner",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suite Riner",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Option text for Suite Riner room type"
+    },
+    "AriaLabelCheckIn": {
+      "term": "bookingForm.ariaLabelCheckIn",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Arrivée",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for check-in date input"
+    },
+    "AriaLabelCheckOut": {
+      "term": "bookingForm.ariaLabelCheckOut",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Départ",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for check-out date input"
+    },
+    "PlaceholderSpecialRequirements": {
+      "term": "bookingForm.placeholderSpecialRequirements",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Demandes particulières",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Placeholder for special requirements textarea"
+    },
+    "AriaLabelSpecialRequirements": {
+      "term": "bookingForm.ariaLabelSpecialRequirements",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Demandes particulières",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Aria label for special requirements textarea"
+    },
+    "ButtonBook": {
+      "term": "bookingForm.buttonBook",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "RÉSERVER",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "bookingForm",
+      "tags": [],
+      "comment": "Button text for submitting booking form"
+    }
+  },
+  "OtherRiadsSlider": {
+    "DefaultTitle": {
+      "term": "otherRiadsSlider.defaultTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Autres hébergements à découvrir - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "otherRiadsSlider",
+      "tags": [],
+      "comment": "Default title for other riads slider section"
+    },
+    "AriaLabelPrevious": {
+      "term": "otherRiadsSlider.ariaLabelPrevious",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Précédent",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "otherRiadsSlider",
+      "tags": [],
+      "comment": "Aria label for previous button"
+    },
+    "AriaLabelNext": {
+      "term": "otherRiadsSlider.ariaLabelNext",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suivant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "otherRiadsSlider",
+      "tags": [],
+      "comment": "Aria label for next button"
+    }
+  },
+  "RoomCard": {
+    "AmenityShower": {
+      "term": "roomCard.amenityShower",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Douche italienne & sèche-cheveux",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Amenity label for Italian shower and hairdryer"
+    },
+    "AmenityWifiTV": {
+      "term": "roomCard.amenityWifiTV",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Wifi & TV",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Amenity label for Wifi and TV"
+    },
+    "AmenityCoffeeMinibar": {
+      "term": "roomCard.amenityCoffeeMinibar",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Café, mini bar & coffre fort",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Amenity label for coffee, minibar and safe"
+    },
+    "AmenityAirConditioning": {
+      "term": "roomCard.amenityAirConditioning",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Climatisation",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Amenity label for air conditioning"
+    },
+    "ButtonBack": {
+      "term": "roomCard.buttonBack",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "← Retour",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Button text for back button"
+    },
+    "ButtonBookNow": {
+      "term": "roomCard.buttonBookNow",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "RÉSERVER MAINTENANT",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Button text for book now button"
+    },
+    "ButtonViewDetails": {
+      "term": "roomCard.buttonViewDetails",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Voir détails",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Button text for view details button on mobile"
+    },
+    "ButtonBookNowHover": {
+      "term": "roomCard.buttonBookNowHover",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Réserver maintenant",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCard",
+      "tags": [],
+      "comment": "Button text that appears on hover for booking"
+    }
+  },
+  "RoomAmenities": {
+    "Title": {
+      "term": "roomAmenities.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Équipements & Services - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomAmenities",
+      "tags": [],
+      "comment": "Title for room amenities section"
+    },
+    "Description": {
+      "term": "roomAmenities.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Chaque chambre est équipée avec le plus grand soin pour assurer votre confort et votre bien-être durant votre séjour.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomAmenities",
+      "tags": [],
+      "comment": "Description for room amenities section"
+    },
+    "AmenityDoubleBed": {
+      "Label": {
+        "term": "roomAmenities.amenityDoubleBed.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Lit double ou twin",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for double or twin bed amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityDoubleBed.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Selon la chambre",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for double or twin bed amenity"
+      }
+    },
+    "AmenityBathroom": {
+      "Label": {
+        "term": "roomAmenities.amenityBathroom.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Salle de bain en tadelakt",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for tadelakt bathroom amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityBathroom.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Avec douche à l'italienne",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for tadelakt bathroom amenity"
+      }
+    },
+    "AmenityAirConditioning": {
+      "Label": {
+        "term": "roomAmenities.amenityAirConditioning.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Climatisation réversible",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for reversible air conditioning amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityAirConditioning.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Chaud & froid",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for reversible air conditioning amenity"
+      }
+    },
+    "AmenityWifiTV": {
+      "Label": {
+        "term": "roomAmenities.amenityWifiTV.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Wifi & Télévision",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for Wifi and TV amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityWifiTV.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Connexion haut débit",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for Wifi and TV amenity"
+      }
+    },
+    "AmenitySafe": {
+      "Label": {
+        "term": "roomAmenities.amenitySafe.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Coffre-fort",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for safe amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenitySafe.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Sécurité pour vos objets de valeur",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for safe amenity"
+      }
+    },
+    "AmenityCoffeeMinibar": {
+      "Label": {
+        "term": "roomAmenities.amenityCoffeeMinibar.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Machine à café & mini bar",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for coffee machine and minibar amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityCoffeeMinibar.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Boissons chaudes et fraîches",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for coffee machine and minibar amenity"
+      }
+    },
+    "AmenityWelcomeProducts": {
+      "Label": {
+        "term": "roomAmenities.amenityWelcomeProducts.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Produits d'accueil",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for welcome products amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityWelcomeProducts.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Naturels",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for welcome products amenity"
+      }
+    },
+    "AmenityHairdryer": {
+      "Label": {
+        "term": "roomAmenities.amenityHairdryer.label",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Sèche-cheveux",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Label for hairdryer amenity"
+      },
+      "Description": {
+        "term": "roomAmenities.amenityHairdryer.description",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Professionnel",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "roomAmenities",
+        "tags": [],
+        "comment": "Description for hairdryer amenity"
+      }
+    }
+  },
+  "RoomCategoriesGrid": {
+    "Title": {
+      "term": "roomCategoriesGrid.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nos Chambres - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCategoriesGrid",
+      "tags": [],
+      "comment": "Title for room categories grid section"
+    },
+    "Description": {
+      "term": "roomCategoriesGrid.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Le riad comporte 17 chambres, toutes différentes vous permettant de voyager... Certaines sont au rez de chaussée, d'autres à l'étage, certaines avec vue sur le patio piscine ou le patio fontaine.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomCategoriesGrid",
+      "tags": [],
+      "comment": "Description for room categories grid section"
+    }
+  },
+  "RoomsCTA": {
+    "Title": {
+      "term": "roomsCTA.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Réservez Votre Séjour - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsCTA",
+      "tags": [],
+      "comment": "Title for rooms CTA section"
+    },
+    "Description": {
+      "term": "roomsCTA.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Découvrez nos hébergements et réservez votre séjour dans l'univers unique du Riad Nashira. Chaque chambre vous attend pour une expérience authentique et raffinée.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsCTA",
+      "tags": [],
+      "comment": "Description for rooms CTA section"
+    },
+    "ButtonBookNow": {
+      "term": "roomsCTA.buttonBookNow",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "RÉSERVER MAINTENANT",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsCTA",
+      "tags": [],
+      "comment": "Button text for booking now"
+    }
+  },
+  "RoomsIntroduction": {
+    "ImageAlt": {
+      "term": "roomsIntroduction.imageAlt",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Luxurious Moroccan Riad interior with intricate zellige tilework, plush velvet seating, and warm ambient lighting, elegant style",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Alt text for rooms introduction image"
+    },
+    "HeaderLabel": {
+      "term": "roomsIntroduction.headerLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Chaque chambre",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Header label for rooms introduction"
+    },
+    "HeaderTitle": {
+      "term": "roomsIntroduction.headerTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Une Atmosphère Singulière - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Header title for rooms introduction"
+    },
+    "Paragraph1": {
+      "term": "roomsIntroduction.paragraph1",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Le Riad Nashira compte 17 chambres et suites toutes différentes les unes des autres. Pensées comme des univers uniques, elles se distinguent par leurs harmonies de couleurs, leurs jeux de lumière et le dialogue subtile entre design contemporain et artisanat marocain.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "First paragraph for rooms introduction"
+    },
+    "Paragraph2": {
+      "term": "roomsIntroduction.paragraph2",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Que vous choisissez une chambre confort, une deluxe, une suite ou les suites exclusives, vous serez immergé dans une ambiance raffinée, bercée par le calme du riad et l'élégance de ses détails.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Second paragraph for rooms introduction"
+    },
+    "StatComfort": {
+      "term": "roomsIntroduction.statComfort",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Confort",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Stat label for comfort rooms"
+    },
+    "StatDeluxe": {
+      "term": "roomsIntroduction.statDeluxe",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Deluxe",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Stat label for deluxe rooms"
+    },
+    "StatSuites": {
+      "term": "roomsIntroduction.statSuites",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suites",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Stat label for suites"
+    },
+    "StatSpecialSuites": {
+      "term": "roomsIntroduction.statSpecialSuites",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Suites spéciales",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "roomsIntroduction",
+      "tags": [],
+      "comment": "Stat label for special suites"
+    }
+  },
+  "RestaurantIntroduction": {
+    "ImageAlt": {
+      "term": "restaurantIntroduction.imageAlt",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Elegant restaurant setting with traditional Moroccan cuisine",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "restaurantIntroduction",
+      "tags": [],
+      "comment": "Alt text for restaurant introduction image"
+    },
+    "HeaderLabel": {
+      "term": "restaurantIntroduction.headerLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Gastronomie",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "restaurantIntroduction",
+      "tags": [],
+      "comment": "Header label for restaurant introduction"
+    },
+    "HeaderTitle": {
+      "term": "restaurantIntroduction.headerTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Une Cuisine D'Excellence - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "restaurantIntroduction",
+      "tags": [],
+      "comment": "Header title for restaurant introduction"
+    },
+    "Paragraph1": {
+      "term": "restaurantIntroduction.paragraph1",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Notre restaurant vous invite à un voyage culinaire où la tradition marocaine rencontre la créativité contemporaine.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "restaurantIntroduction",
+      "tags": [],
+      "comment": "First paragraph for restaurant introduction"
+    },
+    "Paragraph2": {
+      "term": "restaurantIntroduction.paragraph2",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Chaque plat est une célébration des saveurs authentiques, préparés avec des ingrédients locaux soigneusement sélectionnés.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "restaurantIntroduction",
+      "tags": [],
+      "comment": "Second paragraph for restaurant introduction"
+    }
+  },
+  "SpaIntroduction": {
+    "ImageAlt": {
+      "term": "spaIntroduction.imageAlt",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Relaxing spa environment with traditional hammam",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaIntroduction",
+      "tags": [],
+      "comment": "Alt text for spa introduction image"
+    },
+    "HeaderLabel": {
+      "term": "spaIntroduction.headerLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Bien-être",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaIntroduction",
+      "tags": [],
+      "comment": "Header label for spa introduction"
+    },
+    "HeaderTitle": {
+      "term": "spaIntroduction.headerTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Un Havre de Paix - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaIntroduction",
+      "tags": [],
+      "comment": "Header title for spa introduction"
+    },
+    "Paragraph1": {
+      "term": "spaIntroduction.paragraph1",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Découvrez notre spa, un sanctuaire de bien-être où les rituels ancestraux du hammam se mêlent aux techniques de relaxation modernes.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaIntroduction",
+      "tags": [],
+      "comment": "First paragraph for spa introduction"
+    },
+    "Paragraph2": {
+      "term": "spaIntroduction.paragraph2",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Laissez-vous transporter par nos soins signature et retrouvez l'harmonie du corps et de l'esprit.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaIntroduction",
+      "tags": [],
+      "comment": "Second paragraph for spa introduction"
+    }
+  },
+  "EventsIntroduction": {
+    "ImageAlt": {
+      "term": "eventsIntroduction.imageAlt",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Modern conference room in luxury Moroccan hotel with elegant seating, audiovisual equipment, natural lighting, professional business setting",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Alt text for events introduction image"
+    },
+    "HeaderLabel": {
+      "term": "eventsIntroduction.headerLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Événements",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Header label for events introduction"
+    },
+    "HeaderTitle": {
+      "term": "eventsIntroduction.headerTitle",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Des Moments D'Exception - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Header title for events introduction"
+    },
+    "Paragraph1": {
+      "term": "eventsIntroduction.paragraph1",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Au cœur de la Médina, le riad Nashira est bien plus qu'un lieu de séjour où l'on peut imaginer organiser et vivre des événements inoubliables.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "First paragraph for events introduction"
+    },
+    "Paragraph2": {
+      "term": "eventsIntroduction.paragraph2",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Grâce à ses espaces raffinés – patios, rooftops panoramiques, restaurants, bars, salons – notre riad se prête à toutes les occasions, dans une atmosphère intime et élégante.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Second paragraph for events introduction"
+    },
+    "StatSeminarsValue": {
+      "term": "eventsIntroduction.statSeminarsValue",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Séminaires",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat value for seminars"
+    },
+    "StatSeminarsLabel": {
+      "term": "eventsIntroduction.statSeminarsLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "professionnels",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat label for seminars"
+    },
+    "StatDinnersValue": {
+      "term": "eventsIntroduction.statDinnersValue",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Dîners",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat value for dinners"
+    },
+    "StatDinnersLabel": {
+      "term": "eventsIntroduction.statDinnersLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "privés",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat label for dinners"
+    },
+    "StatWeddingsValue": {
+      "term": "eventsIntroduction.statWeddingsValue",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Mariages",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat value for weddings"
+    },
+    "StatWeddingsLabel": {
+      "term": "eventsIntroduction.statWeddingsLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "& célébrations",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat label for weddings"
+    },
+    "StatPrivatizationValue": {
+      "term": "eventsIntroduction.statPrivatizationValue",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Privatisation",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat value for privatization"
+    },
+    "StatPrivatizationLabel": {
+      "term": "eventsIntroduction.statPrivatizationLabel",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "complète",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "eventsIntroduction",
+      "tags": [],
+      "comment": "Stat label for privatization"
+    }
+  },
+  "PatioViews": {
+    "Title": {
+      "term": "patioViews.title",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Emplacements & Vues - BDSP",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "patioViews",
+      "tags": [],
+      "comment": "Title for patio views section"
+    },
+    "Description": {
+      "term": "patioViews.description",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Nos chambres sont réparties entre le rez-de-chaussée et l'étage, offrant différentes perspectives sur nos patios enchanteurs.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "patioViews",
+      "tags": [],
+      "comment": "Description for patio views section"
+    },
+    "ViewPiscine": {
+      "Title": {
+        "term": "patioViews.viewPiscine.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Vue Patio Piscine",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "patioViews",
+        "tags": [],
+        "comment": "Title for pool patio view"
+      },
+      "Subtitle": {
+        "term": "patioViews.viewPiscine.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Sérénité et rafraîchissement",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "patioViews",
+        "tags": [],
+        "comment": "Subtitle for pool patio view"
+      }
+    },
+    "ViewFontaine": {
+      "Title": {
+        "term": "patioViews.viewFontaine.title",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Vue Patio Fontaine",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "patioViews",
+        "tags": [],
+        "comment": "Title for fountain patio view"
+      },
+      "Subtitle": {
+        "term": "patioViews.viewFontaine.subtitle",
+        "context": "",
+        "plural": "",
+        "created": "",
+        "updated": "",
+        "translation": {
+          "content": "Tranquillité et authenticité",
+          "fuzzy": 0,
+          "proofread": 0,
+          "updated": ""
+        },
+        "reference": "patioViews",
+        "tags": [],
+        "comment": "Subtitle for fountain patio view"
+      }
+    }
+  },
+  "Constants": {
+    "SpaSlides": {
+      "Slide1": {
+        "Category": {"term": "constants.spaSlides.slide1.category", "translation": {"content": "BIEN-ÊTRE & SPA"}},
+        "Title": {"term": "constants.spaSlides.slide1.title", "translation": {"content": "Spa Et Rituels De Bien-Être"}},
+        "Description1": {"term": "constants.spaSlides.slide1.description1", "translation": {"content": "Notre spa vous invite à un voyage sensoriel unique inspiré des traditions marocaines."}},
+        "Description2": {"term": "constants.spaSlides.slide1.description2", "translation": {"content": "Entre hammam traditionnel, piscines chauffées et fitness en rooftop , notre riad offre une expérience de bien-être totale , unique dans la Médina"}},
+        "Feature1": {"term": "constants.spaSlides.slide1.feature1", "translation": {"content": "Hammam Traditionnel"}},
+        "Feature2": {"term": "constants.spaSlides.slide1.feature2", "translation": {"content": "Massages"}},
+        "Feature3": {"term": "constants.spaSlides.slide1.feature3", "translation": {"content": "Soins Naturels"}},
+        "Feature4": {"term": "constants.spaSlides.slide1.feature4", "translation": {"content": "Espace Fitness"}}
+      },
+      "Slide2": {
+        "Category": {"term": "constants.spaSlides.slide2.category", "translation": {"content": "DÉTENTE"}},
+        "Title": {"term": "constants.spaSlides.slide2.title", "translation": {"content": "Trois Espaces Aquatiques Uniques"}},
+        "Description1": {"term": "constants.spaSlides.slide2.description1", "translation": {"content": "Profitez de nos trois piscines pour vous ressourcer dans un cadre exceptionnel."}},
+        "Description2": {"term": "constants.spaSlides.slide2.description2", "translation": {"content": "Une piscine sur le rooftop avec vue panoramique sur la Médina, une piscine intérieure chauffée et une piscine au cœur du patio. Des oasis de tranquillité."}},
+        "Feature1": {"term": "constants.spaSlides.slide2.feature1", "translation": {"content": "Piscine Rooftop"}},
+        "Feature2": {"term": "constants.spaSlides.slide2.feature2", "translation": {"content": "Piscine Chauffée"}},
+        "Feature3": {"term": "constants.spaSlides.slide2.feature3", "translation": {"content": "Piscine Patio"}},
+        "Feature4": {"term": "constants.spaSlides.slide2.feature4", "translation": {"content": "Transats Premium"}}
+      }
+    },
+    "EventsSlides": {
+      "Slide1": {
+        "Category": {"term": "constants.eventsSlides.slide1.category", "translation": {"content": "ÉVÉNEMENTS PROFESSIONNELS"}},
+        "Title": {"term": "constants.eventsSlides.slide1.title", "translation": {"content": "Séminaires et Réunions Professionnelles"}},
+        "Description1": {"term": "constants.eventsSlides.slide1.description1", "translation": {"content": "Organisez vos événements d'entreprise dans un cadre inspirant et raffiné. Nos espaces modulables s'adaptent à tous vos besoins professionnels."}},
+        "Description2": {"term": "constants.eventsSlides.slide1.description2", "translation": {"content": "Équipements audiovisuels de pointe, service de restauration personnalisé et accompagnement dédié pour la réussite de vos événements."}},
+        "Feature1": {"term": "constants.eventsSlides.slide1.feature1", "translation": {"content": "Salles Modulables"}},
+        "Feature2": {"term": "constants.eventsSlides.slide1.feature2", "translation": {"content": "Équipements High-Tech"}},
+        "Feature3": {"term": "constants.eventsSlides.slide1.feature3", "translation": {"content": "Service Traiteur"}}
+      },
+      "Slide2": {
+        "Category": {"term": "constants.eventsSlides.slide2.category", "translation": {"content": "ÉVÉNEMENTS PRIVÉS"}},
+        "Title": {"term": "constants.eventsSlides.slide2.title", "translation": {"content": "Dîners Privés et Soirées Exclusives"}},
+        "Description1": {"term": "constants.eventsSlides.slide2.description1", "translation": {"content": "Créez des moments intimes et raffinés pour vos invités. Nos chefs conçoivent des menus sur mesure dans des espaces privatisés d'exception."}},
+        "Description2": {"term": "constants.eventsSlides.slide2.description2", "translation": {"content": "Service personnalisé, ambiance sur mesure et attention aux moindres détails pour des soirées mémorables et exclusives."}},
+        "Feature1": {"term": "constants.eventsSlides.slide2.feature1", "translation": {"content": "Menus Personnalisés"}},
+        "Feature2": {"term": "constants.eventsSlides.slide2.feature2", "translation": {"content": "Service Exclusif"}},
+        "Feature3": {"term": "constants.eventsSlides.slide2.feature3", "translation": {"content": "Ambiance Sur Mesure"}}
+      },
+      "Slide3": {
+        "Category": {"term": "constants.eventsSlides.slide3.category", "translation": {"content": "MOMENTS PRÉCIEUX"}},
+        "Title": {"term": "constants.eventsSlides.slide3.title", "translation": {"content": "Célébrations et Moments de Vie"}},
+        "Description1": {"term": "constants.eventsSlides.slide3.description1", "translation": {"content": "Mariages, anniversaires, baptêmes... Chaque moment important mérite un cadre à la hauteur de vos émotions et de vos rêves."}},
+        "Description2": {"term": "constants.eventsSlides.slide3.description2", "translation": {"content": "Notre équipe vous accompagne dans la création d'événements uniques, reflétant votre personnalité et vos souhaits les plus chers."}},
+        "Feature1": {"term": "constants.eventsSlides.slide3.feature1", "translation": {"content": "Mariages"}},
+        "Feature2": {"term": "constants.eventsSlides.slide3.feature2", "translation": {"content": "Anniversaires"}},
+        "Feature3": {"term": "constants.eventsSlides.slide3.feature3", "translation": {"content": "Événements Familiaux"}}
+      },
+      "Slide4": {
+        "Category": {"term": "constants.eventsSlides.slide4.category", "translation": {"content": "EXCLUSIVITÉ TOTALE"}},
+        "Title": {"term": "constants.eventsSlides.slide4.title", "translation": {"content": "Privatisation Totale du Riad"}},
+        "Description1": {"term": "constants.eventsSlides.slide4.description1", "translation": {"content": "L'expérience ultime : le Riad Nashira entièrement à votre disposition. Un privilège rare pour des événements d'exception et une intimité absolue."}},
+        "Description2": {"term": "constants.eventsSlides.slide4.description2", "translation": {"content": "Tous nos espaces, services et équipes dédiés exclusivement à votre événement pour une expérience sur mesure et inoubliable."}},
+        "Feature1": {"term": "constants.eventsSlides.slide4.feature1", "translation": {"content": "Riad Entier"}},
+        "Feature2": {"term": "constants.eventsSlides.slide4.feature2", "translation": {"content": "Service Dédié"}},
+        "Feature3": {"term": "constants.eventsSlides.slide4.feature3", "translation": {"content": "Intimité Absolue"}}
+      }
+    },
+    "EventSpaces": {
+      "Courtyard": {
+        "Title": {"term": "constants.eventSpaces.courtyard.title", "translation": {"content": "Cour Centrale"}},
+        "Description": {"term": "constants.eventSpaces.courtyard.description", "translation": {"content": "Le cœur du riad, idéal pour les cérémonies intimes et les cocktails."}},
+        "LocationType": {"term": "constants.eventSpaces.courtyard.locationType", "translation": {"content": "Intérieur/Extérieur"}},
+        "ImageAlt": {"term": "constants.eventSpaces.courtyard.imageAlt", "translation": {"content": "Beautiful central courtyard of Moroccan riad with fountain, traditional tiles, orange trees, perfect for intimate ceremonies"}}
+      },
+      "Rooftop": {
+        "Title": {"term": "constants.eventSpaces.rooftop.title", "translation": {"content": "Terrasse Panoramique"}},
+        "Description": {"term": "constants.eventSpaces.rooftop.description", "translation": {"content": "Vue imprenable sur Marrakech pour des soirées mémorables."}},
+        "LocationType": {"term": "constants.eventSpaces.rooftop.locationType", "translation": {"content": "Extérieur"}},
+        "ImageAlt": {"term": "constants.eventSpaces.rooftop.imageAlt", "translation": {"content": "Stunning rooftop terrace in Marrakech with panoramic views, set up for elegant evening reception with string lights"}}
+      },
+      "Salon": {
+        "Title": {"term": "constants.eventSpaces.salon.title", "translation": {"content": "Salon Marocain"}},
+        "Description": {"term": "constants.eventSpaces.salon.description", "translation": {"content": "Ambiance authentique pour des réunions privilégiées."}},
+        "LocationType": {"term": "constants.eventSpaces.salon.locationType", "translation": {"content": "Intérieur"}},
+        "ImageAlt": {"term": "constants.eventSpaces.salon.imageAlt", "translation": {"content": "Elegant Moroccan salon with traditional seating, ornate decorations, perfect for private meetings and intimate gatherings"}}
+      }
+    },
+    "ActivitiesSlides": {
+      "Slide1": {
+        "Category": {"term": "constants.activitiesSlides.slide1.category", "translation": {"content": "AVENTURE EXTRÊME"}},
+        "Title": {"term": "constants.activitiesSlides.slide1.title", "translation": {"content": "Excursion en Quad et Buggy"}},
+        "Description1": {"term": "constants.activitiesSlides.slide1.description1", "translation": {"content": "Vivez l'adrénaline pure en explorant les paysages spectaculaires du désert marocain. Une aventure tout-terrain inoubliable."}},
+        "Description2": {"term": "constants.activitiesSlides.slide1.description2", "translation": {"content": "Équipement professionnel fourni, guides expérimentés et circuit adapté à tous les niveaux pour une expérience sécurisée."}},
+        "Feature1": {"term": "constants.activitiesSlides.slide1.feature1", "translation": {"content": "Équipement Inclus"}},
+        "Feature2": {"term": "constants.activitiesSlides.slide1.feature2", "translation": {"content": "Guide Expert"}},
+        "Feature3": {"term": "constants.activitiesSlides.slide1.feature3", "translation": {"content": "Tous Niveaux"}}
+      },
+      "Slide2": {
+        "Category": {"term": "constants.activitiesSlides.slide2.category", "translation": {"content": "SPORT DE PRESTIGE"}},
+        "Title": {"term": "constants.activitiesSlides.slide2.title", "translation": {"content": "Golf à Marrakech"}},
+        "Description1": {"term": "constants.activitiesSlides.slide2.description1", "translation": {"content": "Découvrez les plus beaux parcours de golf de Marrakech avec vue imprenable sur l'Atlas. Excellence et raffinement garantis."}},
+        "Description2": {"term": "constants.activitiesSlides.slide2.description2", "translation": {"content": "Accès privilégié aux clubs prestigieux, équipement haut de gamme et service personnalisé pour une expérience d'exception."}},
+        "Feature1": {"term": "constants.activitiesSlides.slide2.feature1", "translation": {"content": "Parcours Premium"}},
+        "Feature2": {"term": "constants.activitiesSlides.slide2.feature2", "translation": {"content": "Équipement Fourni"}},
+        "Feature3": {"term": "constants.activitiesSlides.slide2.feature3", "translation": {"content": "Transport Inclus"}}
+      }
+    },
+    "OtherActivities": {
+      "Desert": {
+        "Title": {"term": "constants.otherActivities.desert.title", "translation": {"content": "Excursions Désert"}},
+        "Description": {"term": "constants.otherActivities.desert.description", "translation": {"content": "Partez à la découverte du désert d'Agafay, nuit sous les étoiles et rencontre avec les nomades."}},
+        "ImageAlt": {"term": "constants.otherActivities.desert.imageAlt", "translation": {"content": "Sahara desert excursion with camels and Berber camp, golden sand dunes, traditional nomadic experience"}}
+      },
+      "HorseRiding": {
+        "Title": {"term": "constants.otherActivities.horseRiding.title", "translation": {"content": "Balade à Cheval"}},
+        "Description": {"term": "constants.otherActivities.horseRiding.description", "translation": {"content": "Explorez la palmeraie et les environs de Marrakech à cheval, une expérience unique."}},
+        "ImageAlt": {"term": "constants.otherActivities.horseRiding.imageAlt", "translation": {"content": "Horseback riding in Moroccan countryside, Atlas Mountains background, equestrian adventure, traditional riding"}}
+      },
+      "Essaouira": {
+        "Title": {"term": "constants.otherActivities.essaouira.title", "translation": {"content": "Journée Essaouira"}},
+        "Description": {"term": "constants.otherActivities.essaouira.description", "translation": {"content": "Accompagnez d'un guide, découvrez la perle de l'Atlantique, ses remparts et son ambiance bohème unique."}},
+        "ImageAlt": {"term": "constants.otherActivities.essaouira.imageAlt", "translation": {"content": "Essaouira coastal city Morocco, blue and white medina, Atlantic Ocean, fishing port, historic ramparts"}}
+      },
+      "Cooking": {
+        "Title": {"term": "constants.otherActivities.cooking.title", "translation": {"content": "Cours de Cuisine"}},
+        "Description": {"term": "constants.otherActivities.cooking.description", "translation": {"content": "Apprenez les secrets de la cuisine marocaine avec nos chefs expérimentés."}},
+        "ImageAlt": {"term": "constants.otherActivities.cooking.imageAlt", "translation": {"content": "Moroccan cooking class, traditional tagine preparation, spices market visit, culinary experience, chef instruction"}}
+      },
+      "Medina": {
+        "Title": {"term": "constants.otherActivities.medina.title", "translation": {"content": "Visite Guidée Médina"}},
+        "Description": {"term": "constants.otherActivities.medina.description", "translation": {"content": "Plongez au cœur de la médina et de ses souks avec un guide local expert et passionné."}},
+        "ImageAlt": {"term": "constants.otherActivities.medina.imageAlt", "translation": {"content": "Guided tour of Marrakech medina, traditional souks, local guide, cultural discovery, historic monuments"}}
+      },
+      "Atlas": {
+        "Title": {"term": "constants.otherActivities.atlas.title", "translation": {"content": "Randonnée Atlas"}},
+        "Description": {"term": "constants.otherActivities.atlas.description", "translation": {"content": "Explorez les villages berbères et les sommets de l'Atlas marocain."}},
+        "ImageAlt": {"term": "constants.otherActivities.atlas.imageAlt", "translation": {"content": "Atlas Mountains hiking trail, Berber villages, mountain landscape, trekking adventure, traditional architecture"}}
+      }
+    }
+  }
+}

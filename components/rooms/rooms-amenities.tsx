@@ -1,70 +1,74 @@
+'use client'
+
 import Container from '@/components/ui/container'
 import {FaBed, FaLeaf, FaLock, FaShower, FaSnowflake, FaWifi, FaWind} from 'react-icons/fa'
 import {FaMugSaucer} from "react-icons/fa6";
 import {Amenity} from "@/lib/types";
-
-const amenities: Amenity[] = [
-    {
-        id: "1",
-        label: "Lit double ou twin",
-        description: "Selon la chambre",
-        icon: FaBed,
-    },
-    {
-        id: "2",
-        label: "Salle de bain en tadelakt",
-        description: "Avec douche à l’italienne",
-        icon: FaShower,
-    },
-    {
-        id: "3",
-        label: "Climatisation réversible",
-        description: "Chaud & froid",
-        icon: FaSnowflake,
-    },
-    {
-        id: "4",
-        label: "Wifi & Télévision",
-        description: "Connexion haut débit",
-        icon: FaWifi,
-    },
-    {
-        id: "5",
-        label: "Coffre-fort",
-        description: "Sécurité pour vos objets de valeur",
-        icon: FaLock,
-    },
-    {
-        id: "6",
-        label: "Machine à café & mini bar",
-        description: "Boissons chaudes et fraîches",
-        icon: FaMugSaucer,
-    },
-    {
-        id: "7",
-        label: "Produits d’accueil",
-        description: "Naturels",
-        icon: FaLeaf,
-    },
-    {
-        id: "8",
-        label: "Sèche-cheveux",
-        description: "Professionnel",
-        icon: FaWind,
-    },
-];
+import {useTranslations} from 'next-intl';
 
 export default function RoomAmenities() {
+    const t = useTranslations('RoomAmenities');
+
+    const amenities: Amenity[] = [
+        {
+            id: "1",
+            label: t('AmenityDoubleBed.Label.translation.content'),
+            description: t('AmenityDoubleBed.Description.translation.content'),
+            icon: FaBed,
+        },
+        {
+            id: "2",
+            label: t('AmenityBathroom.Label.translation.content'),
+            description: t('AmenityBathroom.Description.translation.content'),
+            icon: FaShower,
+        },
+        {
+            id: "3",
+            label: t('AmenityAirConditioning.Label.translation.content'),
+            description: t('AmenityAirConditioning.Description.translation.content'),
+            icon: FaSnowflake,
+        },
+        {
+            id: "4",
+            label: t('AmenityWifiTV.Label.translation.content'),
+            description: t('AmenityWifiTV.Description.translation.content'),
+            icon: FaWifi,
+        },
+        {
+            id: "5",
+            label: t('AmenitySafe.Label.translation.content'),
+            description: t('AmenitySafe.Description.translation.content'),
+            icon: FaLock,
+        },
+        {
+            id: "6",
+            label: t('AmenityCoffeeMinibar.Label.translation.content'),
+            description: t('AmenityCoffeeMinibar.Description.translation.content'),
+            icon: FaMugSaucer,
+        },
+        {
+            id: "7",
+            label: t('AmenityWelcomeProducts.Label.translation.content'),
+            description: t('AmenityWelcomeProducts.Description.translation.content'),
+            icon: FaLeaf,
+        },
+        {
+            id: "8",
+            label: t('AmenityHairdryer.Label.translation.content'),
+            description: t('AmenityHairdryer.Description.translation.content'),
+            icon: FaWind,
+        },
+    ];
+
     return (
         <section className="py-20 bg-white">
             <Container>
                 <div className="text-center mb-16">
                     <h2 className='font-serif text-4xl md:text-5xl capitalize text-brand-dark'>
-                        Équipements & Services
+                        {t('Title.translation.content')}
                     </h2>
                     <p className="text-base text-brand-gray-500 max-w-3xl mx-auto mt-8">
-                        Chaque chambre est équipée avec le plus grand soin pour assurer votre confort
-                        et votre bien-être durant votre séjour.
+                        {t('Description.translation.content')}
                     </p>
                 </div>
 
