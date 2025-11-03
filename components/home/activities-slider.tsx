@@ -1,15 +1,19 @@
 'use client'
 
 import {useEffect, useRef, useState} from 'react'
-import {activities} from '@/lib/constants'
 import Container from '@/components/ui/container'
 import SectionHeader from '@/components/ui/section-header'
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
+import {useTranslations} from 'next-intl'
+import {getActivities} from "@/lib/constants";
 
 export default function ActivitiesSlider() {
+    const t = useTranslations('ActivitiesSlider')
     const [currentIndex, setCurrentIndex] = useState(0)
     const sliderRef = useRef<HTMLDivElement>(null)
     const [slidesToShow, setSlidesToShow] = useState(3)
+
+    const activities = getActivities(t);
 
     useEffect(() => {
         const handleResize = () => {
@@ -48,9 +52,9 @@ export default function ActivitiesSlider() {
         <section className="py-16 md:py-24 bg-white">
             <Container>
                 <SectionHeader
-                    label="Services"
-                    title="Services & prestations"
-                    subtitle="Explorez nos services signature et nos installations."
+                    label={t('Label.translation.content')}
+                    title={t('Title.translation.content')}
+                    subtitle={t('Subtitle.translation.content')}
                     centered
                     className="mb-12"
                 />
@@ -86,6 +90,7 @@ export default function ActivitiesSlider() {
                     <button
                         onClick={handlePrev}
                         disabled={currentIndex === 0}
+                        aria-label={t('AriaLabelPrevious.translation.content')}
                         className="w-10 h-10 border cursor-pointer border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
                     >
                         <FaArrowLeft />
@@ -93,6 +98,7 @@ export default function ActivitiesSlider() {
                     <button
                         onClick={handleNext}
                         disabled={currentIndex === maxIndex}
+                        aria-label={t('AriaLabelNext.translation.content')}
                         className="w-10 h-10 border cursor-pointer border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-colors duration-300 flex items-center justify-center disabled:opacity-50"
                     >
                         <FaArrowRight />

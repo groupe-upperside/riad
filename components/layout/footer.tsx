@@ -12,6 +12,7 @@ import {
 } from 'react-icons/hi2';
 import {FaFacebookF, FaXTwitter, FaYoutube} from 'react-icons/fa6';
 import {FaInstagram, FaTripadvisor} from 'react-icons/fa';
+import {useTranslations} from 'next-intl';
 
 type NavLink = { label: string; href: string };
 type CTA = { label: string; href: string };
@@ -31,23 +32,23 @@ export type Social = {
 };
 
 export default function Footer(): JSX.Element {
+    const t = useTranslations('Footer');
     const [email, setEmail] = useState<string>('');
     const [pending, setPending] = useState<boolean>(false);
     const [ok, setOk] = useState<string | null>(null);
     const [err, setErr] = useState<string | null>(null);
 
     const usefulLeft: NavLink[] = [
-        { label: 'Accueil', href: '/' },
-        { label: 'Hébergements', href: '/rooms' },
-        { label: 'Bars & Restaurants', href: '/bars-restaurants' },
-        { label: 'Spa & Bien-Être', href: '/spa' },
+        {label: t('NavHome.translation.content'), href: '/'},
+        {label: t('NavAccommodations.translation.content'), href: '/rooms'},
+        {label: t('NavBarsRestaurants.translation.content'), href: '/bars-restaurants'},
+        {label: t('NavSpaWellness.translation.content'), href: '/spa'},
     ];
     const usefulRight: NavLink[] = [
-        { label: 'Evènements', href: '/events' },
-        { label: 'Activités', href: '/activities' },
-        { label: 'Services', href: '/services' },
-        { label: 'Contact', href: '/contact' },
-
+        {label: t('NavEvents.translation.content'), href: '/events'},
+        {label: t('NavActivities.translation.content'), href: '/activities'},
+        {label: t('NavServices.translation.content'), href: '/services'},
+        {label: t('NavContact.translation.content'), href: '/contact'},
     ];
 
     const contact: Contact = {
@@ -55,7 +56,7 @@ export default function Footer(): JSX.Element {
         office: '+212 (0) 6.66.84.08.28',
         email: 'info@riadnashira.com',
         address: 'Diour Saboune, Derb Sidi Makhlouf n°16 Marrakech',
-        cta: { label: 'réservez maintenant', href: '/booking' },
+        cta: {label: t('CtaBookNow.translation.content'), href: '/booking'},
     };
 
     const social: Social = {
@@ -67,8 +68,7 @@ export default function Footer(): JSX.Element {
         youtube: 'https://www.youtube.com/riadnashira',
     };
 
-    const copyright =
-        'Copyright & Design ©Riad Nashira - 2025. Tous droits réservés.';
+    const copyright = t('Copyright.translation.content');
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -76,10 +76,10 @@ export default function Footer(): JSX.Element {
         setOk(null);
         try {
             setPending(true);
-            setOk('Inscription prise en compte. Vérifiez votre boîte mail.');
+            setOk(t('SuccessMessage.translation.content'));
             setEmail('');
         } catch {
-            setErr("L'inscription a échoué. Veuillez réessayer.");
+            setErr(t('ErrorMessage.translation.content'));
         } finally {
             setPending(false);
         }
@@ -87,7 +87,7 @@ export default function Footer(): JSX.Element {
 
     const scrollToTop = useCallback(() => {
         if (typeof window !== 'undefined') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     }, []);
 
@@ -97,7 +97,7 @@ export default function Footer(): JSX.Element {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 pb-12 md:pb-16">
                     <div className="lg:col-span-4">
                         <h3 className="font-serif text-xl tracking-widest uppercase text-brand-gold-600 mb-6">
-                            Liens utiles
+                            {t('TitleUsefulLinks.translation.content')}
                         </h3>
                         <div className="flex flex-col sm:flex-row sm:gap-16 gap-3">
                             <ul className="space-y-3">
@@ -129,34 +129,34 @@ export default function Footer(): JSX.Element {
 
                     <div className="lg:col-span-4">
                         <h3 className="font-serif text-xl tracking-widest uppercase text-brand-gold-600 mb-6">
-                            Nous contacter
+                            {t('TitleContactUs.translation.content')}
                         </h3>
                         <div className="space-y-4">
                             {contact.reception && (
                                 <div className="flex items-start gap-3">
-                                    <HiPaperAirplane className="mt-1 shrink-0" aria-hidden />
+                                    <HiPaperAirplane className="mt-1 shrink-0" aria-hidden/>
                                     <a
                                         href={`tel:${contact.reception.replace(/\s/g, '')}`}
                                         className="text-sm md:text-base"
                                     >
-                                        Réception: {contact.reception}
+                                        {t('LabelReception.translation.content')}: {contact.reception}
                                     </a>
                                 </div>
                             )}
                             {contact.office && (
                                 <div className="flex items-start gap-3">
-                                    <HiOutlinePhone className="mt-1 shrink-0" aria-hidden />
+                                    <HiOutlinePhone className="mt-1 shrink-0" aria-hidden/>
                                     <a
                                         href={`tel:${contact.office.replace(/\s/g, '')}`}
                                         className="text-sm md:text-base"
                                     >
-                                        Mobile: {contact.office}
+                                        {t('LabelMobile.translation.content')}: {contact.office}
                                     </a>
                                 </div>
                             )}
                             {contact.email && (
                                 <div className="flex items-start gap-3">
-                                    <HiOutlineEnvelope className="mt-1 shrink-0" aria-hidden />
+                                    <HiOutlineEnvelope className="mt-1 shrink-0" aria-hidden/>
                                     <a
                                         className="text-sm md:text-base hover:text-brand-gold-500 transition-colors"
                                         href={`mailto:${contact.email}`}
@@ -167,10 +167,10 @@ export default function Footer(): JSX.Element {
                             )}
                             {contact.address && (
                                 <div className="flex items-start gap-3">
-                                    <HiOutlineMapPin className="mt-1 shrink-0" aria-hidden />
+                                    <HiOutlineMapPin className="mt-1 shrink-0" aria-hidden/>
                                     <span className="text-sm md:text-base">
-                    {contact.address}
-                  </span>
+                                        {contact.address}
+                                    </span>
                                 </div>
                             )}
                         </div>
@@ -182,14 +182,14 @@ export default function Footer(): JSX.Element {
                                 aria-label={contact.cta.label}
                             >
                                 <span>{contact.cta.label}</span>
-                                <HiArrowUpRight className="-rotate-45" aria-hidden />
+                                <HiArrowUpRight className="-rotate-45" aria-hidden/>
                             </Link>
                         )}
                     </div>
 
                     <div className="lg:col-span-4">
                         <h3 className="font-serif text-xl tracking-widest uppercase text-brand-gold-600 mb-6">
-                            {`S'inscrire à la newsletter`}
+                            {t('TitleNewsletter.translation.content')}
                         </h3>
 
                         <form
@@ -197,13 +197,13 @@ export default function Footer(): JSX.Element {
                             className="flex border border-brand-dark-300/60 h-12 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-brand-gold-400"
                         >
                             <label className="sr-only" htmlFor="newsletter-email">
-                                Votre Email
+                                {t('LabelYourEmail.translation.content')}
                             </label>
                             <input
                                 id="newsletter-email"
                                 type="email"
                                 required
-                                placeholder="Votre Email"
+                                placeholder={t('PlaceholderYourEmail.translation.content')}
                                 className="input px-4"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -213,8 +213,8 @@ export default function Footer(): JSX.Element {
                                 disabled={pending}
                                 className="border-l border-brand-dark-300/60 px-4 whitespace-nowrap text-sm font-semibold hover:bg-brand-gray-50 transition-colors inline-flex items-center gap-2 disabled:opacity-60"
                             >
-                                <span>{pending ? 'Inscription ...' : "S'inscrire"}</span>
-                                <HiArrowUpRight className="-rotate-45" aria-hidden />
+                                <span>{pending ? t('ButtonSubscribing.translation.content') : t('ButtonSubscribe.translation.content')}</span>
+                                <HiArrowUpRight className="-rotate-45" aria-hidden/>
                             </button>
                         </form>
 
@@ -223,7 +223,8 @@ export default function Footer(): JSX.Element {
                     </div>
                 </div>
 
-                <div className="border-t border-brand-dark-200 pt-6 flex flex-col md:flex-row gap-6 md:gap-4 justify-between items-center relative">
+                <div
+                    className="border-t border-brand-dark-200 pt-6 flex flex-col md:flex-row gap-6 md:gap-4 justify-between items-center relative">
                     <p className="text-sm text-brand-gray-600 text-center md:text-left">
                         {copyright}
                     </p>
@@ -237,7 +238,7 @@ export default function Footer(): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaInstagram />
+                                <FaInstagram/>
                             </Link>
                         )}
                         {social.facebook && (
@@ -248,7 +249,7 @@ export default function Footer(): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaFacebookF />
+                                <FaFacebookF/>
                             </Link>
                         )}
                         {social.tripadvisor && (
@@ -259,7 +260,7 @@ export default function Footer(): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaTripadvisor />
+                                <FaTripadvisor/>
                             </Link>
                         )}
                         {social.twitter && (
@@ -270,7 +271,7 @@ export default function Footer(): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaXTwitter />
+                                <FaXTwitter/>
                             </Link>
                         )}
                         {social.youtube && (
@@ -281,7 +282,7 @@ export default function Footer(): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaYoutube />
+                                <FaYoutube/>
                             </Link>
                         )}
                     </div>
@@ -289,11 +290,11 @@ export default function Footer(): JSX.Element {
                     <button
                         onClick={scrollToTop}
                         className="md:absolute md:-top-6 md:right-0 w-12 aspect-square rounded-full bg-brand-dark-800 text-white inline-flex items-center justify-center hover:bg-brand-dark-900 transition-colors"
-                        aria-label="Remonter en haut"
-                        title="Back to top"
+                        aria-label={t('AriaLabelBackToTop.translation.content')}
+                        title={t('TitleBackToTop.translation.content')}
                         type="button"
                     >
-                        <HiArrowUp />
+                        <HiArrowUp/>
                     </button>
                 </div>
             </div>

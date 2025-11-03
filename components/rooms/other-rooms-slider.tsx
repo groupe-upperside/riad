@@ -7,6 +7,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import {FaArrowLeft, FaArrowRight} from "react-icons/fa6";
 import {HiArrowUpRight} from "react-icons/hi2";
+import {useTranslations} from 'next-intl';
 
 export type RiadCard = {
     id?: string;
@@ -31,13 +32,14 @@ type OtherRiadsSliderProps = {
 
 export default function OtherRiadsSlider({
                                              id = "other-riads-section",
-                                             title = "Autres hébergements à découvrir",
+                                             title,
                                              items,
                                              bgClass = "bg-white",
                                              textTitleClass = "text-brand-dark",
                                              textBodyClass = "text-brand-gray",
                                              className,
                                          }: OtherRiadsSliderProps) {
+    const t = useTranslations('OtherRiadsSlider');
     const trackRef = useRef<HTMLDivElement>(null);
 
     const scrollByAmount = (dir: "prev" | "next") => {
@@ -54,11 +56,13 @@ export default function OtherRiadsSlider({
         <section id={id} className={clsx("py-24", bgClass, className)}>
             <Container>
                 <div className="flex justify-between items-center mb-12">
-                    <h2 className={clsx("font-serif text-4xl md:text-5xl capitalize text-brand-dark", textTitleClass)}>{title}</h2>
+                    <h2 className={clsx("font-serif text-4xl md:text-5xl capitalize text-brand-dark", textTitleClass)}>
+                        {title || t('DefaultTitle.translation.content')}
+                    </h2>
                     <div className="flex space-x-2">
                         <button
                             onClick={() => scrollByAmount("prev")}
-                            aria-label="Précédent"
+                            aria-label={t('AriaLabelPrevious.translation.content')}
                             className={clsx(
                                 "h-10 w-10 border text-sm transition-colors cursor-pointer",
                                 "border-gray-300 text-brand-gray hover:bg-gray-100 hover:border-brand-dark"
@@ -68,7 +72,7 @@ export default function OtherRiadsSlider({
                         </button>
                         <button
                             onClick={() => scrollByAmount("next")}
-                            aria-label="Suivant"
+                            aria-label={t('AriaLabelNext.translation.content')}
                             className={clsx(
                                 "h-10 w-10 border text-sm transition-colors cursor-pointer",
                                 "border-gray-300 text-brand-gray hover:bg-gray-100 hover:border-brand-dark"

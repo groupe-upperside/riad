@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslations} from 'next-intl';
 
 export interface EventSpace {
     id: string;
@@ -40,17 +41,23 @@ const SpaceCard: React.FC<SpaceCardProps> = ({ space }) => {
 };
 
 const ActivitiesShowcase: React.FC<EventsShowcaseProps> = ({
-                                                           title = "Nos Espaces Événementiels",
-                                                           subtitle = "Des lieux d'exception adaptés à tous vos besoins, de l'intime au grandiose.",
-                                                           spaces,
-                                                           className = ""
-                                                       }) => {
+                                                               title,
+                                                               subtitle,
+                                                               spaces,
+                                                               className = ""
+                                                           }) => {
+    const t = useTranslations('EventsShowcase');
+
     return (
         <section id="events-showcase" className={`py-24 bg-brand-beige ${className}`}>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">{title}</h2>
-                    <p className="text-base leading-relaxed my-8 text-brand-gray-500">{subtitle}</p>
+                    <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">
+                        {title || t('DefaultTitle.translation.content')}
+                    </h2>
+                    <p className="text-base leading-relaxed my-8 text-brand-gray-500">
+                        {subtitle || t('DefaultSubtitle.translation.content')}
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

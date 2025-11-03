@@ -7,12 +7,14 @@ import {HiArrowUpRight} from "react-icons/hi2";
 import SectionHeader from "@/components/ui/section-header";
 import {Slide} from "@/lib/constants";
 import {Link} from "@/lib/i18n/navigation";
+import {useTranslations} from 'next-intl';
 
 interface ExperienceSliderProps {
     sliderContent: Slide[]
 }
 
 export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps) {
+    const t = useTranslations('ExperiencesSlider');
     const [current, setCurrent] = useState<number>(0)
     const [dragX, setDragX] = useState<number>(0)
     const [dir, setDir] = useState<1 | -1>(1)
@@ -227,9 +229,9 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                         {slide.link && (
                             //@ts-expect-error - link is optional
                             <Link href={slide.link} className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
-                                  aria-label="Read more">
+                                  aria-label={t('AriaLabelReadMore.translation.content')}>
                             <span className="relative pb-1 text-base font-medium uppercase text-brand-dark-800">
-                                Découvrir
+                                {t('LinkDiscover.translation.content')}
                                 <span
                                     className="absolute bottom-0 left-0 h-[2px] w-3/4 bg-brand-gold transition-transform group-hover:scale-x-120 group-hover:w-full"/>
                             </span>
@@ -239,7 +241,7 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                     </div>
                     <div className="mt-8 flex gap-2">
                         {sliderContent.map((_, i) => (
-                            <button key={i} onClick={() => slideTo(i)} aria-label={`Aller à la diapositive ${i + 1}`}
+                            <button key={i} onClick={() => slideTo(i)} aria-label={t('AriaLabelGoToSlide.translation.content', {slideNumber: i + 1})}
                                     className={`h-2 cursor-pointer rounded-full transition-all ${i === index ? 'w-8 bg-brand-gold' : 'w-2 bg-gray-300 hover:bg-gray-400'}`}/>
                         ))}
                     </div>
@@ -251,7 +253,7 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
     return (
         <section
             aria-roledescription="carousel"
-            aria-label="Expériences"
+            aria-label={t('AriaLabelExperiences.translation.content')}
             tabIndex={0}
             onKeyDown={onKeyDown}
             className={`relative bg-white select-none touch-pan-y ${dragging ? 'cursor-grabbing' : 'cursor-grab'}`}

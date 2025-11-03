@@ -1,4 +1,5 @@
 import {Facility, FacilityCard} from "@/components/common/facility-card";
+import React from "react";
 
 interface RestaurantShowcaseProps {
     title: string;

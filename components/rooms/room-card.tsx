@@ -6,22 +6,24 @@ import {FaArrowRight, FaCoffee, FaInfoCircle, FaShower, FaSnowflake, FaWifi} fro
 import {cn} from "@/lib/utils/utils";
 import {Room} from "@/lib/types";
 import Link from "next/link";
+import {useTranslations} from 'next-intl';
 
 interface RoomCardProps {
     room: Room
     background?: string
 }
 
-const commonAmenities = [
-    {icon: FaShower, label: 'Douche italienne & sèche-cheveux'},
-    {icon: FaWifi, label: 'Wifi & TV'},
-    {icon: FaCoffee, label: 'Café, mini bar & coffre fort'},
-    {icon: FaSnowflake, label: 'Climatisation'},
-]
-
 export default function RoomCard({room, background}: RoomCardProps) {
+    const t = useTranslations('RoomCard');
     const [showDetails, setShowDetails] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
+
+    const commonAmenities = [
+        {icon: FaShower, label: t('AmenityShower.translation.content')},
+        {icon: FaWifi, label: t('AmenityWifiTV.translation.content')},
+        {icon: FaCoffee, label: t('AmenityCoffeeMinibar.translation.content')},
+        {icon: FaSnowflake, label: t('AmenityAirConditioning.translation.content')},
+    ];
 
     useEffect(() => {
         const checkMobile = () => {
@@ -129,11 +131,11 @@ export default function RoomCard({room, background}: RoomCardProps) {
                             onClick={() => setShowDetails(false)}
                             className="text-sm text-brand-gray-500 mb-3"
                         >
-                            ← Retour
+                            {t('ButtonBack.translation.content')}
                         </button>
                         <Link href={"/booking"}
-                            className="w-full bg-brand-dark-800 text-white py-3 font-semibold tracking-wider hover:bg-brand-gold-400 transition-colors duration-300 flex items-center justify-center gap-2">
-                            RÉSERVER MAINTENANT
+                              className="w-full bg-brand-dark-800 text-white py-3 font-semibold tracking-wider hover:bg-brand-gold-400 transition-colors duration-300 flex items-center justify-center gap-2">
+                            {t('ButtonBookNow.translation.content')}
                             <FaArrowRight/>
                         </Link>
                     </div>
@@ -147,14 +149,14 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         className="inline-flex items-center gap-2 text-brand-dark-800 font-semibold tracking-wider hover:text-brand-gold-400 transition-colors"
                     >
                         <FaInfoCircle/>
-                        <span>Voir détails</span>
+                        <span>{t('ButtonViewDetails.translation.content')}</span>
                     </button>
                 ) : (
                     <Link href={"/booking"}
-                        className="group/btn cursor-pointer inline-flex items-center font-semibold tracking-wider text-brand-dark-800 transition-all duration-700 ease-out hover:text-brand-gold-400">
+                          className="group/btn cursor-pointer inline-flex items-center font-semibold tracking-wider text-brand-dark-800 transition-all duration-700 ease-out hover:text-brand-gold-400">
                         <span
                             className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 translate-y-0.5 transition-[max-width,opacity,transform] duration-700 ease-out group-hover/btn:max-w-[180px] group-hover/btn:opacity-100 group-hover/btn:translate-y-0">
-                            Réserver maintenant
+                            {t('ButtonBookNowHover.translation.content')}
                         </span>
                         <FaArrowRight
                             className="ml-0 transition-[margin,transform] duration-700 ease-out group-hover/btn:ml-2 group-hover/btn:translate-x-0.5"/>

@@ -1,18 +1,20 @@
 import {FaCalendar} from 'react-icons/fa'
 import {CTASectionProps} from "@/components/common/CTA-section";
 
-export const roomsCTA: CTASectionProps = {
-    title: 'Réservez Votre Séjour',
-    description: 'Découvrez nos hébergements et réservez votre séjour dans l\'univers unique du Riad Nashira. Chaque chambre vous attend pour une expérience authentique et raffinée.',
+type TranslationFunction = (key: string) => string;
+
+export const getRoomsCTA = (t: TranslationFunction): CTASectionProps => ({
+    title: t('RoomsCTA.Title.translation.content'),
+    description: t('RoomsCTA.Description.translation.content'),
     backgroundColor: 'bg-brand-gold',
     textColor: 'text-white',
     buttons: [
         {
             href: "/booking",
-            text: 'RÉSERVER MAINTENANT',
+            text: t('RoomsCTA.ButtonBookNow.translation.content'),
             variant: 'outline',
             icon: FaCalendar,
             className: 'border-2 border-white text-white hover:bg-white hover:text-brand-gold-400'
         }
     ]
-};
+});

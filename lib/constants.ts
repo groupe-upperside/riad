@@ -51,95 +51,96 @@ export const images = {
     }
 }
 
-export const amenities: Amenity[] = [
-    {id: '1', icon: FaSpa, label: 'SPA & Jacuzzi'},
-    {id: '2', icon: FaSwimmingPool, label: 'Piscines & Solarium'},
-    {id: '3', icon: FaUtensils, label: 'Restaurants & Bars'},
-    {id: '4', icon: IoIosFitness, label: 'Fitness'},
-    {id: '5', icon: MdElevator, label: 'Ascenceur'},
-    {id: '6', icon: FaWifi, label: 'WIFI Gratuit'},
-]
+export const getAmenities = (t: (key: string) => string): Amenity[] => [
+    {id: '1', icon: FaSpa, label: t('Constants.Amenities.Spa.translation.content')},
+    {id: '2', icon: FaSwimmingPool, label: t('Constants.Amenities.Pools.translation.content')},
+    {id: '3', icon: FaUtensils, label: t('Constants.Amenities.Restaurants.translation.content')},
+    {id: '4', icon: IoIosFitness, label: t('Constants.Amenities.Fitness.translation.content')},
+    {id: '5', icon: MdElevator, label: t('Constants.Amenities.Elevator.translation.content')},
+    {id: '6', icon: FaWifi, label: t('Constants.Amenities.Wifi.translation.content')},
+];
 
 
-export const rooms: Room[] = [
+export const getRooms = (t: (key: string) => string): Room[] => [
     {
         id: '1',
-        title: 'Confort',
+        title: t('Constants.Rooms.Comfort.Title.translation.content'),
         price: 299,
         image: images.rooms.deluxe,
         slug: 'confort-room',
-        description: 'Simplicité raffinée et confort moderne au cœur de la Médina.',
+        description: t('Constants.Rooms.Comfort.Description.translation.content'),
         amenities: [
-            {icon: FaBed, label: 'Trois chambres confort'},
-            {icon: FaSnowflake, label: '25 à 30 m²'},
+            {icon: FaBed, label: t('Constants.Rooms.Comfort.Amenity1.translation.content')},
+            {icon: FaSnowflake, label: t('Constants.Rooms.Comfort.Amenity2.translation.content')},
         ]
     },
     {
         id: '2',
-        title: 'Deluxe',
+        title: t('Constants.Rooms.Deluxe.Title.translation.content'),
         price: 399,
         image: images.rooms.junior,
         slug: 'deluxe-room',
-        description: 'L’alliance du confort spacieux et du charme marocain.',
+        description: t('Constants.Rooms.Deluxe.Description.translation.content'),
         amenities: [
-            {icon: FaBed, label: 'Neuf chambres deluxe'},
-            {icon: MdDeck, label: '30 à 42 m²'},
+            {icon: FaBed, label: t('Constants.Rooms.Deluxe.Amenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.Rooms.Deluxe.Amenity2.translation.content')},
         ]
     },
     {
         id: '3',
-        title: 'Suite',
+        title: t('Constants.Rooms.Suite.Title.translation.content'),
         price: 599,
         image: images.rooms.patio,
         slug: 'suite-room',
-        description: 'L’espace, la lumière et l’élégance pour un séjour d’exception.',
+        description: t('Constants.Rooms.Suite.Description.translation.content'),
         amenities: [
-            {icon: FaBed, label: 'trois suites'},
-            {icon: MdDeck, label: '45 à 60 m²'},
+            {icon: FaBed, label: t('Constants.Rooms.Suite.Amenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.Rooms.Suite.Amenity2.translation.content')},
         ]
     },
     {
         id: '4',
-        title: 'Suite spéciale',
+        title: t('Constants.Rooms.SpecialSuite.Title.translation.content'),
         price: 799,
         image: images.rooms.nashira,
         slug: 'suite-speciale',
-        description: 'Deux suites d\'exception : la Riner en hommage au champion de judo, et la Nashira, la plus grande suite du Riad.',
+        description: t('Constants.Rooms.SpecialSuite.Description.translation.content'),
         amenities: [
-            {icon: FaCrown, label: 'Suites Riner & Nashira'},
-            {icon: MdDeck, label: 'Terrasse panoramique'},
-            {icon: FaCouch, label: 'Plus grande suite'},
-            {icon: FaConciergeBell, label: 'Service butler'}
+            {icon: FaCrown, label: t('Constants.Rooms.SpecialSuite.Amenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.Rooms.SpecialSuite.Amenity2.translation.content')},
+            {icon: FaCouch, label: t('Constants.Rooms.SpecialSuite.Amenity3.translation.content')},
+            {icon: FaConciergeBell, label: t('Constants.Rooms.SpecialSuite.Amenity4.translation.content')}
         ]
     }
-]
+];
 
-export const testimonials: Testimonial[] = [
+export const getTestimonials = (t: (key: string) => string): Testimonial[] => [
     {
         id: '1',
-        name: 'John Wick',
-        location: 'Moscou / Russie',
+        name: t('Constants.Testimonials.Testimonial1.Name.translation.content'),
+        location: t('Constants.Testimonials.Testimonial1.Location.translation.content'),
         rating: 5,
-        review: "Le meilleur riad où j’aie jamais eu le privilège de séjourner. Le bâtiment est superbe, et il ne cesse d’émerveiller. Une expérience véritablement inoubliable.",
+        review: t('Constants.Testimonials.Testimonial1.Review.translation.content'),
         avatar: images.avatars.avatar1
     },
     {
         id: '2',
-        name: 'Nathalie Portman',
-        location: 'Paris / France',
+        name: t('Constants.Testimonials.Testimonial2.Name.translation.content'),
+        location: t('Constants.Testimonials.Testimonial2.Location.translation.content'),
         rating: 5,
-        review: 'C’est l’une des meilleures décisions que nous ayons jamais prises. Nous pensions réserver un riad, mais nous avons trouvé une famille qui nous soutient. Le personnel est incroyable.',
+        review: t('Constants.Testimonials.Testimonial2.Review.translation.content'),
         avatar: images.avatars.avatar2
     },
     {
         id: '3',
-        name: 'Will Smith',
-        location: 'Madrid / Espagne',
+        name: t('Constants.Testimonials.Testimonial3.Name.translation.content'),
+        location: t('Constants.Testimonials.Testimonial3.Location.translation.content'),
         rating: 5,
-        review: 'L’ambiance était fabuleuse. Le bar de la piscine est idéal pour se détendre. Le personnel est très aimable et chaleureux. Une escapade parfaite loin de l’agitation de la ville.',
+        review: t('Constants.Testimonials.Testimonial3.Review.translation.content'),
         avatar: images.avatars.avatar3
     },
-]
+];
+
 
 type GalleryItem = {
     id: string | number;
@@ -149,15 +150,15 @@ type GalleryItem = {
     height: number;
 };
 
-export const activities: Activity[] = [
-    {id: '1', title: 'Transport aéroport & VIP', image: images.activities.transport},
-    {id: '2', title: 'Yoga & Coach Fitness', image: images.activities.coach},
-    {id: '3', title: 'Service coiffure', image: images.activities.hair},
-    {id: '4', title: 'Evènements & Privatisation', image: images.activities.events},
-    {id: '5', title: 'Activités & Excursions', image: images.activities.activities},
-    {id: '6', title: 'Blanchisserie & Pressing', image: images.activities.pressing},
-    {id: '7', title: 'Boutique', image: images.activities.shop},
-]
+export const getActivities = (t: (key: string) => string): Activity[] => [
+    {id: '1', title: t('Constants.Activities.Transport.translation.content'), image: images.activities.transport},
+    {id: '2', title: t('Constants.Activities.Yoga.translation.content'), image: images.activities.coach},
+    {id: '3', title: t('Constants.Activities.Hair.translation.content'), image: images.activities.hair},
+    {id: '4', title: t('Constants.Activities.Events.translation.content'), image: images.activities.events},
+    {id: '5', title: t('Constants.Activities.Activities.translation.content'), image: images.activities.activities},
+    {id: '6', title: t('Constants.Activities.Laundry.translation.content'), image: images.activities.pressing},
+    {id: '7', title: t('Constants.Activities.Shop.translation.content'), image: images.activities.shop},
+];
 
 export const galleryImages: GalleryItem[] = [
     {
@@ -499,16 +500,21 @@ export const fitnessData: SecondaryFacility[] = [
     }
 ];
 
-export const spaSlides: Slide[] = [
+export const getSpaSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: 'BIEN-ÊTRE & SPA',
-        title: 'Spa Et Rituels De Bien-Être',
+        category: t('Constants.SpaSlides.Slide1.Category.translation.content') as SlideCategory,
+        title: t('Constants.SpaSlides.Slide1.Title.translation.content'),
         description: [
-            'Notre spa vous invite à un voyage sensoriel unique inspiré des traditions marocaines.',
-            'Entre hammam traditionnel, piscines chauffées et fitness en rooftop , notre riad offre une expérience de bien-être totale , unique dans la Médina'
+            t('Constants.SpaSlides.Slide1.Description1.translation.content'),
+            t('Constants.SpaSlides.Slide1.Description2.translation.content')
         ],
-        features: ['Hammam Traditionnel', 'Massages', 'Soins Naturels', 'Espace Fitness'],
+        features: [
+            t('Constants.SpaSlides.Slide1.Feature1.translation.content'),
+            t('Constants.SpaSlides.Slide1.Feature2.translation.content'),
+            t('Constants.SpaSlides.Slide1.Feature3.translation.content'),
+            t('Constants.SpaSlides.Slide1.Feature4.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80'
@@ -516,30 +522,39 @@ export const spaSlides: Slide[] = [
     },
     {
         id: 2,
-        category: 'DÉTENTE',
-        title: 'Trois Espaces Aquatiques Uniques',
+        category: t('Constants.SpaSlides.Slide2.Category.translation.content') as SlideCategory,
+        title: t('Constants.SpaSlides.Slide2.Title.translation.content'),
         description: [
-            'Profitez de nos trois piscines pour vous ressourcer dans un cadre exceptionnel.',
-            'Une piscine sur le rooftop avec vue panoramique sur la Médina, une piscine intérieure chauffée et une piscine au cœur du patio. Des oasis de tranquillité.'
+            t('Constants.SpaSlides.Slide2.Description1.translation.content'),
+            t('Constants.SpaSlides.Slide2.Description2.translation.content')
         ],
-        features: ['Piscine Rooftop', 'Piscine Chauffée', 'Piscine Patio', 'Transats Premium'],
+        features: [
+            t('Constants.SpaSlides.Slide2.Feature1.translation.content'),
+            t('Constants.SpaSlides.Slide2.Feature2.translation.content'),
+            t('Constants.SpaSlides.Slide2.Feature3.translation.content'),
+            t('Constants.SpaSlides.Slide2.Feature4.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80'
         }
     },
-]
+];
 
-export const eventsSlides: Slide[] = [
+export const getEventsSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: 'ÉVÉNEMENTS PROFESSIONNELS',
-        title: 'Séminaires et Réunions Professionnelles',
+        category: t('Constants.EventsSlides.Slide1.Category.translation.content') as SlideCategory,
+        title: t('Constants.EventsSlides.Slide1.Title.translation.content'),
         description: [
-            'Organisez vos événements d\'entreprise dans un cadre inspirant et raffiné. Nos espaces modulables s\'adaptent à tous vos besoins professionnels.',
-            'Équipements audiovisuels de pointe, service de restauration personnalisé et accompagnement dédié pour la réussite de vos événements.'
+            t('Constants.EventsSlides.Slide1.Description1.translation.content'),
+            t('Constants.EventsSlides.Slide1.Description2.translation.content')
         ],
-        features: ['Salles Modulables', 'Équipements High-Tech', 'Service Traiteur'],
+        features: [
+            t('Constants.EventsSlides.Slide1.Feature1.translation.content'),
+            t('Constants.EventsSlides.Slide1.Feature2.translation.content'),
+            t('Constants.EventsSlides.Slide1.Feature3.translation.content')
+        ],
         images: {
             main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png',
             secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/9f194e8d44-73d7ed8e3f5811381e05.png'
@@ -547,13 +562,17 @@ export const eventsSlides: Slide[] = [
     },
     {
         id: 2,
-        category: 'ÉVÉNEMENTS PRIVÉS',
-        title: 'Dîners Privés et Soirées Exclusives',
+        category: t('Constants.EventsSlides.Slide2.Category.translation.content') as SlideCategory,
+        title: t('Constants.EventsSlides.Slide2.Title.translation.content'),
         description: [
-            'Créez des moments intimes et raffinés pour vos invités. Nos chefs conçoivent des menus sur mesure dans des espaces privatisés d\'exception.',
-            'Service personnalisé, ambiance sur mesure et attention aux moindres détails pour des soirées mémorables et exclusives.'
+            t('Constants.EventsSlides.Slide2.Description1.translation.content'),
+            t('Constants.EventsSlides.Slide2.Description2.translation.content')
         ],
-        features: ['Menus Personnalisés', 'Service Exclusif', 'Ambiance Sur Mesure'],
+        features: [
+            t('Constants.EventsSlides.Slide2.Feature1.translation.content'),
+            t('Constants.EventsSlides.Slide2.Feature2.translation.content'),
+            t('Constants.EventsSlides.Slide2.Feature3.translation.content')
+        ],
         images: {
             main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/61e7871271-6dd1d996f7a4cc2c0992.png',
             secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/89055ea760-73006c17bb6da7a6f155.png'
@@ -561,13 +580,17 @@ export const eventsSlides: Slide[] = [
     },
     {
         id: 3,
-        category: 'MOMENTS PRÉCIEUX',
-        title: 'Célébrations et Moments de Vie',
+        category: t('Constants.EventsSlides.Slide3.Category.translation.content') as SlideCategory,
+        title: t('Constants.EventsSlides.Slide3.Title.translation.content'),
         description: [
-            'Mariages, anniversaires, baptêmes... Chaque moment important mérite un cadre à la hauteur de vos émotions et de vos rêves.',
-            'Notre équipe vous accompagne dans la création d\'événements uniques, reflétant votre personnalité et vos souhaits les plus chers.'
+            t('Constants.EventsSlides.Slide3.Description1.translation.content'),
+            t('Constants.EventsSlides.Slide3.Description2.translation.content')
         ],
-        features: ['Mariages', 'Anniversaires', 'Événements Familiaux'],
+        features: [
+            t('Constants.EventsSlides.Slide3.Feature1.translation.content'),
+            t('Constants.EventsSlides.Slide3.Feature2.translation.content'),
+            t('Constants.EventsSlides.Slide3.Feature3.translation.content')
+        ],
         images: {
             main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/f64c1a0ffb-976c7943c5562cb6b6a9.png',
             secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4a62406da9-30273bf52e80cf233724.png'
@@ -575,13 +598,17 @@ export const eventsSlides: Slide[] = [
     },
     {
         id: 4,
-        category: 'EXCLUSIVITÉ TOTALE',
-        title: 'Privatisation Totale du Riad',
+        category: t('Constants.EventsSlides.Slide4.Category.translation.content') as SlideCategory,
+        title: t('Constants.EventsSlides.Slide4.Title.translation.content'),
         description: [
-            'L\'expérience ultime : le Riad Nashira entièrement à votre disposition. Un privilège rare pour des événements d\'exception et une intimité absolue.',
-            'Tous nos espaces, services et équipes dédiés exclusivement à votre événement pour une expérience sur mesure et inoubliable.'
+            t('Constants.EventsSlides.Slide4.Description1.translation.content'),
+            t('Constants.EventsSlides.Slide4.Description2.translation.content')
         ],
-        features: ['Riad Entier', 'Service Dédié', 'Intimité Absolue'],
+        features: [
+            t('Constants.EventsSlides.Slide4.Feature1.translation.content'),
+            t('Constants.EventsSlides.Slide4.Feature2.translation.content'),
+            t('Constants.EventsSlides.Slide4.Feature3.translation.content')
+        ],
         images: {
             main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/6d8ead5dc2-9b054213d63436e9568a.png',
             secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b9d9b0a36c-30c1db56b54cd8485586.png'
@@ -589,52 +616,56 @@ export const eventsSlides: Slide[] = [
     }
 ];
 
-export const eventSpacesData: EventSpace[] = [
+export const getEventSpacesData = (t: (key: string) => string): EventSpace[] => [
     {
         id: "courtyard-space",
-        title: "Cour Centrale",
-        description: "Le cœur du riad, idéal pour les cérémonies intimes et les cocktails.",
+        title: t('Constants.EventSpaces.Courtyard.Title.translation.content'),
+        description: t('Constants.EventSpaces.Courtyard.Description.translation.content'),
         capacity: 80,
-        locationType: "Intérieur/Extérieur",
+        locationType: t('Constants.EventSpaces.Courtyard.LocationType.translation.content') as "Intérieur" | "Extérieur" | "Intérieur/Extérieur",
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6558f36621-e20e0706a6c5c022bf86.png",
-            alt: "Beautiful central courtyard of Moroccan riad with fountain, traditional tiles, orange trees, perfect for intimate ceremonies"
+            alt: t('Constants.EventSpaces.Courtyard.ImageAlt.translation.content')
         }
     },
     {
         id: "rooftop-space",
-        title: "Terrasse Panoramique",
-        description: "Vue imprenable sur Marrakech pour des soirées mémorables.",
+        title: t('Constants.EventSpaces.Rooftop.Title.translation.content'),
+        description: t('Constants.EventSpaces.Rooftop.Description.translation.content'),
         capacity: 120,
-        locationType: "Extérieur",
+        locationType: t('Constants.EventSpaces.Rooftop.LocationType.translation.content') as "Intérieur" | "Extérieur" | "Intérieur/Extérieur",
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/863856695e-5849c187e15562a08213.png",
-            alt: "Stunning rooftop terrace in Marrakech with panoramic views, set up for elegant evening reception with string lights"
+            alt: t('Constants.EventSpaces.Rooftop.ImageAlt.translation.content')
         }
     },
     {
         id: "salon-space",
-        title: "Salon Marocain",
-        description: "Ambiance authentique pour des réunions privilégiées.",
+        title: t('Constants.EventSpaces.Salon.Title.translation.content'),
+        description: t('Constants.EventSpaces.Salon.Description.translation.content'),
         capacity: 30,
-        locationType: "Intérieur",
+        locationType: t('Constants.EventSpaces.Salon.LocationType.translation.content') as "Intérieur" | "Extérieur" | "Intérieur/Extérieur",
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/74a5b35bbe-3bebfecc45f28de0ed52.png",
-            alt: "Elegant Moroccan salon with traditional seating, ornate decorations, perfect for private meetings and intimate gatherings"
+            alt: t('Constants.EventSpaces.Salon.ImageAlt.translation.content')
         }
     }
 ];
 
-export const activitiesSlides: Slide[] = [
+export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: "AVENTURE EXTRÊME",
-        title: "Excursion en Quad et Buggy",
+        category: t('Constants.ActivitiesSlides.Slide1.Category.translation.content') as SlideCategory,
+        title: t('Constants.ActivitiesSlides.Slide1.Title.translation.content'),
         description: [
-            "Vivez l'adrénaline pure en explorant les paysages spectaculaires du désert marocain. Une aventure tout-terrain inoubliable.",
-            "Équipement professionnel fourni, guides expérimentés et circuit adapté à tous les niveaux pour une expérience sécurisée."
+            t('Constants.ActivitiesSlides.Slide1.Description1.translation.content'),
+            t('Constants.ActivitiesSlides.Slide1.Description2.translation.content')
         ],
-        features: ["Équipement Inclus", "Guide Expert", "Tous Niveaux"],
+        features: [
+            t('Constants.ActivitiesSlides.Slide1.Feature1.translation.content'),
+            t('Constants.ActivitiesSlides.Slide1.Feature2.translation.content'),
+            t('Constants.ActivitiesSlides.Slide1.Feature3.translation.content')
+        ],
         images: {
             main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/0b7ff82c22-64ad22472bcaae938859.png",
             secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
@@ -642,13 +673,17 @@ export const activitiesSlides: Slide[] = [
     },
     {
         id: 2,
-        category: "SPORT DE PRESTIGE",
-        title: "Golf à Marrakech",
+        category: t('Constants.ActivitiesSlides.Slide2.Category.translation.content') as SlideCategory,
+        title: t('Constants.ActivitiesSlides.Slide2.Title.translation.content'),
         description: [
-            "Découvrez les plus beaux parcours de golf de Marrakech avec vue imprenable sur l'Atlas. Excellence et raffinement garantis.",
-            "Accès privilégié aux clubs prestigieux, équipement haut de gamme et service personnalisé pour une expérience d'exception."
+            t('Constants.ActivitiesSlides.Slide2.Description1.translation.content'),
+            t('Constants.ActivitiesSlides.Slide2.Description2.translation.content')
         ],
-        features: ["Parcours Premium", "Équipement Fourni", "Transport Inclus"],
+        features: [
+            t('Constants.ActivitiesSlides.Slide2.Feature1.translation.content'),
+            t('Constants.ActivitiesSlides.Slide2.Feature2.translation.content'),
+            t('Constants.ActivitiesSlides.Slide2.Feature3.translation.content')
+        ],
         images: {
             main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b8927524b2-a48d98923a544bed8973.png",
             secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c27f84a6af-bc8129bd50aa1ba899aa.png"
@@ -656,65 +691,59 @@ export const activitiesSlides: Slide[] = [
     }
 ];
 
-export const otherActivitiesData =  [
+export const getOtherActivitiesData = (t: (key: string) => string) => [
     {
         id: "desert-excursion-card",
-        title: "Excursions Désert",
-        description:
-            "Partez à la découverte du désert d'Agafay, nuit sous les étoiles et rencontre avec les nomades.",
+        title: t('Constants.OtherActivities.Desert.Title.translation.content'),
+        description: t('Constants.OtherActivities.Desert.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/bf8d658fa1-3c567cdec2565ebf0bcf.png",
-            alt: "Sahara desert excursion with camels and Berber camp, golden sand dunes, traditional nomadic experience",
+            alt: t('Constants.OtherActivities.Desert.ImageAlt.translation.content'),
         },
     },
     {
         id: "horse-riding-card",
-        title: "Balade à Cheval",
-        description:
-            "Explorez la palmeraie et les environs de Marrakech à cheval, une expérience unique.",
+        title: t('Constants.OtherActivities.HorseRiding.Title.translation.content'),
+        description: t('Constants.OtherActivities.HorseRiding.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ff0f2f42a8-7a4347d908e14d14d959.png",
-            alt: "Horseback riding in Moroccan countryside, Atlas Mountains background, equestrian adventure, traditional riding",
+            alt: t('Constants.OtherActivities.HorseRiding.ImageAlt.translation.content'),
         },
     },
     {
         id: "essaouira-card",
-        title: "Journée Essaouira",
-        description:
-            "Accompagnez d'un guide, découvrez la perle de l'Atlantique, ses remparts et son ambiance bohème unique.",
+        title: t('Constants.OtherActivities.Essaouira.Title.translation.content'),
+        description: t('Constants.OtherActivities.Essaouira.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e8114fc3cb-1700b859c31688cf5b27.png",
-            alt: "Essaouira coastal city Morocco, blue and white medina, Atlantic Ocean, fishing port, historic ramparts",
+            alt: t('Constants.OtherActivities.Essaouira.ImageAlt.translation.content'),
         },
     },
     {
         id: "cooking-class-card",
-        title: "Cours de Cuisine",
-        description:
-            "Apprenez les secrets de la cuisine marocaine avec nos chefs expérimentés.",
+        title: t('Constants.OtherActivities.Cooking.Title.translation.content'),
+        description: t('Constants.OtherActivities.Cooking.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ae8263489e-b83b032f87ae704c3841.png",
-            alt: "Moroccan cooking class, traditional tagine preparation, spices market visit, culinary experience, chef instruction",
+            alt: t('Constants.OtherActivities.Cooking.ImageAlt.translation.content'),
         },
     },
     {
         id: "medina-tour-card",
-        title: "Visite Guidée Médina",
-        description:
-            "Plongez au cœur de la médina et de ses souks avec un guide local expert et passionné.",
+        title: t('Constants.OtherActivities.Medina.Title.translation.content'),
+        description: t('Constants.OtherActivities.Medina.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/673726ac87-ba0c37d34e4547597665.png",
-            alt: "Guided tour of Marrakech medina, traditional souks, local guide, cultural discovery, historic monuments",
+            alt: t('Constants.OtherActivities.Medina.ImageAlt.translation.content'),
         },
     },
     {
         id: "atlas-mountains-card",
-        title: "Randonnée Atlas",
-        description:
-            "Explorez les villages berbères et les sommets de l'Atlas marocain.",
+        title: t('Constants.OtherActivities.Atlas.Title.translation.content'),
+        description: t('Constants.OtherActivities.Atlas.Description.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/37793ac69d-275b036d343274fa9974.png",
-            alt: "Atlas Mountains hiking trail, Berber villages, mountain landscape, trekking adventure, traditional architecture",
+            alt: t('Constants.OtherActivities.Atlas.ImageAlt.translation.content'),
         },
     },
 ];

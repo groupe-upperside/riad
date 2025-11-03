@@ -2,6 +2,7 @@ import {ReactNode} from "react";
 import {FaVideo, FaWifi} from "react-icons/fa";
 import {AiFillPrinter} from "react-icons/ai";
 import {MdMeetingRoom} from "react-icons/md";
+import {useTranslations} from 'next-intl';
 
 export type ServiceCardProps = {
     id?: string;
@@ -33,38 +34,42 @@ function BaseCard({
 }
 
 export const ServicesIncluded = () => {
+    const t = useTranslations('ServicesIncluded');
+
     return (
         <section id="services-section" className="py-24 bg-brand-beige">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="font-serif text-4xl text-brand-dark mb-4">Services Inclus</h2>
-                    <p className="text-brand-gray text-base leading-relaxed mx-auto">Un accompagnement complet pour la
-                        réussite
-                        de votre événement.</p>
+                    <h2 className="font-serif text-4xl text-brand-dark mb-4">
+                        {t('MainTitle.translation.content')}
+                    </h2>
+                    <p className="text-brand-gray text-base leading-relaxed mx-auto">
+                        {t('MainDescription.translation.content')}
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <BaseCard
                         id={"planning-service"}
-                        title={"Salle dédiée"}
+                        title={t('ServiceDedicatedRoom.translation.content')}
                         icon={<MdMeetingRoom/>}
                     />
 
                     <BaseCard
                         id={"catering-service"}
-                        title={"WIFI & Internet haut débit"}
+                        title={t('ServiceWifiInternet.translation.content')}
                         icon={<FaWifi/>}
                     />
 
                     <BaseCard
-                        id={"catering-service"}
-                        title={"Rétroprojecteur"}
+                        id={"video-service"}
+                        title={t('ServiceProjector.translation.content')}
                         icon={<FaVideo/>}
                     />
 
                     <BaseCard
-                        id={"catering-service"}
-                        title={"Imprimantes"}
+                        id={"printer-service"}
+                        title={t('ServicePrinters.translation.content')}
                         icon={<AiFillPrinter/>}
                     />
                 </div>

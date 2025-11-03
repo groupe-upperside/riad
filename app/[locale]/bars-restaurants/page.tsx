@@ -4,8 +4,9 @@ import {barsAndRestaurantsSlides, barsData, restaurantsData} from "@/lib/constan
 import {FacilityShowcase} from "@/components/common/facility-showcase";
 import {SecondaryFacilityShowcase} from "@/components/common/secondary-facility-showcase";
 import {CTASection} from "@/components/common/CTA-section";
-import {restaurantsCTA} from "@/components/common/booking-cta";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
+import {getRestaurantsCTA} from "@/components/common/booking-cta";
+import {getTranslations} from "next-intl/server";
 
 const items: GalleryItem[] = [
     {
@@ -29,7 +30,10 @@ const items: GalleryItem[] = [
     },
 ];
 
-export default function BarsRestaurantsPage() {
+export default async function BarsRestaurantsPage() {
+    const t = await getTranslations("Constants")
+    const restaurantsCTA = getRestaurantsCTA(t);
+
     return (
         <>
             <RoomsHeroSection subtitle="Une invitation à un voyage sensoriel inoubliable, où chaque saveur raconte une histoire."

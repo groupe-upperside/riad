@@ -2,14 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import Container from '@/components/ui/container';
 
-// Type definitions
 interface ViewItem {
     id: string;
     title: string;
     subtitle: string;
     image: string;
     imageAlt?: string;
-    description?: string; // Optional description that appears below the image
+    description?: string;
 }
 
 interface ViewsGalleryProps {
@@ -22,7 +21,7 @@ interface ViewsGalleryProps {
     className?: string;
     showOverlay?: boolean;
     overlayPosition?: 'bottom' | 'top' | 'center';
-    showDescriptionBelow?: boolean; // Control whether to show descriptions below images
+    showDescriptionBelow?: boolean;
     id?: string;
 }
 
@@ -34,7 +33,6 @@ interface ViewCardProps {
     showDescriptionBelow: boolean;
 }
 
-// View Card Component
 const ViewCard: React.FC<ViewCardProps> = ({
                                                view,
                                                imageHeight,
@@ -65,7 +63,7 @@ const ViewCard: React.FC<ViewCardProps> = ({
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {showOverlay && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"/>
                     )}
                 </div>
                 <div className={`absolute ${getOverlayPositionClasses()} text-white`}>
@@ -74,7 +72,6 @@ const ViewCard: React.FC<ViewCardProps> = ({
                 </div>
             </div>
 
-            {/* Description below image */}
             {showDescriptionBelow && view.description && (
                 <div className="mt-4 px-2">
                     <p className="text-brand-gray text-sm leading-relaxed">
@@ -86,7 +83,6 @@ const ViewCard: React.FC<ViewCardProps> = ({
     );
 };
 
-// Main Component
 const ViewsGallery: React.FC<ViewsGalleryProps> = ({
                                                        title,
                                                        description,
@@ -98,7 +94,7 @@ const ViewsGallery: React.FC<ViewsGalleryProps> = ({
                                                        showOverlay = true,
                                                        overlayPosition = 'bottom',
                                                        showDescriptionBelow = false,
-    id
+                                                       id
                                                    }) => {
     const getGridColumns = () => {
         switch (columns) {
@@ -147,5 +143,4 @@ const ViewsGallery: React.FC<ViewsGalleryProps> = ({
 
 export default ViewsGallery;
 
-// Export types for external use
-export type { ViewsGalleryProps, ViewItem };
+export type {ViewsGalleryProps, ViewItem};

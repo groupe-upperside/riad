@@ -2,6 +2,8 @@
 
 import Button from "@/components/ui/button";
 import {FaCalendar} from "react-icons/fa";
+import {useTranslations} from 'next-intl';
+import React from "react";
 
 interface CTAButtonsProps {
     menuText?: string;
@@ -13,13 +15,15 @@ interface CTAButtonsProps {
 }
 
 export const CTAButtons: React.FC<CTAButtonsProps> = ({
-                                                          menuText = "VOIR LE MENU",
-                                                          reservationText = "Réserver une table",
+                                                          menuText,
+                                                          reservationText,
                                                           onMenuClick,
                                                           onReservationClick,
                                                           showCalendarIcon = true,
                                                           className = ""
                                                       }) => {
+    const t = useTranslations('CTAButtons');
+
     return (
         <div className={`flex items-center space-x-3 ${className}`}>
             <Button
@@ -28,7 +32,7 @@ export const CTAButtons: React.FC<CTAButtonsProps> = ({
                 className="border-2 border-brand-gold-400 hover:bg-white uppercase hover:text-brand-gold-400"
                 onClick={onMenuClick}
             >
-                {menuText}
+                {menuText || t('DefaultMenuText.translation.content')}
             </Button>
             <Button
                 variant="outline"
@@ -36,7 +40,7 @@ export const CTAButtons: React.FC<CTAButtonsProps> = ({
                 onClick={onReservationClick}
             >
                 {showCalendarIcon && <FaCalendar className="mr-2" />}
-                {reservationText}
+                {reservationText || t('DefaultReservationText.translation.content')}
             </Button>
         </div>
     );

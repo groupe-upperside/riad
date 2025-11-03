@@ -1,32 +1,37 @@
+'use client'
+
 import React from 'react';
 import {FaBed, FaCrown, FaGem, FaGlassCheers, FaHeart, FaHome, FaStar, FaUsers} from 'react-icons/fa';
 import IntroductionSection, {StatItem} from "@/components/common/introduction-section";
-
-const roomsData = {
-    image: {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f6d411a20e-a478a39d4494c6f8a3aa.png",
-        alt: "Luxurious Moroccan Riad interior with intricate zellige tilework, plush velvet seating, and warm ambient lighting, elegant style",
-        priority: true
-    },
-    header: {
-        label: "Chaque chambre",
-        title: "Une Atmosphère Singulière"
-    },
-    content: {
-        paragraphs: [
-            "Le Riad Nashira compte 17 chambres et suites toutes différentes les unes des autres. Pensées comme des univers uniques, elles se distinguent par leurs harmonies de couleurs, leurs jeux de lumière et le dialogue subtile entre design contemporain et artisanat marocain.",
-            "Que vous choisissez une chambre confort, une deluxe, une suite ou les suites exclusives, vous serez immergé dans une ambiance raffinée, bercée par le calme du riad et l'élégance de ses détails."
-        ]
-    },
-    stats: [
-        {icon: FaBed, value: 3, label: "Confort"},
-        {icon: FaStar, value: 9, label: "Deluxe"},
-        {icon: FaGem, value: 3, label: "Suites"},
-        {icon: FaCrown, value: 2, label: "Suites spéciales"}
-    ] as StatItem[]
-};
+import {useTranslations} from 'next-intl';
 
 export default function RoomsIntroduction() {
+    const t = useTranslations('RoomsIntroduction');
+
+    const roomsData = {
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f6d411a20e-a478a39d4494c6f8a3aa.png",
+            alt: t('ImageAlt.translation.content'),
+            priority: true
+        },
+        header: {
+            label: t('HeaderLabel.translation.content'),
+            title: t('HeaderTitle.translation.content')
+        },
+        content: {
+            paragraphs: [
+                t('Paragraph1.translation.content'),
+                t('Paragraph2.translation.content')
+            ]
+        },
+        stats: [
+            {icon: FaBed, value: 3, label: t('StatComfort.translation.content')},
+            {icon: FaStar, value: 9, label: t('StatDeluxe.translation.content')},
+            {icon: FaGem, value: 3, label: t('StatSuites.translation.content')},
+            {icon: FaCrown, value: 2, label: t('StatSpecialSuites.translation.content')}
+        ] as StatItem[]
+    };
+
     return (
         <IntroductionSection
             id="rooms-hero-section"
@@ -40,20 +45,22 @@ export default function RoomsIntroduction() {
 }
 
 export function RestaurantIntroduction() {
+    const t = useTranslations('RestaurantIntroduction');
+
     const restaurantData = {
         image: {
             src: "https://example.com/restaurant-image.jpg",
-            alt: "Elegant restaurant setting with traditional Moroccan cuisine",
+            alt: t('ImageAlt.translation.content'),
             priority: false
         },
         header: {
-            label: "Gastronomie",
-            title: "Une Cuisine D'Excellence"
+            label: t('HeaderLabel.translation.content'),
+            title: t('HeaderTitle.translation.content')
         },
         content: {
             paragraphs: [
-                "Notre restaurant vous invite à un voyage culinaire où la tradition marocaine rencontre la créativité contemporaine.",
-                "Chaque plat est une célébration des saveurs authentiques, préparés avec des ingrédients locaux soigneusement sélectionnés."
+                t('Paragraph1.translation.content'),
+                t('Paragraph2.translation.content')
             ]
         }
     };
@@ -70,20 +77,22 @@ export function RestaurantIntroduction() {
 }
 
 export function SpaIntroduction() {
+    const t = useTranslations('SpaIntroduction');
+
     const spaData = {
         image: {
             src: "https://example.com/spa-image.jpg",
-            alt: "Relaxing spa environment with traditional hammam",
+            alt: t('ImageAlt.translation.content'),
             priority: false
         },
         header: {
-            label: "Bien-être",
-            title: "Un Havre de Paix"
+            label: t('HeaderLabel.translation.content'),
+            title: t('HeaderTitle.translation.content')
         },
         content: {
             paragraphs: [
-                "Découvrez notre spa, un sanctuaire de bien-être où les rituels ancestraux du hammam se mêlent aux techniques de relaxation modernes.",
-                "Laissez-vous transporter par nos soins signature et retrouvez l'harmonie du corps et de l'esprit."
+                t('Paragraph1.translation.content'),
+                t('Paragraph2.translation.content')
             ]
         }
     };
@@ -100,30 +109,32 @@ export function SpaIntroduction() {
     );
 }
 
-const eventsData = {
-    image: {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png",
-        alt: "Modern conference room in luxury Moroccan hotel with elegant seating, audiovisual equipment, natural lighting, professional business setting",
-        priority: true
-    },
-    header: {
-        label: "Événements",
-        title: "Des Moments D'Exception"
-    },
-    content: {
-        paragraphs: [
-            "Au cœur de la Médina, le riad Nashira est bien plus qu'un lieu de séjour où l'on peut imaginer organiser et vivre des événements inoubliables.",
-            "Grâce à ses espaces raffinés – patios, rooftops panoramiques, restaurants, bars, salons – notre riad se prête à toutes les occasions, dans une atmosphère intime et élégante."
-        ]
-    }
-};
-
 export function EventsIntroduction() {
+    const t = useTranslations('EventsIntroduction');
+
+    const eventsData = {
+        image: {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png",
+            alt: t('ImageAlt.translation.content'),
+            priority: true
+        },
+        header: {
+            label: t('HeaderLabel.translation.content'),
+            title: t('HeaderTitle.translation.content')
+        },
+        content: {
+            paragraphs: [
+                t('Paragraph1.translation.content'),
+                t('Paragraph2.translation.content')
+            ]
+        }
+    };
+
     const eventTypesStats: StatItem[] = [
-        { icon: FaUsers, value: "Séminaires", label: "professionnels" },
-        { icon: FaGlassCheers, value: "Dîners", label: "privés" },
-        { icon: FaHeart, value: "Mariages", label: "& célébrations" },
-        { icon: FaHome, value: "Privatisation", label: "complète" }
+        { icon: FaUsers, value: t('StatSeminarsValue.translation.content'), label: t('StatSeminarsLabel.translation.content') },
+        { icon: FaGlassCheers, value: t('StatDinnersValue.translation.content'), label: t('StatDinnersLabel.translation.content') },
+        { icon: FaHeart, value: t('StatWeddingsValue.translation.content'), label: t('StatWeddingsLabel.translation.content') },
+        { icon: FaHome, value: t('StatPrivatizationValue.translation.content'), label: t('StatPrivatizationLabel.translation.content') }
     ];
 
     return (
