@@ -8,7 +8,7 @@ import {useTranslations} from 'next-intl'
 
 export default function Testimonials() {
     const t = useTranslations('Testimonials')
-    const tConstants = useTranslations('Constants')
+    const tConstants = useTranslations()
 
     const testimonials = getTestimonials(tConstants);
 
@@ -40,7 +40,6 @@ export default function Testimonials() {
                                 ))}
                             </div>
                             <h4 className="font-semibold">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">{testimonial.location}</p>
                         </div>
                     ))}
                 </div>

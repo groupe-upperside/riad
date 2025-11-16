@@ -5,6 +5,7 @@ import {galleryImages} from '@/lib/constants';
 import SectionHeader from "@/components/ui/section-header";
 import {JSX} from "react";
 import Container from "@/components/ui/container";
+import {useTranslations} from "next-intl";
 
 type GalleryItem = {
     id: string | number;
@@ -16,6 +17,7 @@ type GalleryItem = {
 
 export default function GalleryColumns(): JSX.Element {
     const items = galleryImages as GalleryItem[];
+    const t = useTranslations();
     const columnsCount = 4;
 
     const cols: GalleryItem[][] = Array.from({length: columnsCount}, () => []);
@@ -37,8 +39,8 @@ export default function GalleryColumns(): JSX.Element {
         <section className="py-16 md:py-24 bg-white">
             <Container>
                 <SectionHeader
-                    label="Galerie"
-                    title="Notre galerie"
+                    label={t('GallerySection.Label.translation.content')}
+                    title={t('GallerySection.Title.translation.content')}
                     centered
                     className="mb-12"
                 />

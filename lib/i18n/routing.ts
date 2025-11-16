@@ -16,210 +16,90 @@ export const routing = defineRouting({
         '/rooms': {
             en: '/rooms',
             fr: '/hebergements',
-            it: '/vietato',
-            es: '/prohibido',
-            pt: '/proibido',
-            de: '/verboten'
+            it: '/camere',
+            es: '/habitaciones',
+            pt: '/quartos',
+            de: '/zimmer'
         },
         '/rooms/comfort': {
             en: '/rooms/comfort',
             fr: '/hebergements/confort',
-            it: '/crediti',
-            es: '/creditos',
-            pt: '/creditos',
-            de: '/credits'
+            it: '/camere/comfort',
+            es: '/habitaciones/confort',
+            pt: '/quartos/conforto',
+            de: '/zimmer/komfort'
         },
         '/rooms/deluxe': {
             en: '/rooms/deluxe',
             fr: '/hebergements/deluxe',
-            it: '/contatto',
-            es: '/contacto',
-            pt: '/contato',
-            de: '/kontakt'
+            it: '/camere/deluxe',
+            es: '/habitaciones/deluxe',
+            pt: '/quartos/deluxe',
+            de: '/zimmer/deluxe'
         },
         '/rooms/special-suites': {
             en: '/rooms/special-suites',
             fr: '/hebergements/suites-speciales',
-            it: '/accesso',
-            es: '/iniciar-sesion',
-            pt: '/entrar',
-            de: '/anmelden'
+            it: '/camere/suites-speciali',
+            es: '/habitaciones/suites-especiales',
+            pt: '/quartos/suites-especiais',
+            de: '/zimmer/besondere-suiten'
         },
         '/rooms/suites': {
-            en:  '/rooms/suites',
+            en: '/rooms/suites',
             fr: '/hebergements/suites',
-            it: '/registrazione',
-            es: '/registro',
-            pt: '/registrar',
-            de: '/registrieren'
+            it: '/camere/suite',
+            es: '/habitaciones/suites',
+            pt: '/quartos/suites',
+            de: '/zimmer/suiten'
         },
         '/bars-restaurants': {
             en: '/bars-restaurants',
             fr: '/bars-restaurants',
-            it: '/fatture',
-            es: '/facturas',
-            pt: '/faturas',
-            de: '/rechnungen'
+            it: '/bar-ristoranti',
+            es: '/bares-restaurantes',
+            pt: '/bares-restaurantes',
+            de: '/bars-und-restaurants'
         },
         '/events': {
             en: '/events',
             fr: '/evenements',
-            it: '/faq',
-            es: '/preguntas-frecuentes',
-            pt: '/perguntas-frequentes',
-            de: '/haeufig-gestellte-fragen'
+            it: '/eventi',
+            es: '/eventos',
+            pt: '/eventos',
+            de: '/veranstaltungen'
         },
         '/activities': {
             en: '/activities',
             fr: '/activites',
-            it: '/documentazioni',
-            es: '/documentaciones',
-            pt: '/documentacoes',
-            de: '/dokumentationen'
+            it: '/attivita',
+            es: '/actividades',
+            pt: '/atividades',
+            de: '/aktivitaeten'
         },
         '/services': {
             en: '/services',
             fr: '/services',
-            it: '/profilo',
-            es: '/perfil',
-            pt: '/perfil',
-            de: '/profil'
+            it: '/servizi',
+            es: '/servicios',
+            pt: '/servicos',
+            de: '/dienstleistungen'
         },
-        '/account/activate': {
-            en: '/account/activate',
-            fr: '/compte/activation',
-            it: '/account/attivazione',
-            es: '/cuenta/activar',
-            pt: '/conta/ativar',
-            de: '/konto/aktivieren'
+        '/booking': {
+            en: '/booking',
+            fr: '/reservation',
+            it: '/prenotazione',
+            es: '/reserva',
+            pt: '/reserva',
+            de: '/buchung'
         },
-        '/orders/new': {
-            en: '/orders/new',
-            fr: '/commandes/creer',
-            it: '/ordini/nuovo',
-            es: '/pedidos/nuevo',
-            pt: '/pedidos/novo',
-            de: '/bestellungen/neu'
-        },
-        '/order/[id]': {
-            en: '/order/[id]',
-            fr: '/commande/[id]',
-            it: '/ordine/[id]',
-            es: '/pedido/[id]',
-            pt: '/pedido/[id]',
-            de: '/bestellung/[id]'
-        },
-        '/wishlists': {
-            en: '/wishlists',
-            fr: '/favoris',
-            it: '/preferiti',
-            es: '/favoritos',
-            pt: '/favoritos',
-            de: '/wunschlisten'
-        },
-        '/messages': {
-            en: '/messages',
-            fr: '/messages',
-            it: '/messaggi',
-            es: '/mensajes',
-            pt: '/mensagens',
-            de: '/nachrichten'
-        },
-        '/admin': {
-            en: '/admin',
-            fr: '/admin',
-            it: '/admin',
-            es: '/admin',
-            pt: '/admin',
-            de: '/admin'
-        },
-        '/admin/orders': {
-            en: '/admin/orders',
-            fr: '/admin/commandes',
-            it: '/admin/ordini',
-            es: '/admin/pedidos',
-            pt: '/admin/pedidos',
-            de: '/admin/bestellungen'
-        },
-        '/admin/orders/new': {
-            en: '/admin/orders/new',
-            fr: '/admin/commandes/creer',
-            it: '/admin/ordini/nuovo',
-            es: '/admin/pedidos/nuevo',
-            pt: '/admin/pedidos/novo',
-            de: '/admin/bestellungen/neu'
-        },
-        '/admin/orders/archived': {
-            en: '/admin/orders/archived',
-            fr: '/admin/commandes/archives',
-            it: '/admin/ordini/archiviati',
-            es: '/admin/pedidos/archivados',
-            pt: '/admin/pedidos/arquivados',
-            de: '/admin/bestellungen/archiviert'
-        },
-        '/admin/documentations': {
-            en: '/admin/documentations',
-            fr: '/admin/documentations',
-            it: '/admin/documentazioni',
-            es: '/admin/documentaciones',
-            pt: '/admin/documentacoes',
-            de: '/admin/dokumentationen'
-        },
-        '/admin/news': {
-            en: '/admin/news',
-            fr: '/admin/actualites',
-            it: '/admin/notizie',
-            es: '/admin/noticias',
-            pt: '/admin/noticias',
-            de: '/admin/nachrichten'
-        },
-        '/admin/analytics': {
-            en: '/admin/analytics',
-            fr: '/admin/analyses',
-            it: '/admin/analisi',
-            es: '/admin/analiticas',
-            pt: '/admin/analiticas',
-            de: '/admin/analysen'
-        },
-        '/admin/faqs': {
-            en: '/admin/faqs',
-            fr: '/admin/faqs',
-            it: '/admin/faq',
-            es: '/admin/preguntas-frecuentes',
-            pt: '/admin/perguntas-frequentes',
-            de: '/admin/haeufig-gestellte-fragen'
-        },
-        '/admin/users': {
-            en: '/admin/users',
-            fr: '/admin/utilisateurs',
-            it: '/admin/utenti',
-            es: '/admin/usuarios',
-            pt: '/admin/usuarios',
-            de: '/admin/benutzer'
-        },
-        '/admin/users/orders/[id]': {
-            en: '/admin/users/orders/[id]',
-            fr: '/admin/utilisateurs/commandes/[id]',
-            it: '/admin/utenti/ordini/[id]',
-            es: '/admin/usuarios/pedidos/[id]',
-            pt: '/admin/usuarios/pedidos/[id]',
-            de: '/admin/benutzer/bestellungen/[id]'
-        },
-        '/admin/users/[id]': {
-            en: '/admin/users/[id]',
-            fr: '/admin/utilisateurs/[id]',
-            it: '/admin/utenti/[id]',
-            es: '/admin/usuarios/[id]',
-            pt: '/admin/usuarios/[id]',
-            de: '/admin/benutzer/[id]'
-        },
-        '/admin/orders/[id]': {
-            en: '/admin/orders/[id]',
-            fr: '/admin/commandes/[id]',
-            it: '/admin/ordini/[id]',
-            es: '/admin/pedidos/[id]',
-            pt: '/admin/pedidos/[id]',
-            de: '/admin/bestellungen/[id]'
+        '/spa': {
+            en: '/spa',
+            fr: '/spa',
+            it: '/spa',
+            es: '/spa',
+            pt: '/spa',
+            de: '/spa'
         }
     }
 });

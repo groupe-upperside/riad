@@ -1,3 +1,5 @@
+'use client'
+
 import RoomsHeroSection from "@/components/rooms/rooms-hero-section";
 import {
     FaCheckCircle,
@@ -21,155 +23,178 @@ import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
 import BookingCtaSection, {Bullet, CtaAction} from "@/components/rooms/booking-cta";
 import OtherRiadsSlider, {RiadCard} from "@/components/rooms/other-rooms-slider";
 import SuiteFeaturesSection, {SuiteFeatureItem} from "@/components/rooms/suite-features";
+import {useTranslations} from 'next-intl';
 
-const confortGalleryItems: GalleryItem[] = [
-    {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/90ee5ab427-305e8d6f2ce0b90bd450.png",
-        alt: "Moroccan comfort room bedroom area with traditional bed, warm textiles, carved wood headboard, soft lighting, cozy atmosphere",
-        colSpan: 1,
-        rowSpan: 1,
-    },
-    {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/8c48eafdaa-0b4207e8945399016d15.png",
-        alt: "Traditional Moroccan tadelakt bathroom with Italian shower, natural stone, warm lighting, luxury hotel amenities",
-        colSpan: 2,
-        rowSpan: 2,
-    },
-    {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ce00edbb79-75ece5ea27168dcddbdf.png",
-        alt: "Intimate seating area in Moroccan comfort room with traditional cushions, low table, warm ambiance, authentic decor",
-        colSpan: 1,
-        rowSpan: 1,
-    },
-];
+export default function SpecialSuitesPage() {
+    const t = useTranslations('SpecialSuitesPage');
 
-const bullets: Bullet[] = [
-    {icon: FaCheckCircle, label: "Réservation immédiate"},
-    {icon: FaCheckCircle, label: "Annulation gratuite"},
-    {icon: FaCheckCircle, label: "Meilleur prix garanti"},
-];
+    const confortGalleryItems: GalleryItem[] = [
+        {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/90ee5ab427-305e8d6f2ce0b90bd450.png",
+            alt: t('GalleryItem1Alt.translation.content'),
+            colSpan: 1,
+            rowSpan: 1,
+        },
+        {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/8c48eafdaa-0b4207e8945399016d15.png",
+            alt: t('GalleryItem2Alt.translation.content'),
+            colSpan: 2,
+            rowSpan: 2,
+        },
+        {
+            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ce00edbb79-75ece5ea27168dcddbdf.png",
+            alt: t('GalleryItem3Alt.translation.content'),
+            colSpan: 1,
+            rowSpan: 1,
+        },
+    ];
 
-const actions: CtaAction[] = [
-    {label: "RÉSERVER LA RINER", href: "/booking", icon: FaMedal, variant: "primary"},
-    {label: "RÉSERVER LA NASHIRA", href: "/booking", icon: FaCrown, variant: "outline"}
-];
+    const bullets: Bullet[] = [
+        {icon: FaCheckCircle, label: t('BulletImmediate.translation.content')},
+        {icon: FaCheckCircle, label: t('BulletCancellation.translation.content')},
+        {icon: FaCheckCircle, label: t('BulletBestPrice.translation.content')},
+    ];
 
-const riads: RiadCard[] = [
-    {
-        id: "comfort-card",
-        imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6b8b83c359-dad4974c3cc4d2c74a06.png",
-        imageAlt:
-            "Dark and moody interior of a premier Moroccan riad suite, with intricate latticework, plush armchairs, and atmospheric lighting, sophisticated style",
-        meta: "25-30 M² | 3 CHAMBRES CONFORT",
-        title: "Confort",
-        description:
-            "Avec leurs 25 à 30 m², nos chambres Confort offrent un cadre intime et chaleureux, mariant harmonies de couleurs et artisanat marocain. Matières naturelles, luminaires doux et boiseries finement travaillées composent une atmosphère apaisante, idéale pour se ressourcer après une journée dans la Médina. Pensées pour le bien-être, elles allient fonctionnalité moderne (literie haut de gamme, rangements astucieux, salle de bain en tadelakt) et élégance discrète pour un séjour tout en douceur.",
-        ctaLabel: "Découvrir",
-        href: "/rooms/comfort",
-    },
-    {
-        id: "deluxes-card",
-        imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
-        imageAlt:
-            "Dark and moody interior of a premier Moroccan riad suite, with intricate latticework, plush armchairs, and atmospheric lighting, sophisticated style",
-        meta: "30–42 M² | 9 CHAMBRES DELUXE",
-        title: "Deluxe",
-        description:
-            "Avec leurs 30 à 42 m², nos chambres Deluxe marient un confort généreux à l’authenticité marocaine. "
-            + "Boiseries finement sculptées, matières nobles et palette chaleureuse composent une atmosphère apaisante, "
-            + "idéale pour se détendre après une journée dans la Médina. Chaque détail a été pensé pour offrir de l’espace, "
-            + "de la douceur et une élégance discrète, entre modernité et artisanat.",
-        ctaLabel: "Découvrir",
-        href: "/riads/deluxe",
-    },
-    {
-        id: "suites-card",
-        imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6fb9a6e07-c31d7466bc3063c3ed84.png",
-        imageAlt:
-            "Rooftop dining setup at a Moroccan riad at dusk, with candlelight, white tablecloth, and city views, romantic and exclusive",
-        meta: "45–60 M² | 3 SUITES",
-        title: "Suites",
-        description:
-            "De 45 à 60 m², nos Suites privilégient l’espace et la lumière pour sublimer l’élégance des lieux. "
-            + "Les volumes harmonieux, le mobilier sur mesure et les textures raffinées créent un cocon haut de gamme "
-            + "où l’on savoure un véritable sentiment de liberté. Parfaites pour un séjour prolongé, elles conjuguent "
-            + "intimité, confort contemporain et sens du détail.",
-        ctaLabel: "Découvrir",
-        href: "/rooms/suites",
-    },
-];
+    const actions: CtaAction[] = [
+        {
+            label: t('ActionBookRiner.translation.content'),
+            href: "/booking",
+            icon: FaMedal,
+            variant: "primary"
+        },
+        {
+            label: t('ActionBookNashira.translation.content'),
+            href: "/booking",
+            icon: FaCrown,
+            variant: "outline"
+        }
+    ];
 
-const rinerFeatures: Feature[] = [
-    {icon: FaMedal, label: "Décor inspiré du judo"},
-    {icon: FaCrown, label: "Mobilier d'exception"},
-    {icon: FaSpa, label: "Espace bien-être privé"},
-    {icon: FaMountain, label: "Vue panoramique"},
-];
+    const riads: RiadCard[] = [
+        {
+            id: "comfort-card",
+            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6b8b83c359-dad4974c3cc4d2c74a06.png",
+            imageAlt: t('OtherRoomComfortImageAlt.translation.content'),
+            meta: t('OtherRoomComfortMeta.translation.content'),
+            title: t('OtherRoomComfortTitle.translation.content'),
+            description: t('OtherRoomComfortDescription.translation.content'),
+            ctaLabel: t('OtherRoomCtaLabel.translation.content'),
+            href: "/rooms/comfort",
+        },
+        {
+            id: "deluxes-card",
+            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
+            imageAlt: t('OtherRoomDeluxeImageAlt.translation.content'),
+            meta: t('OtherRoomDeluxeMeta.translation.content'),
+            title: t('OtherRoomDeluxeTitle.translation.content'),
+            description: t('OtherRoomDeluxeDescription.translation.content'),
+            ctaLabel: t('OtherRoomCtaLabel.translation.content'),
+            href: "/rooms/deluxe",
+        },
+        {
+            id: "suites-card",
+            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6fb9a6e07-c31d7466bc3063c3ed84.png",
+            imageAlt: t('OtherRoomSuitesImageAlt.translation.content'),
+            meta: t('OtherRoomSuitesMeta.translation.content'),
+            title: t('OtherRoomSuitesTitle.translation.content'),
+            description: t('OtherRoomSuitesDescription.translation.content'),
+            ctaLabel: t('OtherRoomCtaLabel.translation.content'),
+            href: "/rooms/suites",
+        },
+    ];
 
-const nashiraFeatures: Feature[] = [
-    {icon: FaGem, label: "Luxe absolu"},
-    {icon: FaHome, label: "Espace le plus vaste"},
-    {icon: FaConciergeBell, label: "Service personnalisé"},
-    {icon: FaStar, label: "Prestations exclusives"},
-];
+    const rinerFeatures: Feature[] = [
+        {icon: FaMedal, label: t('RinerFeature1Label.translation.content')},
+        {icon: FaCrown, label: t('RinerFeature2Label.translation.content')},
+        {icon: FaSpa, label: t('RinerFeature3Label.translation.content')},
+        {icon: FaMountain, label: t('RinerFeature4Label.translation.content')},
+    ];
 
-const rinerSuiteFeatures: SuiteFeatureItem[] = [
-    {
-        id: "riner-space",
-        icon: FaUpDownLeftRight,
-        title: "Espace Généreux",
-        description: "65 m² d'espace luxueux avec salon séparé et terrasse privée de 15 m².",
-    },
-    {
-        id: "riner-theme",
-        icon: FaDumbbell,
-        title: "Thème Sportif",
-        description: "Décoration unique inspirée du judo avec éléments authentiques.",
-    },
-    {
-        id: "riner-spa",
-        icon: FaHotTub,
-        title: "Spa Privé",
-        description: "Hammam privé et baignoire en tadelakt pour une détente absolue.",
-    },
-];
+    const nashiraFeatures: Feature[] = [
+        {icon: FaGem, label: t('NashiraFeature1Label.translation.content')},
+        {icon: FaHome, label: t('NashiraFeature2Label.translation.content')},
+        {icon: FaConciergeBell, label: t('NashiraFeature3Label.translation.content')},
+        {icon: FaStar, label: t('NashiraFeature4Label.translation.content')},
+    ];
 
+    const rinerSuiteFeatures: SuiteFeatureItem[] = [
+        {
+            id: "riner-space",
+            icon: FaUpDownLeftRight,
+            title: t('RinerSuiteFeature1Title.translation.content'),
+            description: t('RinerSuiteFeature1Description.translation.content'),
+        },
+        {
+            id: "riner-theme",
+            icon: FaDumbbell,
+            title: t('RinerSuiteFeature2Title.translation.content'),
+            description: t('RinerSuiteFeature2Description.translation.content'),
+        },
+        {
+            id: "riner-spa",
+            icon: FaHotTub,
+            title: t('RinerSuiteFeature3Title.translation.content'),
+            description: t('RinerSuiteFeature3Description.translation.content'),
+        },
+    ];
 
-export default function ComfortPage() {
+    const nashiraSuiteFeatures: SuiteFeatureItem[] = [
+        {
+            id: "nashira-space",
+            icon: FaUpDownLeftRight,
+            title: t('NashiraSuiteFeature1Title.translation.content'),
+            description: t('NashiraSuiteFeature1Description.translation.content'),
+        },
+        {
+            id: "nashira-theme",
+            icon: FaDumbbell,
+            title: t('NashiraSuiteFeature2Title.translation.content'),
+            description: t('NashiraSuiteFeature2Description.translation.content'),
+        },
+        {
+            id: "nashira-spa",
+            icon: FaHotTub,
+            title: t('NashiraSuiteFeature3Title.translation.content'),
+            description: t('NashiraSuiteFeature3Description.translation.content'),
+        },
+    ];
+
     return (
         <>
-            <RoomsHeroSection subtitle="La Riner & La Nashira - Deux univers d'exception"
-                              title="Suites Spéciales"
-                              image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/9c2af6dedf-4e1d2db8acbf899200a2.png"}/>
+            <RoomsHeroSection
+                subtitle={t('HeroSubtitle.translation.content')}
+                title={t('HeroTitle.translation.content')}
+                image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/9c2af6dedf-4e1d2db8acbf899200a2.png"}
+            />
             <OverviewSection
                 id="suites-riner-overview-section"
-                badge="2 SUITES"
+                badge={t('OverviewBadge.translation.content')}
                 badgeToneClass="bg-brand-gold text-white"
-                meta="SUITES SPÉCIALES"
-                title="Espace et Raffinement Suprême"
+                meta={t('OverviewMeta.translation.content')}
+                title={t('OverviewTitle.translation.content')}
                 paragraphs={[
-                    "Le Riad Nashira abrite deux suites d'exception, chacune racontant une histoire unique. Ces espaces privilégiés offrent le summum du luxe et de l'intimité, pensés pour les voyageurs les plus exigeants en quête d'une expérience authentique et raffinée.",
-                    "La Suite Riner rend hommage à un champion, tandis que la Suite Nashira incarne l'excellence absolue de notre établissement. Découvrez ces univers uniques où chaque détail a été pensé pour créer une expérience inoubliable.",
+                    t('OverviewParagraph1.translation.content'),
+                    t('OverviewParagraph2.translation.content'),
                 ]}
                 facts={[
-                    {icon: <FaUsers className="h-4 w-4"/>, label: "3-4 personnes"},
-                    {icon: <FaExpand className="h-4 w-4"/>, label: "45-60m²"},
-                    {icon: <FaLocationDot className="h-4 w-4"/>, label: "Salon privatif"},
+                    {icon: <FaUsers className="h-4 w-4"/>, label: t('FactCapacity.translation.content')},
+                    {icon: <FaExpand className="h-4 w-4"/>, label: t('FactSize.translation.content')},
+                    {icon: <FaLocationDot className="h-4 w-4"/>, label: t('FactLounge.translation.content')},
                 ]}
                 imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/954b102df9-45140dd4a93b11517a0b.png"
-                imageAlt="Cozy Moroccan comfort room with traditional tadelakt bathroom, warm earth tones, handcrafted details, intimate lighting."
+                imageAlt={t('OverviewImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[500px]"
             />
             <RoomsGallerySection items={confortGalleryItems} rounded/>
             <RoomFeatures
                 id="room-riner-features"
-                title="La Riner"
-                subtitle="SUITE SPÉCIALE"
-                description="Un hommage vibrant à l'un des propriétaires, multiple champion de judo. Cette suite unique allie l'esprit sportif à l'élégance marocaine, créant un environnement où la force et la grâce se rencontrent dans une harmonie parfaite."
+                title={t('RinerTitle.translation.content')}
+                subtitle={t('RinerSubtitle.translation.content')}
+                description={t('RinerDescription.translation.content')}
                 features={rinerFeatures}
                 imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/6d1482e77c-7f210c8db8908548d1ad.png"
-                imageAlt="Artisanat marocain"
+                imageAlt={t('RinerImageAlt.translation.content')}
                 imagePriority
                 imagePosition="left"
                 bgClass="bg-white"
@@ -179,7 +204,7 @@ export default function ComfortPage() {
             />
             <SuiteFeaturesSection
                 id="riner-features"
-                title="Caractéristiques de la Suite Riner"
+                title={t('RinerFeaturesTitle.translation.content')}
                 items={rinerSuiteFeatures}
                 bgClass="bg-brand-beige"
                 cardBgClass="bg-white"
@@ -190,13 +215,13 @@ export default function ComfortPage() {
                 rounded
             />
             <RoomFeatures
-                id="room-nashita-features"
-                title="La Nashira"
-                subtitle="SUITE SPÉCIALE"
-                description="La plus grande suite du Riad, incarnation absolue du luxe et de l'excellence. Un espace d'exception où l'art de vivre marocain atteint sa plus belle expression, offrant une expérience présidentielle inoubliable."
+                id="room-nashira-features"
+                title={t('NashiraTitle.translation.content')}
+                subtitle={t('NashiraSubtitle.translation.content')}
+                description={t('NashiraDescription.translation.content')}
                 features={nashiraFeatures}
                 imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/acb4ebc0a0-3ed38b744976512362a4.png"
-                imageAlt="Artisanat marocain"
+                imageAlt={t('NashiraImageAlt.translation.content')}
                 imagePriority
                 imagePosition="right"
                 bgClass="bg-brand-dark"
@@ -206,8 +231,8 @@ export default function ComfortPage() {
             />
             <SuiteFeaturesSection
                 id="nashira-features"
-                title="Caractéristiques de la Suite Nashira"
-                items={rinerSuiteFeatures}
+                title={t('NashiraFeaturesTitle.translation.content')}
+                items={nashiraSuiteFeatures}
                 bgClass="bg-white"
                 cardBgClass="bg-brand-beige"
                 titleClass="text-brand-dark"
@@ -217,12 +242,12 @@ export default function ComfortPage() {
                 rounded
             />
             <BookingCtaSection
-                title="Réservez Votre Suite d'Exception"
-                subtitle="Vivez une expérience unique dans nos suites spéciales. Chaque séjour devient un souvenir inoubliable dans ces univers d'exception pensés pour les voyageurs les plus exigeants."
+                title={t('BookingCtaTitle.translation.content')}
+                subtitle={t('BookingCtaSubtitle.translation.content')}
                 bullets={bullets}
                 actions={actions}
                 imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/072d875d2b-972eb328df761ae0b2fe.png"
-                imageAlt="Cozy Moroccan comfort room at golden hour, warm ambient lighting, traditional decor, inviting atmosphere, luxury hotel photography"
+                imageAlt={t('BookingCtaImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[400px]"
                 imagePosition="right"
@@ -230,7 +255,7 @@ export default function ComfortPage() {
                 textTone="light"
                 accentClass="text-brand-gold"
             />
-            <OtherRiadsSlider items={riads}/>;
+            <OtherRiadsSlider items={riads}/>
         </>
     )
 }

@@ -9,11 +9,12 @@ import {getActivities} from "@/lib/constants";
 
 export default function ActivitiesSlider() {
     const t = useTranslations('ActivitiesSlider')
+    const tConstants = useTranslations()
     const [currentIndex, setCurrentIndex] = useState(0)
     const sliderRef = useRef<HTMLDivElement>(null)
     const [slidesToShow, setSlidesToShow] = useState(3)
 
-    const activities = getActivities(t);
+    const activities = getActivities(tConstants);
 
     useEffect(() => {
         const handleResize = () => {

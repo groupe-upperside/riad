@@ -2,9 +2,10 @@
 
 import {useEffect, useRef, useState} from 'react'
 import Link from 'next/link'
-import {MenuItem, navigationMenu} from '@/lib/navigation'
+import {getNavigationMenu, MenuItem} from '@/lib/navigation'
 import {FaChevronDown} from 'react-icons/fa'
 import {cn} from "@/lib/utils/utils";
+import {useTranslations} from "next-intl";
 
 function DesktopMenuItem({ item }: { item: MenuItem }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -111,6 +112,9 @@ function DesktopSubMenuItem({ item }: { item: MenuItem; }) {
 }
 
 export default function DesktopMenu() {
+    const t = useTranslations('NavigationMenu');
+    const navigationMenu = getNavigationMenu(t);
+    
     return (
         <nav className="hidden lg:block">
             <ul className="flex items-center">

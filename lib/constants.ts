@@ -17,7 +17,7 @@ import {SecondaryFacility} from "@/components/common/secondary-facility-card";
 import {EventSpace} from "@/components/events/events-showcase";
 
 export const images = {
-    hero: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/92e2273a04-b5f14e21a0c1ed168958.png',
+    hero: process.env.NEXT_PUBLIC_CDN_URL + 'home_slide_1.jpg',
     aboutRiad: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4f19248be1-361b5188a53dc6e33bfc.png',
     experienceSuite: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/0b98983862-ad0abfe6da44ee70e37b.png',
     patternOverlay: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/dc765237cd-ef220abc13ff04563495.png',
@@ -52,64 +52,63 @@ export const images = {
 }
 
 export const getAmenities = (t: (key: string) => string): Amenity[] => [
-    {id: '1', icon: FaSpa, label: t('Constants.Amenities.Spa.translation.content')},
-    {id: '2', icon: FaSwimmingPool, label: t('Constants.Amenities.Pools.translation.content')},
-    {id: '3', icon: FaUtensils, label: t('Constants.Amenities.Restaurants.translation.content')},
-    {id: '4', icon: IoIosFitness, label: t('Constants.Amenities.Fitness.translation.content')},
-    {id: '5', icon: MdElevator, label: t('Constants.Amenities.Elevator.translation.content')},
-    {id: '6', icon: FaWifi, label: t('Constants.Amenities.Wifi.translation.content')},
+    {id: '1', icon: FaSpa, label: t('AmenitySpa.translation.content')},
+    {id: '2', icon: FaSwimmingPool, label: t('AmenityPools.translation.content')},
+    {id: '3', icon: FaUtensils, label: t('AmenityRestaurants.translation.content')},
+    {id: '4', icon: IoIosFitness, label: t('AmenityFitness.translation.content')},
+    {id: '5', icon: MdElevator, label: t('AmenityElevator.translation.content')},
+    {id: '6', icon: FaWifi, label: t('AmenityWifi.translation.content')},
 ];
-
 
 export const getRooms = (t: (key: string) => string): Room[] => [
     {
         id: '1',
-        title: t('Constants.Rooms.Comfort.Title.translation.content'),
+        title: t('Constants.RoomComfortTitle.translation.content'),
         price: 299,
         image: images.rooms.deluxe,
         slug: 'confort-room',
-        description: t('Constants.Rooms.Comfort.Description.translation.content'),
+        description: t('Constants.RoomComfortDescription.translation.content'),
         amenities: [
-            {icon: FaBed, label: t('Constants.Rooms.Comfort.Amenity1.translation.content')},
-            {icon: FaSnowflake, label: t('Constants.Rooms.Comfort.Amenity2.translation.content')},
+            {icon: FaBed, label: t('Constants.RoomComfortAmenity1.translation.content')},
+            {icon: FaSnowflake, label: t('Constants.RoomComfortAmenity2.translation.content')},
         ]
     },
     {
         id: '2',
-        title: t('Constants.Rooms.Deluxe.Title.translation.content'),
+        title: t('Constants.RoomDeluxeTitle.translation.content'),
         price: 399,
         image: images.rooms.junior,
         slug: 'deluxe-room',
-        description: t('Constants.Rooms.Deluxe.Description.translation.content'),
+        description: t('Constants.RoomDeluxeDescription.translation.content'),
         amenities: [
-            {icon: FaBed, label: t('Constants.Rooms.Deluxe.Amenity1.translation.content')},
-            {icon: MdDeck, label: t('Constants.Rooms.Deluxe.Amenity2.translation.content')},
+            {icon: FaBed, label: t('Constants.RoomDeluxeAmenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.RoomDeluxeAmenity2.translation.content')},
         ]
     },
     {
         id: '3',
-        title: t('Constants.Rooms.Suite.Title.translation.content'),
+        title: t('Constants.RoomSuiteTitle.translation.content'),
         price: 599,
         image: images.rooms.patio,
         slug: 'suite-room',
-        description: t('Constants.Rooms.Suite.Description.translation.content'),
+        description: t('Constants.RoomSuiteDescription.translation.content'),
         amenities: [
-            {icon: FaBed, label: t('Constants.Rooms.Suite.Amenity1.translation.content')},
-            {icon: MdDeck, label: t('Constants.Rooms.Suite.Amenity2.translation.content')},
+            {icon: FaBed, label: t('Constants.RoomSuiteAmenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.RoomSuiteAmenity2.translation.content')},
         ]
     },
     {
         id: '4',
-        title: t('Constants.Rooms.SpecialSuite.Title.translation.content'),
+        title: t('Constants.RoomSpecialSuiteTitle.translation.content'),
         price: 799,
         image: images.rooms.nashira,
         slug: 'suite-speciale',
-        description: t('Constants.Rooms.SpecialSuite.Description.translation.content'),
+        description: t('Constants.RoomSpecialSuiteDescription.translation.content'),
         amenities: [
-            {icon: FaCrown, label: t('Constants.Rooms.SpecialSuite.Amenity1.translation.content')},
-            {icon: MdDeck, label: t('Constants.Rooms.SpecialSuite.Amenity2.translation.content')},
-            {icon: FaCouch, label: t('Constants.Rooms.SpecialSuite.Amenity3.translation.content')},
-            {icon: FaConciergeBell, label: t('Constants.Rooms.SpecialSuite.Amenity4.translation.content')}
+            {icon: FaCrown, label: t('Constants.RoomSpecialSuiteAmenity1.translation.content')},
+            {icon: MdDeck, label: t('Constants.RoomSpecialSuiteAmenity2.translation.content')},
+            {icon: FaCouch, label: t('Constants.RoomSpecialSuiteAmenity3.translation.content')},
+            {icon: FaConciergeBell, label: t('Constants.RoomSpecialSuiteAmenity4.translation.content')}
         ]
     }
 ];
@@ -117,30 +116,29 @@ export const getRooms = (t: (key: string) => string): Room[] => [
 export const getTestimonials = (t: (key: string) => string): Testimonial[] => [
     {
         id: '1',
-        name: t('Constants.Testimonials.Testimonial1.Name.translation.content'),
-        location: t('Constants.Testimonials.Testimonial1.Location.translation.content'),
+        name: t('Constants.Testimonial1Name.translation.content'),
+        location: t('Constants.Testimonial1Location.translation.content'),
         rating: 5,
-        review: t('Constants.Testimonials.Testimonial1.Review.translation.content'),
+        review: t('Constants.Testimonial1Review.translation.content'),
         avatar: images.avatars.avatar1
     },
     {
         id: '2',
-        name: t('Constants.Testimonials.Testimonial2.Name.translation.content'),
-        location: t('Constants.Testimonials.Testimonial2.Location.translation.content'),
+        name: t('Constants.Testimonial2Name.translation.content'),
+        location: t('Constants.Testimonial2Location.translation.content'),
         rating: 5,
-        review: t('Constants.Testimonials.Testimonial2.Review.translation.content'),
+        review: t('Constants.Testimonial2Review.translation.content'),
         avatar: images.avatars.avatar2
     },
     {
         id: '3',
-        name: t('Constants.Testimonials.Testimonial3.Name.translation.content'),
-        location: t('Constants.Testimonials.Testimonial3.Location.translation.content'),
+        name: t('Constants.Testimonial3Name.translation.content'),
+        location: t('Constants.Testimonial3Location.translation.content'),
         rating: 5,
-        review: t('Constants.Testimonials.Testimonial3.Review.translation.content'),
+        review: t('Constants.Testimonial3Review.translation.content'),
         avatar: images.avatars.avatar3
     },
 ];
-
 
 type GalleryItem = {
     id: string | number;
@@ -151,13 +149,13 @@ type GalleryItem = {
 };
 
 export const getActivities = (t: (key: string) => string): Activity[] => [
-    {id: '1', title: t('Constants.Activities.Transport.translation.content'), image: images.activities.transport},
-    {id: '2', title: t('Constants.Activities.Yoga.translation.content'), image: images.activities.coach},
-    {id: '3', title: t('Constants.Activities.Hair.translation.content'), image: images.activities.hair},
-    {id: '4', title: t('Constants.Activities.Events.translation.content'), image: images.activities.events},
-    {id: '5', title: t('Constants.Activities.Activities.translation.content'), image: images.activities.activities},
-    {id: '6', title: t('Constants.Activities.Laundry.translation.content'), image: images.activities.pressing},
-    {id: '7', title: t('Constants.Activities.Shop.translation.content'), image: images.activities.shop},
+    {id: '1', title: t('Constants.ActivityTransport.translation.content'), image: images.activities.transport},
+    {id: '2', title: t('Constants.ActivityYoga.translation.content'), image: images.activities.coach},
+    {id: '3', title: t('Constants.ActivityHair.translation.content'), image: images.activities.hair},
+    {id: '4', title: t('Constants.ActivityEvents.translation.content'), image: images.activities.events},
+    {id: '5', title: t('Constants.ActivityActivities.translation.content'), image: images.activities.activities},
+    {id: '6', title: t('Constants.ActivityLaundry.translation.content'), image: images.activities.pressing},
+    {id: '7', title: t('Constants.ActivityShop.translation.content'), image: images.activities.shop},
 ];
 
 export const galleryImages: GalleryItem[] = [
@@ -289,7 +287,7 @@ export interface SlideImages {
 
 export interface Slide {
     id: number;
-    category: SlideCategory;
+    category: SlideCategory | string;
     title: string;
     description: string[];
     features: string[];
@@ -298,16 +296,21 @@ export interface Slide {
 }
 
 
-export const experienceSlides: Slide[] = [
+export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: 'HÉBERGEMENTS',
-        title: '17 Chambres Et Suites Uniques',
+        category: t('Slide1Category.translation.content') as SlideCategory,
+        title: t('Slide1Title.translation.content'),
         description: [
-            'Le Riad Nashira vous offre 17 chambres et suites élégamment conçues au cœur de la Médina de Marrakech.',
-            'Chaque espace allie le charme traditionnel marocain au confort moderne. Un refuge de luxe pour un séjour inoubliable avec architecture authentique et décoration raffinée.'
+            t('Slide1Description1.translation.content'),
+            t('Slide1Description2.translation.content')
         ],
-        features: ['Chambres Confort', 'Chambres Deluxe', 'Suites', 'Suites Spéciales'],
+        features: [
+            t('Slide1Feature1.translation.content'),
+            t('Slide1Feature2.translation.content'),
+            t('Slide1Feature3.translation.content'),
+            t('Slide1Feature4.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80'
@@ -316,13 +319,17 @@ export const experienceSlides: Slide[] = [
     },
     {
         id: 2,
-        category: 'GASTRONOMIE',
-        title: 'Expériences Culinaires Raffinées',
+        category: t('Slide2Category.translation.content') as SlideCategory,
+        title: t('Slide2Title.translation.content'),
         description: [
-            'Entre Le Nour, restaurant marocain, et Le Rive, restaurant méditerranéen, laissez-vous séduire par deux univers culinaires complémentaires.',
-            'Des plats raffinés, une inspiration locale et méditerranéenne, et des ingrédients frais pour un voyage gustatif unique.',
+            t('Slide2Description1.translation.content'),
+            t('Slide2Description2.translation.content')
         ],
-        features: ['Restaurant Marocain', 'Restaurant Méditerranéen', 'Produits Locaux'],
+        features: [
+            t('Slide2Feature1.translation.content'),
+            t('Slide2Feature2.translation.content'),
+            t('Slide2Feature3.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'
@@ -331,13 +338,18 @@ export const experienceSlides: Slide[] = [
     },
     {
         id: 3,
-        category: 'DÉTENTE',
-        title: 'Trois Espaces Aquatiques Uniques',
+        category: t('Slide3Category.translation.content') as SlideCategory,
+        title: t('Slide3Title.translation.content'),
         description: [
-            'Profitez de nos trois piscines pour vous ressourcer dans un cadre exceptionnel.',
-            'Une piscine sur le rooftop avec vue panoramique sur la Médina, une piscine intérieure chauffée et une piscine au cœur du patio. Des oasis de tranquillité.'
+            t('Slide3Description1.translation.content'),
+            t('Slide3Description2.translation.content')
         ],
-        features: ['Piscine Rooftop', 'Piscine Chauffée', 'Piscine Patio', 'Transats Premium'],
+        features: [
+            t('Slide3Feature1.translation.content'),
+            t('Slide3Feature2.translation.content'),
+            t('Slide3Feature3.translation.content'),
+            t('Slide3Feature4.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80'
@@ -346,13 +358,18 @@ export const experienceSlides: Slide[] = [
     },
     {
         id: 4,
-        category: 'BIEN-ÊTRE & SPA',
-        title: 'Spa Et Rituels De Bien-Être',
+        category: t('Slide4Category.translation.content') as SlideCategory,
+        title: t('Slide4Title.translation.content'),
         description: [
-            'Notre spa vous invite à un voyage sensoriel unique inspiré des traditions marocaines.',
-            'Entre hammam traditionnel, piscines chauffées et fitness en rooftop , notre riad offre une expérience de bien-être totale , unique dans la Médina'
+            t('Slide4Description1.translation.content'),
+            t('Slide4Description2.translation.content')
         ],
-        features: ['Hammam Traditionnel', 'Massages', 'Soins Naturels', 'Espace Fitness'],
+        features: [
+            t('Slide4Feature1.translation.content'),
+            t('Slide4Feature2.translation.content'),
+            t('Slide4Feature3.translation.content'),
+            t('Slide4Feature4.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80'
@@ -361,31 +378,41 @@ export const experienceSlides: Slide[] = [
     },
     {
         id: 5,
-        category: 'AMBIANCE',
-        title: 'Une Ambiance Raffinée Et Authentique',
+        category: t('Slide5Category.translation.content') as SlideCategory,
+        title: t('Slide5Title.translation.content'),
         description: [
-            'Découvrez deux bars et une terrasse panoramique où le raffinement rencontre la tradition marocaine.',
-            'Architecture authentique, décoration soignée et service personnalisé : chaque espace a été conçu pour offrir une expérience unique et mémorable au cœur de Marrakech.'
+            t('Slide5Description1.translation.content'),
+            t('Slide5Description2.translation.content')
         ],
-        features: ['Architecture Traditionnelle', 'Boutique artisanale', 'Rooftop Panoramique'],
+        features: [
+            t('Slide5Feature1.translation.content'),
+            t('Slide5Feature2.translation.content'),
+            t('Slide5Feature3.translation.content')
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80'
         },
         link: '/bars-restaurants'
     }
-]
+];
 
-export const barsAndRestaurantsSlides: Slide[] = [
+export const experienceSlides: Slide[] = [];
+
+export const getBarsAndRestaurantsSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: 'GASTRONOMIE',
-        title: 'Expériences Culinaires Raffinées',
+        category: t('BarsSlides1Category.translation.content'),
+        title: t('BarsSlides1Title.translation.content'),
         description: [
-            'Au Riad Nashira, la gastronomie fait partie intégrante du voyage. De la finesse des saveurs marocaines aux assiettes méditeraneennes les plus raffinées nos restaurants et bars sont des lieux de partage, de découverte et de convivialité.',
-            'Chaque espace a été pensé comme une escale sensorielle : intimiste, élégante et authentique.',
+            t('BarsSlides1Description1.translation.content'),
+            t('BarsSlides1Description2.translation.content'),
         ],
-        features: ['Restaurant Marocain', 'Restaurant Méditerranéen', 'Produits Locaux'],
+        features: [
+            t('BarsSlides1Feature1.translation.content'),
+            t('BarsSlides1Feature2.translation.content'),
+            t('BarsSlides1Feature3.translation.content'),
+        ],
         images: {
             main: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
             secondary: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'
@@ -393,19 +420,24 @@ export const barsAndRestaurantsSlides: Slide[] = [
     },
     {
         id: 2,
-        category: 'MIXOLOGIE',
-        title: 'Ambiance & Cocktails Signature',
+        category: t('BarsSlides2Category.translation.content'),
+        title: t('BarsSlides2Title.translation.content'),
         description: [
-            'Découvrez le Rinlip, notre bar intimiste, et le Rooftop Rinlip, offrant une vue imprenable sur Marrakech. Deux atmosphères, une même excellence.',
-            'Des créations uniques de nos mixologues, une sélection de vins fins et des spiritueux premium dans des cadres exceptionnels.'
+            t('BarsSlides2Description1.translation.content'),
+            t('BarsSlides2Description2.translation.content'),
         ],
-        features: ['Bar Intimiste', 'Rooftop Panoramique', 'Musique Live'],
+        features: [
+            t('BarsSlides2Feature1.translation.content'),
+            t('BarsSlides2Feature2.translation.content'),
+            t('BarsSlides2Feature3.translation.content'),
+        ],
         images: {
             main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4a62ee7e92-0dee6221cf659278bcca.png',
             secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/498a4d7e0f-c87a7fb0c2a1cedf230c.png'
         }
     },
-]
+];
+
 
 export const restaurantsData: Facility[] = [
     {
@@ -466,22 +498,86 @@ export const spaData: Facility[] = [
     }
 ];
 
-export const barsData: SecondaryFacility[] = [
+export const getSpaData = (t: (key: string) => string): Facility[] => [
+    {
+        id: 'spa',
+        category: t('SpaCategory.translation.content'),
+        name: t('SpaName.translation.content'),
+        description: [
+            t('SpaDescription1.translation.content'),
+            t('SpaDescription2.translation.content'),
+        ],
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/1e8781d502-0bcb5ebf0de2cf37c8d1.png',
+        imageAlt: t('SpaImageAlt.translation.content'),
+        menuText: t('SpaMenuText.translation.content'),
+        reservationText: t('SpaReservationText.translation.content'),
+    },
+    {
+        id: 'hammam',
+        category: t('HammamCategory.translation.content'),
+        name: t('HammamName.translation.content'),
+        description: [
+            t('HammamDescription1.translation.content'),
+            t('HammamDescription2.translation.content'),
+        ],
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/d88c3415bb-270587d94437037719d8.png',
+        imageAlt: t('HammamImageAlt.translation.content'),
+    }
+];
+
+
+export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
+    {
+        id: 'nour-marocain',
+        category: t('RestaurantsNourCategory.translation.content'),
+        name: t('RestaurantsNourName.translation.content'),
+        description: [
+            t('RestaurantsNourDescription1.translation.content'),
+            t('RestaurantsNourDescription2.translation.content'),
+        ],
+        cuisine: t('RestaurantsNourCuisine.translation.content'),
+        hours: t('RestaurantsNourHours.translation.content'),
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/925b1db0bb-8ae59c63c6dcd46c5865.png',
+        imageAlt: t('RestaurantsNourImageAlt.translation.content'),
+        icon: 'FaUtensils',
+        menuText: t('RestaurantsMenuText.translation.content'),
+        reservationText: t('RestaurantsReservationText.translation.content'),
+    },
+    {
+        id: 'rive-mediterraneen',
+        category: t('RestaurantsRiveCategory.translation.content'),
+        name: t('RestaurantsRiveName.translation.content'),
+        description: [
+            t('RestaurantsRiveDescription1.translation.content'),
+            t('RestaurantsRiveDescription2.translation.content'),
+        ],
+        cuisine: t('RestaurantsRiveCuisine.translation.content'),
+        hours: t('RestaurantsRiveHours.translation.content'),
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b70eac3837-41486d2a6f64cbfb3242.png',
+        imageAlt: t('RestaurantsRiveImageAlt.translation.content'),
+        icon: 'FaFish',
+        menuText: t('RestaurantsMenuText.translation.content'),
+        reservationText: t('RestaurantsReservationText.translation.content'),
+    },
+];
+
+export const getBarsData = (t: (key: string) => string): SecondaryFacility[] => [
     {
         id: 'rinlip-bar',
-        name: 'Rinlip',
-        description: 'Un refuge feutré et élégant au rez-de-chaussée, idéal pour un apéritif ou un digestif. Laissez-vous tenter par nos cocktails classiques et nos créations signature dans une atmosphère confidentielle.',
+        name: t('BarsRinlipName.translation.content'),
+        description: t('BarsRinlipDescription.translation.content'),
         image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/aa75bc1473-d418b8a3dff98c57245e.png',
-        imageAlt: 'Cozy and sophisticated speakeasy bar with dark wood paneling, leather armchairs, a glowing bar with premium spirits, and intimate lighting, classic style'
+        imageAlt: t('BarsRinlipImageAlt.translation.content'),
     },
     {
         id: 'rooftop-rinlip',
-        name: 'Rinlip Rooftop',
-        description: 'Le point culminant de votre soirée. Profitez d\'une vue à 360° sur Marrakech, de la musique live et d\'une ambiance festive. Le lieu parfait pour admirer le coucher de soleil, un cocktail à la main.',
+        name: t('BarsRooftopName.translation.content'),
+        description: t('BarsRooftopDescription.translation.content'),
         image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b699b38764-1967ceb92cee9547429b.png',
-        imageAlt: 'Stunning rooftop bar in Marrakech at sunset, with panoramic views of the Atlas mountains, stylish lounge furniture, infinity pool, and vibrant ambiance'
-    }
+        imageAlt: t('BarsRooftopImageAlt.translation.content'),
+    },
 ];
+
 
 export const fitnessData: SecondaryFacility[] = [
     {
@@ -503,17 +599,17 @@ export const fitnessData: SecondaryFacility[] = [
 export const getSpaSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: t('Constants.SpaSlides.Slide1.Category.translation.content') as SlideCategory,
-        title: t('Constants.SpaSlides.Slide1.Title.translation.content'),
+        category: t('SpaSlides1Category.translation.content'),
+        title: t('SpaSlides1Title.translation.content'),
         description: [
-            t('Constants.SpaSlides.Slide1.Description1.translation.content'),
-            t('Constants.SpaSlides.Slide1.Description2.translation.content')
+            t('SpaSlides1Description1.translation.content'),
+            t('SpaSlides1Description2.translation.content'),
         ],
         features: [
-            t('Constants.SpaSlides.Slide1.Feature1.translation.content'),
-            t('Constants.SpaSlides.Slide1.Feature2.translation.content'),
-            t('Constants.SpaSlides.Slide1.Feature3.translation.content'),
-            t('Constants.SpaSlides.Slide1.Feature4.translation.content')
+            t('SpaSlides1Feature1.translation.content'),
+            t('SpaSlides1Feature2.translation.content'),
+            t('SpaSlides1Feature3.translation.content'),
+            t('SpaSlides1Feature4.translation.content'),
         ],
         images: {
             main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
@@ -522,17 +618,17 @@ export const getSpaSlides = (t: (key: string) => string): Slide[] => [
     },
     {
         id: 2,
-        category: t('Constants.SpaSlides.Slide2.Category.translation.content') as SlideCategory,
-        title: t('Constants.SpaSlides.Slide2.Title.translation.content'),
+        category: t('SpaSlides2Category.translation.content'),
+        title: t('SpaSlides2Title.translation.content'),
         description: [
-            t('Constants.SpaSlides.Slide2.Description1.translation.content'),
-            t('Constants.SpaSlides.Slide2.Description2.translation.content')
+            t('SpaSlides2Description1.translation.content'),
+            t('SpaSlides2Description2.translation.content'),
         ],
         features: [
-            t('Constants.SpaSlides.Slide2.Feature1.translation.content'),
-            t('Constants.SpaSlides.Slide2.Feature2.translation.content'),
-            t('Constants.SpaSlides.Slide2.Feature3.translation.content'),
-            t('Constants.SpaSlides.Slide2.Feature4.translation.content')
+            t('SpaSlides2Feature1.translation.content'),
+            t('SpaSlides2Feature2.translation.content'),
+            t('SpaSlides2Feature3.translation.content'),
+            t('SpaSlides2Feature4.translation.content'),
         ],
         images: {
             main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
@@ -655,16 +751,16 @@ export const getEventSpacesData = (t: (key: string) => string): EventSpace[] => 
 export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
     {
         id: 1,
-        category: t('Constants.ActivitiesSlides.Slide1.Category.translation.content') as SlideCategory,
-        title: t('Constants.ActivitiesSlides.Slide1.Title.translation.content'),
+        category: t('ActivitiesSlides1Category.translation.content'),
+        title: t('ActivitiesSlides1Title.translation.content'),
         description: [
-            t('Constants.ActivitiesSlides.Slide1.Description1.translation.content'),
-            t('Constants.ActivitiesSlides.Slide1.Description2.translation.content')
+            t('ActivitiesSlides1Description1.translation.content'),
+            t('ActivitiesSlides1Description2.translation.content'),
         ],
         features: [
-            t('Constants.ActivitiesSlides.Slide1.Feature1.translation.content'),
-            t('Constants.ActivitiesSlides.Slide1.Feature2.translation.content'),
-            t('Constants.ActivitiesSlides.Slide1.Feature3.translation.content')
+            t('ActivitiesSlides1Feature1.translation.content'),
+            t('ActivitiesSlides1Feature2.translation.content'),
+            t('ActivitiesSlides1Feature3.translation.content'),
         ],
         images: {
             main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/0b7ff82c22-64ad22472bcaae938859.png",
@@ -673,16 +769,16 @@ export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
     },
     {
         id: 2,
-        category: t('Constants.ActivitiesSlides.Slide2.Category.translation.content') as SlideCategory,
-        title: t('Constants.ActivitiesSlides.Slide2.Title.translation.content'),
+        category: t('ActivitiesSlides2Category.translation.content'),
+        title: t('ActivitiesSlides2Title.translation.content'),
         description: [
-            t('Constants.ActivitiesSlides.Slide2.Description1.translation.content'),
-            t('Constants.ActivitiesSlides.Slide2.Description2.translation.content')
+            t('ActivitiesSlides2Description1.translation.content'),
+            t('ActivitiesSlides2Description2.translation.content'),
         ],
         features: [
-            t('Constants.ActivitiesSlides.Slide2.Feature1.translation.content'),
-            t('Constants.ActivitiesSlides.Slide2.Feature2.translation.content'),
-            t('Constants.ActivitiesSlides.Slide2.Feature3.translation.content')
+            t('ActivitiesSlides2Feature1.translation.content'),
+            t('ActivitiesSlides2Feature2.translation.content'),
+            t('ActivitiesSlides2Feature3.translation.content'),
         ],
         images: {
             main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b8927524b2-a48d98923a544bed8973.png",
@@ -694,59 +790,60 @@ export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
 export const getOtherActivitiesData = (t: (key: string) => string) => [
     {
         id: "desert-excursion-card",
-        title: t('Constants.OtherActivities.Desert.Title.translation.content'),
-        description: t('Constants.OtherActivities.Desert.Description.translation.content'),
+        title: t('OtherActivitiesDesertTitle.translation.content'),
+        description: t('OtherActivitiesDesertDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/bf8d658fa1-3c567cdec2565ebf0bcf.png",
-            alt: t('Constants.OtherActivities.Desert.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesDesertImageAlt.translation.content'),
         },
     },
     {
         id: "horse-riding-card",
-        title: t('Constants.OtherActivities.HorseRiding.Title.translation.content'),
-        description: t('Constants.OtherActivities.HorseRiding.Description.translation.content'),
+        title: t('OtherActivitiesHorseRidingTitle.translation.content'),
+        description: t('OtherActivitiesHorseRidingDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ff0f2f42a8-7a4347d908e14d14d959.png",
-            alt: t('Constants.OtherActivities.HorseRiding.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesHorseRidingImageAlt.translation.content'),
         },
     },
     {
         id: "essaouira-card",
-        title: t('Constants.OtherActivities.Essaouira.Title.translation.content'),
-        description: t('Constants.OtherActivities.Essaouira.Description.translation.content'),
+        title: t('OtherActivitiesEssaouiraTitle.translation.content'),
+        description: t('OtherActivitiesEssaouiraDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e8114fc3cb-1700b859c31688cf5b27.png",
-            alt: t('Constants.OtherActivities.Essaouira.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesEssaouiraImageAlt.translation.content'),
         },
     },
     {
         id: "cooking-class-card",
-        title: t('Constants.OtherActivities.Cooking.Title.translation.content'),
-        description: t('Constants.OtherActivities.Cooking.Description.translation.content'),
+        title: t('OtherActivitiesCookingTitle.translation.content'),
+        description: t('OtherActivitiesCookingDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ae8263489e-b83b032f87ae704c3841.png",
-            alt: t('Constants.OtherActivities.Cooking.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesCookingImageAlt.translation.content'),
         },
     },
     {
         id: "medina-tour-card",
-        title: t('Constants.OtherActivities.Medina.Title.translation.content'),
-        description: t('Constants.OtherActivities.Medina.Description.translation.content'),
+        title: t('OtherActivitiesMedinaTitle.translation.content'),
+        description: t('OtherActivitiesMedinaDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/673726ac87-ba0c37d34e4547597665.png",
-            alt: t('Constants.OtherActivities.Medina.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesMedinaImageAlt.translation.content'),
         },
     },
     {
         id: "atlas-mountains-card",
-        title: t('Constants.OtherActivities.Atlas.Title.translation.content'),
-        description: t('Constants.OtherActivities.Atlas.Description.translation.content'),
+        title: t('OtherActivitiesAtlasTitle.translation.content'),
+        description: t('OtherActivitiesAtlasDescription.translation.content'),
         image: {
             src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/37793ac69d-275b036d343274fa9974.png",
-            alt: t('Constants.OtherActivities.Atlas.ImageAlt.translation.content'),
+            alt: t('OtherActivitiesAtlasImageAlt.translation.content'),
         },
     },
 ];
+
 
 
 

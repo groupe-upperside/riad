@@ -12,7 +12,7 @@ import {useTranslations} from 'next-intl';
 
 export default function RoomsSuites() {
     const t = useTranslations('RoomsSuites');
-    const tConstant = useTranslations('Constants')
+    const tConstant = useTranslations()
     const parallax = useParallax({
         strength: 0.15,
         maxShift: 140,

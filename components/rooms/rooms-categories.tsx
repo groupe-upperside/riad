@@ -1,7 +1,7 @@
 'use client'
 
 import Container from '@/components/ui/container'
-import {images, rooms} from "@/lib/constants";
+import {getRooms, images} from "@/lib/constants";
 import RoomCard from "@/components/rooms/room-card";
 import Image from "next/image";
 import {useParallax} from "@/lib/hooks/use-parallax";
@@ -9,11 +9,14 @@ import {useTranslations} from 'next-intl';
 
 export default function RoomCategoriesGrid() {
     const t = useTranslations('RoomCategoriesGrid');
+    const tConstant = useTranslations()
     const parallax = useParallax({
         strength: 0.15,
         maxShift: 140,
         overscan: 0.3
     })
+
+    const rooms = getRooms(tConstant)
 
     return (
         <section className="relative overflow-hidden bg-brand-dark-800 py-16 md:py-24">
