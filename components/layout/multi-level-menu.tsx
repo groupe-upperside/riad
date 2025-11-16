@@ -1,10 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import {MenuItem, navigationMenu} from '@/lib/navigation'
+import {getNavigationMenu, MenuItem} from '@/lib/navigation'
 import {cn} from '@/lib/utils/utils'
 import {useEffect, useState} from 'react'
 import {FiMinus, FiPlus} from "react-icons/fi";
+import {useTranslations} from "next-intl";
 
 interface MenuItemComponentProps {
     item: MenuItem
@@ -117,6 +118,8 @@ interface MultiLevelMenuProps {
 
 export default function MultiLevelMenu({onClose, isOpen}: MultiLevelMenuProps) {
     const [openItems, setOpenItems] = useState<Set<string>>(new Set())
+    const t = useTranslations('NavigationMenu');
+    const navigationMenu = getNavigationMenu(t);
 
     useEffect(() => {
         if (!isOpen) {

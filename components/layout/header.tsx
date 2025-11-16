@@ -20,6 +20,7 @@ import MultiLevelMenu from "@/components/layout/multi-level-menu";
 import {usePathname} from "@/lib/i18n/navigation";
 import {RxHamburgerMenu} from "react-icons/rx";
 import {useTranslations} from "next-intl";
+import LocaleSwitcher from "@/components/layout/locale-switcher";
 
 export default function Header(): JSX.Element {
     const t = useTranslations('Header');
@@ -28,7 +29,6 @@ export default function Header(): JSX.Element {
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [headerH, setHeaderH] = useState<number>(0);
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-    const [language, setLanguage] = useState('FR');
 
     const path = usePathname();
 
@@ -145,15 +145,7 @@ export default function Header(): JSX.Element {
 
                         <div className="flex-1 flex items-center justify-end space-x-4 md:space-x-6">
                             <div className="relative hidden md:block">
-                                <button
-                                    className={cn(
-                                        "flex items-center text-sm hover:text-brand-gold-400 cursor-pointer",
-                                        scrolled || path !== "/" ? "text-brand-dark-800" : "text-white"
-                                    )}
-                                    onClick={() => setLanguage(language === 'FR' ? 'EN' : 'FR')}
-                                >
-                                    <span>{language}</span>
-                                </button>
+                                <LocaleSwitcher textColor={scrolled || path !== "/" ? "text-brand-dark-800" : "text-white" }/>
                             </div>
                             <Link
                                 href="/booking"
@@ -208,7 +200,7 @@ export default function Header(): JSX.Element {
                         aria-modal="true"
                         aria-label={t('AriaLabelMainNavigation.translation.content')}
                         className={cn(
-                            'fixed left-0 top-0 h-full w-full md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-white flex flex-col overflow-y-auto z-50 transition-transform duration-300',
+                            'fixed left-0 top-0 h-full w-full md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-white flex flex-col overflow-y-auto z-100 transition-transform duration-300',
                             isMenuOpen ? 'translate-x-0' : '-translate-x-full'
                         )}
                     >

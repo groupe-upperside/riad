@@ -8,54 +8,55 @@ import {useTranslations} from 'next-intl';
 
 export default function RoomAmenities() {
     const t = useTranslations('RoomAmenities');
+    const tSuite = useTranslations("SuitesPage")
 
     const amenities: Amenity[] = [
         {
             id: "1",
-            label: t('AmenityDoubleBed.Label.translation.content'),
-            description: t('AmenityDoubleBed.Description.translation.content'),
+            label: tSuite('AmenityDoubleBedLabel.translation.content'),
+            description: tSuite('AmenityDoubleBedDescription.translation.content'),
             icon: FaBed,
         },
         {
             id: "2",
-            label: t('AmenityBathroom.Label.translation.content'),
-            description: t('AmenityBathroom.Description.translation.content'),
+            label: tSuite('AmenityBathroomLabel.translation.content'),
+            description: tSuite('AmenityBathroomDescription.translation.content'),
             icon: FaShower,
         },
         {
             id: "3",
-            label: t('AmenityAirConditioning.Label.translation.content'),
-            description: t('AmenityAirConditioning.Description.translation.content'),
+            label: tSuite('AmenityAirConditioningLabel.translation.content'),
+            description: tSuite('AmenityAirConditioningDescription.translation.content'),
             icon: FaSnowflake,
         },
         {
             id: "4",
-            label: t('AmenityWifiTV.Label.translation.content'),
-            description: t('AmenityWifiTV.Description.translation.content'),
+            label: tSuite('AmenityWifiTVLabel.translation.content'),
+            description: tSuite('AmenityWifiTVDescription.translation.content'),
             icon: FaWifi,
         },
         {
             id: "5",
-            label: t('AmenitySafe.Label.translation.content'),
-            description: t('AmenitySafe.Description.translation.content'),
+            label: tSuite('AmenitySafeLabel.translation.content'),
+            description: tSuite('AmenitySafeDescription.translation.content'),
             icon: FaLock,
         },
         {
             id: "6",
-            label: t('AmenityCoffeeMinibar.Label.translation.content'),
-            description: t('AmenityCoffeeMinibar.Description.translation.content'),
+            label: tSuite('AmenityCoffeeMinibarLabel.translation.content'),
+            description: tSuite('AmenityCoffeeMinibarDescription.translation.content'),
             icon: FaMugSaucer,
         },
         {
             id: "7",
-            label: t('AmenityWelcomeProducts.Label.translation.content'),
-            description: t('AmenityWelcomeProducts.Description.translation.content'),
+            label: tSuite('AmenityWelcomeProductsLabel.translation.content'),
+            description: tSuite('AmenityWelcomeProductsDescription.translation.content'),
             icon: FaLeaf,
         },
         {
             id: "8",
-            label: t('AmenityHairdryer.Label.translation.content'),
-            description: t('AmenityHairdryer.Description.translation.content'),
+            label: tSuite('AmenityHairdryerLabel.translation.content'),
+            description: tSuite('AmenityHairdryerDescription.translation.content'),
             icon: FaWind,
         },
     ];
@@ -76,7 +77,7 @@ export default function RoomAmenities() {
                     {amenities.map((amenity) => {
                         const Icon = amenity.icon
                         return (
-                            <div key={amenity.label}
+                            <div key={amenity.id}
                                  className="text-center p-4">
                                 <Icon className="text-2xl text-brand-gold-400 mb-2 mx-auto"/>
                                 <p className="font-semibold text-base text-brand-dark-800">

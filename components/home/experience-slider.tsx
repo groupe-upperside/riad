@@ -5,9 +5,9 @@ import Image from 'next/image'
 import {IoMdCheckmarkCircleOutline} from "react-icons/io";
 import {HiArrowUpRight} from "react-icons/hi2";
 import SectionHeader from "@/components/ui/section-header";
-import {Slide} from "@/lib/constants";
 import {Link} from "@/lib/i18n/navigation";
-import {useTranslations} from 'next-intl';
+import {Slide} from "@/lib/constants";
+import {useTranslations} from "next-intl";
 
 interface ExperienceSliderProps {
     sliderContent: Slide[]
@@ -24,6 +24,7 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
     const containerRef = useRef<HTMLDivElement | null>(null)
     const startXRef = useRef<number | null>(null)
     const widthRef = useRef<number>(0)
+
     const len = sliderContent.length
     const TAP_SLOP_PX = 8
     const isPressingRef = useRef<boolean>(false)
@@ -228,7 +229,8 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                         </div>
                         {slide.link && (
                             //@ts-expect-error - link is optional
-                            <Link href={slide.link} className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
+                            <Link href={slide.link}
+                                  className="group mt-10 inline-flex items-center gap-3 self-start cursor-pointer"
                                   aria-label={t('AriaLabelReadMore.translation.content')}>
                             <span className="relative pb-1 text-base font-medium uppercase text-brand-dark-800">
                                 {t('LinkDiscover.translation.content')}
@@ -241,7 +243,8 @@ export default function ExperiencesSlider({sliderContent}: ExperienceSliderProps
                     </div>
                     <div className="mt-8 flex gap-2">
                         {sliderContent.map((_, i) => (
-                            <button key={i} onClick={() => slideTo(i)} aria-label={t('AriaLabelGoToSlide.translation.content', {slideNumber: i + 1})}
+                            <button key={i} onClick={() => slideTo(i)}
+                                    aria-label={t('AriaLabelGoToSlide.translation.content', {slideNumber: i + 1})}
                                     className={`h-2 cursor-pointer rounded-full transition-all ${i === index ? 'w-8 bg-brand-gold' : 'w-2 bg-gray-300 hover:bg-gray-400'}`}/>
                         ))}
                     </div>
