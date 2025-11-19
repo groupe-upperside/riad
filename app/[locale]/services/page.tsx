@@ -129,9 +129,9 @@ export default function ActivitiesPage() {
                     process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_header.jpeg'
                 }
             />
-            <ServiceFeature {...laundryData} />
-            <ServiceFeature {...airportVipData} />
-            <ServiceFeature {...boutiqueData} />
+            <ServiceFeature {...laundryData} id={"pressing"}/>
+            <ServiceFeature {...airportVipData}  id={"shuttle"} />
+            <ServiceFeature {...boutiqueData}   id={"shop"}/>
             <RoomsGallerySection items={items} rounded />
         </>
     );

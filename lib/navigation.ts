@@ -154,17 +154,17 @@ export const getNavigationMenu = (t: (key: string) => string): MenuItem[] => [
             {
                 id: 'pressing',
                 label:  t('ServicesPressingLabel.translation.content'),
-                href: '/services'
+                href: '/services#pressing'
             },
             {
                 id: 'shuttle',
                 label:  t('ServicesShuttleLabel.translation.content'),
-                href: '/services'
+                href: '/services#shuttle'
             },
             {
                 id: 'shop',
                 label:  t('ServicesShopLabel.translation.content'),
-                href: '/services'
+                href: '/services#shop'
             },
         ]
     }

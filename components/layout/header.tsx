@@ -113,7 +113,7 @@ export default function Header(): JSX.Element {
                 <div className="w-full px-4 md:px-6 py-4 md:py-4 lg:px-12">
                     <div className="flex items-center justify-between relative">
                         <div className="flex-1 flex items-center gap-4 md:gap-6">
-                            <Link href="/" className="flex items-center" aria-label="Go to homepage">
+                            <a href="https://www.elegance-epicurean-group.com" className="flex items-center" target="_blank">
                                 <Image
                                     src={`${process.env.NEXT_PUBLIC_CDN_URL}${scrolled || path !== "/" ? "epicurean_noir.png" : "epicurean.png"}`}
                                     alt={t('AltLogo.translation.content')}
@@ -128,7 +128,7 @@ export default function Header(): JSX.Element {
                                     width={90}
                                     height={82}
                                 />
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

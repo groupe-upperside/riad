@@ -6,6 +6,7 @@ import {cn} from '@/lib/utils/utils'
 import {useEffect, useState} from 'react'
 import {FiMinus, FiPlus} from "react-icons/fi";
 import {useTranslations} from "next-intl";
+import {usePathname} from "@/lib/i18n/navigation";
 
 interface MenuItemComponentProps {
     item: MenuItem
@@ -13,9 +14,10 @@ interface MenuItemComponentProps {
     openItems: Set<string>
     toggleItem: (id: string) => void
     onClose?: () => void
+    resolveHref: (href?: string) => string
 }
 
-function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: MenuItemComponentProps) {
+function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem, resolveHref}: MenuItemComponentProps) {
     const hasChildren = item.children && item.children.length > 0
     const isSubMenuOpen = openItems.has(item.id)
 
@@ -45,7 +47,7 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
                         aria-expanded={isSubMenuOpen}
                     >
                         <Link
-                            href={item.href || '#'}
+                            href={resolveHref(item.href)}
                             onClick={handleLinkClick}
                             className={cn(
                                 level === 0 && "uppercase font-medium",
@@ -67,7 +69,7 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
                     </div>
                 ) : (
                     <Link
-                        href={item.href || '#'}
+                        href={resolveHref(item.href)}
                         onClick={handleLinkClick}
                         className="flex items-center justify-between w-full"
                     >
@@ -103,6 +105,7 @@ function MenuItemComponent({item, level = 0, onClose, openItems, toggleItem}: Me
                             onClose={onClose}
                             openItems={openItems}
                             toggleItem={toggleItem}
+                            resolveHref={resolveHref}
                         />
                     ))}
                 </ul>
@@ -120,6 +123,12 @@ export default function MultiLevelMenu({onClose, isOpen}: MultiLevelMenuProps) {
     const [openItems, setOpenItems] = useState<Set<string>>(new Set())
     const t = useTranslations('NavigationMenu');
     const navigationMenu = getNavigationMenu(t);
+    const pathname = usePathname();
+
+    const resolveHref = (href?: string): string => {
+        if (!href) return '#';
+        return href;
+    };
 
     useEffect(() => {
         if (!isOpen) {
@@ -183,6 +192,7 @@ export default function MultiLevelMenu({onClose, isOpen}: MultiLevelMenuProps) {
                         onClose={handleClose}
                         openItems={openItems}
                         toggleItem={toggleItem}
+                        resolveHref={resolveHref}
                     />
                 ))}
             </ul>
