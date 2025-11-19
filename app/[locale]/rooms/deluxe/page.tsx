@@ -75,7 +75,7 @@ export default function DeluxePage() {
     const riads: RiadCard[] = [
         {
             id: "comfort-card",
-            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'deluxe/' + 'comfort_slider.jpg',
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'deluxe/' + 'comfort_2_slider.jpeg',
             imageAlt: t('OtherRoomComfortImageAlt.translation.content'),
             meta: t('OtherRoomComfortMeta.translation.content'),
             title: t('OtherRoomComfortTitle.translation.content'),

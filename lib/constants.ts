@@ -27,18 +27,18 @@ export const images = {
     hero8: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_8.jpeg',
     hero9: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_9.jpeg',
     hero10: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_10.jpeg',
-    hero11: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_11.jpeg',
+    hero11: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_111.jpeg',
     hero12: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_12.jpeg',
     hero13: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_13.jpeg',
     hero14: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_14.jpeg',
-    aboutRiad: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_about.jpeg',
+    aboutRiad: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_about_2.jpeg',
     experienceSuite: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_luxe.jpeg',
     patternOverlay: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/dc765237cd-ef220abc13ff04563495.png',
     goldLight: 'https://storage.googleapis.com/uxpilot-images-and-prompts/images/1706612450849-gold-light.png',
     rooms: {
-        confort: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_comfort.jpg',
+        confort: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_comfort_2.jpeg',
         deluxe: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_deluxe.jpg',
-        suite: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_suite.jpg',
+        suite: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_deluxe_2.jpeg',
         nashira: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_nashira.jpg',
     },
     activities: {
@@ -325,8 +325,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide1Feature4.translation.content')
         ],
         images: {
-            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_rooms.jpeg',
-            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_room_2.jpeg',
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_rooms_12.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_rooms_11.jpeg',
         },
         link: '/rooms'
     },
@@ -345,7 +345,7 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
         ],
         images: {
             main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_restaurant.jpeg',
-            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_restaurant_2.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_bars_11.jpeg',
         },
         link: '/bars-restaurants'
     },
@@ -365,7 +365,7 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
         ],
         images: {
             main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_pool.jpeg',
-            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_pool_2.jpg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_pool_4.jpeg',
         },
         link: '/spa'
     },
@@ -385,7 +385,7 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
         ],
         images: {
             main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_spa.jpeg',
-            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_spa_2.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_spa_3.jpeg',
         },
         link: '/spa'
     },
@@ -403,7 +403,7 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide5Feature3.translation.content')
         ],
         images: {
-            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_bar.jpg',
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_ambiance.jpeg',
             secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_bar_2.jpg',
         },
         link: '/bars-restaurants'
@@ -566,7 +566,7 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         ],
         cuisine: t('RestaurantsRiveCuisine.translation.content'),
         hours: t('RestaurantsRiveHours.translation.content'),
-        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_introduction_2.jpg',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_introduction_3.jpg',
         imageAlt: t('RestaurantsRiveImageAlt.translation.content'),
         icon: 'FaFish',
         menuText: t('RestaurantsMenuText.translation.content'),
@@ -776,8 +776,8 @@ export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
             t('ActivitiesSlides1Feature3.translation.content'),
         ],
         images: {
-            main:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_slider_1.jpeg',
-            secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
+            secondary:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_slider_1.jpeg',
+            main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
         }
     },
     {
@@ -833,7 +833,7 @@ export const getOtherActivitiesData = (t: (key: string) => string) => [
         title: t('OtherActivitiesCookingTitle.translation.content'),
         description: t('OtherActivitiesCookingDescription.translation.content'),
         image: {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ae8263489e-b83b032f87ae704c3841.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_cooking.jpeg',
             alt: t('OtherActivitiesCookingImageAlt.translation.content'),
         },
     },

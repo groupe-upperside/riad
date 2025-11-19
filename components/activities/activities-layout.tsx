@@ -16,20 +16,20 @@ export default function ActivitiesLayout() {
     const activitiesSlides = getActivitiesSlides(tConstant)
     const items: GalleryItem[] = [
         {
-            src:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_gallery_1.jpeg',
+            src:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_gallery_2.jpg',
             alt: t("GalleryItem1Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fa6a98b30e-098ad1353861b1d43e3d.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_gallery_1.jpeg',
             alt: t("GalleryItem2Alt.translation.content"),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a2ae5f694-e509340f023df548f5e4.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_gallery_3.jpg',
             alt: t("GalleryItem3Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,

@@ -16,7 +16,7 @@ export default function ActivitiesPage() {
             rowSpan: 1,
         },
         {
-            src: process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_gallery_1.jpg',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_gallery_2.jpeg',
             alt: t("GalleryItem2Alt.translation.content"),
             colSpan: 2,
             rowSpan: 2,

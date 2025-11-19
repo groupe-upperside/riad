@@ -85,7 +85,7 @@ export default function SuitesPage() {
         },
         {
             id: "comfort-card",
-            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'comfort_slider.jpg',
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'comfort_2_slider.jpeg',
             imageAlt: t('OtherRoomComfortImageAlt.translation.content'),
             meta: t('OtherRoomComfortMeta.translation.content'),
             title: t('OtherRoomComfortTitle.translation.content'),

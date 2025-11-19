@@ -39,7 +39,7 @@ export default function ComfortPage() {
             rowSpan: 2,
         },
         {
-            src: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_gallery_2.jpg',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_gallery_5.jpeg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
@@ -191,7 +191,7 @@ export default function ComfortPage() {
                 subtitle={t('BookingCtaSubtitle.translation.content')}
                 bullets={bullets}
                 actions={actions}
-                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_features.jpg'}
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_features_2.jpeg'}
                 imageAlt={t('BookingCtaImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[400px]"

@@ -6,7 +6,7 @@ export const getEventSpacesDetailed = (t: (key: string) => string): ViewItem[] =
         id: "1",
         title: t('ProfessionalEventsTitle.translation.content'),
         subtitle: t('ProfessionalEventsSubtitle.translation.content'),
-        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_header.jpeg',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_private.jpeg',
         imageAlt: t('ProfessionalEventsImageAlt.translation.content'),
         description: t('ProfessionalEventsDescription.translation.content')
     },
@@ -14,7 +14,7 @@ export const getEventSpacesDetailed = (t: (key: string) => string): ViewItem[] =
         id: "2",
         title: t('PrivateEventsTitle.translation.content'),
         subtitle: t('PrivateEventsSubtitle.translation.content'),
-        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_private.jpeg',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_header.jpeg',
         imageAlt: t('PrivateEventsImageAlt.translation.content'),
         description: t('PrivateEventsDescription.translation.content')
     },
@@ -22,7 +22,7 @@ export const getEventSpacesDetailed = (t: (key: string) => string): ViewItem[] =
         id: "3",
         title: t('PreciousMomentsTitle.translation.content'),
         subtitle: t('PreciousMomentsSubtitle.translation.content'),
-        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_precious.jpeg',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_precious.jpg',
         imageAlt: t('PreciousMomentsImageAlt.translation.content'),
         description: t('PreciousMomentsDescription.translation.content')
     },

@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 import {FaArrowRight, FaChevronDown} from 'react-icons/fa6';
 import Container from '@/components/ui/container';
 import {useTranslations} from 'next-intl';
+import {sendBookingEmail} from "@/app/lib/actions/sendEmail/action";
+import toast from "react-hot-toast";
 
 export type BookingFormProps = {
     defaultRoomBadge?: string;
@@ -31,10 +33,10 @@ export default function BookingForm({
     const [phone, setPhone] = useState('');
     const [specialReq, setSpecialReq] = useState('');
 
-    const [adults, setAdults] = useState(defaultAdults ?? t('DefaultAdults.translation.content'));
-    const [children, setChildren] = useState(defaultChildren ?? t('DefaultChildren.translation.content'));
-    const [rooms, setRooms] = useState(defaultRooms ?? t('DefaultRooms.translation.content'));
-    const [roomTypeSelect, setRoomTypeSelect] = useState(defaultRoomTypeSelect ?? t('DefaultRoomType.translation.content'));
+    const [adults, setAdults] = useState(defaultAdults ?? '');
+    const [children, setChildren] = useState(defaultChildren ?? '');
+    const [rooms, setRooms] = useState(defaultRooms ?? '');
+    const [roomTypeSelect, setRoomTypeSelect] = useState(defaultRoomTypeSelect ?? '');
 
     const [checkInISO, setCheckInISO] = useState<string>(defaultCheckIn ?? '');
     const [checkOutISO, setCheckOutISO] = useState<string>(defaultCheckOut ?? '');
@@ -48,29 +50,41 @@ export default function BookingForm({
     const dateInput =
         'w-full h-12 rounded-md border border-gray-200 bg-gray-50 pr-10 pl-4 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-black/5 focus:border-gray-300';
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const tomorrowISO = tomorrow.toISOString().slice(0, 10);
+
+    async function submitBooking(formData: FormData) {
         const payload = {
-            roomBadge: defaultRoomBadge,
-            firstName,
-            lastName,
-            email,
-            phone,
-            adults,
-            children,
-            rooms,
-            roomTypeSelect,
-            checkIn: checkInISO,
-            checkOut: checkOutISO,
-            specialRequirements: specialReq,
-        };
-        console.log('Booking payload:', payload);
-    };
+            roomBadge: formData.get('roomBadge'),
+            firstName: formData.get('first-name'),
+            lastName: formData.get('last-name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            adults: formData.get('adults'),
+            children: formData.get('children'),
+            rooms: formData.get('rooms'),
+            roomTypeSelect: formData.get('room-type-select'),
+            checkIn: formData.get('check-in'),
+            checkOut: formData.get('check-out'),
+            specialRequirements: formData.get('special-requirements'),
+        } as Record<string, unknown>;
+
+        try {
+            await sendBookingEmail(payload);
+            toast.success('Réservation envoyée.')
+        } catch {
+            toast.error("La réservation n'a pas pu être envoyée.")
+        }
+    }
 
     return (
         <section id="booking-form-container" className="bg-white py-24">
             <Container>
-                <form id="booking-form" onSubmit={handleSubmit}>
+                <form id="booking-form" action={submitBooking}>
+                    <input type="hidden" name="roomBadge" value={defaultRoomBadge} />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div id="first-name-field">
                             <input
@@ -124,6 +138,7 @@ export default function BookingForm({
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 aria-label={t('AriaLabelPhone.translation.content')}
+                                required
                             />
                         </div>
 
@@ -135,8 +150,9 @@ export default function BookingForm({
                                 value={adults}
                                 onChange={(e) => setAdults(e.target.value)}
                                 aria-label={t('AriaLabelAdults.translation.content')}
+                                required
                             >
-                                <option>{t('OptionAdults.translation.content')}</option>
+                                <option value="" disabled>{t('OptionAdults.translation.content')}</option>
                                 <option>{t('Option1Adult.translation.content')}</option>
                                 <option>{t('Option2Adults.translation.content')}</option>
                                 <option>{t('Option3Adults.translation.content')}</option>
@@ -154,8 +170,9 @@ export default function BookingForm({
                                 value={children}
                                 onChange={(e) => setChildren(e.target.value)}
                                 aria-label={t('AriaLabelChildren.translation.content')}
+                                required
                             >
-                                <option>{t('OptionChildren.translation.content')}</option>
+                                <option value="" disabled>{t('OptionChildren.translation.content')}</option>
                                 <option>{t('Option0Child.translation.content')}</option>
                                 <option>{t('Option1Child.translation.content')}</option>
                                 <option>{t('Option2Children.translation.content')}</option>
@@ -173,6 +190,7 @@ export default function BookingForm({
                                 value={rooms}
                                 onChange={(e) => setRooms(e.target.value)}
                                 aria-label={t('AriaLabelRooms.translation.content')}
+                                required
                             >
                                 <option>{t('Option1Room.translation.content')}</option>
                                 <option>{t('Option2Rooms.translation.content')}</option>
@@ -190,8 +208,9 @@ export default function BookingForm({
                                 value={roomTypeSelect}
                                 onChange={(e) => setRoomTypeSelect(e.target.value)}
                                 aria-label={t('AriaLabelRoomType.translation.content')}
+                                required
                             >
-                                <option>{t('OptionRoomType.translation.content')}</option>
+                                <option value="" disabled>{t('OptionRoomType.translation.content')}</option>
                                 <option>{t('OptionComfort.translation.content')}</option>
                                 <option>{t('OptionDeluxe.translation.content')}</option>
                                 <option>{t('OptionSuite.translation.content')}</option>
@@ -211,6 +230,8 @@ export default function BookingForm({
                                 value={checkInISO}
                                 onChange={(e) => setCheckInISO(e.target.value)}
                                 aria-label={t('AriaLabelCheckIn.translation.content')}
+                                min={tomorrowISO}
+                                required
                             />
                         </div>
 
@@ -223,6 +244,8 @@ export default function BookingForm({
                                 value={checkOutISO}
                                 onChange={(e) => setCheckOutISO(e.target.value)}
                                 aria-label={t('AriaLabelCheckOut.translation.content')}
+                                min={tomorrowISO}
+                                required
                             />
                         </div>
 
