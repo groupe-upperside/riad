@@ -21,20 +21,20 @@ export default function BarsRestaurantsLayout() {
 
     const items: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/925b1db0bb-8ae59c63c6dcd46c5865.png",
+            src:process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_gallery_1.jpeg',
             alt: t("GalleryItem1Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b70eac3837-41486d2a6f64cbfb3242.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_gallery_2.jpeg',
             alt: t("GalleryItem2Alt.translation.content"),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f49c5a3e37-bec3436e20f016a5e417.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_gallery_3.jpeg',
             alt: t("GalleryItem3Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
@@ -47,7 +47,7 @@ export default function BarsRestaurantsLayout() {
                 subtitle={t("HeroSubtitle.translation.content")}
                 title={t("HeroTitle.translation.content")}
                 image={
-                    "https://storage.googleapis.com/uxpilot-auth.appspot.com/9ffe227a17-c390c05fd6b3b180c57c.png"
+                    process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_header_2.jpg'
                 }
             />
             <ExperiencesSlider sliderContent={barsAndRestaurantsSlides} />

@@ -3,7 +3,6 @@
 import RoomsHeroSection from "@/components/rooms/rooms-hero-section";
 import RoomCategoriesGrid from "@/components/rooms/rooms-categories";
 import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
-import {PatioViews} from "@/components/rooms/rooms-patio-view";
 import RoomAmenities from "@/components/rooms/rooms-amenities";
 import RoomsIntroduction from "@/components/rooms/rooms-introduction";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
@@ -18,20 +17,20 @@ export default function RoomsPage() {
 
     const items: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/27efb571a6-bfb5549702fe34d5cc45.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_1.jpeg',
             alt: t('GalleryItem1Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/7a6eb71fb4-fbb2cfff33f63bb0a351.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_2.jpeg',
             alt: t('GalleryItem2Alt.translation.content'),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f49c5a3e37-bec3436e20f016a5e417.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_3.jpeg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
@@ -52,7 +51,7 @@ export default function RoomsPage() {
             <RoomsHeroSection
                 subtitle={t('HeroSubtitle.translation.content')}
                 title={t('HeroTitle.translation.content')}
-                image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/528ecabd16-5b28210d28f530c83c2d.png"}
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_header.jpeg'}
             />
             <RoomsIntroduction/>
             <RoomCategoriesGrid/>
@@ -62,16 +61,15 @@ export default function RoomsPage() {
                 subtitle={t('FeaturesSubtitle.translation.content')}
                 description={t('FeaturesDescription.translation.content')}
                 features={features}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/2b319d51f8-bdd709bd88a137ae9b34.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_features.jpeg'}
                 imageAlt={t('FeaturesImageAlt.translation.content')}
                 imagePriority
                 imagePosition="right"
-                bgClass="bg-white"
+                bgClass="bg-[#F9F5F0]"
                 textTone="dark"
                 accentClass="text-brand-gold"
                 featuresColumns={2}
             />
-            <PatioViews/>
             <RoomAmenities/>
             <RoomsGallerySection items={items} rounded />
             <CTASection {...roomsCTA} />

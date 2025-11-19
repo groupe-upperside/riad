@@ -17,19 +17,19 @@ export default function SuitesPage() {
 
     const confortGalleryItems: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/90ee5ab427-305e8d6f2ce0b90bd450.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_gallery_1.jpeg',
             alt: t('GalleryItem1Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/8c48eafdaa-0b4207e8945399016d15.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_gallery_2.jpeg',
             alt: t('GalleryItem2Alt.translation.content'),
             colSpan: 2,
             rowSpan: 2,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ce00edbb79-75ece5ea27168dcddbdf.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_gallery_3.jpeg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
@@ -75,7 +75,7 @@ export default function SuitesPage() {
     const riads: RiadCard[] = [
         {
             id: "deluxes-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'deluxe_slider.jpeg',
             imageAlt: t('OtherRoomDeluxeImageAlt.translation.content'),
             meta: t('OtherRoomDeluxeMeta.translation.content'),
             title: t('OtherRoomDeluxeTitle.translation.content'),
@@ -84,8 +84,8 @@ export default function SuitesPage() {
             href: "/rooms/deluxe",
         },
         {
-            id: "suites-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6fb9a6e07-c31d7466bc3063c3ed84.png",
+            id: "comfort-card",
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'comfort_slider.jpg',
             imageAlt: t('OtherRoomComfortImageAlt.translation.content'),
             meta: t('OtherRoomComfortMeta.translation.content'),
             title: t('OtherRoomComfortTitle.translation.content'),
@@ -95,7 +95,7 @@ export default function SuitesPage() {
         },
         {
             id: "suites-speciales-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
+            imageSrc:process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'nashira_slider.jpeg',
             imageAlt: t('OtherRoomSpecialImageAlt.translation.content'),
             meta: t('OtherRoomSpecialMeta.translation.content'),
             title: t('OtherRoomSpecialTitle.translation.content'),
@@ -110,7 +110,7 @@ export default function SuitesPage() {
             <RoomsHeroSection
                 subtitle={t('HeroSubtitle.translation.content')}
                 title={t('HeroTitle.translation.content')}
-                image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/9c2af6dedf-4e1d2db8acbf899200a2.png"}
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_header.jpeg'}
             />
             <OverviewSection
                 id="suites-overview-section"
@@ -127,7 +127,7 @@ export default function SuitesPage() {
                     {icon: <FaExpand className="h-4 w-4"/>, label: t('FactSize.translation.content')},
                     {icon: <FaLocationDot className="h-4 w-4"/>, label: t('FactTerrace.translation.content')},
                 ]}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/954b102df9-45140dd4a93b11517a0b.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_introduction.jpeg'}
                 imageAlt={t('OverviewImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[500px]"
@@ -155,7 +155,7 @@ export default function SuitesPage() {
                         description: t('Feature3Description.translation.content'),
                     },
                 ]}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/f0441a701a-b2c31e6e0db1583f2146.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_features.jpeg'}
                 imageAlt={t('FeaturesImageAlt.translation.content')}
                 imagePriority
                 bgClass="bg-brand-dark"
@@ -181,7 +181,7 @@ export default function SuitesPage() {
                 subtitle={t('BookingCtaSubtitle.translation.content')}
                 bullets={bullets}
                 actions={actions}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/072d875d2b-972eb328df761ae0b2fe.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'suites/' + 'suites_cta.jpeg'}
                 imageAlt={t('BookingCtaImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[400px]"

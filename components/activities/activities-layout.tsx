@@ -16,7 +16,7 @@ export default function ActivitiesLayout() {
     const activitiesSlides = getActivitiesSlides(tConstant)
     const items: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c089dca217-3a27a0cc05bcbe64b5b9.png",
+            src:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_gallery_1.jpeg',
             alt: t("GalleryItem1Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
@@ -42,7 +42,7 @@ export default function ActivitiesLayout() {
                 subtitle={t("HeroSubtitle.translation.content")}
                 title={t("HeroTitle.translation.content")}
                 image={
-                    "https://storage.googleapis.com/uxpilot-auth.appspot.com/92e2273a04-fa6f75627272bce3ff9e.png"
+                    process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_header.jpeg'
                 }
             />
             <ExperiencesSlider sliderContent={activitiesSlides} />

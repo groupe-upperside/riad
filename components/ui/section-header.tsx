@@ -28,7 +28,7 @@ export default function SectionHeader({
                 </p>
             )}
             <h2 className={cn(
-                'font-serif text-4xl md:text-5xl capitalize',
+                'font-serif text-4xl lg:text-5xl capitalize',
                 dark ? 'text-white' : 'text-brand-dark'
             )}>
                 {title}

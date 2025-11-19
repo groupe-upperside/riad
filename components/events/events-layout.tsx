@@ -9,20 +9,20 @@ import {useTranslations} from "next-intl";
 
 const items: GalleryItem[] = [
     {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c089dca217-3a27a0cc05bcbe64b5b9.png",
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_gallery_1.jpg',
         alt: "Close-up of a luxurious Moroccan bedroom detail, showing a carved wooden nightstand, elegant lamp, and rich textiles, moody lighting",
         colSpan: 1,
         rowSpan: 1,
     },
     {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fa6a98b30e-098ad1353861b1d43e3d.png",
+        src:process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_gallery_2.jpg',
         alt: "Elegant Moroccan bedroom with a four-poster bed, dark wood paneling, and sophisticated decor, warm and intimate",
         colSpan: 2,
         rowSpan: 2,
         priority: true,
     },
     {
-        src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a2ae5f694-e509340f023df548f5e4.png",
+        src:process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_gallery_3.jpeg',
         alt: "Comfortable seating area in a Moroccan riad with colorful patterned cushions against a backdrop of intricate zellige tiles, vibrant and detailed",
         colSpan: 1,
         rowSpan: 1,
@@ -36,7 +36,7 @@ export default function EventsLayout() {
             <RoomsHeroSection
                 subtitle={t('HeroSubtitle.translation.content')}
                 title={t('HeroTitle.translation.content')}
-                image="https://storage.googleapis.com/uxpilot-auth.appspot.com/92e2273a04-fa6f75627272bce3ff9e.png"
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_header.jpeg'}
             />
             <EventsIntroduction />
             <EventSpacesDetailed />
