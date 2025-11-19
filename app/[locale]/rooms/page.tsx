@@ -23,14 +23,14 @@ export default function RoomsPage() {
             rowSpan: 1,
         },
         {
-            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_2.jpeg',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_5.jpeg',
             alt: t('GalleryItem2Alt.translation.content'),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_3.jpeg',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_gallery_4.jpeg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,

@@ -31,7 +31,7 @@ export default async function ReservationsPage({
             <RoomsHeroSection
                 subtitle="Réservez votre séjour dans l'univers unique du Riad Nashira. Chaque chambre vous attend pour une expérience authentique et raffinée."
                 title="Réservations"
-                image={ process.env.NEXT_PUBLIC_CDN_URL + 'booking/' + 'booking_header.jpeg'}/>
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'booking/' + 'booking_header.jpeg'}/>
             <BookingForm
                 defaultCheckIn={checkIn ?? null}
                 defaultCheckOut={checkOut ?? null}

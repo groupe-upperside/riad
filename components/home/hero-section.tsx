@@ -32,7 +32,7 @@ export default function HeroSection() {
 
         const interval = setInterval(() => {
             setCurrentIndex(prev => (prev + 1) % heroImages.length);
-        }, 1500);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [heroImages.length]);

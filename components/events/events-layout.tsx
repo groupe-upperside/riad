@@ -22,7 +22,7 @@ const items: GalleryItem[] = [
         priority: true,
     },
     {
-        src:process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_gallery_3.jpeg',
+        src:process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'event_gallery_3.jpeg',
         alt: "Comfortable seating area in a Moroccan riad with colorful patterned cushions against a backdrop of intricate zellige tiles, vibrant and detailed",
         colSpan: 1,
         rowSpan: 1,
