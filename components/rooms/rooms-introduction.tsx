@@ -10,7 +10,7 @@ export default function RoomsIntroduction() {
 
     const roomsData = {
         image: {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/f6d411a20e-a478a39d4494c6f8a3aa.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_introduction.jpeg',
             alt: t('ImageAlt.translation.content'),
             priority: true
         },
@@ -114,7 +114,7 @@ export function EventsIntroduction() {
 
     const eventsData = {
         image: {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fb9b241cd0-ba7125f26fa70a4c33ca.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'events/' + 'events_introduction.jpeg',
             alt: t('ImageAlt.translation.content'),
             priority: true
         },

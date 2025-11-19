@@ -55,7 +55,7 @@ export default function GalleryColumns(): JSX.Element {
                                             alt={img.alt}
                                             width={img.width}
                                             height={img.height}
-                                            className="h-auto max-w-full rounded-sm object-cover"
+                                            className="h-auto max-w-full aspect-square rounded-sm object-cover"
                                             sizes="(max-width: 768px) 50vw, 25vw"
                                         />
                                     ) : (
@@ -63,7 +63,7 @@ export default function GalleryColumns(): JSX.Element {
                                             src={img.src}
                                             alt={img.alt}
                                             loading="lazy"
-                                            className="h-auto max-w-full rounded-lg object-cover"
+                                            className="h-auto max-w-full aspect-square rounded-lg object-cover"
                                         />
                                     )}
                                 </div>

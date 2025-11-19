@@ -11,13 +11,13 @@ export function PatioViews() {
             id: 'piscine',
             title: t('ViewPiscine.Title.translation.content'),
             subtitle: t('ViewPiscine.Subtitle.translation.content'),
-            image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4f43fb3cce-280346dc4f66128d6913.png'
+            image: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_patio_1.jpeg'
         },
         {
             id: 'fontaine',
             title: t('ViewFontaine.Title.translation.content'),
             subtitle: t('ViewFontaine.Subtitle.translation.content'),
-            image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/ca81908e4c-3cecebeed056ac2b76aa.png'
+            image: process.env.NEXT_PUBLIC_CDN_URL + 'rooms/' + 'rooms_patio_2.jpeg'
         }
     ];
 

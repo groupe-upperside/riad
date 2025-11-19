@@ -27,19 +27,19 @@ export default function ComfortPage() {
 
     const confortGalleryItems: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/9571959619-cc22f503e6583057876d.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_gallery_1.jpeg',
             alt: t('GalleryItem1Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/437bbed603-2018053487a323de0180.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_gallery_3.jpg',
             alt: t('GalleryItem2Alt.translation.content'),
             colSpan: 2,
             rowSpan: 2,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/acf79a0003-0321473a3521e240497e.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_gallery_2.jpg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
@@ -85,7 +85,7 @@ export default function ComfortPage() {
     const riads: RiadCard[] = [
         {
             id: "deluxes-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'deluxe_slider.jpeg',
             imageAlt: t('OtherRoomDeluxeImageAlt.translation.content'),
             meta: t('OtherRoomDeluxeMeta.translation.content'),
             title: t('OtherRoomDeluxeTitle.translation.content'),
@@ -95,7 +95,7 @@ export default function ComfortPage() {
         },
         {
             id: "suites-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/e6fb9a6e07-c31d7466bc3063c3ed84.png",
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'suites_slider.jpeg',
             imageAlt: t('OtherRoomSuitesImageAlt.translation.content'),
             meta: t('OtherRoomSuitesMeta.translation.content'),
             title: t('OtherRoomSuitesTitle.translation.content'),
@@ -105,7 +105,7 @@ export default function ComfortPage() {
         },
         {
             id: "suites-speciales-card",
-            imageSrc: "https://storage.googleapis.com/uxpilot-auth.appspot.com/933ab16edf-4753b6bbdb49d5859196.png",
+            imageSrc: process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'nashira_slider.jpeg',
             imageAlt: t('OtherRoomSpecialImageAlt.translation.content'),
             meta: t('OtherRoomSpecialMeta.translation.content'),
             title: t('OtherRoomSpecialTitle.translation.content'),
@@ -120,7 +120,7 @@ export default function ComfortPage() {
             <RoomsHeroSection
                 subtitle={t('HeroSubtitle.translation.content')}
                 title={t('HeroTitle.translation.content')}
-                image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/65044f8887-a01d2336709dbbf2c5ef.png"}
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_header.jpeg'}
             />
             <OverviewSection
                 id="confort-overview-section"
@@ -137,7 +137,7 @@ export default function ComfortPage() {
                     { icon: <FaExpand className="h-4 w-4" />, label: t('FactSize.translation.content') },
                     { icon: <FaLocationDot className="h-4 w-4" />, label: t('FactLocation.translation.content') },
                 ]}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/6b8b83c359-cf2cdeb3e6cc0f82226a.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_introduction.jpg'}
                 imageAlt={t('OverviewImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[500px]"
@@ -165,7 +165,7 @@ export default function ComfortPage() {
                         description: t('Feature3Description.translation.content'),
                     },
                 ]}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/89c6091dde-d38904cd3df458dbb94a.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_features.jpg'}
                 imageAlt={t('FeaturesImageAlt.translation.content')}
                 imagePriority
                 bgClass="bg-brand-dark"
@@ -191,7 +191,7 @@ export default function ComfortPage() {
                 subtitle={t('BookingCtaSubtitle.translation.content')}
                 bullets={bullets}
                 actions={actions}
-                imageSrc="https://storage.googleapis.com/uxpilot-auth.appspot.com/3c5cbf24fc-15885a8ed29fc8749ad5.png"
+                imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'comfort/' + 'comfort_features.jpg'}
                 imageAlt={t('BookingCtaImageAlt.translation.content')}
                 imagePriority
                 imageHeightClass="h-[400px]"

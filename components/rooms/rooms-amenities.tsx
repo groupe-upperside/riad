@@ -31,7 +31,7 @@ export default function RoomAmenities() {
         },
         {
             id: "4",
-            label: tSuite('AmenityWifiTVLabel.translation.content'),
+            label: "WIFI",
             description: tSuite('AmenityWifiTVDescription.translation.content'),
             icon: FaWifi,
         },

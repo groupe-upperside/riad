@@ -1,7 +1,6 @@
 "use client"
 
 import HeroSection from "@/components/home/hero-section";
-import AmenitiesBar from "@/components/home/amenities-bar";
 import GalleryMasonry from "@/components/home/gallery";
 import Testimonials from "@/components/home/testimonials";
 import RoomsSuites from "@/components/home/room-suites";
@@ -19,9 +18,8 @@ export default function HomePage() {
     return (
         <>
             <HeroSection/>
-            <AmenitiesBar/>
-            <ExperiencesSlider sliderContent={sliderContent}/>
             <AboutSection/>
+            <ExperiencesSlider sliderContent={sliderContent}/>
             <RoomsSuites/>
             <ActivitiesSlider/>
             <Testimonials/>

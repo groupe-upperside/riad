@@ -20,20 +20,20 @@ export default function SpaLayout() {
     const spaData = getSpaData(t);
     const items: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c089dca217-3a27a0cc05bcbe64b5b9.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_gallery_1.jpg',
             alt: t('GalleryItem1Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fa6a98b30e-098ad1353861b1d43e3d.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_gallery_2.jpg',
             alt: t('GalleryItem2Alt.translation.content'),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a2ae5f694-e509340f023df548f5e4.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_gallery_3.jpg',
             alt: t('GalleryItem3Alt.translation.content'),
             colSpan: 1,
             rowSpan: 1,
@@ -60,17 +60,17 @@ export default function SpaLayout() {
 
     const poolsImages: FeatureShowcaseImage[] = [
         {
-            src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/d3387085e4-4deb9cb8e79193578bc8.png',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_pools_1.jpg',
             alt: t('PoolsImage1Alt.translation.content'),
             span: 'double'
         },
         {
-            src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/187e0b9e99-7c09947ff759f8669bd7.png',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_pools_2.jpg',
             alt: t('PoolsImage2Alt.translation.content'),
             span: 'single'
         },
         {
-            src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/2c572fd2ec-f9e7ecedb31ec7b51955.png',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_pools_3.jpg',
             alt: t('PoolsImage3Alt.translation.content'),
             span: 'single'
         }
@@ -81,7 +81,7 @@ export default function SpaLayout() {
             <RoomsHeroSection
                 subtitle={t('HeroSubtitle.translation.content')}
                 title={t('HeroTitle.translation.content')}
-                image={"https://storage.googleapis.com/uxpilot-auth.appspot.com/0fe39abce0-497a549a4cecfd8d9f4a.png"}
+                image={process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_header.jpeg'}
             />
             <ExperiencesSlider sliderContent={spaSlides} />
             <FacilityShowcase

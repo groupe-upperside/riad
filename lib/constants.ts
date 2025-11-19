@@ -17,25 +17,38 @@ import {SecondaryFacility} from "@/components/common/secondary-facility-card";
 import {EventSpace} from "@/components/events/events-showcase";
 
 export const images = {
-    hero: process.env.NEXT_PUBLIC_CDN_URL + 'home_slide_1.jpg',
-    aboutRiad: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4f19248be1-361b5188a53dc6e33bfc.png',
-    experienceSuite: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/0b98983862-ad0abfe6da44ee70e37b.png',
+    hero1: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_4.jpg',
+    hero2: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_3.jpeg',
+    hero3: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_2.jpeg',
+    hero4: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_1.jpeg',
+    hero5: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_5.jpeg',
+    hero6: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_6.jpeg',
+    hero7: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_7.jpeg',
+    hero8: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_8.jpeg',
+    hero9: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_9.jpeg',
+    hero10: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_10.jpeg',
+    hero11: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_11.jpeg',
+    hero12: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_12.jpeg',
+    hero13: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_13.jpeg',
+    hero14: process.env.NEXT_PUBLIC_CDN_URL + 'home_slider/' + 'slide_14.jpeg',
+    aboutRiad: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_about.jpeg',
+    experienceSuite: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_luxe.jpeg',
     patternOverlay: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/dc765237cd-ef220abc13ff04563495.png',
     goldLight: 'https://storage.googleapis.com/uxpilot-images-and-prompts/images/1706612450849-gold-light.png',
     rooms: {
-        deluxe: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/a699041c02-80fbfd2bd61526107246.png',
-        junior: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/1a792e274a-ff4b71d1c3d7ad473292.png',
-        patio: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/ec1e6b951b-c088ea06b3dbe52828bd.png',
-        nashira: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/3fa88d1502-498ae2aa5eaf06ab6c35.png',
+        confort: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_comfort.jpg',
+        deluxe: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_deluxe.jpg',
+        suite: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_suite.jpg',
+        nashira: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_nashira.jpg',
     },
     activities: {
         transport: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/f34877789a-867779bb1e7523bcf56e.png',
-        coach: "https://storage.googleapis.com/uxpilot-auth.appspot.com/a34f760bd2-455672029b1e6c4e95dd.png",
-        hair: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/33a82979b3-0baabc21182ebae8c615.png',
-        events: "https://storage.googleapis.com/uxpilot-auth.appspot.com/2a2078c3a1-dfe846e8a7a93bb39977.png",
-        activities: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/3ba7229b14-95aa6aa2e7b5015f18dc.png',
+        coach: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_fitness.png',
+        hair: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_coiffure.jpeg',
+        events: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_events.jpeg',
+        activities: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_activities.jpeg',
         pressing: "https://storage.googleapis.com/uxpilot-auth.appspot.com/1340fb335f-c09b1d90dbd378dc0ca8.png",
-        shop: "https://storage.googleapis.com/uxpilot-auth.appspot.com/d220cf195e-9c318a4b0f864976c34d.png"
+        shop: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_boutique.jpeg',
     },
     gallery: {
         courtyard: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/fbd2ef6416-519eb0fe1a16159a24f9.png',
@@ -65,7 +78,7 @@ export const getRooms = (t: (key: string) => string): Room[] => [
         id: '1',
         title: t('Constants.RoomComfortTitle.translation.content'),
         price: 299,
-        image: images.rooms.deluxe,
+        image: images.rooms.confort,
         slug: 'confort-room',
         description: t('Constants.RoomComfortDescription.translation.content'),
         amenities: [
@@ -77,7 +90,7 @@ export const getRooms = (t: (key: string) => string): Room[] => [
         id: '2',
         title: t('Constants.RoomDeluxeTitle.translation.content'),
         price: 399,
-        image: images.rooms.junior,
+        image: images.rooms.deluxe,
         slug: 'deluxe-room',
         description: t('Constants.RoomDeluxeDescription.translation.content'),
         amenities: [
@@ -89,7 +102,7 @@ export const getRooms = (t: (key: string) => string): Room[] => [
         id: '3',
         title: t('Constants.RoomSuiteTitle.translation.content'),
         price: 599,
-        image: images.rooms.patio,
+        image: images.rooms.suite,
         slug: 'suite-room',
         description: t('Constants.RoomSuiteDescription.translation.content'),
         amenities: [
@@ -151,122 +164,122 @@ type GalleryItem = {
 export const getActivities = (t: (key: string) => string): Activity[] => [
     {id: '1', title: t('Constants.ActivityTransport.translation.content'), image: images.activities.transport},
     {id: '2', title: t('Constants.ActivityYoga.translation.content'), image: images.activities.coach},
-    {id: '3', title: t('Constants.ActivityHair.translation.content'), image: images.activities.hair},
-    {id: '4', title: t('Constants.ActivityEvents.translation.content'), image: images.activities.events},
-    {id: '5', title: t('Constants.ActivityActivities.translation.content'), image: images.activities.activities},
-    {id: '6', title: t('Constants.ActivityLaundry.translation.content'), image: images.activities.pressing},
+    {id: '3', title: t('Constants.ActivityEvents.translation.content'), image: images.activities.events},
+    {id: '4', title: t('Constants.ActivityActivities.translation.content'), image: images.activities.activities},
+    {id: '5', title: t('Constants.ActivityLaundry.translation.content'), image: images.activities.pressing},
+    {id: '6', title: t('Constants.ActivityHair.translation.content'), image: images.activities.hair},
     {id: '7', title: t('Constants.ActivityShop.translation.content'), image: images.activities.shop},
 ];
 
 export const galleryImages: GalleryItem[] = [
     {
         id: '1',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/fbd2ef6416-519eb0fe1a16159a24f9.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_1.jpeg',
         alt: 'A serene Moroccan courtyard garden with a central fountain',
         width: 1200,
         height: 1400,
     },
     {
         id: '2',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/02d7f1c424-700fae45d8e1b7bceb5f.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_2.jpeg',
         alt: 'Traditional Moroccan tagine dish',
         width: 1200,
         height: 800,
     },
     {
         id: '3',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/580707640f-ebdcf2aa6c8a51e8acd7.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_3.jpeg',
         alt: 'Rooftop terrace at sunset with Atlas Mountains view',
         width: 1200,
         height: 1400,
     },
     {
         id: '4',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/02532e2b78-93b0259644fe3a57c82d.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_4.jpeg',
         alt: 'Traditional Moroccan Hammam and spa',
         width: 1200,
         height: 1000,
     },
     {
         id: '5',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/c27775db0f-be53cf174d6ec01e228b.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_5.jpeg',
         alt: 'Bustling Marrakech souk with colorful displays',
         width: 1200,
         height: 1000,
     },
     {
         id: '6',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/05f166391a-3aba4f8574f7917e1958.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_6.jpeg',
         alt: 'Moroccan hotel bedroom with traditional carved wooden bed',
         width: 1200,
         height: 1400,
     },
     {
         id: '7',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/24912c6018-ee69d26990ac0d0c7bfb.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_7.jpeg',
         alt: 'Traditional Moroccan mint tea ceremony',
         width: 1200,
         height: 800,
     },
     {
         id: '8',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/cf1456705d-c7a03e291a07282251ae.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_8.jpeg',
         alt: 'Luxurious hotel spa treatment room',
         width: 1200,
         height: 1000,
     },
     {
         id: '9',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/f0e537146e-8218d985fd0779604e26.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_9.jpeg',
         alt: 'Moroccan riad courtyard at night',
         width: 1200,
         height: 1400,
     },
     {
         id: '10',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/3c8af76559-86c0b3869d7e58372e0d.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_10.jpeg',
         alt: 'Hotel restaurant dining area',
         width: 1200,
         height: 1000,
     },
     {
         id: '11',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/c44b1f9fea-a3e92de5b0b57a7a15ee.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_11.jpeg',
         alt: 'Intricate Moroccan mosaic tilework',
         width: 1200,
         height: 800,
     },
     {
         id: '12',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/7799a529ce-38018d13e9db661afced.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_12.jpeg',
         alt: 'Hotel concierge desk',
         width: 1200,
         height: 1000,
     },
     {
         id: '13',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/0830ecfa41-f8aaabc1e3a16b1ac79a.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_13.jpeg',
         alt: 'Moroccan hotel balcony overlooking medina',
         width: 1200,
         height: 1400,
     },
     {
         id: '14',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/23f932cf8b-21687faecdd12b6e150e.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_14.jpeg',
         alt: 'Traditional Moroccan carpet weaving',
         width: 1200,
         height: 1000,
     },
     {
         id: '15',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/1ccb1ab89c-c4cfa3ca134f0b3c7440.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_15.jpeg',
         alt: 'Hotel fitness center',
         width: 1200,
         height: 800,
     },
     {
         id: '16',
-        src: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/812360b1d9-338ec2b582ebf1ecfeea.png',
+        src: process.env.NEXT_PUBLIC_CDN_URL + 'gallery/' + 'gallery_16.jpeg',
         alt: 'Moroccan hotel library',
         width: 1200,
         height: 1000,
@@ -312,8 +325,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide1Feature4.translation.content')
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_rooms.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_room_2.jpeg',
         },
         link: '/rooms'
     },
@@ -331,8 +344,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide2Feature3.translation.content')
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_restaurant.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_restaurant_2.jpeg',
         },
         link: '/bars-restaurants'
     },
@@ -351,8 +364,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide3Feature4.translation.content')
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_pool.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_pool_2.jpg',
         },
         link: '/spa'
     },
@@ -371,8 +384,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide4Feature4.translation.content')
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_spa.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_spa_2.jpeg',
         },
         link: '/spa'
     },
@@ -390,8 +403,8 @@ export const getExperienceSlides = (t: (key: string) => string): Slide[] => [
             t('Slide5Feature3.translation.content')
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_bar.jpg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'home_sections/' + 'home_bar_2.jpg',
         },
         link: '/bars-restaurants'
     }
@@ -414,8 +427,8 @@ export const getBarsAndRestaurantsSlides = (t: (key: string) => string): Slide[]
             t('BarsSlides1Feature3.translation.content'),
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_slider_1.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_slider_2.jpeg',
         }
     },
     {
@@ -432,8 +445,8 @@ export const getBarsAndRestaurantsSlides = (t: (key: string) => string): Slide[]
             t('BarsSlides2Feature3.translation.content'),
         ],
         images: {
-            main: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/4a62ee7e92-0dee6221cf659278bcca.png',
-            secondary: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/498a4d7e0f-c87a7fb0c2a1cedf230c.png'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_slider_4.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_slider_3.jpeg',
         }
     },
 ];
@@ -507,7 +520,7 @@ export const getSpaData = (t: (key: string) => string): Facility[] => [
             t('SpaDescription1.translation.content'),
             t('SpaDescription2.translation.content'),
         ],
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/1e8781d502-0bcb5ebf0de2cf37c8d1.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_features_1.jpg',
         imageAlt: t('SpaImageAlt.translation.content'),
         menuText: t('SpaMenuText.translation.content'),
         reservationText: t('SpaReservationText.translation.content'),
@@ -520,7 +533,7 @@ export const getSpaData = (t: (key: string) => string): Facility[] => [
             t('HammamDescription1.translation.content'),
             t('HammamDescription2.translation.content'),
         ],
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/d88c3415bb-270587d94437037719d8.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_features_2.jpg',
         imageAlt: t('HammamImageAlt.translation.content'),
     }
 ];
@@ -537,7 +550,7 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         ],
         cuisine: t('RestaurantsNourCuisine.translation.content'),
         hours: t('RestaurantsNourHours.translation.content'),
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/925b1db0bb-8ae59c63c6dcd46c5865.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_introduction.jpg',
         imageAlt: t('RestaurantsNourImageAlt.translation.content'),
         icon: 'FaUtensils',
         menuText: t('RestaurantsMenuText.translation.content'),
@@ -553,7 +566,7 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         ],
         cuisine: t('RestaurantsRiveCuisine.translation.content'),
         hours: t('RestaurantsRiveHours.translation.content'),
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b70eac3837-41486d2a6f64cbfb3242.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_introduction_2.jpg',
         imageAlt: t('RestaurantsRiveImageAlt.translation.content'),
         icon: 'FaFish',
         menuText: t('RestaurantsMenuText.translation.content'),
@@ -566,14 +579,14 @@ export const getBarsData = (t: (key: string) => string): SecondaryFacility[] => 
         id: 'rinlip-bar',
         name: t('BarsRinlipName.translation.content'),
         description: t('BarsRinlipDescription.translation.content'),
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/aa75bc1473-d418b8a3dff98c57245e.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_rinlip.jpg',
         imageAlt: t('BarsRinlipImageAlt.translation.content'),
     },
     {
         id: 'rooftop-rinlip',
         name: t('BarsRooftopName.translation.content'),
         description: t('BarsRooftopDescription.translation.content'),
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/b699b38764-1967ceb92cee9547429b.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'bars/' + 'bars_rooftop.jpg',
         imageAlt: t('BarsRooftopImageAlt.translation.content'),
     },
 ];
@@ -584,14 +597,14 @@ export const fitnessData: SecondaryFacility[] = [
         id: 'fitness',
         name: 'Fitness',
         description: 'Pour ceux qui souhaitent allier voyage et équilibre, le rooftop du riad accueille un espace fitness moderne baigné de lumière et ouvert sur les toits de Marrakech. Un cadre insolite pour s’entrainer en toute tranquilité.',
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/0cf4c4d830-da169879529c69d95a67.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_fitness.jpg',
         imageAlt: 'Cozy and sophisticated speakeasy bar with dark wood paneling, leather armchairs, a glowing bar with premium spirits, and intimate lighting, classic style'
     },
     {
         id: 'yoga',
         name: 'Coach & Yoga',
         description: 'Un coach personnalisé, des cours de yoga peuvent aussi être proposés sur demande.',
-        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/8f54bdda5d-9914f6738cbfa93ae961.png',
+        image: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_coach.jpg',
         imageAlt: 'Stunning rooftop bar in Marrakech at sunset, with panoramic views of the Atlas mountains, stylish lounge furniture, infinity pool, and vibrant ambiance'
     }
 ];
@@ -612,8 +625,8 @@ export const getSpaSlides = (t: (key: string) => string): Slide[] => [
             t('SpaSlides1Feature4.translation.content'),
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_slider_1.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_slider_2.jpeg',
         }
     },
     {
@@ -631,8 +644,8 @@ export const getSpaSlides = (t: (key: string) => string): Slide[] => [
             t('SpaSlides2Feature4.translation.content'),
         ],
         images: {
-            main: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-            secondary: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80'
+            main: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_slider_3.jpg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_slider_4.jpg',
         }
     },
 ];
@@ -763,7 +776,7 @@ export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
             t('ActivitiesSlides1Feature3.translation.content'),
         ],
         images: {
-            main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/0b7ff82c22-64ad22472bcaae938859.png",
+            main:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_slider_1.jpeg',
             secondary: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
         }
     },

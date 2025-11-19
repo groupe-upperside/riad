@@ -5,7 +5,6 @@ export interface MenuItem {
     children?: MenuItem[];
 }
 
-// t is a translation function from next-intl (useTranslations / getTranslations)
 export const getNavigationMenu = (t: (key: string) => string): MenuItem[] => [
     {
         id: 'accueil',
@@ -118,11 +117,55 @@ export const getNavigationMenu = (t: (key: string) => string): MenuItem[] => [
     {
         id: 'activites',
         label: t('ActivitesLabel.translation.content'),
-        href: '/activites'
+        href: '/activites',
+        children: [
+            {
+                id: 'excursions',
+                label: t('ActivitesExcursionsLabel.translation.content'),
+                href: '/activites'
+            },
+            {
+                id: 'golf',
+                label: t('ActivitesGolfLabel.translation.content'),
+                href: '/activites'
+            },
+            {
+                id: 'fly',
+                label:t('ActivitesFlyLabel.translation.content'),
+                href: '/activites'
+            },
+            {
+                id: 'visits',
+                label: t('ActivitesVisitsLabel.translation.content'),
+                href: '/activites'
+            },
+            {
+                id: 'horse',
+                label: t('ActivitesHorseLabel.translation.content'),
+                href: '/activites'
+            }
+        ]
     },
     {
         id: 'services',
         label: t('ServicesLabel.translation.content'),
-        href: '/services'
+        href: '/services',
+        children: [
+            {
+                id: 'pressing',
+                label:  t('ServicesPressingLabel.translation.content'),
+                href: '/services'
+            },
+            {
+                id: 'shuttle',
+                label:  t('ServicesShuttleLabel.translation.content'),
+                href: '/services'
+            },
+            {
+                id: 'shop',
+                label:  t('ServicesShopLabel.translation.content'),
+                href: '/services'
+            },
+        ]
     }
 ];

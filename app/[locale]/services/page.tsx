@@ -10,20 +10,20 @@ export default function ActivitiesPage() {
 
     const items: GalleryItem[] = [
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/c089dca217-3a27a0cc05bcbe64b5b9.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_gallery_1.jpg',
             alt: t("GalleryItem1Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/fa6a98b30e-098ad1353861b1d43e3d.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_gallery_1.jpg',
             alt: t("GalleryItem2Alt.translation.content"),
             colSpan: 2,
             rowSpan: 2,
             priority: true,
         },
         {
-            src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/6a2ae5f694-e509340f023df548f5e4.png",
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_gallery_3.jpeg',
             alt: t("GalleryItem3Alt.translation.content"),
             colSpan: 1,
             rowSpan: 1,
@@ -104,11 +104,11 @@ export default function ActivitiesPage() {
         ],
         images: {
             primary: {
-                src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/cf6f1e9c0a-1c4ff7ee941a8d7b2898.png",
+                src:  process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_shop_1.jpg',
                 alt: t("BoutiqueImagePrimaryAlt.translation.content"),
             },
             secondary: {
-                src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/91f648397c-0b60dc7f4ec1e7e16bbe.png",
+                src:  process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_shop_2.jpg',
                 alt: t("BoutiqueImageSecondaryAlt.translation.content"),
             },
         },
@@ -126,7 +126,7 @@ export default function ActivitiesPage() {
                 subtitle={t("HeroSubtitle.translation.content")}
                 title={t("HeroTitle.translation.content")}
                 image={
-                    "https://storage.googleapis.com/uxpilot-auth.appspot.com/94ba6122b1-a91c8380698d3b451c81.png"
+                    process.env.NEXT_PUBLIC_CDN_URL + 'services/' + 'services_header.jpeg'
                 }
             />
             <ServiceFeature {...laundryData} />
