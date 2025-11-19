@@ -53,7 +53,7 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ 
                     ))}
                 </div>
                 {(facility.cuisine || facility.hours) && (
-                    <div className="flex items-center space-x-8 mb-8 text-brand-dark-900">
+                    <div className="flex md:items-center md:flex-row flex-col md:space-x-8 mb-8 text-brand-dark-900">
                         {facility.cuisine && (
                             <div className="flex items-center space-x-3">
                                 {Icon && <Icon className="mr-2 text-brand-gold-400" />}
@@ -76,10 +76,10 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ 
                         {facility.phone && (
                             <div className="flex items-center space-x-3">
                                 <FaPhone className="mr-2 text-brand-gold-400"/>
-                                <div>
+                                <a href={`tel:${facility.phone}`}>
                                     <p className="font-semibold">{t('PhoneLabel.translation.content') || 'Phone'}</p>
                                     <p className="text-sm text-gray-600">{facility.phone}</p>
-                                </div>
+                                </a>
                             </div>
 
                         )}
