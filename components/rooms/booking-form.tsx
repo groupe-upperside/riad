@@ -58,7 +58,6 @@ export default function BookingForm({
 
     async function submitBooking(formData: FormData) {
         const payload = {
-            roomBadge: formData.get('roomBadge'),
             firstName: formData.get('first-name'),
             lastName: formData.get('last-name'),
             email: formData.get('email'),
