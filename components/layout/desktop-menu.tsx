@@ -6,6 +6,7 @@ import {getNavigationMenu, MenuItem} from '@/lib/navigation'
 import {FaChevronDown} from 'react-icons/fa'
 import {cn} from "@/lib/utils/utils";
 import {useTranslations} from "next-intl";
+import {usePathname} from "@/lib/i18n/navigation";
 
 function DesktopMenuItem({ item }: { item: MenuItem }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -70,6 +71,20 @@ function DesktopMenuItem({ item }: { item: MenuItem }) {
 function DesktopSubMenuItem({ item }: { item: MenuItem; }) {
     const [isOpen, setIsOpen] = useState(false)
     const hasChildren = item.children && item.children.length > 0
+    const pathname = usePathname();
+
+    const resolveHref = (href?: string): string => {
+        if (!href) return '#';
+        if (href.startsWith('/bars-restaurants#')) {
+            const hash = href.substring(href.indexOf('#'));
+            const current = pathname?.split('?')[0] || '';
+            // Support locale-prefixed paths like /fr/bars-restaurants
+            const segments = current.split('/').filter(Boolean);
+            const isOnBarsRestaurants = segments.includes('bars-restaurants');
+            return isOnBarsRestaurants ? `${current}${hash}` : '/bars-restaurants';
+        }
+        return href;
+    };
 
     return (
         <li
@@ -78,7 +93,7 @@ function DesktopSubMenuItem({ item }: { item: MenuItem; }) {
             onMouseLeave={() => setIsOpen(false)}
         >
             <Link
-                href={item.href || '#'}
+                href={resolveHref(item.href)}
                 className="flex items-center justify-between px-4 py-2 text-sm hover:bg-brand-gray-50 hover:text-brand-gold-500 transition-colors"
             >
                 {item.label}
@@ -97,7 +112,7 @@ function DesktopSubMenuItem({ item }: { item: MenuItem; }) {
                         {item.children?.map((child) => (
                             <li key={child.id}>
                                 <Link
-                                    href={child.href || '#'}
+                                    href={resolveHref(child.href)}
                                     className="block px-4 py-2 text-sm hover:bg-brand-gray-50 hover:text-brand-gold-500 transition-colors"
                                 >
                                     {child.label}

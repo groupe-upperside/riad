@@ -6,23 +6,21 @@ import {
     FaConciergeBell,
     FaCrown,
     FaDumbbell,
-    FaExpand,
     FaGem,
     FaHome,
     FaHotTub,
     FaMedal,
     FaMountain,
     FaSpa,
-    FaStar,
-    FaUsers
+    FaStar
 } from "react-icons/fa";
-import {FaLocationDot, FaUpDownLeftRight} from "react-icons/fa6";
+import {FaUpDownLeftRight} from "react-icons/fa6";
 import OverviewSection from "@/components/rooms/rooms-overview";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
 import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
 import BookingCtaSection, {Bullet, CtaAction} from "@/components/rooms/booking-cta";
 import OtherRiadsSlider, {RiadCard} from "@/components/rooms/other-rooms-slider";
-import SuiteFeaturesSection, {SuiteFeatureItem} from "@/components/rooms/suite-features";
+import {SuiteFeatureItem} from "@/components/rooms/suite-features";
 import {useTranslations} from 'next-intl';
 
 export default function SpecialSuitesPage() {
@@ -176,11 +174,6 @@ export default function SpecialSuitesPage() {
                     t('OverviewParagraph1.translation.content'),
                     t('OverviewParagraph2.translation.content'),
                 ]}
-                facts={[
-                    {icon: <FaUsers className="h-4 w-4"/>, label: t('FactCapacity.translation.content')},
-                    {icon: <FaExpand className="h-4 w-4"/>, label: t('FactSize.translation.content')},
-                    {icon: <FaLocationDot className="h-4 w-4"/>, label: t('FactLounge.translation.content')},
-                ]}
                 imageSrc={process.env.NEXT_PUBLIC_CDN_URL + 'special-suites/' + 'suites_introduction.jpeg'}
                 imageAlt={t('OverviewImageAlt.translation.content')}
                 imagePriority
@@ -202,18 +195,6 @@ export default function SpecialSuitesPage() {
                 accentClass="text-brand-gold"
                 featuresColumns={2}
             />
-            <SuiteFeaturesSection
-                id="riner-features"
-                title={t('RinerFeaturesTitle.translation.content')}
-                items={rinerSuiteFeatures}
-                bgClass="bg-brand-beige"
-                cardBgClass="bg-white"
-                titleClass="text-brand-dark"
-                bodyClass="text-brand-gray"
-                iconClass="text-brand-gold text-4xl"
-                columns={3}
-                rounded
-            />
             <RoomFeatures
                 id="room-nashira-features"
                 title={t('NashiraTitle.translation.content')}
@@ -228,18 +209,6 @@ export default function SpecialSuitesPage() {
                 textTone="light"
                 accentClass="text-brand-gold"
                 featuresColumns={2}
-            />
-            <SuiteFeaturesSection
-                id="nashira-features"
-                title={t('NashiraFeaturesTitle.translation.content')}
-                items={nashiraSuiteFeatures}
-                bgClass="bg-white"
-                cardBgClass="bg-brand-beige"
-                titleClass="text-brand-dark"
-                bodyClass="text-brand-gray"
-                iconClass="text-brand-gold text-4xl"
-                columns={3}
-                rounded
             />
             <BookingCtaSection
                 title={t('BookingCtaTitle.translation.content')}

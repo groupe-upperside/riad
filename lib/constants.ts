@@ -558,7 +558,8 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         menuText: t('RestaurantsMenuText.translation.content'),
         reservationText: t('RestaurantsReservationText.translation.content'),
         menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/nour.pdf',
-        reservationLink: "mailto:restauration@riadnashira.com"
+        reservationLink: "mailto:restauration@riadnashira.com?subject=Réservation Nour",
+        phone: "+212 (0) 524.39.06.03"
     },
     {
         id: 'rive-mediterraneen',
@@ -576,7 +577,8 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         menuText: t('RestaurantsMenuText.translation.content'),
         reservationText: t('RestaurantsReservationText.translation.content'),
         menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/rive.pdf',
-        reservationLink: "mailto:restauration@riadnashira.com"
+        reservationLink: "mailto:restauration@riadnashira.com?subject=Réservation Rive",
+        phone:"+212 (0) 524.39.06.03"
     },
 ];
 

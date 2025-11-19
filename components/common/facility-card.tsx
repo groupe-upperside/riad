@@ -1,10 +1,11 @@
 "use client";
 
 import SectionHeader from "@/components/ui/section-header";
-import {FaClock, FaFish, FaUtensils} from "react-icons/fa";
+import {FaClock, FaFish, FaPhone, FaUtensils} from "react-icons/fa";
 import {CTAButtons} from "@/components/common/CTA-buttons";
 import {IconType} from "react-icons";
 import React from "react";
+import {useTranslations} from 'next-intl';
 
 export interface Facility {
     id: string;
@@ -20,6 +21,7 @@ export interface Facility {
     menuLink?: string;
     reservationText?: string;
     reservationLink?: string;
+    phone?: string;
 }
 
 const iconMap: Record<string, IconType> = {
@@ -30,6 +32,7 @@ const iconMap: Record<string, IconType> = {
 export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ facility, index }) => {
     const isEven = index % 2 === 0;
     const Icon = facility.icon ? iconMap[facility.icon] : undefined;
+    const t = useTranslations('FacilityCard');
 
     return (
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index > 0 ? 'mt-20' : ''}`}>
@@ -55,7 +58,7 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ 
                             <div className="flex items-center space-x-3">
                                 {Icon && <Icon className="mr-2 text-brand-gold-400" />}
                                 <div>
-                                    <p className="font-semibold">Cuisine</p>
+                                    <p className="font-semibold">{t('CuisineLabel.translation.content') || 'Cuisine'}</p>
                                     <p className="text-sm text-brand-gray-500">{facility.cuisine}</p>
                                 </div>
                             </div>
@@ -64,10 +67,21 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ 
                             <div className="flex items-center space-x-3">
                             <FaClock className="mr-2 text-brand-gold-400"/>
                             <div>
-                                <p className="font-semibold">Horaires</p>
+                                <p className="font-semibold">{t('HoursLabel.translation.content') || 'Hours'}</p>
                                 <p className="text-sm text-gray-600">{facility.hours}</p>
                             </div>
                         </div>
+
+                        )}
+                        {facility.phone && (
+                            <div className="flex items-center space-x-3">
+                                <FaPhone className="mr-2 text-brand-gold-400"/>
+                                <div>
+                                    <p className="font-semibold">{t('PhoneLabel.translation.content') || 'Phone'}</p>
+                                    <p className="text-sm text-gray-600">{facility.phone}</p>
+                                </div>
+                            </div>
+
                         )}
                     </div>
                 )}

@@ -12,10 +12,10 @@ export const FacilityShowcase: React.FC<RestaurantShowcaseProps> = ({
                                                                         title,
                                                                         subtitle,
                                                                         facilities,
-    id
+                                                                        id,
                                                                     }) => {
     return (
-        <section className="py-24 bg-brand-beige-100" id={id} >
+        <section className="py-24 bg-brand-beige-100" id={id}>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">{title}</h2>
