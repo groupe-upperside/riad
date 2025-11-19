@@ -524,6 +524,8 @@ export const getSpaData = (t: (key: string) => string): Facility[] => [
         imageAlt: t('SpaImageAlt.translation.content'),
         menuText: t('SpaMenuText.translation.content'),
         reservationText: t('SpaReservationText.translation.content'),
+        menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/spa.pdf',
+        reservationLink: "mailto:spa@riadnashira.com"
     },
     {
         id: 'hammam',
@@ -555,6 +557,8 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         icon: 'FaUtensils',
         menuText: t('RestaurantsMenuText.translation.content'),
         reservationText: t('RestaurantsReservationText.translation.content'),
+        menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/nour.pdf',
+        reservationLink: "mailto:restauration@riadnashira.com"
     },
     {
         id: 'rive-mediterraneen',
@@ -571,6 +575,8 @@ export const getRestaurantsData = (t: (key: string) => string): Facility[] => [
         icon: 'FaFish',
         menuText: t('RestaurantsMenuText.translation.content'),
         reservationText: t('RestaurantsReservationText.translation.content'),
+        menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/rive.pdf',
+        reservationLink: "mailto:restauration@riadnashira.com"
     },
 ];
 
@@ -776,7 +782,7 @@ export const getActivitiesSlides = (t: (key: string) => string): Slide[] => [
             t('ActivitiesSlides1Feature3.translation.content'),
         ],
         images: {
-            secondary:  process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_slider_1.jpeg',
+            secondary: process.env.NEXT_PUBLIC_CDN_URL + 'activities/' + 'activities_slider_1.jpeg',
             main: "https://storage.googleapis.com/uxpilot-auth.appspot.com/11c079ca96-699a5154a3fc4a4286f0.png"
         }
     },
