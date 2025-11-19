@@ -13,7 +13,8 @@ export const getRestaurantsCTA = (t: TranslationFunction): CTASectionProps => ({
             text: t('ButtonReserveTable.translation.content'),
             variant: 'outline',
             icon: FaCalendar,
-            className: 'border-2 border-white text-white hover:bg-white hover:text-brand-gold-400'
+            className: 'border-2 border-white text-white hover:bg-white hover:text-brand-gold-400',
+            href:  "mailto:restauration@riadnashira.com"
         }
     ]
 });
@@ -28,7 +29,8 @@ export const getSpaCTA = (t: TranslationFunction): CTASectionProps => ({
             text: t('ButtonReserveTreatment.translation.content'),
             variant: 'outline',
             icon: FaCalendar,
-            className: 'border-2 border-white text-white hover:bg-white hover:text-brand-gold-400'
+            className: 'border-2 border-white text-white hover:bg-white hover:text-brand-gold-400',
+            href: "mailto:spa@riadnashira.com"
         }
     ]
 });

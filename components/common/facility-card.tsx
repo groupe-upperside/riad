@@ -17,7 +17,9 @@ export interface Facility {
     imageAlt: string;
     icon?: string;
     menuText?: string;
+    menuLink?: string;
     reservationText?: string;
+    reservationLink?: string;
 }
 
 const iconMap: Record<string, IconType> = {
@@ -72,7 +74,9 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ 
                 {(facility.menuText || facility.reservationText) && (
                     <CTAButtons
                         menuText={facility.menuText}
+                        menuLink={facility.menuLink}
                         reservationText={facility.reservationText}
+                        reservationLink={facility.reservationLink}
                         onMenuClick={() => console.log('Menu clicked for:', facility.name)}
                         onReservationClick={() => console.log('Reservation clicked for:', facility.name)}
                     />

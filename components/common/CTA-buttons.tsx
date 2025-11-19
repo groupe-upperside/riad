@@ -7,7 +7,9 @@ import React from "react";
 
 interface CTAButtonsProps {
     menuText?: string;
+    menuLink?: string;
     reservationText?: string;
+    reservationLink?: string;
     onMenuClick?: () => void;
     onReservationClick?: () => void;
     showCalendarIcon?: boolean;
@@ -20,7 +22,8 @@ export const CTAButtons: React.FC<CTAButtonsProps> = ({
                                                           onMenuClick,
                                                           onReservationClick,
                                                           showCalendarIcon = true,
-                                                          className = ""
+                                                          className = "",
+                                                          menuLink, reservationLink
                                                       }) => {
     const t = useTranslations('CTAButtons');
 
@@ -32,15 +35,19 @@ export const CTAButtons: React.FC<CTAButtonsProps> = ({
                 className="border-2 border-brand-gold-400 hover:bg-white uppercase hover:text-brand-gold-400"
                 onClick={onMenuClick}
             >
-                {menuText || t('DefaultMenuText.translation.content')}
+                <a href={menuLink || "/menu"} target="_blank" rel="noopener noreferrer">
+                    {menuText || t('DefaultMenuText.translation.content')}
+                </a>
             </Button>
             <Button
                 variant="outline"
                 className="border-2 border-brand-gold-400 hover:bg-brand-gold-400 uppercase text-brand-gold-400"
                 onClick={onReservationClick}
             >
-                {showCalendarIcon && <FaCalendar className="mr-2" />}
-                {reservationText || t('DefaultReservationText.translation.content')}
+                <a href={reservationLink || "/reservation"} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    {showCalendarIcon && <FaCalendar className="mr-2"/>}
+                    {reservationText || t('DefaultReservationText.translation.content')}
+                </a>
             </Button>
         </div>
     );
