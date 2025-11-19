@@ -49,7 +49,7 @@ const DEFAULT_SENDER = {
   Name: 'Riad Nashira',
 };
 
-const DEFAULT_RECEIVER = 'aurore.louche@orange.fr';
+const DEFAULT_RECEIVER = 'info@riadnashira.com';
 
 function objectToHtml(title: string, data: Record<string, unknown>): string {
  const LABELS_FR: Record<string, string> = {
