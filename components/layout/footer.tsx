@@ -63,7 +63,7 @@ export default function Footer(): JSX.Element {
         instagram: 'https://www.instagram.com/riadnashira',
         tripadvisor:
             'https://www.tripadvisor.fr/Hotel_Review-g293734-d3139952-Reviews-Riad_Nashira_Spa-Marrakech_Marrakech_Tensift_El_Haouz_Region.html',
-        facebook: 'https://www.facebook.com/riadnashira.spa?fref=ts',
+        facebook: 'https://www.facebook.com/riadnashira',
         twitter: 'https://twitter.com/RiadNashira',
         youtube: 'https://www.youtube.com/riadnashira',
     };
