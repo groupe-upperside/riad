@@ -34,13 +34,13 @@ export default function AboutSection() {
                         <p className="text-brand-gray-500 mb-8 leading-relaxed">
                             {t('DescriptionAboutUs.translation.content')}
                         </p>
-                        <Link href="/booking">
+                        <a href="https://riad-nashira-spa.hotelrunner.com/bv3/search" target="_blank">
                             <Button variant="outline"
                                     showArrow
                                     className="uppercase">
                                 {t('ButtonReserve.translation.content')}
                             </Button>
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-8 lg:gap-0 mt-12 lg:mt-0 lg:grid-cols-2 items-center">

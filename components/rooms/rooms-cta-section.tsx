@@ -10,7 +10,7 @@ export const getRoomsCTA = (t: TranslationFunction): CTASectionProps => ({
     textColor: 'text-white',
     buttons: [
         {
-            href: "/booking",
+            href: "https://riad-nashira-spa.hotelrunner.com/bv3/search",
             text: t('RoomsCTA.ButtonBookNow.translation.content'),
             variant: 'outline',
             icon: FaCalendar,

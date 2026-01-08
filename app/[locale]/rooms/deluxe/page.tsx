@@ -66,7 +66,7 @@ export default function DeluxePage() {
     const actions: CtaAction[] = [
         {
             label: t('ActionBookNow.translation.content'),
-            href: "/booking",
+            href: "https://riad-nashira-spa.hotelrunner.com/bv3/search",
             icon: FaCalendar,
             variant: "primary"
         }

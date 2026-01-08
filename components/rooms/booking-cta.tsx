@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/ui/container";
 import clsx from "clsx";
-import Link from "next/link";
 import type {ComponentType, ReactNode} from "react";
 
 export type Bullet = {
@@ -123,9 +122,9 @@ export default function BookingCtaSection({
 
                                     if (a.href) {
                                         return (
-                                            <Link key={idx} href={a.href} className={classes}>
+                                            <a target="_blank" key={idx} href={a.href} className={classes}>
                                                 {content}
-                                            </Link>
+                                            </a>
                                         );
                                     }
                                     return (
