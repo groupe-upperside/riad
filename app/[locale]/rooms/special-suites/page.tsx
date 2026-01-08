@@ -5,22 +5,18 @@ import {
     FaCheckCircle,
     FaConciergeBell,
     FaCrown,
-    FaDumbbell,
     FaGem,
     FaHome,
-    FaHotTub,
     FaMedal,
     FaMountain,
     FaSpa,
     FaStar
 } from "react-icons/fa";
-import {FaUpDownLeftRight} from "react-icons/fa6";
 import OverviewSection from "@/components/rooms/rooms-overview";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
 import RoomFeatures, {Feature} from "@/components/rooms/rooms-features";
 import BookingCtaSection, {Bullet, CtaAction} from "@/components/rooms/booking-cta";
 import OtherRiadsSlider, {RiadCard} from "@/components/rooms/other-rooms-slider";
-import {SuiteFeatureItem} from "@/components/rooms/suite-features";
 import {useTranslations} from 'next-intl';
 
 export default function SpecialSuitesPage() {
@@ -56,13 +52,13 @@ export default function SpecialSuitesPage() {
     const actions: CtaAction[] = [
         {
             label: t('ActionBookRiner.translation.content'),
-            href: "/booking",
+            href: "https://riad-nashira-spa.hotelrunner.com/bv3/search",
             icon: FaMedal,
             variant: "primary"
         },
         {
             label: t('ActionBookNashira.translation.content'),
-            href: "/booking",
+            href: "https://riad-nashira-spa.hotelrunner.com/bv3/search",
             icon: FaCrown,
             variant: "outline"
         }
@@ -113,48 +109,6 @@ export default function SpecialSuitesPage() {
         {icon: FaHome, label: t('NashiraFeature2Label.translation.content')},
         {icon: FaConciergeBell, label: t('NashiraFeature3Label.translation.content')},
         {icon: FaStar, label: t('NashiraFeature4Label.translation.content')},
-    ];
-
-    const rinerSuiteFeatures: SuiteFeatureItem[] = [
-        {
-            id: "riner-space",
-            icon: FaUpDownLeftRight,
-            title: t('RinerSuiteFeature1Title.translation.content'),
-            description: t('RinerSuiteFeature1Description.translation.content'),
-        },
-        {
-            id: "riner-theme",
-            icon: FaDumbbell,
-            title: t('RinerSuiteFeature2Title.translation.content'),
-            description: t('RinerSuiteFeature2Description.translation.content'),
-        },
-        {
-            id: "riner-spa",
-            icon: FaHotTub,
-            title: t('RinerSuiteFeature3Title.translation.content'),
-            description: t('RinerSuiteFeature3Description.translation.content'),
-        },
-    ];
-
-    const nashiraSuiteFeatures: SuiteFeatureItem[] = [
-        {
-            id: "nashira-space",
-            icon: FaUpDownLeftRight,
-            title: t('NashiraSuiteFeature1Title.translation.content'),
-            description: t('NashiraSuiteFeature1Description.translation.content'),
-        },
-        {
-            id: "nashira-theme",
-            icon: FaDumbbell,
-            title: t('NashiraSuiteFeature2Title.translation.content'),
-            description: t('NashiraSuiteFeature2Description.translation.content'),
-        },
-        {
-            id: "nashira-spa",
-            icon: FaHotTub,
-            title: t('NashiraSuiteFeature3Title.translation.content'),
-            description: t('NashiraSuiteFeature3Description.translation.content'),
-        },
     ];
 
     return (

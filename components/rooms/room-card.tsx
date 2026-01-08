@@ -133,11 +133,11 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         >
                             {t('ButtonBack.translation.content')}
                         </button>
-                        <Link href={"/booking"}
+                        <a href="https://riad-nashira-spa.hotelrunner.com/bv3/search" target="_blank"
                               className="w-full bg-brand-dark-800 text-white py-3 font-semibold tracking-wider hover:bg-brand-gold-400 transition-colors duration-300 flex items-center justify-center gap-2">
                             {t('ButtonBookNow.translation.content')}
                             <FaArrowRight/>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             )}
@@ -152,7 +152,8 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         <span>{t('ButtonViewDetails.translation.content')}</span>
                     </button>
                 ) : (
-                    <Link href={"/booking"}
+                    <a href="https://riad-nashira-spa.hotelrunner.com/bv3/search"
+                       target="_blank"
                           className="group/btn cursor-pointer inline-flex items-center font-semibold tracking-wider text-brand-dark-800 transition-all duration-700 ease-out hover:text-brand-gold-400">
                         <span
                             className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 translate-y-0.5 transition-[max-width,opacity,transform] duration-700 ease-out group-hover/btn:max-w-[180px] group-hover/btn:opacity-100 group-hover/btn:translate-y-0">
@@ -160,7 +161,7 @@ export default function RoomCard({room, background}: RoomCardProps) {
                         </span>
                         <FaArrowRight
                             className="ml-0 transition-[margin,transform] duration-700 ease-out group-hover/btn:ml-2 group-hover/btn:translate-x-0.5"/>
-                    </Link>
+                    </a>
                 )}
             </div>
         </div>

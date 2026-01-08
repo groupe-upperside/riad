@@ -56,7 +56,7 @@ export default function Footer(): JSX.Element {
         office: '+212 (0) 6.66.84.08.28',
         email: 'info@riadnashira.com',
         address: 'Diour Saboune, Derb Sidi Makhlouf n°16 Marrakech',
-        cta: {label: t('CtaBookNow.translation.content'), href: '/booking'},
+        cta: {label: t('CtaBookNow.translation.content'), href: 'https://riad-nashira-spa.hotelrunner.com/bv3/search'},
     };
 
     const social: Social = {
@@ -176,14 +176,15 @@ export default function Footer(): JSX.Element {
                         </div>
 
                         {contact.cta && (
-                            <Link
+                            <a
                                 href={contact.cta.href}
+                                target="_blank"
                                 className="mt-8 inline-flex items-center uppercase gap-2 btn-primary"
                                 aria-label={contact.cta.label}
                             >
                                 <span>{contact.cta.label}</span>
                                 <HiArrowUpRight className="-rotate-45" aria-hidden/>
-                            </Link>
+                            </a>
                         )}
                     </div>
 

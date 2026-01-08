@@ -147,8 +147,9 @@ export default function Header(): JSX.Element {
                             <div className="relative hidden md:block">
                                 <LocaleSwitcher textColor={scrolled || path !== "/" ? "text-brand-dark-800" : "text-white" }/>
                             </div>
-                            <Link
-                                href="/booking"
+                            <a
+                                href="https://riad-nashira-spa.hotelrunner.com/bv3/search"
+                                target="_blank"
                                 className={cn(
                                     'hidden md:inline-flex items-center gap-2 px-4 md:px-5 py-3 font-semibold tracking-wider group duration-300 transition-all text-xs md:text-sm',
                                     scrolled || path !== "/"
@@ -160,7 +161,7 @@ export default function Header(): JSX.Element {
                                 <span className="uppercase">{t('ButtonBook.translation.content')}</span>
                                 <HiArrowUpRight aria-hidden
                                                 className="group-hover:translate-x-1 transition-transform duration-300"/>
-                            </Link>
+                            </a>
                             <button
                                 type="button"
                                 onClick={() => {
@@ -335,8 +336,9 @@ export default function Header(): JSX.Element {
                             </div>
 
                             <div className="mt-auto py-8">
-                                <Link
-                                    href="/booking"
+                                <a
+                                    href="https://riad-nashira-spa.hotelrunner.com/bv3/search"
+                                    target="_blank"
                                     className={cn(
                                         'inline-flex items-center gap-2 px-5 py-3 font-semibold tracking-wider group duration-300 transition-all',
                                         scrolled || path !== "/"
@@ -348,7 +350,7 @@ export default function Header(): JSX.Element {
                                     <span className="uppercase">{t('ButtonBook.translation.content')}</span>
                                     <HiArrowUpRight aria-hidden
                                                     className="group-hover:translate-x-1 transition-transform duration-300"/>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </aside>
