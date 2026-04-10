@@ -89,7 +89,7 @@ export default function Header(): JSX.Element {
     };
 
     const contact: Contact = {
-        reception: '+212 (0) 524.39.06.03',
+        reception: '+212 (0) 6.66.84.08.28',
         office: '+212 (0) 6.66.84.08.28',
         email: 'info@riadnashira.com',
         address: 'Diour Saboune, Derb Sidi Makhlouf n°16 Marrakech',
