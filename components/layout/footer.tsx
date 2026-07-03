@@ -13,6 +13,7 @@ import {
 import {FaFacebookF, FaXTwitter, FaYoutube} from 'react-icons/fa6';
 import {FaInstagram, FaTripadvisor} from 'react-icons/fa';
 import {useTranslations} from 'next-intl';
+import Image from "next/image";
 
 type NavLink = { label: string; href: string };
 type CTA = { label: string; href: string };
@@ -69,6 +70,8 @@ export default function Footer(): JSX.Element {
     };
 
     const copyright = t('Copyright.translation.content');
+
+    const tcs = t('TCs.translation.content');
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -221,13 +224,20 @@ export default function Footer(): JSX.Element {
 
                         {ok && <p className="mt-3 text-sm text-green-700">{ok}</p>}
                         {err && <p className="mt-3 text-sm text-red-700">{err}</p>}
+                        <Image
+                            src={`${process.env.NEXT_PUBLIC_CDN_URL}payzone.png`}
+                            alt="Payzone - paiement sécurisé"
+                            width={1162}
+                            height={120}
+                            className="mt-8 w-full h-auto"
+                        />
                     </div>
                 </div>
 
                 <div
                     className="border-t border-brand-dark-200 pt-6 flex flex-col md:flex-row gap-6 md:gap-4 justify-between items-center relative">
                     <p className="text-sm text-brand-gray-600 text-center md:text-left">
-                        {copyright}
+                        {copyright} - <a href={`${process.env.NEXT_PUBLIC_CDN_URL}cgv.pdf`} target="_blank">{tcs}</a>
                     </p>
 
                     <div className="flex items-center gap-2">
