@@ -5,7 +5,8 @@ import {getSpaCTA} from "@/components/common/booking-cta";
 import RoomsHeroSection from "@/components/rooms/rooms-hero-section";
 import ExperiencesSlider from "@/components/home/experience-slider";
 import {FacilityShowcase} from "@/components/common/facility-showcase";
-import {fitnessData, getSpaData, getSpaSlides} from "@/lib/constants";
+import {fitnessData, getMedispaData, getSpaData, getSpaSlides} from "@/lib/constants";
+import {FacilityCard} from "@/components/common/facility-card";
 import {FeatureItem, FeatureShowcase, FeatureShowcaseImage} from "@/components/common/feature-showcase";
 import {SecondaryFacilityShowcase} from "@/components/common/secondary-facility-showcase";
 import RoomsGallerySection, {GalleryItem} from "@/components/rooms/rooms-gallery";
@@ -18,6 +19,7 @@ export default function SpaLayout() {
     const spaCTA = getSpaCTA(tCta);
     const spaSlides = getSpaSlides(tConstant)
     const spaData = getSpaData(t);
+    const medispaData = getMedispaData(t);
     const items: GalleryItem[] = [
         {
             src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_gallery_1.jpg',
@@ -70,7 +72,7 @@ export default function SpaLayout() {
             span: 'single'
         },
         {
-            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_pools_3.jpg',
+            src: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'spa_pools_3_new.jpg',
             alt: t('PoolsImage3Alt.translation.content'),
             span: 'single'
         }
@@ -99,14 +101,18 @@ export default function SpaLayout() {
                 images={poolsImages}
                 backgroundColor="bg-white"
             />
+            <section className="py-24 bg-brand-beige-100" id="medispa">
+                <div className="container mx-auto px-4">
+                    <FacilityCard facility={medispaData} index={0} imageRight/>
+                </div>
+            </section>
             <SecondaryFacilityShowcase
                 id="fitness"
                 title={t('FitnessTitle.translation.content')}
                 subtitle={t('FitnessSubtitle.translation.content')}
                 secondaryFacilities={fitnessData}
-                bgWhite={false}
             />
-            <RoomsGallerySection items={items} rounded className="bg-white" />
+            <RoomsGallerySection items={items} rounded className="bg-brand-beige-100" />
             <CTASection {...spaCTA} />
         </>
     );

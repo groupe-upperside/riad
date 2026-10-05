@@ -29,8 +29,8 @@ const iconMap: Record<string, IconType> = {
     'FaFish': FaFish
 };
 
-export const FacilityCard: React.FC<{ facility: Facility; index: number }> = ({ facility, index }) => {
-    const isEven = index % 2 === 0;
+export const FacilityCard: React.FC<{ facility: Facility; index: number; imageRight?: boolean }> = ({ facility, index, imageRight = false }) => {
+    const isEven = (index % 2 === 0) !== imageRight;
     const Icon = facility.icon ? iconMap[facility.icon] : undefined;
     const t = useTranslations('FacilityCard');
 
