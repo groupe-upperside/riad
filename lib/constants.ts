@@ -524,7 +524,7 @@ export const getSpaData = (t: (key: string) => string): Facility[] => [
         imageAlt: t('SpaImageAlt.translation.content'),
         menuText: t('SpaMenuText.translation.content'),
         reservationText: t('SpaReservationText.translation.content'),
-        menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/spa.pdf',
+        menuLink: process.env.NEXT_PUBLIC_CDN_URL + '/menus/spa_new.pdf',
         reservationLink: "mailto:spa@riadnashira.com"
     },
     {
@@ -539,6 +539,20 @@ export const getSpaData = (t: (key: string) => string): Facility[] => [
         imageAlt: t('HammamImageAlt.translation.content'),
     }
 ];
+
+export const getMedispaData = (t: (key: string) => string): Facility => ({
+    id: 'medispa',
+    category: t('MedispaCategory.translation.content'),
+    name: t('MedispaName.translation.content'),
+    description: [
+        t('MedispaDescription1.translation.content'),
+        t('MedispaDescription2.translation.content'),
+        t('MedispaDescription3.translation.content'),
+        t('MedispaDescription4.translation.content'),
+    ],
+    image: process.env.NEXT_PUBLIC_CDN_URL + 'spa/' + 'atp.png',
+    imageAlt: t('MedispaImageAlt.translation.content'),
+});
 
 
 export const getRestaurantsData = (t: (key: string) => string): Facility[] => [

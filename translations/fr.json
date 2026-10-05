@@ -1037,7 +1037,7 @@
       "created": "",
       "updated": "",
       "translation": {
-        "content": "Spa & Bien-Être",
+        "content": "Medispa & Bien-Être",
         "fuzzy": 0,
         "proofread": 0,
         "updated": ""
@@ -11867,7 +11867,7 @@
       "created": "",
       "updated": "",
       "translation": {
-        "content": "Spa & Bien-être",
+        "content": "Medispa & Bien-être",
         "fuzzy": 0,
         "proofread": 0,
         "updated": ""
@@ -11883,7 +11883,7 @@
       "created": "",
       "updated": "",
       "translation": {
-        "content": "Notre spa",
+        "content": "Notre medispa",
         "fuzzy": 0,
         "proofread": 0,
         "updated": ""
@@ -12833,7 +12833,7 @@
       "created": "",
       "updated": "",
       "translation": {
-        "content": "Spa & Bien-être",
+        "content": "Medispa & Bien-être",
         "fuzzy": 0,
         "proofread": 0,
         "updated": ""
@@ -13337,6 +13337,118 @@
       "reference": "spaPage",
       "tags": [],
       "comment": "Alt text for hammam image"
+    },
+    "MedispaCategory": {
+      "term": "spaPage.medispa.category",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Photobiomodulation",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Category label for medispa facility"
+    },
+    "MedispaName": {
+      "term": "spaPage.medispa.name",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "La lumière au service de la récupération et de la longévité",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Name for medispa facility"
+    },
+    "MedispaDescription1": {
+      "term": "spaPage.medispa.description1",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Le MediSpa Nashira intègre la photobiomodulation à ses protocoles de bien-être et de récupération.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "First paragraph for medispa description"
+    },
+    "MedispaDescription2": {
+      "term": "spaPage.medispa.description2",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Cette technologie utilise une lumière de faible intensité (6 longueurs d’onde) pour stimuler les mécanismes naturels de régénération cellulaire. Reconnue pour ses effets anti-inflammatoires, antalgiques et régénérants, elle favorise notamment la récupération musculaire, l’apaisement des tensions, la réparation des tissus, la stimulation du collagène.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Second paragraph for medispa description"
+    },
+    "MedispaDescription3": {
+      "term": "spaPage.medispa.description3",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Aujourd’hui intégrée à de nombreux protocoles de récupération, performance et longévité, la photobiomodulation est notamment plébiscitée par des sportifs de haut niveau et des artistes internationaux (même Madonna est fan de l’ATP38).",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Third paragraph for medispa description"
+    },
+    "MedispaDescription4": {
+      "term": "spaPage.medispa.description4",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Séance de 3 à 15 minutes, idéale en complément d’un soin du corps ou intégrée à une cure sur plusieurs jours.",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Fourth paragraph for medispa description"
+    },
+    "MedispaImageAlt": {
+      "term": "spaPage.medispa.imageAlt",
+      "context": "",
+      "plural": "",
+      "created": "",
+      "updated": "",
+      "translation": {
+        "content": "Séance de photobiomodulation au MediSpa Nashira",
+        "fuzzy": 0,
+        "proofread": 0,
+        "updated": ""
+      },
+      "reference": "spaPage",
+      "tags": [],
+      "comment": "Alt text for medispa image"
     }
   },
   "EventsPage": {
