@@ -1,23 +1,27 @@
-'use client'
+'use client';
 
-import {usePathname, useRouter} from 'next/navigation'
-import {useLocale} from 'next-intl'
-import {locales} from '@/lib/i18n/routing'
-import {ChangeEvent} from "react";
+import {useLocale} from 'next-intl';
+import {useRouter} from 'next/navigation';
+import {getPathname, locales, pathnames, type Locale, usePathname} from '@/lib/i18n/routing';
+import {ChangeEvent} from 'react';
 
-export default function LocaleSwitcher({full, textColor}: {full?: boolean, textColor?: string}) {
-    const locale = useLocale()
-    const pathname = usePathname()
-    const router = useRouter()
-
-    const switchPath = (path: string, to: string) =>
-        path.replace(/^\/(fr|en|it|es|pt|de)(?=\/|$)/, `/${to}`)
+export default function LocaleSwitcher({full, textColor}: {full?: boolean; textColor?: string}) {
+    const locale = useLocale();
+    const pathname = usePathname();
+    const router = useRouter();
 
     const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        const to = e.target.value
-        const target = pathname ? switchPath(pathname, to) : `/${to}`
-        router.push(target)
-    }
+        const to = e.target.value as Locale;
+        if (!locales.includes(to)) return;
+        const query: Record<string, string | string[]> = {};
+        const search = new URLSearchParams(window.location.search);
+        for (const key of new Set(search.keys())) {
+            const values = search.getAll(key);
+            query[key] = values.length > 1 ? values : values[0];
+        }
+        const target = getPathname({locale: to, href: {pathname: (pathname || '/') as keyof typeof pathnames, query}});
+        router.push(`${target}${window.location.hash}`);
+    };
 
     return (
         <select
@@ -32,5 +36,5 @@ export default function LocaleSwitcher({full, textColor}: {full?: boolean, textC
                 </option>
             ))}
         </select>
-    )
+    );
 }

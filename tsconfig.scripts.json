@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    },
+    "include": ["pull-trad.ts", "push-trad.ts", "lib/i18n/**/*.ts", "scripts/**/*.ts"],
+    "exclude": ["node_modules"]
+}

@@ -1,26 +1,17 @@
-import {notFound} from 'next/navigation';
 import {getRequestConfig} from 'next-intl/server';
-import {loadMessagesFromDisk} from "@/lib/i18n/loadMessages";
 
-const locales = ['fr', 'en', 'it', 'es', 'pt', 'de'] as const;
-type Locale = (typeof locales)[number];
-const defaultLocale: Locale = 'fr';
+import {loadMessagesFromDisk} from '@/lib/i18n/loadMessages';
+import {getMessageFallback, onErrorMessage} from '@/lib/i18n/message-fallback';
+import {defaultLocale, type Locale, locales} from '@/lib/i18n/routing';
 
 export default getRequestConfig(async ({requestLocale}) => {
     const requested = await requestLocale;
-
-    const locale: Locale =
-        locales.includes((requested as Locale) ?? ('' as Locale))
-            ? (requested as Locale)
-            : defaultLocale;
-
-    if (!locales.includes(locale)) notFound();
-
-    const messages = await loadMessagesFromDisk(locale);
-
+    const locale: Locale = locales.includes(requested as Locale) ? (requested as Locale) : defaultLocale;
     return {
         locale,
-        messages,
-        timeZone: 'Europe/Paris'
+        messages: await loadMessagesFromDisk(locale),
+        timeZone: 'Europe/Paris',
+        getMessageFallback,
+        onError: onErrorMessage,
     };
 });

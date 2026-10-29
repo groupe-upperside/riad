@@ -1,0 +1,46 @@
+name: Define env
+description: Generate build and production environment files from GitHub variables and secrets.
+inputs:
+    NEXT_PUBLIC_CDN_URL:
+        required: true
+        description: Public asset CDN URL, including its trailing slash.
+    POEDITOR_URL:
+        required: true
+        description: POEditor API URL.
+    POEDITOR_APP_ID:
+        required: true
+        description: POEditor project identifier.
+    POEDITOR_SECRET:
+        required: false
+        description: POEditor API secret.
+    APP_MAILJET_KEY:
+        required: false
+        description: Mailjet API key, required for production.
+    APP_MAILJET_SECRET:
+        required: false
+        description: Mailjet API secret, required for production.
+    STAFF_AUTH_SECRET:
+        required: false
+        description: Production staff session secret.
+    STAFF_BOOTSTRAP_PASSWORD:
+        required: false
+        description: Initial booking account password.
+    runtime_file:
+        required: false
+        description: Private production Compose environment file to generate.
+runs:
+    using: composite
+    steps:
+        - name: Render environment files
+          shell: bash
+          env:
+              NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
+              POEDITOR_URL: ${{ inputs.POEDITOR_URL }}
+              POEDITOR_APP_ID: ${{ inputs.POEDITOR_APP_ID }}
+              POEDITOR_SECRET: ${{ inputs.POEDITOR_SECRET }}
+              APP_MAILJET_KEY: ${{ inputs.APP_MAILJET_KEY }}
+              APP_MAILJET_SECRET: ${{ inputs.APP_MAILJET_SECRET }}
+              STAFF_AUTH_SECRET: ${{ inputs.STAFF_AUTH_SECRET }}
+              STAFF_BOOTSTRAP_PASSWORD: ${{ inputs.STAFF_BOOTSTRAP_PASSWORD }}
+              RUNTIME_ENV_FILE: ${{ inputs.runtime_file }}
+          run: node "$GITHUB_ACTION_PATH/../../../scripts/define-env.cjs"

@@ -1,0 +1,3 @@
+if [ -z "${2:-}" ] && [ -t 0 ]; then
+    bunx cz --hook || true
+fi

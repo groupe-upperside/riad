@@ -37,3 +37,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Tooling
+!.env.example
+/playwright-report/
+/test-results/
+/.idea/
+*.iml
+/.agents/
+/.aws/
+
+# Local review notes
+/docs/code-review.md
+
+# Persistent private application data
+/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Development-only design review artifacts
+/.impeccable/

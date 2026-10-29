@@ -33,13 +33,7 @@ interface ViewCardProps {
     showDescriptionBelow: boolean;
 }
 
-const ViewCard: React.FC<ViewCardProps> = ({
-                                               view,
-                                               imageHeight,
-                                               showOverlay,
-                                               overlayPosition,
-                                               showDescriptionBelow
-                                           }) => {
+const ViewCard: React.FC<ViewCardProps> = ({view, imageHeight, showOverlay, overlayPosition, showDescriptionBelow}) => {
     const getOverlayPositionClasses = () => {
         switch (overlayPosition) {
             case 'top':
@@ -62,9 +56,7 @@ const ViewCard: React.FC<ViewCardProps> = ({
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    {showOverlay && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"/>
-                    )}
+                    {showOverlay && <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />}
                 </div>
                 <div className={`absolute ${getOverlayPositionClasses()} text-white`}>
                     <h3 className="font-serif text-2xl mb-2">{view.title}</h3>
@@ -74,9 +66,7 @@ const ViewCard: React.FC<ViewCardProps> = ({
 
             {showDescriptionBelow && view.description && (
                 <div className="mt-4 px-2">
-                    <p className="text-brand-gray text-sm leading-relaxed">
-                        {view.description}
-                    </p>
+                    <p className="text-brand-gray text-sm leading-relaxed">{view.description}</p>
                 </div>
             )}
         </div>
@@ -84,18 +74,18 @@ const ViewCard: React.FC<ViewCardProps> = ({
 };
 
 const ViewsGallery: React.FC<ViewsGalleryProps> = ({
-                                                       title,
-                                                       description,
-                                                       views,
-                                                       columns = 2,
-                                                       imageHeight = 'h-[350px]',
-                                                       backgroundColor = 'bg-brand-beige-100',
-                                                       className = '',
-                                                       showOverlay = true,
-                                                       overlayPosition = 'bottom',
-                                                       showDescriptionBelow = false,
-                                                       id
-                                                   }) => {
+    title,
+    description,
+    views,
+    columns = 2,
+    imageHeight = 'h-[350px]',
+    backgroundColor = 'bg-brand-beige-100',
+    className = '',
+    showOverlay = true,
+    overlayPosition = 'bottom',
+    showDescriptionBelow = false,
+    id,
+}) => {
     const getGridColumns = () => {
         switch (columns) {
             case 1:
@@ -114,13 +104,9 @@ const ViewsGallery: React.FC<ViewsGalleryProps> = ({
         <section className={`py-20 ${backgroundColor} ${className}`} id={id}>
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">
-                        {title}
-                    </h2>
+                    <h2 className="font-serif text-4xl md:text-5xl capitalize text-brand-dark">{title}</h2>
                     {description && (
-                        <p className="text-base text-brand-gray-500 max-w-3xl mx-auto mt-8">
-                            {description}
-                        </p>
+                        <p className="text-base text-brand-gray-500 max-w-3xl mx-auto mt-8">{description}</p>
                     )}
                 </div>
 

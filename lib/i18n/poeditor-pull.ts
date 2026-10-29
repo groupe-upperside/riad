@@ -8,7 +8,7 @@ export type PullConfig = {
     onlyWithTranslations?: boolean;
 };
 
-type ApiBodyBase = { api_token: string; id: string; language?: string };
+type ApiBodyBase = {api_token: string; id: string; language?: string};
 
 export type LanguageInfo = {
     code: string;
@@ -64,11 +64,7 @@ export type NormalizedEntry = {
 
 export type GroupedTerms = Record<string, Record<string, NormalizedEntry>>;
 
-const post = async <T>(
-    apiUrl: string,
-    endpoint: string,
-    form: FormPayload
-): Promise<T> => {
+const post = async <T>(apiUrl: string, endpoint: string, form: FormPayload): Promise<T> => {
     const url = `${apiUrl.replace(/\/$/, '')}/${endpoint.replace(/^\//, '')}`;
     const params = new URLSearchParams();
     for (const [k, v] of Object.entries(form)) params.append(k, String(v ?? ''));
@@ -85,17 +81,11 @@ const post = async <T>(
 
 export async function listEligibleLanguages(cfg: PullConfig) {
     const body: ApiBodyBase = {api_token: cfg.apiToken, id: cfg.projectId};
-    const result = await post<{ languages?: LanguageInfo[] }>(
-        cfg.apiUrl,
-        'languages/list',
-        body
-    );
+    const result = await post<{languages?: LanguageInfo[]}>(cfg.apiUrl, 'languages/list', body);
     const langs: LanguageInfo[] = result.languages ?? [];
     const minPct = cfg.minPercentage ?? 95;
     const onlyWith = cfg.onlyWithTranslations ?? true;
-    return langs.filter(
-        (l) => (!onlyWith || l.translations !== 0) && l.percentage >= minPct
-    );
+    return langs.filter((l) => (!onlyWith || l.translations !== 0) && l.percentage >= minPct);
 }
 
 function capitalize(s: string) {
@@ -171,12 +161,12 @@ export function groupTermsByReference(terms: ProductTerm[]): GroupedTerms {
 
 export async function pullFromPoeditor(
     cfg: PullConfig,
-    langCodes?: string[]
+    langCodes?: string[],
 ): Promise<{
     byLang: Record<string, GroupedTerms>;
-    summary: { languages: number; totalTerms: number };
+    summary: {languages: number; totalTerms: number};
 }> {
-    const eligible: { code: string }[] = langCodes?.length
+    const eligible: {code: string}[] = langCodes?.length
         ? langCodes.map((code) => ({code}))
         : await listEligibleLanguages(cfg);
 
@@ -184,18 +174,14 @@ export async function pullFromPoeditor(
 
     const results = await Promise.all(
         eligible.map(async (lang) => {
-            const termsRes = await post<{ terms?: ProductTerm[] }>(
-                cfg.apiUrl,
-                'terms/list',
-                {
-                    ...bodyBase,
-                    language: lang.code,
-                }
-            );
+            const termsRes = await post<{terms?: ProductTerm[]}>(cfg.apiUrl, 'terms/list', {
+                ...bodyBase,
+                language: lang.code,
+            });
             const terms = termsRes.terms ?? [];
             const grouped = groupTermsByReference(terms);
             return {code: lang.code, grouped, count: terms.length};
-        })
+        }),
     );
 
     const byLang: Record<string, GroupedTerms> = {};

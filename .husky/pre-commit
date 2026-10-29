@@ -1,0 +1,4 @@
+bun run env:example
+git add .env.example
+
+bunx lint-staged

@@ -3,11 +3,11 @@
 import NextError from 'next/error';
 
 export default function GlobalError() {
-  return (
-    <html>
-      <body>
-        <NextError statusCode={undefined as unknown as number} />
-      </body>
-    </html>
-  );
+    return (
+        <html>
+            <body>
+                <NextError statusCode={undefined as unknown as number} />
+            </body>
+        </html>
+    );
 }

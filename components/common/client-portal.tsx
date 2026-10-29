@@ -4,9 +4,9 @@ import {type ReactNode, useEffect, useState} from 'react';
 import {createPortal} from 'react-dom';
 
 export default function ClientPortal({
-                                         children,
-                                         containerId = 'drawer-root',
-                                     }: {
+    children,
+    containerId = 'drawer-root',
+}: {
     children: ReactNode;
     containerId?: string;
 }) {

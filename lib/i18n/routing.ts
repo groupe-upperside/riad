@@ -1,3 +1,4 @@
+import {createNavigation} from 'next-intl/navigation';
 import {defineRouting} from 'next-intl/routing';
 
 export const routing = defineRouting({
@@ -12,7 +13,7 @@ export const routing = defineRouting({
             it: '/',
             es: '/',
             pt: '/',
-            de: '/'
+            de: '/',
         },
         '/rooms': {
             en: '/rooms',
@@ -20,7 +21,7 @@ export const routing = defineRouting({
             it: '/camere',
             es: '/habitaciones',
             pt: '/quartos',
-            de: '/zimmer'
+            de: '/zimmer',
         },
         '/rooms/comfort': {
             en: '/rooms/comfort',
@@ -28,7 +29,7 @@ export const routing = defineRouting({
             it: '/camere/comfort',
             es: '/habitaciones/confort',
             pt: '/quartos/conforto',
-            de: '/zimmer/komfort'
+            de: '/zimmer/komfort',
         },
         '/rooms/deluxe': {
             en: '/rooms/deluxe',
@@ -36,7 +37,7 @@ export const routing = defineRouting({
             it: '/camere/deluxe',
             es: '/habitaciones/deluxe',
             pt: '/quartos/deluxe',
-            de: '/zimmer/deluxe'
+            de: '/zimmer/deluxe',
         },
         '/rooms/special-suites': {
             en: '/rooms/special-suites',
@@ -44,7 +45,7 @@ export const routing = defineRouting({
             it: '/camere/suites-speciali',
             es: '/habitaciones/suites-especiales',
             pt: '/quartos/suites-especiais',
-            de: '/zimmer/besondere-suiten'
+            de: '/zimmer/besondere-suiten',
         },
         '/rooms/suites': {
             en: '/rooms/suites',
@@ -52,7 +53,7 @@ export const routing = defineRouting({
             it: '/camere/suite',
             es: '/habitaciones/suites',
             pt: '/quartos/suites',
-            de: '/zimmer/suiten'
+            de: '/zimmer/suiten',
         },
         '/bars-restaurants': {
             en: '/bars-restaurants',
@@ -60,7 +61,7 @@ export const routing = defineRouting({
             it: '/bar-ristoranti',
             es: '/bares-restaurantes',
             pt: '/bares-restaurantes',
-            de: '/bars-und-restaurants'
+            de: '/bars-und-restaurants',
         },
         '/events': {
             en: '/events',
@@ -68,7 +69,7 @@ export const routing = defineRouting({
             it: '/eventi',
             es: '/eventos',
             pt: '/eventos',
-            de: '/veranstaltungen'
+            de: '/veranstaltungen',
         },
         '/activities': {
             en: '/activities',
@@ -76,7 +77,7 @@ export const routing = defineRouting({
             it: '/attivita',
             es: '/actividades',
             pt: '/atividades',
-            de: '/aktivitaeten'
+            de: '/aktivitaeten',
         },
         '/services': {
             en: '/services',
@@ -84,7 +85,7 @@ export const routing = defineRouting({
             it: '/servizi',
             es: '/servicios',
             pt: '/servicos',
-            de: '/dienstleistungen'
+            de: '/dienstleistungen',
         },
         '/booking': {
             en: '/booking',
@@ -92,7 +93,7 @@ export const routing = defineRouting({
             it: '/prenotazione',
             es: '/reserva',
             pt: '/reserva',
-            de: '/buchung'
+            de: '/buchung',
         },
         '/spa': {
             en: '/spa',
@@ -100,10 +101,11 @@ export const routing = defineRouting({
             it: '/spa',
             es: '/spa',
             pt: '/spa',
-            de: '/spa'
-        }
-    }
+            de: '/spa',
+        },
+    },
 });
 
 export const {locales, defaultLocale, localePrefix, pathnames} = routing;
 export type Locale = (typeof locales)[number];
+export const {Link, redirect, usePathname, useRouter, getPathname} = createNavigation(routing);

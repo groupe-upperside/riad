@@ -1,35 +1,22 @@
-"use client";
+import type {Facility} from '@/types/facility.type';
 
-import SectionHeader from "@/components/ui/section-header";
-import {FaClock, FaFish, FaPhone, FaUtensils} from "react-icons/fa";
-import {CTAButtons} from "@/components/common/CTA-buttons";
-import {IconType} from "react-icons";
-import React from "react";
+import SectionHeader from '@/components/ui/section-header';
+import {FaClock, FaFish, FaPhone, FaUtensils} from 'react-icons/fa';
+import {CTAButtons} from '@/components/common/CTA-buttons';
+import {IconType} from 'react-icons';
+import React from 'react';
 import {useTranslations} from 'next-intl';
 
-export interface Facility {
-    id: string;
-    category: string;
-    name: string;
-    description: string[];
-    cuisine?: string;
-    hours?: string;
-    image: string;
-    imageAlt: string;
-    icon?: string;
-    menuText?: string;
-    menuLink?: string;
-    reservationText?: string;
-    reservationLink?: string;
-    phone?: string;
-}
-
 const iconMap: Record<string, IconType> = {
-    'FaUtensils': FaUtensils,
-    'FaFish': FaFish
+    FaUtensils: FaUtensils,
+    FaFish: FaFish,
 };
 
-export const FacilityCard: React.FC<{ facility: Facility; index: number; imageRight?: boolean }> = ({ facility, index, imageRight = false }) => {
+export const FacilityCard: React.FC<{facility: Facility; index: number; imageRight?: boolean}> = ({
+    facility,
+    index,
+    imageRight = false,
+}) => {
     const isEven = (index % 2 === 0) !== imageRight;
     const Icon = facility.icon ? iconMap[facility.icon] : undefined;
     const t = useTranslations('FacilityCard');
@@ -37,11 +24,7 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number; imageRi
     return (
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index > 0 ? 'mt-20' : ''}`}>
             <div className={`h-[550px] rounded-sm overflow-hidden ${isEven ? '' : 'lg:order-2'}`}>
-                <img
-                    className="h-full w-full object-cover"
-                    src={facility.image}
-                    alt={facility.imageAlt}
-                />
+                <img className="h-full w-full object-cover" src={facility.image} alt={facility.imageAlt} />
             </div>
             <div className={isEven ? '' : 'lg:order-1'}>
                 <SectionHeader title={facility.name} label={facility.category} />
@@ -58,30 +41,30 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number; imageRi
                             <div className="flex items-center space-x-3">
                                 {Icon && <Icon className="mr-2 text-brand-gold-400" />}
                                 <div>
-                                    <p className="font-semibold">{t('CuisineLabel.translation.content') || 'Cuisine'}</p>
+                                    <p className="font-semibold">
+                                        {t('CuisineLabel.translation.content') || 'Cuisine'}
+                                    </p>
                                     <p className="text-sm text-brand-gray-500">{facility.cuisine}</p>
                                 </div>
                             </div>
                         )}
                         {facility.hours && (
                             <div className="flex items-center space-x-3">
-                            <FaClock className="mr-2 text-brand-gold-400"/>
-                            <div>
-                                <p className="font-semibold">{t('HoursLabel.translation.content') || 'Hours'}</p>
-                                <p className="text-sm text-gray-600">{facility.hours}</p>
+                                <FaClock className="mr-2 text-brand-gold-400" />
+                                <div>
+                                    <p className="font-semibold">{t('HoursLabel.translation.content') || 'Hours'}</p>
+                                    <p className="text-sm text-gray-600">{facility.hours}</p>
+                                </div>
                             </div>
-                        </div>
-
                         )}
                         {facility.phone && (
                             <div className="flex items-center space-x-3">
-                                <FaPhone className="mr-2 text-brand-gold-400"/>
+                                <FaPhone className="mr-2 text-brand-gold-400" />
                                 <a href={`tel:${facility.phone}`}>
                                     <p className="font-semibold">{t('PhoneLabel.translation.content') || 'Phone'}</p>
                                     <p className="text-sm text-gray-600">{facility.phone}</p>
                                 </a>
                             </div>
-
                         )}
                     </div>
                 )}
@@ -91,8 +74,6 @@ export const FacilityCard: React.FC<{ facility: Facility; index: number; imageRi
                         menuLink={facility.menuLink}
                         reservationText={facility.reservationText}
                         reservationLink={facility.reservationLink}
-                        onMenuClick={() => console.log('Menu clicked for:', facility.name)}
-                        onReservationClick={() => console.log('Reservation clicked for:', facility.name)}
                     />
                 )}
             </div>

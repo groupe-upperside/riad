@@ -1,10 +1,8 @@
 #!/usr/bin/env ts-node
-/* eslint-disable no-console */
-require('dotenv/config');
-const fs = require('fs');
-const path = require('path');
-const { pushToPoeditor } = require('./lib/i18n/poeditor-push');
-
+import 'dotenv/config';
+import fs from 'node:fs';
+import path from 'node:path';
+import {pushToPoeditor} from './lib/i18n/poeditor-push';
 
 function arg(flag: string, fallback?: string) {
     const i = process.argv.indexOf(flag);

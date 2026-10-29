@@ -1,0 +1,68 @@
+name: Release production
+
+on:
+    release:
+        types: [published]
+
+permissions:
+    contents: read
+
+concurrency:
+    group: riad-production
+    cancel-in-progress: false
+
+jobs:
+    verify:
+        if: ${{ !github.event.release.prerelease && !github.event.release.draft }}
+        uses: ./.github/workflows/ci.yml
+        with:
+            publish-image: true
+
+    deploy:
+        needs: verify
+        runs-on: ubuntu-24.04
+        timeout-minutes: 15
+        environment:
+            name: Production
+            url: https://www.riadnashira.com
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v6
+              with:
+                  node-version-file: .nvmrc
+            - uses: actions/download-artifact@v7
+              with:
+                  name: production-image
+                  path: release/
+            - name: Define production environment
+              uses: ./.github/actions/define_env
+              env:
+                  CONFIRMATION_NOUR_MENU_URL: ${{ vars.CONFIRMATION_NOUR_MENU_URL }}
+                  CONFIRMATION_RIVE_MENU_URL: ${{ vars.CONFIRMATION_RIVE_MENU_URL }}
+                  CONFIRMATION_SPA_MENU_FR_URL: ${{ vars.CONFIRMATION_SPA_MENU_FR_URL }}
+                  CONFIRMATION_SPA_MENU_EN_URL: ${{ vars.CONFIRMATION_SPA_MENU_EN_URL }}
+                  CONFIRMATION_EXPERIENCES_URL: ${{ vars.CONFIRMATION_EXPERIENCES_URL }}
+              with:
+                  NEXT_PUBLIC_CDN_URL: ${{ vars.NEXT_PUBLIC_CDN_URL }}
+                  POEDITOR_URL: ${{ vars.POEDITOR_URL }}
+                  POEDITOR_APP_ID: ${{ vars.POEDITOR_APP_ID }}
+                  APP_MAILJET_KEY: ${{ secrets.APP_MAILJET_KEY }}
+                  APP_MAILJET_SECRET: ${{ secrets.APP_MAILJET_SECRET }}
+                  POEDITOR_SECRET: ${{ secrets.POEDITOR_SECRET }}
+                  STAFF_AUTH_SECRET: ${{ secrets.STAFF_AUTH_SECRET }}
+                  STAFF_BOOTSTRAP_PASSWORD: ${{ secrets.STAFF_BOOTSTRAP_PASSWORD }}
+                  runtime_file: ${{ runner.temp }}/riad-production.env
+            - name: Deploy through S4all bastion
+              env:
+                  SSH_PRIVATE_KEY: ${{ secrets.SECURE4ALL_SSH_PRIVATE_KEY }}
+                  SSH_KNOWN_HOSTS: ${{ secrets.SECURE4ALL_KNOWN_HOSTS }}
+                  PRODUCTION_ENV_FILE: ${{ runner.temp }}/riad-production.env
+                  BASTION_HOST: ${{ vars.SECURE4ALL_BASTION_IP || '212.106.125.38' }}
+                  BASTION_PORT: ${{ vars.SECURE4ALL_BASTION_PORT || '3615' }}
+                  BASTION_USER: ${{ vars.SECURE4ALL_BASTION_USER || 'aurore.louche' }}
+                  PRODUCTION_USER: ${{ vars.RIAD_PRODUCTION_USER || 'aurore.louche' }}
+                  RELEASE_ID: ${{ needs.verify.outputs.image-tag }}
+              run: bash deploy/upload-release.sh
+            - name: Remove private environment files
+              if: always()
+              run: rm -f .env "$RUNNER_TEMP/riad-production.env"

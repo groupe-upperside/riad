@@ -42,14 +42,10 @@ interface OverlappingImagesProps {
     position: 'left' | 'right';
 }
 
-const OverlappingImages: React.FC<OverlappingImagesProps> = ({ images, position }) => {
-    const primaryPositionClass = position === 'left'
-        ? 'top-0 left-0'
-        : 'top-0 right-0';
+const OverlappingImages: React.FC<OverlappingImagesProps> = ({images, position}) => {
+    const primaryPositionClass = position === 'left' ? 'top-0 left-0' : 'top-0 right-0';
 
-    const secondaryPositionClass = position === 'left'
-        ? 'bottom-0 right-0'
-        : 'bottom-0 left-0';
+    const secondaryPositionClass = position === 'left' ? 'bottom-0 right-0' : 'bottom-0 left-0';
 
     return (
         <div className="relative h-[600px] flex items-center justify-center">
@@ -75,12 +71,12 @@ const OverlappingImages: React.FC<OverlappingImagesProps> = ({ images, position 
     );
 };
 
-const FeaturesList: React.FC<{ features: ServiceFeatureItem[] | string[] }> = ({ features }) => {
+const FeaturesList: React.FC<{features: ServiceFeatureItem[] | string[]}> = ({features}) => {
     return (
         <div className="flex flex-wrap items-center gap-6 text-brand-gray mb-10">
             {features.map((feature, index) => {
                 const isString = typeof feature === 'string';
-                const Icon = isString ? FaCheck : (feature.icon || FaCheck);
+                const Icon = isString ? FaCheck : feature.icon || FaCheck;
                 const text = isString ? feature : feature.text;
 
                 return (
@@ -95,23 +91,21 @@ const FeaturesList: React.FC<{ features: ServiceFeatureItem[] | string[] }> = ({
 };
 
 const ServiceFeature: React.FC<ServiceFeatureProps> = ({
-                                                           id,
-                                                           category,
-                                                           title,
-                                                           description,
-                                                           features,
-                                                           images,
-                                                           imagePosition = 'right',
-                                                           backgroundColor = 'bg-white',
-                                                           className = ''
-                                                       }) => {
+    id,
+    category,
+    title,
+    description,
+    features,
+    images,
+    imagePosition = 'right',
+    backgroundColor = 'bg-white',
+    className = '',
+}) => {
     const sectionId = id || `${title.toLowerCase().replace(/\s+/g, '-')}-section`;
 
-    const ContentSection = () => (
+    const contentSection = (
         <div>
-            <p className="text-brand-gold tracking-widest font-medium text-sm mb-4">
-                {category.toUpperCase()}
-            </p>
+            <p className="text-brand-gold tracking-widest font-medium text-sm mb-4">{category.toUpperCase()}</p>
             <h2 className="font-serif text-5xl text-brand-dark mb-6">{title}</h2>
             {description.map((paragraph, index) => (
                 <p
@@ -134,11 +128,11 @@ const ServiceFeature: React.FC<ServiceFeatureProps> = ({
                     {imagePosition === 'left' ? (
                         <>
                             <OverlappingImages images={images} position="left" />
-                            <ContentSection />
+                            {contentSection}
                         </>
                     ) : (
                         <>
-                            <ContentSection />
+                            {contentSection}
                             <OverlappingImages images={images} position="right" />
                         </>
                     )}
@@ -150,4 +144,4 @@ const ServiceFeature: React.FC<ServiceFeatureProps> = ({
 
 export default ServiceFeature;
 
-export type { ServiceFeatureProps, ServiceFeatureItem, ServiceImage };
+export type {ServiceFeatureProps, ServiceFeatureItem, ServiceImage};

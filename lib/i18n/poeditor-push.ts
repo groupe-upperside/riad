@@ -12,7 +12,7 @@ export type Term = {
 export type Translation = {
     term: string;
     context?: string;
-    translation: { content: string | Record<string, string> };
+    translation: {content: string | Record<string, string>};
 };
 
 export type PushConfig = {
@@ -33,14 +33,7 @@ type PoEditorResponse<T = unknown> = {
     result?: T;
 };
 
-type FormEncodable =
-    | string
-    | number
-    | boolean
-    | null
-    | undefined
-    | Record<string, unknown>
-    | unknown[];
+type FormEncodable = string | number | boolean | null | undefined | Record<string, unknown> | unknown[];
 
 export type EntryInput = {
     term: string;
@@ -49,7 +42,7 @@ export type EntryInput = {
     plural?: string;
     comment?: string;
     tags?: string[];
-    translation?: { content?: string | Record<string, string> };
+    translation?: {content?: string | Record<string, string>};
 };
 
 export type GroupedJson = Record<string, Record<string, EntryInput>>;
@@ -57,7 +50,7 @@ export type GroupedJson = Record<string, Record<string, EntryInput>>;
 const post = async <T = unknown>(
     apiUrl: string,
     endpoint: string,
-    form: Record<string, FormEncodable>
+    form: Record<string, FormEncodable>,
 ): Promise<PoEditorResponse<T>> => {
     const url = `${apiUrl.replace(/\/$/, '')}/${endpoint.replace(/^\//, '')}`;
     const params = new URLSearchParams();
@@ -104,10 +97,8 @@ export function buildPayloadsFromGroupedJson(json: GroupedJson) {
     return {terms, translations};
 }
 
-const chunk = <T, >(arr: T[], size = 100): T[][] =>
-    Array.from({length: Math.ceil(arr.length / size)}, (_, i) =>
-        arr.slice(i * size, i * size + size)
-    );
+const chunk = <T>(arr: T[], size = 100): T[][] =>
+    Array.from({length: Math.ceil(arr.length / size)}, (_, i) => arr.slice(i * size, i * size + size));
 
 export async function pushToPoeditor(json: GroupedJson, cfg: PushConfig) {
     const {terms, translations} = buildPayloadsFromGroupedJson(json);

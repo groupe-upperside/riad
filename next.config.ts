@@ -1,6 +1,34 @@
-import type {NextConfig} from "next";
+import type {NextConfig} from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./lib/i18n/i18n.ts');
 
 const nextConfig: NextConfig = {
+    reactCompiler: true,
+    experimental: {
+        turbopackFileSystemCacheForDev: true,
+        optimizePackageImports: ['react-icons'],
+    },
+    reactStrictMode: true,
+    output: 'standalone',
+    serverExternalPackages: ['better-auth'],
+    outputFileTracingIncludes: {
+        '/api/staff/confirmations/*/preview': ['./email-templates/**/*'],
+        '/api/staff/confirmations': ['./email-templates/**/*'],
+        '/api/staff/confirmations/*/send': ['./email-templates/**/*'],
+    },
+    async headers() {
+        return [
+            {
+                source: '/admin/:path*',
+                headers: [
+                    {key: 'Cache-Control', value: 'private, no-store'},
+                    {key: 'X-Robots-Tag', value: 'noindex, nofollow'},
+                    {key: 'Referrer-Policy', value: 'same-origin'},
+                ],
+            },
+        ];
+    },
     images: {
         qualities: [100],
         unoptimized: true,
@@ -25,4 +53,4 @@ const nextConfig: NextConfig = {
     },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

@@ -1,46 +1,42 @@
-import {cn} from '@/lib/utils/utils'
+import {cn} from '@/lib/utils/cn';
 
 interface SectionHeaderProps {
-    label?: string
-    title: string
-    subtitle?: string
-    centered?: boolean
-    className?: string
-    dark?: boolean
+    label?: string;
+    title: string;
+    subtitle?: string;
+    centered?: boolean;
+    className?: string;
+    dark?: boolean;
 }
 
 export default function SectionHeader({
-                                          label,
-                                          title,
-                                          subtitle,
-                                          centered = false,
-                                          className,
-                                          dark = false
-                                      }: SectionHeaderProps) {
+    label,
+    title,
+    subtitle,
+    centered = false,
+    className,
+    dark = false,
+}: SectionHeaderProps) {
     return (
         <div className={cn(centered && 'text-center', className)}>
             {label && (
-                <p className={cn(
-                    'text-xs font-semibold tracking-widest uppercase mb-2',
-                    dark ? 'text-white' : 'text-brand-gold-400'
-                )}>
+                <p
+                    className={cn(
+                        'text-xs font-semibold tracking-widest uppercase mb-2',
+                        dark ? 'text-white' : 'text-brand-gold-400',
+                    )}
+                >
                     {label}
                 </p>
             )}
-            <h2 className={cn(
-                'font-serif text-4xl lg:text-5xl capitalize',
-                dark ? 'text-white' : 'text-brand-dark'
-            )}>
+            <h2 className={cn('font-serif text-4xl lg:text-5xl capitalize', dark ? 'text-white' : 'text-brand-dark')}>
                 {title}
             </h2>
             {subtitle && (
-                <h3 className={cn(
-                    'font-serif text-3xl md:text-4xl mt-2',
-                    dark ? 'text-white' : 'text-brand-dark'
-                )}>
+                <h3 className={cn('font-serif text-3xl md:text-4xl mt-2', dark ? 'text-white' : 'text-brand-dark')}>
                     {subtitle}
                 </h3>
             )}
         </div>
-    )
+    );
 }

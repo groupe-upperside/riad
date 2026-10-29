@@ -1,0 +1,35 @@
+services:
+    next-front:
+        image: riad-front:${IMAGE_TAG:-local}
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: production
+            args:
+                NEXT_PUBLIC_CDN_URL: ${NEXT_PUBLIC_CDN_URL:?Renseigner NEXT_PUBLIC_CDN_URL dans .env}
+        restart: unless-stopped
+        init: true
+        ports:
+            - '127.0.0.1:3001:3000'
+        environment:
+            APP_MAILJET_KEY: ${APP_MAILJET_KEY:?Renseigner APP_MAILJET_KEY dans .env}
+            APP_MAILJET_SECRET: ${APP_MAILJET_SECRET:?Renseigner APP_MAILJET_SECRET dans .env}
+            STAFF_BASE_URL: https://www.riadnashira.com
+            STAFF_BOOTSTRAP_PASSWORD: ${STAFF_BOOTSTRAP_PASSWORD:-}
+            STAFF_AUTH_SECRET: ${STAFF_AUTH_SECRET:?Renseigner STAFF_AUTH_SECRET dans .env}
+            STAFF_DATABASE_PATH: /app/data/staff.sqlite
+            CONFIRMATION_NOUR_MENU_URL: ${CONFIRMATION_NOUR_MENU_URL:-}
+            CONFIRMATION_RIVE_MENU_URL: ${CONFIRMATION_RIVE_MENU_URL:-}
+            CONFIRMATION_SPA_MENU_FR_URL: ${CONFIRMATION_SPA_MENU_FR_URL:-}
+            CONFIRMATION_SPA_MENU_EN_URL: ${CONFIRMATION_SPA_MENU_EN_URL:-}
+            CONFIRMATION_EXPERIENCES_URL: ${CONFIRMATION_EXPERIENCES_URL:-}
+        volumes:
+            - staff-data:/app/data
+        logging:
+            driver: json-file
+            options:
+                max-size: '10m'
+                max-file: '3'
+
+volumes:
+    staff-data:

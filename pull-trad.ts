@@ -1,9 +1,9 @@
 #!/usr/bin/env ts-node
 
-require('dotenv/config');
-const fs = require('fs');
-const path = require('path');
-const { pullFromPoeditor } = require('./lib/i18n/poeditor-pull');
+import 'dotenv/config';
+import fs from 'node:fs';
+import path from 'node:path';
+import {pullFromPoeditor} from './lib/i18n/poeditor-pull';
 
 function arg(flag: string, fallback?: string) {
     const i = process.argv.indexOf(flag);
@@ -24,9 +24,9 @@ function arg(flag: string, fallback?: string) {
         process.exit(1);
     }
 
-    const { byLang, summary } = await pullFromPoeditor(
-        { apiUrl, apiToken, projectId, minPercentage: minPct, onlyWithTranslations: onlyWith },
-        langCodes
+    const {byLang, summary} = await pullFromPoeditor(
+        {apiUrl, apiToken, projectId, minPercentage: minPct, onlyWithTranslations: onlyWith},
+        langCodes,
     );
 
     const dir = path.join(process.cwd(), 'translations');
