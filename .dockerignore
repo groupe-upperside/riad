@@ -23,5 +23,5 @@ data
 Confirmation_sejour_*.html
 
 .impeccable
-PRODUCT.md
-DESIGN.md
+/*.md
+!README.md

@@ -42,10 +42,14 @@ next-env.d.ts
 !.env.example
 /playwright-report/
 /test-results/
-/.idea/
+.idea/
 *.iml
 /.agents/
 /.aws/
+
+# Keep only the project README among root Markdown files
+/*.[mM][dD]
+!/README.md
 
 # Local review notes
 /docs/code-review.md
