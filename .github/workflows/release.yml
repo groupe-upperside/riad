@@ -53,6 +53,7 @@ jobs:
                   STAFF_BOOTSTRAP_PASSWORD: ${{ secrets.STAFF_BOOTSTRAP_PASSWORD }}
                   runtime_file: ${{ runner.temp }}/riad-production.env
             - name: Deploy through S4all bastion
+              uses: ./.github/actions/deployment
               env:
                   SSH_PRIVATE_KEY: ${{ secrets.SECURE4ALL_SSH_PRIVATE_KEY }}
                   SSH_KNOWN_HOSTS: ${{ secrets.SECURE4ALL_KNOWN_HOSTS }}
@@ -62,7 +63,6 @@ jobs:
                   BASTION_USER: ${{ vars.SECURE4ALL_BASTION_USER || 'aurore.louche' }}
                   PRODUCTION_USER: ${{ vars.RIAD_PRODUCTION_USER || 'aurore.louche' }}
                   RELEASE_ID: ${{ needs.verify.outputs.image-tag }}
-              run: bash deploy/upload-release.sh
             - name: Remove private environment files
               if: always()
               run: rm -f .env "$RUNNER_TEMP/riad-production.env"

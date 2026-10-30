@@ -177,7 +177,7 @@ public/                            ressources publiques locales
 email-templates/                   modèles de confirmation et images intégrées
 data/                              base privée locale, ignorée par Git
 tests/                             tests unitaires, intégration, E2E, visuels et médias
-deploy/                            exemple nginx pour www.riadnashira.com
+.github/actions/                   environnement et déploiement S4all
 ```
 
 ---
@@ -369,7 +369,7 @@ docker compose --project-name riad-production -f docker-compose.production.yml u
 curl -fsS http://127.0.0.1:3001/api/health
 ```
 
-La configuration [nginx](./deploy/nginx.conf) transmet `Host` et les en-têtes `X-Forwarded-*`, nécessaires notamment aux actions serveur. Les certificats doivent être présents sur l'hôte. Le volume `staff-data` conserve les comptes et l’historique des confirmations. Voir [Déploiement Docker](./docs/deployment.md) et [Espace équipe](./docs/staff-confirmations.md) pour la procédure complète.
+La configuration [nginx](./.github/actions/deployment/nginx.conf) transmet `Host` et les en-têtes `X-Forwarded-*`, nécessaires notamment aux actions serveur. Les certificats doivent être présents sur l'hôte. Le volume `staff-data` conserve les comptes et l’historique des confirmations. Voir [Déploiement Docker](./docs/deployment.md) et [Espace équipe](./docs/staff-confirmations.md) pour la procédure complète.
 
 ---
 

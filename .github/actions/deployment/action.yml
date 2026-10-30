@@ -1,0 +1,8 @@
+name: Deploy production
+description: Transfer and deploy the tested image through the S4all bastion.
+runs:
+    using: composite
+    steps:
+        - name: Transfer and deploy release
+          shell: bash
+          run: bash "$GITHUB_ACTION_PATH/upload-release.sh"

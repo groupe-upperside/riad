@@ -20,9 +20,11 @@ CONFIRMATION_EXPERIENCES_URL=
 
 Pour générer le secret : `openssl rand -base64 48`. En développement, utiliser l’origine effective du serveur, par exemple `http://localhost:3001`. Ne pas utiliser de variable `NEXT_PUBLIC_` pour les secrets.
 
-Les deux modèles sources fournis sont à la racine du dépôt. `email-templates/` contient leurs versions paramétrées. Les six images proviennent exclusivement de ces modèles et sont conservées sans modification visuelle ; elles sont dédupliquées par leur empreinte SHA-256. Les fichiers clients utilisent des pièces jointes intégrées avec `Content-ID`. La prévisualisation restitue ces mêmes images, sans script ni accès au document parent. Seules les valeurs des zones variables, les liens PDF à configurer et la note de préparation finale sont remplacés.
+Les deux modèles sources fournis sont à la racine du dépôt. `email-templates/` contient leurs versions paramétrées. Les six images proviennent exclusivement de ces modèles et sont conservées sans modification visuelle ; elles sont dédupliquées par leur empreinte SHA-256. Les fichiers clients utilisent des pièces jointes intégrées avec `Content-ID`. La prévisualisation restitue ces mêmes images, sans script ni accès au document parent.
 
-Les quatre PDF fournis sont utilisés par défaut depuis `https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/` : `nour.pdf`, `rive.pdf`, `spa.pdf` et `activites.pdf`. Les variables d’environnement permettent de remplacer leurs URL si nécessaire. Le formulaire refuse de produire un message avec des liens « LIEN-A-REMPLACER ». Les coordonnées et conditions du modèle restent celles fournies.
+Les deux langues partagent les mêmes règles typographiques : Georgia pour les titres, Arial pour le corps du texte, les données du séjour, les tarifs et les boutons. Sous les tarifs des transferts, « Réserver un transfert » ouvre WhatsApp au numéro du riad avec un message prérempli dans la langue du client. Le Fast Track est présenté comme un service en complément du transfert. Les conditions affichées ne comportent pas de clause d'acompte de 50 % à 15 jours ni de solde à 7 jours.
+
+Les quatre PDF fournis sont utilisés par défaut depuis `https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/` : `nour.pdf`, `rive.pdf`, `spa.pdf` et `activites.pdf`. Les variables d’environnement permettent de remplacer leurs URL si nécessaire. Le formulaire refuse de produire un message avec des liens « LIEN-A-REMPLACER ». Les coordonnées du modèle restent celles fournies.
 
 ## Compte initial à la release
 

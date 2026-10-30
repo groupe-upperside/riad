@@ -82,7 +82,7 @@ Le reverse proxy, le DNS et le certificat TLS doivent également être prêts. L
 
 Les fichiers arrivent dans `releases/release-<commit>-<run>-<tentative>/`. Le projet Compose garde toujours le nom `riad-production`, donc le volume conserve le nom `riad-production_staff-data` entre releases. Le lien `current` désigne la dernière livraison ayant passé les contrôles.
 
-Avant chaque mise à jour d'une installation existante, [le script de livraison](../deploy/release.sh) crée une sauvegarde SQLite cohérente, incluant le WAL, dans `/app/data/backups/pre-<release>.sqlite`. La copie s'effectue avec l'image précédente et sans accès réseau. L'échec d'une sauvegarde bloque la mise à jour avant de remplacer le service. Prévoir aussi une sauvegarde externe du volume : cette copie locale ne protège pas d'une perte du serveur.
+Avant chaque mise à jour d'une installation existante, [le script de livraison](../.github/actions/deployment/release.sh) crée une sauvegarde SQLite cohérente, incluant le WAL, dans `/app/data/backups/pre-<release>.sqlite`. La copie s'effectue avec l'image précédente et sans accès réseau. L'échec d'une sauvegarde bloque la mise à jour avant de remplacer le service. Prévoir aussi une sauvegarde externe du volume : cette copie locale ne protège pas d'une perte du serveur.
 
 Le conteneur exécute le seed avant Next.js. La livraison attend ensuite son état `healthy`, vérifie son image, `/api/health`, l'accueil français et le refus d'accès anonyme à l'API équipe. Aucun email n'est envoyé par ces contrôles.
 
@@ -119,7 +119,7 @@ Le service `next-front` utilise la cible `production` du Dockerfile. Node 22 ex�
 
 ## Reverse proxy et TLS
 
-`deploy/nginx.conf` fournit un exemple pour nginx installé sur l'hôte :
+`.github/actions/deployment/nginx.conf` fournit un exemple pour nginx installé sur l'hôte :
 
 - domaine `www.riadnashira.com` ;
 - redirection HTTP vers HTTPS ;

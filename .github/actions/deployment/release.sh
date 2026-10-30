@@ -77,7 +77,7 @@ if [[ -L "$root/current" ]]; then
     docker volume inspect riad-production_staff-data > /dev/null
     docker run --rm --network none -i --user node \
         --mount type=volume,source=riad-production_staff-data,target=/app/data \
-        --entrypoint node "riad-front:$(cat "$previous/image-tag")" - "$release" < deploy/backup-staff-db.cjs
+        --entrypoint node "riad-front:$(cat "$previous/image-tag")" - "$release" < deployment/backup-staff-db.cjs
 else
     # Never silently adopt an existing installation without its rollback metadata.
     [[ -z "$(docker ps -aq --filter label=com.docker.compose.project=riad-production --filter label=com.docker.compose.service=next-front)" ]]

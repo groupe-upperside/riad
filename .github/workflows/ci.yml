@@ -44,7 +44,7 @@ jobs:
               run: bun run prettier:check
             - name: Check deployment scripts
               run: |
-                  bash -n deploy/release.sh deploy/upload-release.sh
+                  bash -n .github/actions/deployment/release.sh .github/actions/deployment/upload-release.sh
                   bun run test:deploy
             - name: Install Chromium
               run: bunx playwright install --with-deps chromium
@@ -97,15 +97,15 @@ jobs:
               if: inputs.publish-image
               run: |
                   tag="release-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-                  mkdir -p release/deploy
+                  mkdir -p release/deployment
                   docker tag riad-front:ci "riad-front:$tag"
                   docker image inspect --format '{{.Id}}' "riad-front:$tag" > release/image-id
                   printf '%s\n' "$tag" > release/image-tag
                   printf '%s\n' "$NEXT_PUBLIC_CDN_URL" > release/cdn-url
                   docker save "riad-front:$tag" | gzip > release/image.tar.gz
                   cp docker-compose.production.yml release/
-                  cp deploy/release.sh deploy/backup-staff-db.cjs release/deploy/
-                  (cd release && sha256sum image.tar.gz image-id image-tag cdn-url docker-compose.production.yml deploy/* > SHA256SUMS)
+                  cp .github/actions/deployment/release.sh .github/actions/deployment/backup-staff-db.cjs release/deployment/
+                  (cd release && sha256sum image.tar.gz image-id image-tag cdn-url docker-compose.production.yml deployment/* > SHA256SUMS)
                   echo "image-tag=$tag" >> "$GITHUB_OUTPUT"
             - uses: actions/upload-artifact@v7
               if: inputs.publish-image

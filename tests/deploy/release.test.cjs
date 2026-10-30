@@ -32,8 +32,11 @@ function fixture(t, {existing = true, failNew = false, failBackup = false} = {})
             fs.writeFileSync(path.join(location, file), data);
     }
     metadata(directory, release, imageId);
-    fs.mkdirSync(path.join(directory, 'deploy'));
-    fs.copyFileSync(path.join(repo, 'deploy/backup-staff-db.cjs'), path.join(directory, 'deploy/backup-staff-db.cjs'));
+    fs.mkdirSync(path.join(directory, 'deployment'));
+    fs.copyFileSync(
+        path.join(repo, '.github/actions/deployment/backup-staff-db.cjs'),
+        path.join(directory, 'deployment/backup-staff-db.cjs'),
+    );
     fs.writeFileSync(
         path.join(directory, 'SHA256SUMS'),
         execFileSync(
@@ -44,7 +47,7 @@ function fixture(t, {existing = true, failNew = false, failBackup = false} = {})
                 'image-id',
                 'cdn-url',
                 'docker-compose.production.yml',
-                'deploy/backup-staff-db.cjs',
+                'deployment/backup-staff-db.cjs',
             ],
             {cwd: directory},
         ),
@@ -88,7 +91,11 @@ else if(args[0] === 'run' && process.env.FAIL_BACKUP === '1') process.exit(1);
     return {
         root,
         directory,
-        run: () => spawnSync('bash', [path.join(repo, 'deploy/release.sh'), root, release], {env, encoding: 'utf8'}),
+        run: () =>
+            spawnSync('bash', [path.join(repo, '.github/actions/deployment/release.sh'), root, release], {
+                env,
+                encoding: 'utf8',
+            }),
         commands: () =>
             fs.existsSync(path.join(root, 'commands'))
                 ? fs.readFileSync(path.join(root, 'commands'), 'utf8').trim().split('\n').map(JSON.parse)
@@ -168,10 +175,14 @@ test('SQLite backup includes committed WAL data and leaves the original history 
         database.exec(
             "PRAGMA journal_mode=WAL; CREATE TABLE history (id TEXT); INSERT INTO history VALUES ('sent-email')",
         );
-        const result = spawnSync(process.execPath, [path.join(repo, 'deploy/backup-staff-db.cjs'), release], {
-            env: {...process.env, STAFF_DATABASE_PATH: source},
-            encoding: 'utf8',
-        });
+        const result = spawnSync(
+            process.execPath,
+            [path.join(repo, '.github/actions/deployment/backup-staff-db.cjs'), release],
+            {
+                env: {...process.env, STAFF_DATABASE_PATH: source},
+                encoding: 'utf8',
+            },
+        );
         assert.equal(result.status, 0, result.stderr);
         const filename = path.join(directory, 'backups', `pre-${release}.sqlite`);
         const backup = new DatabaseSync(filename, {readOnly: true});
@@ -186,7 +197,7 @@ test('SQLite backup includes committed WAL data and leaves the original history 
             backup.close();
         }
         assert.notEqual(
-            spawnSync(process.execPath, [path.join(repo, 'deploy/backup-staff-db.cjs'), release], {
+            spawnSync(process.execPath, [path.join(repo, '.github/actions/deployment/backup-staff-db.cjs'), release], {
                 env: {...process.env, STAFF_DATABASE_PATH: source},
                 encoding: 'utf8',
             }).status,

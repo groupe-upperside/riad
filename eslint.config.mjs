@@ -64,7 +64,7 @@ const eslintConfig = defineConfig([
         },
     },
     {
-        files: ['*.cjs', 'scripts/*.cjs', 'deploy/*.cjs', 'tests/**/*.cjs', 'tests/**/*.ts', 'tests/**/*.tsx'],
+        files: ['*.cjs', 'scripts/*.cjs', 'tests/**/*.cjs', 'tests/**/*.ts', 'tests/**/*.tsx'],
         rules: {
             '@typescript-eslint/no-require-imports': 'off',
         },

@@ -44,3 +44,17 @@ it('uses the four exact CDN documents supplied by the user by default', () => {
     for (const name of ['nour', 'rive', 'spa', 'activites'])
         expect(html).toContain(`https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/${name}.pdf`);
 });
+
+it.each(['fr', 'en'] as const)('lets a %s guest book a transfer separately from Fast Track', (language) => {
+    const {html} = renderConfirmation({...confirmationInput, language});
+    const label = language === 'fr' ? 'Réserver un transfert' : 'Book a transfer';
+    const link = html.match(new RegExp(`<a href="([^"]+)"[^>]*>${label}</a>`));
+    expect(link).not.toBeNull();
+    const url = new URL(link![1]);
+    expect(url.origin).toBe('https://wa.me');
+    expect(url.pathname).toBe('/212666840828');
+    expect(url.searchParams.get('text')).toContain(language === 'fr' ? 'transfert aéroport' : 'airport transfer');
+    expect(html.indexOf(label)).toBeGreaterThan(html.indexOf('Fast Track'));
+    expect(html).toContain(language === 'fr' ? '(en plus du transfert)' : '(in addition to the transfer)');
+    expect(html).not.toMatch(/Acompte de 50|50% deposit due|15 jours avant l’arrivée|15 days before arrival/);
+});

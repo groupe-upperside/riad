@@ -51,7 +51,7 @@ fs.appendFileSync(process.env.UPLOAD_LOG, '${tool}' + String.fromCharCode(10));
         UPLOAD_LOG: path.join(root, 'calls'),
     };
     const run = (overrides = {}) =>
-        spawnSync('bash', [path.join(repo, 'deploy/upload-release.sh')], {
+        spawnSync('bash', [path.join(repo, '.github/actions/deployment/upload-release.sh')], {
             cwd: root,
             env: {...env, ...overrides},
             encoding: 'utf8',

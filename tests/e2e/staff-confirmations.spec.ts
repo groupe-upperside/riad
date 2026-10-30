@@ -89,6 +89,20 @@ for (const language of ['fr', 'en'] as const) {
             language === 'fr' ? 'Chère Madame Alice Martin' : 'Ms Alice Martin',
         );
         await expect(frame.locator('body')).not.toContainText('LIEN-A-REMPLACER');
+        await expect(
+            frame.getByRole('link', {
+                name: language === 'fr' ? 'Réserver un transfert' : 'Book a transfer',
+                exact: true,
+            }),
+        ).toHaveAttribute('href', /^https:\/\/wa\.me\/212666840828\?text=/);
+        await expect(frame.locator('body')).toContainText(
+            language === 'fr'
+                ? 'Fast Track - Accueil VIP aéroport (en plus du transfert)'
+                : 'Fast Track - VIP airport welcome (in addition to the transfer)',
+        );
+        await expect(frame.locator('body')).not.toContainText(
+            language === 'fr' ? 'Acompte de 50 % à régler 15 jours' : '50% deposit due 15 days',
+        );
         await page.getByRole('button', {name: 'Confirmer l’envoi', exact: true}).click();
         await expect(page.getByRole('status')).toContainText('Envoi accepté par Mailjet');
         expect(sentCount(data.recipient)).toBe(1);
