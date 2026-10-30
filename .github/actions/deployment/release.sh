@@ -13,6 +13,9 @@ flock -n 9 || { echo 'Another deployment is running.' >&2; exit 1; }
 sha256sum --check --status SHA256SUMS
 [[ "$(cat image-tag)" == "$release" ]]
 [[ "$(cat image-id)" =~ ^sha256:[a-f0-9]{64}$ ]]
+if [[ -f image-manifest-id ]]; then
+    [[ "$(cat image-manifest-id)" =~ ^sha256:[a-f0-9]{64}$ ]]
+fi
 [[ "$(cat cdn-url)" =~ ^https://[^[:space:]]+/$ ]]
 test -s runtime.env
 chmod 600 runtime.env
@@ -25,6 +28,17 @@ compose() {
         -f "$location/docker-compose.production.yml" "$@"
 }
 
+image_matches() {
+    local actual=$1 location=$2 metadata expected
+    for metadata in image-id image-manifest-id; do
+        [[ -f "$location/$metadata" ]] || continue
+        expected=$(cat "$location/$metadata")
+        [[ "$expected" =~ ^sha256:[a-f0-9]{64}$ ]] || return 1
+        [[ "$actual" != "$expected" ]] || return 0
+    done
+    return 1
+}
+
 healthy() {
     local location=$1 container status
     for ((attempt=0; attempt<60; attempt++)); do
@@ -32,7 +46,7 @@ healthy() {
         if [[ -n "$container" ]]; then
             status=$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}missing{{end}}' "$container")
             if [[ "$status" == healthy ]]; then
-                [[ "$(docker inspect --format '{{.Image}}' "$container")" == "$(cat "$location/image-id")" ]] || return 1
+                image_matches "$(docker inspect --format '{{.Image}}' "$container")" "$location" || return 1
                 curl --fail --silent --show-error --max-time 10 http://127.0.0.1:3001/api/health > /dev/null || return 1
                 curl --fail --silent --show-error --max-time 20 -H 'Host: www.riadnashira.com' -H 'X-Forwarded-Host: www.riadnashira.com' -H 'X-Forwarded-Proto: https' http://127.0.0.1:3001/fr > /dev/null || return 1
                 [[ "$(curl --silent --show-error --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:3001/api/staff/confirmations)" == 401 ]] || return 1
@@ -88,7 +102,10 @@ else
 fi
 
 docker load --input image.tar.gz > /dev/null
-[[ "$(docker image inspect --format '{{.Id}}' "riad-front:$release")" == "$(cat image-id)" ]]
+image_matches "$(docker image inspect --format '{{.Id}}' "riad-front:$release")" "$directory" || {
+    echo 'Loaded image identity does not match the verified release.' >&2
+    false
+}
 started=1
 compose "$directory" up -d --no-build --pull never next-front
 healthy "$directory"

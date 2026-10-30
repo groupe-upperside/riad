@@ -11,8 +11,12 @@ const release = `release-${'a'.repeat(40)}-123-1`;
 const previous = `release-${'b'.repeat(40)}-122-1`;
 const imageId = `sha256:${'c'.repeat(64)}`;
 const oldImageId = `sha256:${'d'.repeat(64)}`;
+const manifestId = `sha256:${'e'.repeat(64)}`;
 
-function fixture(t, {existing = true, failNew = false, failBackup = false} = {}) {
+function fixture(
+    t,
+    {existing = true, failNew = false, failBackup = false, containerd = false, wrongImage = false} = {},
+) {
     const root = fs.mkdtempSync(path.join(os.tmpdir(), 'riad-deploy-'));
     t.after(() => fs.rmSync(root, {recursive: true, force: true}));
     const directory = path.join(root, 'releases', release);
@@ -24,6 +28,7 @@ function fixture(t, {existing = true, failNew = false, failBackup = false} = {})
         for (const [file, data] of Object.entries({
             'image-tag': tag,
             'image-id': id,
+            'image-manifest-id': manifestId,
             'cdn-url': 'https://cdn.example.org/riad/',
             'runtime.env': 'APP_MAILJET_KEY=fake\nAPP_MAILJET_SECRET=fake\nSTAFF_AUTH_SECRET=fake-test-secret\n',
             'docker-compose.production.yml': 'services: {}',
@@ -45,6 +50,7 @@ function fixture(t, {existing = true, failNew = false, failBackup = false} = {})
                 'image.tar.gz',
                 'image-tag',
                 'image-id',
+                'image-manifest-id',
                 'cdn-url',
                 'docker-compose.production.yml',
                 'deployment/backup-staff-db.cjs',
@@ -72,9 +78,9 @@ if(args[0] === 'compose') {
   if(args.includes('ps')) console.log('fake-container');
 } else if(args[0] === 'inspect') {
   if(args[2].includes('.State.Health')) console.log(read() === '${release}' && process.env.FAIL_NEW === '1' ? 'unhealthy' : 'healthy');
-  else console.log(read() === '${release}' ? '${imageId}' : '${oldImageId}');
+  else console.log(read() === '${release}' ? '${containerd ? manifestId : imageId}' : '${oldImageId}');
 } else if(args[0] === 'image' && args[1] === 'inspect') {
-  console.log(args.at(-1).endsWith('${release}') ? '${imageId}' : '${oldImageId}');
+  console.log(args.at(-1).endsWith('${release}') ? '${wrongImage ? `sha256:${'f'.repeat(64)}` : containerd ? manifestId : imageId}' : '${oldImageId}');
 } else if(args[0] === 'volume' && !${existing}) process.exit(1);
 else if(args[0] === 'run' && process.env.FAIL_BACKUP === '1') process.exit(1);
 `,
@@ -132,6 +138,22 @@ test('unhealthy upgrade restores previous image and configuration, keeping histo
                     args.includes('prune') || args.includes('down') || (args.includes('volume') && args.includes('rm')),
             ),
     );
+});
+
+test('containerd manifest IDs are accepted when the runner recorded a config ID', (t) => {
+    const f = fixture(t, {containerd: true});
+    const result = f.run();
+    assert.equal(result.status, 0, result.stderr);
+    assert.equal(fs.readlinkSync(path.join(f.root, 'current')), `releases/${release}`);
+});
+
+test('an unrelated loaded image is rejected before replacing the running service', (t) => {
+    const f = fixture(t, {wrongImage: true});
+    const result = f.run();
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Loaded image identity does not match/);
+    assert.ok(!f.commands().some((args) => args.includes('up')));
+    assert.equal(fs.readFileSync(path.join(f.root, 'state'), 'utf8'), previous);
 });
 
 test('backup failure leaves the running release untouched', (t) => {

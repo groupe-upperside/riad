@@ -54,9 +54,13 @@ EOF
 remote_root=/srv/docker-compose/riad-prod
 destination="$remote_root/releases/$RELEASE_ID"
 # Check the downloaded artifact before sending anything to production.
+echo 'Checking release archive integrity.'
 (cd release && sha256sum --check --status SHA256SUMS)
 [[ "$(cat release/image-tag)" == "$RELEASE_ID" ]]
+echo 'Checking production prerequisites through the bastion.'
 ssh -F "$ssh_dir/config" riad-production "set -eu; docker info > /dev/null; docker compose version > /dev/null; command -v bash curl flock sha256sum > /dev/null; umask 077; mkdir -p '$destination'; test ! -e '$destination/runtime.env'"
+echo 'Transferring tested release image.'
 scp -q -F "$ssh_dir/config" -r release/. "riad-production:$destination/"
 scp -q -F "$ssh_dir/config" "$ssh_dir/runtime.env" "riad-production:$destination/runtime.env"
+echo 'Activating verified production release.'
 ssh -F "$ssh_dir/config" riad-production "bash '$destination/deployment/release.sh' '$remote_root' '$RELEASE_ID'"

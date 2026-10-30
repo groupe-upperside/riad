@@ -17,6 +17,10 @@ Release GitHub stable
 
 Le workflow réutilise [la CI](../.github/workflows/ci.yml), puis transfère exactement l'image testée, sans compilation sur le serveur. Le tag d'image associe le commit, l'exécution GitHub et sa tentative. L'archive et ses fichiers de déploiement sont contrôlés par SHA256 ; l'identifiant de l'image démarrée est également vérifié. Les artefacts GitHub expirent après un jour et ne contiennent aucun secret.
 
+Le contrôle d'identité accepte le digest de configuration et le digest du manifeste OCI de la même image Linux amd64 : les moteurs Docker classiques et ceux utilisant containerd n'exposent pas le même identifiant. Les deux digests sont reliés et vérifiés dans l'archive avant sa livraison. Une image portant un autre identifiant bloque le démarrage.
+
+**Actions → CI → Run workflow** permet de vérifier les tests, l'image Docker et la préparation de l'archive avant une release, sans déployer en production.
+
 Les releases sont sérialisées. Aucun runner auto-hébergé, registre d'images ou accès direct du runner au réseau privé n'est nécessaire. Le bastion doit accepter la connexion SSH du runner GitHub et autoriser le transfert TCP vers la cible.
 
 ## Secrets et variables GitHub

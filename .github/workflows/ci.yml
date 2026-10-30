@@ -95,8 +95,9 @@ jobs:
               run: node tests/docker/staff-smoke.cjs riad-front:ci
             - name: Package tested release image
               id: package
-              if: inputs.publish-image
+              if: inputs.publish-image || github.event_name == 'workflow_dispatch'
               run: |
+                  set -euo pipefail
                   tag="release-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
                   mkdir -p release/deployment
                   docker tag riad-front:ci "riad-front:$tag"
@@ -104,12 +105,13 @@ jobs:
                   printf '%s\n' "$tag" > release/image-tag
                   printf '%s\n' "$NEXT_PUBLIC_CDN_URL" > release/cdn-url
                   docker save "riad-front:$tag" | gzip > release/image.tar.gz
+                  node scripts/image-manifest-id.cjs release/image.tar.gz "$(cat release/image-id)" > release/image-manifest-id
                   cp docker-compose.production.yml release/
                   cp .github/actions/deployment/release.sh .github/actions/deployment/backup-staff-db.cjs release/deployment/
-                  (cd release && sha256sum image.tar.gz image-id image-tag cdn-url docker-compose.production.yml deployment/* > SHA256SUMS)
+                  (cd release && sha256sum image.tar.gz image-id image-manifest-id image-tag cdn-url docker-compose.production.yml deployment/* > SHA256SUMS)
                   echo "image-tag=$tag" >> "$GITHUB_OUTPUT"
             - uses: actions/upload-artifact@v7
-              if: inputs.publish-image
+              if: inputs.publish-image || github.event_name == 'workflow_dispatch'
               with:
                   name: production-image
                   path: release/
