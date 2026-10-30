@@ -341,6 +341,8 @@ Voir [le guide des tests](./docs/testing.md) pour l'installation de Chromium et 
 
 Une release GitHub stable publiée déclenche [Release production](./.github/workflows/release.yml). Les runners hébergés GitHub exécutent la CI et les tests Docker, puis livrent l'image testée via le bastion S4all (`212.106.125.38:3615`). Aucun runner dédié ni environnement de recette n'est requis.
 
+Avant de publier une release, lancer **Actions → CI → Run workflow** sur `main` pour vérifier les tests, les captures de référence et l'image Docker. Cette exécution manuelle ne déploie pas en production.
+
 Comme dans `bda-front`, l'action [define_env](./.github/actions/define_env/action.yml) génère les fichiers d'environnement à partir des paramètres GitHub :
 
 | Emplacement GitHub                        | Noms à renseigner                                                                                                                                                   |
