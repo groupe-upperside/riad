@@ -88,7 +88,7 @@ jobs:
                     -e STAFF_BASE_URL=https://www.riadnashira.com \
                     -e STAFF_AUTH_SECRET="$(openssl rand -hex 32)" \
                     -e STAFF_BOOTSTRAP_PASSWORD="$(openssl rand -hex 24)" riad-front:ci
-                  curl --fail --retry 20 --retry-connrefused --retry-delay 1 --max-time 5 http://127.0.0.1:3102/api/health
+                  curl --fail --retry 20 --retry-all-errors --retry-delay 1 --retry-max-time 90 --max-time 5 http://127.0.0.1:3102/api/health
                   curl --fail --max-time 15 --output /dev/null http://127.0.0.1:3102/fr
                   curl --fail --max-time 15 --output /dev/null --header "Host: www.riadnashira.com" --header "X-Forwarded-Host: www.riadnashira.com" --header "X-Forwarded-Proto: https" http://127.0.0.1:3102/fr/hebergements/confort
             - name: Check staff accounts and persisted history
