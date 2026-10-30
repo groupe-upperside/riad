@@ -4,11 +4,13 @@ import {claimDraft, getConfirmation, markSent, markUnsuccessful} from '@/lib/con
 import {inlineAttachments} from '@/lib/confirmations/template';
 import {ConfirmationDeliveryError, deliverConfirmation} from '@/lib/email/mailjet';
 import {ConfirmationError} from '@/types/confirmation.type';
+import {validateConfirmation} from '@/lib/confirmations/validation';
 
 export async function sendConfirmation(id: string, token: string, actorId: string) {
     const saved = getConfirmation(id);
     if (!saved || saved.createdBy !== actorId)
         throw new ConfirmationError('Cette prévisualisation ne peut pas être utilisée.', 409);
+    validateConfirmation(saved.input);
     let inlinedAttachments: ReturnType<typeof inlineAttachments>;
     try {
         inlinedAttachments = inlineAttachments(saved.html);

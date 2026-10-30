@@ -3,6 +3,7 @@ import {notFound} from 'next/navigation';
 import {requireStaffPage} from '@/lib/auth/server';
 import {getConfirmation} from '@/lib/confirmations/repository';
 import ConfirmationForm from '@/components/features/staff/confirmation-form';
+import {todayAtRiad} from '@/lib/confirmations/dates';
 export default async function NewConfirmationPage({searchParams}: {searchParams: Promise<{draft?: string}>}) {
     const staff = await requireStaffPage();
     const {draft} = await searchParams;
@@ -12,7 +13,7 @@ export default async function NewConfirmationPage({searchParams}: {searchParams:
         (!previous || previous.createdBy !== staff.id || !['draft', 'failed', 'expired'].includes(previous.status))
     )
         notFound();
-    const today = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Africa/Casablanca'}).format(new Date());
+    const today = todayAtRiad();
     return (
         <>
             <Link href="/admin/confirmations" className="text-sm text-brand-dark-500 underline underline-offset-4">

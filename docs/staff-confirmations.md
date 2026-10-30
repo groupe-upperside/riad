@@ -2,6 +2,8 @@
 
 L’espace privé est accessible à `/admin`. Aucun lien n’est ajouté au site public. Les membres de l’équipe se connectent, renseignent le séjour, prévisualisent le modèle français ou anglais fourni, puis confirment explicitement l’envoi au client. L’historique est partagé et consultable par nom, email ou référence.
 
+L’arrivée doit être aujourd’hui ou une date future, selon le calendrier de Marrakech. Le départ doit être strictement après l’arrivée. Le calendrier adapte ses dates minimales ; déplacer l’arrivée au jour du départ ou après vide le départ pour permettre une nouvelle sélection. Ces règles sont aussi contrôlées par l’API et au moment de l’envoi, y compris pour un brouillon préparé avant minuit.
+
 ## Configuration
 
 ```dotenv

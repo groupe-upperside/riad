@@ -6,6 +6,7 @@ import {useState, type ChangeEvent, type FormEvent} from 'react';
 import StaffField from '@/components/features/staff/field';
 import EmailPreview from '@/components/features/staff/email-preview';
 import type {StayConfirmationInput} from '@/types/confirmation.type';
+import {addCalendarDays} from '@/lib/confirmations/dates';
 
 type DraftPreview = {id: string; previewToken: string; subject: string};
 type RequestError = {error?: string; existingId?: string};
@@ -44,10 +45,18 @@ export default function ConfirmationForm({
     const [pending, setPending] = useState<'preview' | 'send' | null>(null);
     const [error, setError] = useState<RequestError | null>(null);
     const [needsLogin, setNeedsLogin] = useState(false);
+    const minimumCheckOut = addCalendarDays(
+        values.checkIn.length === 10 && values.checkIn > today ? values.checkIn : today,
+        1,
+    );
 
     function change(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
         const {name, value} = event.target;
-        setValues((previous) => ({...previous, [name]: ['adults', 'children'].includes(name) ? Number(value) : value}));
+        setValues((previous) => {
+            const next = {...previous, [name]: ['adults', 'children'].includes(name) ? Number(value) : value};
+            if (name === 'checkIn' && value && previous.checkOut && previous.checkOut <= value) next.checkOut = '';
+            return next;
+        });
     }
     async function request(url: string, body: unknown) {
         const response = await fetch(url, {
@@ -260,11 +269,15 @@ export default function ConfirmationForm({
                     <fieldset className="staff-panel">
                         <legend className="px-2 text-lg font-semibold">Détails du séjour</legend>
                         <div className="grid gap-6 sm:grid-cols-2">
-                            <StaffField id="checkIn" label="Date d’arrivée">
-                                {control('checkIn', 'date')}
+                            <StaffField id="checkIn" label="Date d’arrivée" hint="À partir d’aujourd’hui.">
+                                {control('checkIn', 'date', {min: today})}
                             </StaffField>
-                            <StaffField id="checkOut" label="Date de départ">
-                                {control('checkOut', 'date', {min: values.checkIn || undefined})}
+                            <StaffField
+                                id="checkOut"
+                                label="Date de départ"
+                                hint="Au plus tôt le lendemain de l’arrivée."
+                            >
+                                {control('checkOut', 'date', {min: minimumCheckOut})}
                             </StaffField>
                             <StaffField id="adults" label="Nombre d’adultes">
                                 {control('adults', 'number', {min: 1, max: 30, step: 1})}

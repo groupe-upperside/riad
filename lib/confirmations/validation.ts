@@ -1,4 +1,5 @@
 import {ConfirmationError, type StayConfirmationInput} from '@/types/confirmation.type';
+import {todayAtRiad} from '@/lib/confirmations/dates';
 
 const text = (value: unknown, label: string, max: number, optional = false): string => {
     if (typeof value !== 'string') throw new ConfirmationError(`${label} : valeur invalide.`);
@@ -51,6 +52,9 @@ export function validateConfirmation(value: unknown): StayConfirmationInput {
         throw new ConfirmationError('Choisissez le type de règlement.');
     const checkIn = validDate(input.checkIn, 'Arrivée');
     const checkOut = validDate(input.checkOut, 'Départ');
+    const today = todayAtRiad();
+    if (checkIn < today) throw new ConfirmationError('La date d’arrivée doit être aujourd’hui ou une date future.');
+    if (checkOut < today) throw new ConfirmationError('La date de départ doit être aujourd’hui ou une date future.');
     const nights = stayNights(checkIn, checkOut);
     if (nights < 1 || nights > 365)
         throw new ConfirmationError('Le départ doit suivre l’arrivée, pour un séjour de 365 nuits au maximum.');

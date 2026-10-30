@@ -2,12 +2,21 @@ import {randomUUID} from 'node:crypto';
 import {test, expect, capturedMailjet} from './fixtures';
 import {confirmationInput} from '../fixtures/stay-confirmation';
 import type {Page} from '@playwright/test';
+import {addCalendarDays, todayAtRiad} from '../../lib/confirmations/dates';
 
 const origin = `http://localhost:${process.env.E2E_PORT || 3101}`;
 const headers = {origin};
 function input(prefix = 'confirmation') {
     const id = randomUUID();
-    return {...confirmationInput, reference: `RN-${id}`, recipient: `${prefix}-${id}@example.com`};
+    const today = todayAtRiad();
+    return {
+        ...confirmationInput,
+        reference: `RN-${id}`,
+        recipient: `${prefix}-${id}@example.com`,
+        checkIn: addCalendarDays(today, 14),
+        checkOut: addCalendarDays(today, 17),
+        confirmedOn: today,
+    };
 }
 function sentCount(recipient: string) {
     return capturedMailjet().messages.filter((item) => item.Messages[0].To[0].Email === recipient).length;
@@ -51,6 +60,45 @@ test('staff pages and all business endpoints reject anonymous or forged sessions
         data: {email: 'uninvited@example.com', name: 'Intruder', password: 'uninvited-password-12345'},
     });
     expect(registration.ok()).toBe(false);
+});
+
+test('stay calendars and the API enforce today and a departure strictly after arrival', async ({page}) => {
+    await login(page, 90);
+    await page.goto('/admin/confirmations/new');
+    const today = todayAtRiad();
+    const yesterday = addCalendarDays(today, -1);
+    const tomorrow = addCalendarDays(today, 1);
+    const dayAfterTomorrow = addCalendarDays(today, 2);
+    const arrival = page.getByLabel('Date d’arrivée', {exact: true});
+    const departure = page.getByLabel('Date de départ', {exact: true});
+    await expect(arrival).toHaveAttribute('min', today);
+    await expect(departure).toHaveAttribute('min', tomorrow);
+    await arrival.fill(today);
+    expect(await arrival.evaluate((element: HTMLInputElement) => element.checkValidity())).toBe(true);
+    await departure.fill(today);
+    expect(await departure.evaluate((element: HTMLInputElement) => element.validity.rangeUnderflow)).toBe(true);
+    await departure.fill(tomorrow);
+    expect(await departure.evaluate((element: HTMLInputElement) => element.checkValidity())).toBe(true);
+    await arrival.fill(tomorrow);
+    await expect(departure).toHaveValue('');
+    await expect(departure).toHaveAttribute('min', dayAfterTomorrow);
+    await arrival.fill(yesterday);
+    expect(await arrival.evaluate((element: HTMLInputElement) => element.validity.rangeUnderflow)).toBe(true);
+    await departure.fill(yesterday);
+    expect(await departure.evaluate((element: HTMLInputElement) => element.validity.rangeUnderflow)).toBe(true);
+
+    for (const dates of [
+        {checkIn: yesterday, checkOut: tomorrow},
+        {checkIn: today, checkOut: yesterday},
+        {checkIn: today, checkOut: today},
+        {checkIn: tomorrow, checkOut: today},
+    ]) {
+        const data = {...input(), ...dates};
+        const response = await page.request.post('/api/staff/confirmations', {headers, data: {input: data}});
+        expect(response.status()).toBe(400);
+        expect(sentCount(data.recipient)).toBe(0);
+    }
+    await draft(page, {...input(), checkIn: today, checkOut: tomorrow});
 });
 
 for (const language of ['fr', 'en'] as const) {
