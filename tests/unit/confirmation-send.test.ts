@@ -23,12 +23,18 @@ const draft = {
     recipient: confirmationInput.recipient,
     subject: 'Confirmation de séjour',
     html: '<p>Confirmation</p>',
-    input: confirmationInput,
+    input: {
+        ...confirmationInput,
+        checkIn: '2024-01-01',
+        checkOut: '2024-01-04',
+        confirmedOn: '2023-12-15',
+    },
 } as ConfirmationDetail;
 
 beforeEach(() => {
     jest.clearAllMocks();
-    jest.useFakeTimers().setSystemTime(new Date('2027-06-01T22:30:00Z'));
+    // Use a historical UTC+1 date so both instants straddle midnight in Marrakech.
+    jest.useFakeTimers().setSystemTime(new Date('2024-01-01T22:30:00Z'));
     jest.mocked(getConfirmation).mockReturnValue(draft);
     jest.mocked(claimDraft).mockReturnValue(draft);
     jest.mocked(deliverConfirmation).mockResolvedValue({messageId: 'provider-1'});
@@ -42,7 +48,7 @@ it('sends a preview while its arrival is still today in Marrakech', async () => 
 });
 
 it('blocks a preview after midnight without consuming its token or contacting Mailjet', async () => {
-    jest.setSystemTime(new Date('2027-06-01T23:30:00Z'));
+    jest.setSystemTime(new Date('2024-01-01T23:30:00Z'));
     await expect(sendConfirmation(draft.id, 'preview-token', draft.createdBy)).rejects.toThrow('date d’arrivée');
     expect(claimDraft).not.toHaveBeenCalled();
     expect(deliverConfirmation).not.toHaveBeenCalled();

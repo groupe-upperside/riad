@@ -58,9 +58,13 @@ it('rejects a departure in the past or on or before the arrival date', () => {
     );
 });
 
-it('uses the current day in Marrakech even before the UTC day changes', () => {
-    expect(todayAtRiad(new Date('2027-01-01T22:30:00Z'))).toBe('2027-01-01');
-    expect(todayAtRiad(new Date('2027-01-01T23:30:00Z'))).toBe('2027-01-02');
+// Historical dates keep these checks independent of future timezone rule changes.
+it.each([
+    ['2024-01-01T22:30:00Z', '2024-01-01'],
+    ['2024-01-01T23:30:00Z', '2024-01-02'],
+    ['2024-03-20T23:30:00Z', '2024-03-20'],
+])('uses the Marrakech calendar date at %s', (instant, expected) => {
+    expect(todayAtRiad(new Date(instant))).toBe(expected);
 });
 
 it('moves between calendar dates across leap days and year boundaries', () => {
