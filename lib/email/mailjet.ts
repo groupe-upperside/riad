@@ -131,7 +131,7 @@ export async function deliverConfirmation({
                     ReplyTo: {Email: DEFAULT_RECEIVER, Name: 'Riad Nashira'},
                     Subject: subject,
                     HTMLPart: html,
-                    InlinedAttachments: inlinedAttachments,
+                    ...(inlinedAttachments.length ? {InlinedAttachments: inlinedAttachments} : {}),
                     CustomID: id,
                     CustomCampaign: `stay-confirmation-${id}`,
                     DeduplicateCampaign: true,

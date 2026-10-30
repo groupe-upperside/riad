@@ -22,7 +22,20 @@ CONFIRMATION_EXPERIENCES_URL=
 
 Pour générer le secret : `openssl rand -base64 48`. En développement, utiliser l’origine effective du serveur, par exemple `http://localhost:3001`. Ne pas utiliser de variable `NEXT_PUBLIC_` pour les secrets.
 
-Les deux modèles sources fournis sont à la racine du dépôt. `email-templates/` contient leurs versions paramétrées. Les six images proviennent exclusivement de ces modèles et sont conservées sans modification visuelle ; elles sont dédupliquées par leur empreinte SHA-256. Les fichiers clients utilisent des pièces jointes intégrées avec `Content-ID`. La prévisualisation restitue ces mêmes images, sans script ni accès au document parent.
+Les deux modèles sources fournis sont à la racine du dépôt. `email-templates/` contient leurs versions paramétrées. Les six images proviennent exclusivement de ces modèles et sont conservées sans modification visuelle ; elles sont dédupliquées par leur empreinte SHA-256. Les nouveaux emails et leur prévisualisation chargent les images par URL HTTPS depuis `https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/`, sans pièces jointes intégrées. La prévisualisation autorise uniquement ces images distantes et les images intégrées des anciennes confirmations, sans script ni accès au document parent. Les anciens brouillons et archives utilisant `Content-ID` restent pris en charge.
+
+Déposer les six fichiers de `email-templates/assets/` dans `/data/Riad/mail/` sur le CDN, avec leurs noms exacts :
+
+| Image       | Fichier                                 |
+| ----------- | --------------------------------------- |
+| Logo        | `confirmation-e30b4ff4e91e465013d9.jpg` |
+| Bannière    | `confirmation-a012d124d732c565f3c8.jpg` |
+| Le Nour     | `confirmation-bd0e3ff0477f5667b6ab.jpg` |
+| Le Rive     | `confirmation-61f9ed1cae3705775ca0.jpg` |
+| MediSpa     | `confirmation-dee7cf7f6556efb2bef0.jpg` |
+| Expériences | `confirmation-91a6143b0b4bbc6b3e6f.jpg` |
+
+Ces URL doivent être publiques, sans authentification. Outlook peut demander au destinataire d’autoriser le téléchargement des images distantes. Après la mise à jour, préparer une nouvelle confirmation pour utiliser les URL CDN ; un brouillon déjà prévisualisé conserve son HTML d’origine.
 
 Les deux langues partagent les mêmes règles typographiques : Georgia pour les titres, Arial pour le corps du texte, les données du séjour, les tarifs et les boutons. Sous les tarifs des transferts, « Réserver un transfert » ouvre WhatsApp au numéro du riad avec un message prérempli dans la langue du client. Le Fast Track est présenté comme un service en complément du transfert. Les conditions affichées ne comportent pas de clause d'acompte de 50 % à 15 jours ni de solde à 7 jours.
 

@@ -118,7 +118,15 @@ async function ready(route = '/api/health', authenticated = false) {
         assert.equal(preview.status, 200);
         assert.ok(preview.headers.get('content-security-policy').includes("default-src 'none'"));
         const html = await preview.text();
-        assert.ok(html.includes('Ms Docker Guest') && html.includes('data:image/jpeg;base64,'));
+        assert.ok(html.includes('Ms Docker Guest'));
+        const images = [...html.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+        assert.equal(images.length, 6);
+        assert.ok(
+            images.every((src) =>
+                src.startsWith('https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/'),
+            ),
+        );
+        assert.ok(!html.includes('cid:') && !html.includes('data:image'));
         for (const document of ['nour.pdf', 'rive.pdf', 'spa.pdf', 'activites.pdf'])
             assert.ok(html.includes(`/mail/${document}`));
         const passwordHash = () =>

@@ -195,6 +195,15 @@ describe('private confirmation delivery', () => {
             ],
         });
     });
+    it('sends CDN image URLs without adding inline attachments', async () => {
+        const html = '<img src="https://1-files-biotech-dental-clt-cdn.secure4all.xyz/data/Riad/mail/logo.jpg">';
+        await expect(deliverConfirmation({...message, html, inlinedAttachments: []})).resolves.toEqual({
+            messageId: 'mailjet-id',
+        });
+        const sent = request.mock.calls[0][0].Messages[0];
+        expect(sent.HTMLPart).toBe(html);
+        expect(sent).not.toHaveProperty('InlinedAttachments');
+    });
     it.each([
         [{Status: 'error'}, true],
         [{Status: 'success'}, false],

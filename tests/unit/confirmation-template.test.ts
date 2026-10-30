@@ -1,6 +1,8 @@
 /** @jest-environment node */
 import {renderConfirmation, previewHtml, inlineAttachments} from '@/lib/confirmations/template';
 import {confirmationInput} from '@/tests/fixtures/stay-confirmation';
+import assets from '../../email-templates/assets.json';
+import {MAIL_CDN} from '@/lib/constants/confirmation';
 
 beforeEach(() => {
     process.env.CONFIRMATION_SPA_MENU_FR_URL = 'https://example.com/spa-fr.pdf';
@@ -8,18 +10,29 @@ beforeEach(() => {
     process.env.CONFIRMATION_EXPERIENCES_URL = 'https://example.com/experiences.pdf';
 });
 it.each(['fr', 'en'] as const)(
-    'renders the supplied %s template with real inline images and no authoring placeholders',
+    'renders the supplied %s template with six CDN images and no authoring placeholders',
     (language) => {
         const {html, subject} = renderConfirmation({...confirmationInput, language});
         expect(html).toContain(language === 'fr' ? 'Chère Madame Alice Martin' : 'Ms Alice Martin');
         expect(html).toContain(language === 'fr' ? 'mardi 1 juin 2027' : 'Tuesday, 1 June 2027');
         expect(html).not.toMatch(/LIEN-A-REMPLACER|\{\{|\[jour|\[day|Remplacer les deux|Replace the two/);
         expect(subject).toContain(confirmationInput.reference);
-        expect(inlineAttachments(html)).toHaveLength(6);
-        expect(previewHtml(html)).toContain('data:image/jpeg;base64,');
-        expect(previewHtml(html)).not.toContain('cid:');
+        const images = [...html.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+        expect(images).toEqual(assets.map((asset) => `${MAIL_CDN}${asset.filename}`));
+        expect(html).not.toMatch(/cid:|data:image/);
+        expect(inlineAttachments(html)).toEqual([]);
+        expect(previewHtml(html)).toBe(html);
     },
 );
+it('still previews and attaches images from archived emails using Content-ID', () => {
+    const asset = assets[0];
+    const html = `<img src="cid:${asset.contentId}">`;
+    expect(inlineAttachments(html)).toEqual([
+        expect.objectContaining({ContentID: asset.contentId, Filename: asset.filename}),
+    ]);
+    expect(previewHtml(html)).toContain('src="data:image/jpeg;base64,');
+    expect(previewHtml(html)).not.toContain('cid:');
+});
 it('escapes customer content instead of allowing it to introduce markup', () => {
     const {html} = renderConfirmation({
         ...confirmationInput,

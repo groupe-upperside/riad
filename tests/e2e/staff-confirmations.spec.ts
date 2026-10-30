@@ -3,6 +3,8 @@ import {test, expect, capturedMailjet} from './fixtures';
 import {confirmationInput} from '../fixtures/stay-confirmation';
 import type {Page} from '@playwright/test';
 import {addCalendarDays, todayAtRiad} from '../../lib/confirmations/dates';
+import {MAIL_CDN} from '../../lib/constants/confirmation';
+import emailAssets from '../../email-templates/assets.json';
 
 const origin = `http://localhost:${process.env.E2E_PORT || 3101}`;
 const headers = {origin};
@@ -105,6 +107,10 @@ for (const language of ['fr', 'en'] as const) {
     test(`previews, explicitly sends and archives the supplied ${language} email without allowing a duplicate`, async ({
         page,
     }, info) => {
+        for (const asset of emailAssets)
+            await page.route(`${MAIL_CDN}${asset.filename}`, (route) =>
+                route.fulfill({path: `email-templates/assets/${asset.filename}`, contentType: 'image/jpeg'}),
+            );
         await page.context().setExtraHTTPHeaders({
             'x-real-ip': `198.51.100.${info.testId.charCodeAt(0) + (language === 'fr' ? 10 : 20)}`,
         });
@@ -133,6 +139,18 @@ for (const language of ['fr', 'en'] as const) {
         await expect(page.getByRole('heading', {name: 'Vérifiez le message avant l’envoi'})).toBeVisible();
         expect(sentCount(data.recipient)).toBe(0);
         const frame = page.frameLocator('iframe');
+        await expect(frame.locator('img')).toHaveCount(6);
+        await expect
+            .poll(() =>
+                frame
+                    .locator('img')
+                    .evaluateAll((images) =>
+                        images.every(
+                            (image) => image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0,
+                        ),
+                    ),
+            )
+            .toBe(true);
         await expect(frame.locator('body')).toContainText(
             language === 'fr' ? 'Chère Madame Alice Martin' : 'Ms Alice Martin',
         );
@@ -157,6 +175,9 @@ for (const language of ['fr', 'en'] as const) {
         const message = capturedMailjet().messages.find((item) => item.Messages[0].To[0].Email === data.recipient)!
             .Messages[0];
         expect(message.HTMLPart).toContain(language === 'fr' ? 'Chère Madame Alice Martin' : 'Ms Alice Martin');
+        for (const asset of emailAssets) expect(message.HTMLPart).toContain(`${MAIL_CDN}${asset.filename}`);
+        expect(message.HTMLPart).not.toMatch(/cid:|data:image/);
+        expect(message).not.toHaveProperty('InlinedAttachments');
         await expect(page.frameLocator('iframe').locator('body')).toContainText(data.room);
         await page.getByRole('link', {name: 'Retour à l’historique', exact: true}).click();
         await page.getByLabel('Rechercher un client ou une réservation').fill(data.recipient);
